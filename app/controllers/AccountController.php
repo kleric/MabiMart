@@ -103,18 +103,16 @@ class AccountController extends BaseController {
 
 			if($user) {
 
-				/*Mail::send('emails.auth.activate', array('link' => URL::route('activate', $activcode), 'username' => $username), function($message) use $user {
+				Mail::send('emails.auth.activate', array('link' => URL::route('activate', $activcode), 'username' => $username), function($message) use $user {
 					$message->to($user->email, $user->username)->subject('Activate your MabiMart Account');
 				});
-				return Redirect::route('login')->with('success_message', 'Your account has been created. Please visit your e-mail address and activate it.');*/
+				return Redirect::route('login')->with('success_message', 'Your account has been created. Please visit your e-mail address and activate it.');
 
 			}
 			else {
 				Redirect::route('register')
 					->withInput();
 			}
-
 		}
 	}
-
 }
