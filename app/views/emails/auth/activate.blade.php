@@ -1,15 +1,15 @@
-Hiya {{ $username }}!
+Hiya {{ $username }}! <br> <br>
 
-Thanks for registering for an account at MabiMart! All that's left is for you to activate your account.
+Thanks for registering for an account at MabiMart! All that's left is for you to activate your account. Don't worry, it's really easy :)
 <br>
-Just visit the URL below to activate your account.<br>
----
+Just visit the URL below to activate your account.<br> <br>
+---<br>
 {{ $link }}<br>
 ---
 <br>
 <br>
-Remember, till then you won't be able to login to your account!
+Till then you won't be able to login,
 
 <br><br>
 Thanks,<br>
- - Rhaenyx (MabiMart creator)
+ - Rhaenyx
