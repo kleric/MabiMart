@@ -67,6 +67,11 @@ class AccountController extends BaseController {
 	{
 		$this->layout->content = View::make('login');
 	}
+	public function getLogout()
+	{
+		Auth::logout();
+		return Redirect::route('login')->with('success_message', 'You have successfully signed out.');
+	}
 
 	public function getRegistration()
 	{
@@ -103,9 +108,9 @@ class AccountController extends BaseController {
 
 			if($user) {
 
-				Mail::send('emails.auth.activate', array('link' => URL::route('activate', $activcode), 'username' => $username), function($message) use $user {
+				/*Mail::send('emails.auth.activate', array('link' => URL::route('activate', $activcode), 'username' => $username), function($message) use ($user) {
 					$message->to($user->email, $user->username)->subject('Activate your MabiMart Account');
-				});
+				});*/
 				return Redirect::route('login')->with('success_message', 'Your account has been created. Please visit your e-mail address and activate it.');
 
 			}

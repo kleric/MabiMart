@@ -15,7 +15,12 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
-
+Route::group(array('before' => 'auth'), function() {
+	Route::get('/logout', array(
+		'as' => 'logout',
+		'uses' => 'AccountController@getLogout')
+	);
+});
 Route::group(array('before' => 'guest'), function() {
 	//CSRF protection
 	Route::group(array('before' => 'csrf'), function() {
