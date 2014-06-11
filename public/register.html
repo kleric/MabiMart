@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>MabiMart | Create an Account</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container" id="logoarea">
+			<div class="col-xs-2 col-md-2">
+					<img src="images/logo.png">
+			</div>
+			<div class="col-xs-3 pull-right col-md-2 text-right" id="userpanel">
+				Welcome, <b>Guest</b>. </br> Please <a href="/login">Login</a> or <a href="/register">Register</a>.
+			</div>
+		</div>
+		<div class="navbar-inverse navbar-default" role="navigation" id="navbar">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            					<span class="sr-only">Toggle navigation</span>
+            					<span class="icon-bar"></span>
+            					<span class="icon-bar"></span>
+            					<span class="icon-bar"></span>
+          			</button>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="#">Home</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="container" id="content">
+			<div class="page-header">
+				<h1>Create an Account</h1>
+			</div>
+			<div class="alert alert-warning">
+				Have an account already? What are you doing here? <a href="">Login</a>!
+			</div>
+			<div class="col-md-4">
+				<center><img class=".desktop-only" src="images/welcome.png"></center>
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						Password Requirements
+					</div>
+					<div class="panel-body">
+						Passwords must be more than 8 characters long and must contain special characters, numbers, uppercase letters, and lowercase letters.
+					</div>
+				</div>
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						Your E-mail
+					</div>
+					<div class="panel-body">
+						Don't worry, we won't sell your e-mail. We only need it so we can verify your account. </br>
+						</br>
+						We also won't send you lame newsletters. Cause that'd be lame.
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<form method="post">
+					<div class="form-group">
+						<label for="inputUsername">Username</label>
+        				<input type="text" required class="form-control" id="inputUsername" name="username" placeholder="Username">
+        				<br>
+						<label for="inputEmail">Email</label>
+        				<input type="email" required class="form-control" id="inputEmail" name="email" placeholder="Email">
+        				<br>
+						<label for="inputPassword">Password</label>
+        				<input type="password" required class="form-control" id="inputPassword" name="password" placeholder="Password">
+
+        				<br>
+        				<label for="inputConfirmPassword">Confirm Password</label>
+        				<input type="password" required class="form-control" id="inputConfirmPassword" name="confirmpassword" placeholder="Confirm your password">
+					</div>
+					<div class="form-group pull-right">
+						<button type="submit" class="btn btn-success">Register</button>
+					</div>
+				</form>
+			</div>
+			<div id="footer" class="col-md-12 col-xs-12">
+				Copyright &copy; 2014 MabiMart. Built lovingly with <a href="http://getbootstrap.com/">Bootstrap</a>.
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

@@ -15,3 +15,38 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::group(array('before' => 'guest'), function() {
+	//CSRF protection
+	Route::group(array('before' => 'csrf'), function() {
+		//Registering
+		Route::post('/register', array(
+			'as' => 'register-post',
+			'uses' => 'AccountController@postRegistration')
+		);
+
+		//Signing In
+		Route::post('/login', array(
+			'as' => 'login-post',
+			'uses' => 'AccountController@postLogin')
+		);
+	});
+
+	//Signing In
+	Route::get('/login', array(
+		'as' => 'login',
+		'uses' => 'AccountController@getLogin')
+	);
+
+	//Registration
+	Route::get('/register', array(
+		'as' => 'register',
+		'uses' => 'AccountController@getRegistration')
+	);
+
+	//Activation
+	Route::get('/account/activate/{code}', array(
+		'as' => 'activate',
+		'uses' => 'AccountController@getActivate')
+	);
+});
