@@ -5,14 +5,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<title>MabiMart | @yield('page-title')</title>
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
 
-		<link href="css/style.css" rel="stylesheet">
+		<link href="/css/style.css" rel="stylesheet">
 	</head>
 	<body>
 		<div class="container" id="logoarea">
 			<div class="col-xs-2 col-md-2">
-					<img src="images/logo.png">
+					<img src="/images/logo.png">
 			</div>
 			<!--<div class="col-xs-3 pull-right col-md-2 text-right" id="userpanel">
 				Welcome, <b>Guest</b>. </br> Please <a href="/login">Login</a> or <a href="/register">Register</a>.
@@ -30,14 +30,24 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li><a href="#">Home</a></li>
-						@if(Auth::check())
-						<li>You successfully logged in.</li>
-						@else
-						<li><a href="{{ URL::route('login') }}">Login</a>
-						@endif
-
+						<li><a href="/">Home</a></li>
+						<li><a href="{{ URL::route('items') }}">Items</a></li>
 					</ul>
+					<ul class="nav navbar-nav navbar-right">
+        				<li class="dropdown">
+          					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
+          					<ul class="dropdown-menu">
+          						@if(Auth::check())
+          						<li role="presentation" class="dropdown-header">Hi Rhaenyx</li>
+          						<li role="presentation" class="divider"></li>
+          						<li><a href="{{ URL::route('logout') }}">Logout</a></li>
+          						@else
+          						<li><a href="{{ URL::route('login') }}">Login</a>
+          						<li><a href="{{ URL::route('register') }}">Register</a>
+          						@endif
+         				 	</ul>
+        				</li>
+      				</ul>
 				</div>
 			</div>
 		</div>
@@ -48,6 +58,6 @@
 			</div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
 	</body>
 </html>
