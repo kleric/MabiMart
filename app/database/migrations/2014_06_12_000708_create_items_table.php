@@ -19,46 +19,52 @@ class CreateItemsTable extends Migration {
 			$table->string('name',128);
 			$table->string('description', 1024);
 
-			$table->smallInteger('maxdamage')->nullable();
-			$table->smallInteger('mindamage')->nullable();
+			$table->smallInteger('weaponmax')->nullable(); #
+			$table->smallInteger('weaponmin')->nullable(); #
 
-			$table->smallInteger('magicattack')->nullable();
+			$table->smallInteger('weaponinjurymax')->nullable(); #
+			$table->smallinteger('weaponinjurymin')->nullable(); #
 
-			$table->smallInteger('maxinjury')->nullable();
-			$table->smallInteger('mininjury')->nullable();
+			$table->smallInteger('maxdamage')->nullable(); #
+			$table->smallInteger('mindamage')->nullable(); #
 
-			$table->smallInteger('critical')->nullable();
-			$table->smallInteger('balance')->nullable();
+			$table->smallInteger('magicattack')->nullable(); #
 
-			$table->smallInteger('maxdurability')->unsigned()->nullable();
+			$table->smallInteger('maxinjury')->nullable(); #
+			$table->smallInteger('mininjury')->nullable(); #
 
-			$table->smallInteger('defense')->nullable();
-			$table->smallInteger('protection')->nullable();
-			$table->smallInteger('mdefense')->nullable();
-			$table->smallInteger('mprotection')->nullable();
+			$table->smallInteger('critical')->nullable(); #
+			$table->smallInteger('balance')->nullable(); #
 
-			$table->smallInteger('luck')->nullable();
-			$table->smallInteger('int')->nullable();
-			$table->smallInteger('dex')->nullable();
-			$table->smallInteger('str')->nullable();
-			$table->smallInteger('will')->nullable();
+			$table->smallInteger('maxdurability')->unsigned()->nullable(); #
 
-			$table->smallInteger('hp')->nullable();
-			$table->smallInteger('sp')->nullable();
-			$table->smallInteger('mp')->nullable();
-			$table->smallInteger('cp')->nullable();
+			$table->smallInteger('defense')->nullable(); #
+			$table->smallInteger('protection')->nullable(); #
+			$table->smallInteger('mdefense')->nullable(); #
+			$table->smallInteger('mprotection')->nullable(); #
 
-			$table->smallInteger('pierce')->nullable(); //Armor Piercing (e.g. Lances)
+			$table->smallInteger('luck')->nullable(); #
+			$table->smallInteger('int')->nullable(); #
+			$table->smallInteger('dex')->nullable(); #
+			$table->smallInteger('str')->nullable(); #
+			$table->smallInteger('will')->nullable(); #
 
-			$table->decimal('size',4,2);
-			$table->smallInteger('attackrate')->unsigned()->nullable(); //Rate of attack, e.g. 1 = Very Slow, 2 = Slow, 3 = Normal, 4 = Fast, 5 = Very Fast
+			$table->smallInteger('hp')->nullable(); #
+			$table->smallInteger('sp')->nullable(); #
+			$table->smallInteger('mp')->nullable(); #
+			$table->smallInteger('cp')->nullable(); #
 
-			$table->smallInteger('setexplosion')->unsigned()->nullable(); //Explosion Defense Set Effect
-			$table->smallInteger('setstomp')->unsigned()->nullable(); //Stomp Resistance Set Effect
-			$table->smallInteger('setpoison')->unsigned()->nullable(); //Poison Resistance Set Effect
-			$table->smallInteger('setmpred')->unsigned()->nullable(); //MP Reduction
-			$table->smallInteger('setspred')->unsigned()->nullable(); //Stamina Reduction
-			$table->smallInteger('setattackspeed')->unsigned()->nullable(); //Attack Speed Boost
+			$table->smallInteger('pierce')->nullable(); //Armor Piercing (e.g. Lances) #
+
+			$table->smallInteger('attackrate')->unsigned()->nullable(); //#Rate of attack, e.g. 1 = Very Slow, 2 = Slow, 3 = Normal, 4 = Fast, 5 = Very Fast
+			$table->smallInteger('numattacks')->unsigned()->nullable();
+
+			$table->smallInteger('setexplosion')->unsigned()->nullable(); //#Explosion Defense Set Effect
+			$table->smallInteger('setstomp')->unsigned()->nullable(); //#Stomp Resistance Set Effect
+			$table->smallInteger('setpoison')->unsigned()->nullable(); //#Poison Resistance Set Effect
+			$table->smallInteger('setmpred')->unsigned()->nullable(); //#MP Reduction
+			$table->smallInteger('setspred')->unsigned()->nullable(); //#Stamina Reduction
+			$table->smallInteger('setattackspeed')->unsigned()->nullable(); //#Attack Speed Boost
 			$table->smallInteger('setpetrification')->unsigned()->nullable(); //Petrifcation Resistance
 			$table->smallInteger('setflameburst')->unsigned()->nullable(); //Flame Burst
 			$table->smallInteger('setwatercannon')->unsigned()->nullable(); //Water Cannon
@@ -78,7 +84,7 @@ class CreateItemsTable extends Migration {
 			$table->smallInteger('setdemigod')->unsigned()->nullable(); //DEMI GOD
 
 			$table->string('notes', 256)->nullable(); //E.g. part of the nuadha set
-
+			$table->string('wikilink', 256)->nullable();
 			$table->timestamps();
 		});
 	}

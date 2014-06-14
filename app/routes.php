@@ -20,9 +20,12 @@ Route::get('/items', array(
 	'uses' => 'ItemController@getItems')
 );
 
-Route::get('/item/{id}', array(
+Route::get('/item/view/{id}', array(
 	'as' => 'item',
 	'uses' => 'ItemController@getItem'));
+Route::get('/auction/view/{id}', array(
+	'as' => 'auction',
+	'uses' => 'AuctionController@getAuction'));
 
 Route::group(array('before' => 'auth'), function() {
 	Route::get('/logout', array(

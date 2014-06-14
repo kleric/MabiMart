@@ -35,7 +35,7 @@
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
         				<li class="dropdown">
-          					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
+          					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Account</strong> <b class="caret"></b></a>
           					<ul class="dropdown-menu">
           						@if(Auth::check())
           						<li role="presentation" class="dropdown-header">Hi Rhaenyx</li>

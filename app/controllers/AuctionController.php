@@ -1,6 +1,6 @@
 <?php
 
-class ItemController extends BaseController {
+class AuctionController extends BaseController {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -16,7 +16,7 @@ class ItemController extends BaseController {
 	*/
 	protected $layout = 'layouts.master';
 
-	public function getItem($id) 
+	public function getAuction($id) 
 	{
 		$item = Item::where('id', '=', $id);
 
@@ -26,19 +26,11 @@ class ItemController extends BaseController {
 
 			$item_name = $item->getName();
 			$description = 	$item->getDescription();
-			$stats = $item->getStats();
-			$wiki_link = $item->getWikiLink();
 
-			$this->layout->content = View::make('itemview', array(
+			$this->layout->content = View::make('auctionview', array(
 				'item_id' => $id,
 				'description' => $description,
-				'item_name' => $item_name,
-				'item_stats' => $stats,
-				'wiki_link' => $wiki_link));
+				'item_name' => $item_name));
 		}
-	}
-	public function getItems() 
-	{
-		$this->layout->content = View::make('itemlist');
 	}
 }
