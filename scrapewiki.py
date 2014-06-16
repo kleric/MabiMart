@@ -26,9 +26,12 @@ def mw_item_page_scrape(url):
     Obtained From
     Sold By
 
-  Finally, returns a dictionary of this data using the above as the keys. If an
-  error indicating an improper parse is encountered, prints an error message
-  and returns None.
+  unless the item is a simple item that doesn't have the "Base Stats and
+  Information" table, in which case only Description and Description Bullets
+  are included.
+
+  If an error indicating an improper parse is encountered, prints an error
+  message and returns None.
   '''
 
   mw_base_url = 'http://wiki.mabinogiworld.com'
@@ -45,7 +48,7 @@ def mw_item_page_scrape(url):
 #  table_css = 'div#mw-content-text > h2:contains("Base Stats and Information") + table.mabitable'
 #  table_alt_css = 'div#mw-content-text > h2:contains("Base Stats and Information") + div.tabdiv > div#tab1 > table.mabitable'
 #  # <tbody> element is invisible to this for some reason
-#  description_css = 'div#mw-content-text > p:nth-of-type(1)'
+#  description_css = 'div#mw-content-text > h2:contains("Description") ~ p > i'
 #  description_bullets_css = description_css + ' + ul > li'
 #  icon_link_css = 'tr:nth-child(1) > td.image:nth-child(1) > a > img'
 #  all_th_css = 'tr:not(tr:nth-child(1)) > th'
@@ -56,11 +59,36 @@ def mw_item_page_scrape(url):
 #  sold_by_css = table_css + ' tr > td > table > tr:nth-child(2) > td:nth-child(2) > div > ul > li'
   #DEBUG: keep for now
 
+  # do these first, 'cause it's the only thing needed for simple items
+
+  # overly broad, but mostly safe because we only use the first one later
+  description_xpath = "descendant-or-self::div[@id = 'mw-content-text']/h2[contains(., 'Description')]/following-sibling::p/i"
+  # this is still a bit dangerous as it selects from all that match above
+  description_bullets_xpath = description_xpath + "/following-sibling::*[name() = 'ul' and (position() = 1)]/li"
+
+  description = tree.xpath(description_xpath)
+  if len(description) > 1:
+    print 'WARNING: More than one description matched; extraneous bullets may be included.'
+  description_bullets = tree.xpath(description_bullets_xpath)
+
   table_xpath = "descendant-or-self::div[@id = 'mw-content-text']/h2[contains(., 'Base Stats and Information')]/following-sibling::*[@class and contains(concat(' ', normalize-space(@class), ' '), ' mabitable ') and (name() = 'table') and (position() = 1)]"
   table_alt_xpath = "descendant-or-self::div[@id = 'mw-content-text']/h2[contains(., 'Base Stats and Information')]/following-sibling::*[@class and contains(concat(' ', normalize-space(@class), ' '), ' tabdiv ') and (name() = 'div') and (position() = 1)]/div[@id = 'tab1']/table[@class and contains(concat(' ', normalize-space(@class), ' '), ' mabitable ')]"
+  
+  # see if the table exists (check two paths to cover Spirit Weapons)
+  table = tree.xpath(table_xpath)
+  if not table:
+    table = tree.xpath(table_alt_xpath)
+    table_xpath = table_alt_xpath
+  if len(table) > 1:
+    print 'ERROR:', str(len(table)), 'tables selected!'
+    return None
+  elif len(table) == 0: # simple item; table processing omitted
+    print 'WARNING:', 'No table selected; treating as simple item.'
+    return {'Description': description[0].text_content().strip(),
+            'Description Bullets': [db.text_content().strip()
+                                    for db in description_bullets]}
 
-  description_xpath = "descendant-or-self::div[@id = 'mw-content-text']/p[position() = 1]"
-  description_bullets_xpath = description_xpath + "/following-sibling::*[name() = 'ul' and (position() = 1)]/li"
+  # the rest of the stuff, in the table
   icon_link_xpath = "*[name() = 'tr' and (position() = 1)]/*[@class and contains(concat(' ', normalize-space(@class), ' '), ' image ') and (name() = 'td') and (position() = 1)]/a/img/@src"
   all_th_xpath = "tr[not(name() = 'tr' and (position() = 1))]/th"
   all_td_xpath = "tr[not(name() = 'tr' and (position() = 1))]/th/following-sibling::*[name() = 'td' and (position() = 1)]"
@@ -68,19 +96,7 @@ def mw_item_page_scrape(url):
   other_info_xpath = "tr/th[contains(., 'Other Information')]/following-sibling::*[name() = 'td' and (position() = 1)]"
   obtained_from_xpath = "tr/td/table/*[name() = 'tr' and (position() = 2)]/*[name() = 'td' and (position() = 1)]/div/ul/li"
   sold_by_xpath = "tr/td/table/*[name() = 'tr' and (position() = 2)]/*[name() = 'td' and (position() = 2)]/div/ul/li"
-  
-  # find elements matching XPaths; all are lists
-  table = tree.xpath(table_xpath)
-  if not table:
-    table = tree.xpath(table_alt_xpath)
-    if len(table) != 1:
-      print 'ERROR:', str(len(table)), 'tables selected!'
-      return None
-    else:
-      table_xpath = table_alt_xpath
 
-  description = tree.xpath(description_xpath)
-  description_bullets = tree.xpath(description_bullets_xpath)
   icon_link = tree.xpath(table_xpath + '/' + icon_link_xpath)
   all_th = tree.xpath(table_xpath + '/' + all_th_xpath)
   all_td = tree.xpath(table_xpath + '/' + all_td_xpath)
@@ -173,21 +189,22 @@ def print_scrape(scrape_data):
   print 'Description:', scrape_data['Description']
   for db in scrape_data['Description Bullets']:
     print ' o', db
-  print 'Icon link:', scrape_data['Icon Link']
-  print 'Stats:'
-  stats = scrape_data['Stats']
-  for key in stats:
-    print key + ':', stats[key]
-  print 'Enchant Types:', scrape_data['Enchant Types']
-  print 'Other Information:'
-  for oi in scrape_data['Other Information']:
-    print ' o', oi
-  print 'Obtained From:', scrape_data['Obtained From']
-  print 'Sold By:'
-  for (price, sellers) in scrape_data['Sold By']:
-    print 'Price:', price
-    for s in sellers:
-      print ' o', s
+  if 'Stats' in scrape_data:
+    print 'Icon Link:', scrape_data['Icon Link']
+    print 'Stats:'
+    stats = scrape_data['Stats']
+    for key in stats:
+      print key + ':', stats[key]
+    print 'Enchant Types:', scrape_data['Enchant Types']
+    print 'Other Information:'
+    for oi in scrape_data['Other Information']:
+      print ' o', oi
+    print 'Obtained From:', scrape_data['Obtained From']
+    print 'Sold By:'
+    for (price, sellers) in scrape_data['Sold By']:
+      print 'Price:', price
+      for s in sellers:
+        print ' o', s
 
 print_scrape(mw_item_page_scrape('http://wiki.mabinogiworld.com/view/Amulet'))
 print '-------------------------------------------------------'
@@ -196,3 +213,5 @@ print '-------------------------------------------------------'
 print_scrape(mw_item_page_scrape('http://wiki.mabinogiworld.com/view/Bipennis'))
 print '-------------------------------------------------------'
 print_scrape(mw_item_page_scrape('http://wiki.mabinogiworld.com/view/Fomor_Crossbow'))
+print '-------------------------------------------------------'
+print_scrape(mw_item_page_scrape('http://wiki.mabinogiworld.com/view/Amethyst_Arrow'))
