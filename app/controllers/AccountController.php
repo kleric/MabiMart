@@ -82,7 +82,7 @@ class AccountController extends BaseController {
 		$validator = Validator::make(Input::all(),
 			array(
 				'email' => 'required|max:254|email|unique:users',
-				'username' => 'required|max:30|min:3|unique:users',
+				'username' => 'required|max:30|alpha_dash|min:3|unique:users',
 				'password' => 'required|min:8',
 				'confirmpassword' => 'required|same:password'
 			)
@@ -108,9 +108,9 @@ class AccountController extends BaseController {
 
 			if($user) {
 
-				/*Mail::send('emails.auth.activate', array('link' => URL::route('activate', $activcode), 'username' => $username), function($message) use ($user) {
+				Mail::send('emails.auth.activate', array('link' => URL::route('activate', $activcode), 'username' => $username), function($message) use ($user) {
 					$message->to($user->email, $user->username)->subject('Activate your MabiMart Account');
-				});*/
+				});
 				return Redirect::route('login')->with('success_message', 'Your account has been created. Please visit your e-mail address and activate it.');
 
 			}

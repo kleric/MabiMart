@@ -13,14 +13,27 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('welcome');
 });
+Route::get('/items', array(
+	'as' => 'items',
+	'uses' => 'ItemController@getItems')
+);
+
+Route::get('/item/view/{id}', array(
+	'as' => 'item',
+	'uses' => 'ItemController@getItem'));
+Route::get('/auction/view/{id}', array(
+	'as' => 'auction',
+	'uses' => 'AuctionController@getAuction'));
+
 Route::group(array('before' => 'auth'), function() {
 	Route::get('/logout', array(
 		'as' => 'logout',
 		'uses' => 'AccountController@getLogout')
 	);
 });
+
 Route::group(array('before' => 'guest'), function() {
 	//CSRF protection
 	Route::group(array('before' => 'csrf'), function() {
