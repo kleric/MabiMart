@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateItemsTable extends Migration {
+class CreateAuctionsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,20 @@ class CreateItemsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('items', function(Blueprint $table)
+		Schema::create('auctions', function(Blueprint $table)
 		{
 			$table->increments('id');
 
-			$table->string('name',128);
-			$table->string('description', 1024);
+			$table->foreign('item_id')->references('id')->on('items');
+			$table->foreign('seller_id')->references('id')->on('users');
+
+			$table->string('description', 500);
+
+			$table->foreign('prefix_enchant_id')->references('id')->on('enchants')->unsigned();
+			$table->foreign('suffix_enchant_id')->references('id')->on('enchants')->unsigned();
+
+			$table->foreign('reforge_id')->references('id')->on('reforges');
+			$table->smallInteger('reforge_level')->unsigned()->nullable();
 
 			$table->smallInteger('weaponmax')->nullable(); #
 			$table->smallInteger('weaponmin')->nullable(); #
@@ -36,6 +44,7 @@ class CreateItemsTable extends Migration {
 			$table->smallInteger('critical')->nullable(); #
 			$table->smallInteger('balance')->nullable(); #
 
+			$table->smallInteger('durability')->unsigned()->nullable();
 			$table->smallInteger('maxdurability')->unsigned()->nullable(); #
 
 			$table->smallInteger('defense')->nullable(); #
@@ -55,14 +64,6 @@ class CreateItemsTable extends Migration {
 			$table->smallInteger('cp')->nullable(); #
 
 			$table->smallInteger('pierce')->nullable(); //Armor Piercing (e.g. Lances) #
-
-			$table->smallInteger('attackrate')->unsigned()->nullable(); //#Rate of attack, e.g. 1 = Very Slow, 2 = Slow, 3 = Normal, 4 = Fast, 5 = Very Fast
-			$table->smallInteger('numattacks')->unsigned()->nullable();
-
-			$table->smallInteger('upgradeclass')->unsigned()->nullable();
-			$table->boolean('specialupgradable')->nullable();
-			$table->boolean('reforgable')->nullable();
-			$table->boolean('enchantable')->nullable();
 
 			$table->smallInteger('upgrades')->unsigned()->nullable();
 			$table->smallInteger('gemupgrades')->unsigned()->nullable();
@@ -91,8 +92,6 @@ class CreateItemsTable extends Migration {
 			$table->smallInteger('setassaultslash')->unsigned()->nullable(); //Assault Slash
 			$table->smallInteger('setdemigod')->unsigned()->nullable(); //DEMI GOD
 
-			$table->string('notes', 256)->nullable(); //E.g. part of the nuadha set
-			$table->string('wikilink', 256)->nullable();
 			$table->timestamps();
 		});
 	}
@@ -104,7 +103,7 @@ class CreateItemsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('items');
+		Schema::drop('auctions');
 	}
 
 }
