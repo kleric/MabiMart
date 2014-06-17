@@ -59,6 +59,8 @@ class CreateItemsTable extends Migration {
 			$table->smallInteger('attackrate')->unsigned()->nullable(); //#Rate of attack, e.g. 1 = Very Slow, 2 = Slow, 3 = Normal, 4 = Fast, 5 = Very Fast
 			$table->smallInteger('numattacks')->unsigned()->nullable();
 
+			$table->smallInteger('upgradeclass')->unsigned()->nullable();
+
 			$table->smallInteger('setexplosion')->unsigned()->nullable(); //#Explosion Defense Set Effect
 			$table->smallInteger('setstomp')->unsigned()->nullable(); //#Stomp Resistance Set Effect
 			$table->smallInteger('setpoison')->unsigned()->nullable(); //#Poison Resistance Set Effect
