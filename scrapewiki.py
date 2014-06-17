@@ -4,6 +4,9 @@ from lxml import html
 import requests
 from cssselect import HTMLTranslator, SelectorError
 
+
+mw_base_url = 'http://wiki.mabinogiworld.com'
+
 def delete_mouseover(element):
   '''Given an element of the tree, looks for and deletes any mouseover text
   associated with it.
@@ -16,7 +19,7 @@ def delete_mouseover(element):
 
 def mw_item_page_scrape(url):
   '''Given a URL of an item page on Mabinogi World Wiki, scrapes the following
-  info into a dictionary:
+  info into a dictionary to return:
     Description
     Description Bullets (as list; may be empty)
     Icon Link (link to the icon picture used on the website)
@@ -34,7 +37,6 @@ def mw_item_page_scrape(url):
   message and returns None.
   '''
 
-  mw_base_url = 'http://wiki.mabinogiworld.com'
   r = requests.get(url) # request desired webpage to scrape
   if r.status_code != requests.codes.ok: # confirm that request was successful
     print 'ERROR: Request error'
@@ -65,11 +67,18 @@ def mw_item_page_scrape(url):
   description_xpath = "descendant-or-self::div[@id = 'mw-content-text']/h2[contains(., 'Description')]/following-sibling::p/i"
   # this is still a bit dangerous as it selects from all that match above
   description_bullets_xpath = description_xpath + "/following-sibling::*[name() = 'ul' and (position() = 1)]/li"
+  # use this one for pages that don't have a "Description" header
+  description_alt_xpath = "descendant-or-self::div[@id = 'mw-content-text']/p/i"
 
   description = tree.xpath(description_xpath)
+  description_bullets = tree.xpath(description_bullets_xpath)
   if len(description) > 1:
     print 'WARNING: More than one description matched; extraneous bullets may be included.'
-  description_bullets = tree.xpath(description_bullets_xpath)
+  elif len(description) == 0:
+    description = tree.xpath(description_alt_xpath)
+  if len(description) == 0: # if both original and alt are empty
+    print 'ERROR: Unable to find a description.'
+    return None
 
   table_xpath = "descendant-or-self::div[@id = 'mw-content-text']/h2[contains(., 'Base Stats and Information')]/following-sibling::*[@class and contains(concat(' ', normalize-space(@class), ' '), ' mabitable ') and (name() = 'table') and (position() = 1)]"
   table_alt_xpath = "descendant-or-self::div[@id = 'mw-content-text']/h2[contains(., 'Base Stats and Information')]/following-sibling::*[@class and contains(concat(' ', normalize-space(@class), ' '), ' tabdiv ') and (name() = 'div') and (position() = 1)]/div[@id = 'tab1']/table[@class and contains(concat(' ', normalize-space(@class), ' '), ' mabitable ')]"
@@ -206,12 +215,51 @@ def print_scrape(scrape_data):
       for s in sellers:
         print ' o', s
 
-print_scrape(mw_item_page_scrape('http://wiki.mabinogiworld.com/view/Amulet'))
-print '-------------------------------------------------------'
-print_scrape(mw_item_page_scrape('http://wiki.mabinogiworld.com/view/Knight_Lance'))
-print '-------------------------------------------------------'
-print_scrape(mw_item_page_scrape('http://wiki.mabinogiworld.com/view/Bipennis'))
-print '-------------------------------------------------------'
-print_scrape(mw_item_page_scrape('http://wiki.mabinogiworld.com/view/Fomor_Crossbow'))
-print '-------------------------------------------------------'
-print_scrape(mw_item_page_scrape('http://wiki.mabinogiworld.com/view/Amethyst_Arrow'))
+def gather_item_links_to_scrape():
+  '''Scrapes all the required links from the Weapons, Equipment, and Items
+  category pages, and returns them in a list. The links are relative, and
+  must be appended to mw_base_url.
+  '''
+  weapons_url = "http://wiki.mabinogiworld.com/view/Category:Weapons"
+  equipment_url = "http://wiki.mabinogiworld.com/view/Category:Equipment"
+  items_url = "http://wiki.mabinogiworld.com/view/Category:Items"
+  urls = [weapons_url, equipment_url, items_url]
+
+  links_xpath = "descendant-or-self::div[@id = 'mw-pages']/div[@class and contains(concat(' ', normalize-space(@class), ' '), ' mw-content-ltr ')]/table/tr/td/ul/li/a/@href"
+  # On the first page of Weapons and Equipment, the first ul is extraneous
+  extraneous_links_xpath = "descendant-or-self::div[@id = 'mw-pages']/div[@class and contains(concat(' ', normalize-space(@class), ' '), ' mw-content-ltr ')]/table/tr/*[name() = 'td' and (position() = 1)]/ul[position() = 1]/li"
+  next_page_xpath = "descendant-or-self::div[@id = 'mw-pages']/a[position() = last() and (contains(., 'next 200'))]/@href"
+
+  all_links = []
+
+  for i in xrange(len(urls)): 
+    links = []
+    url = urls[i]
+    page_number = 1
+
+    # bit hacky, but it works nicely; we set page_number = 0 to end the loop
+    while page_number:
+      r = requests.get(url) # request desired webpage to scrape
+      if r.status_code != requests.codes.ok: # confirm request successful
+        print 'ERROR: Request error'
+        return None
+      tree = html.fromstring(r.text) # parse html into tree
+      # add links on this page
+      if i < 2 and page_number == 1: # if first page of Weapons or Equipment
+        omit = len(tree.xpath(extraneous_links_xpath)) # mark for deletion
+      links += tree.xpath(links_xpath) # add all links
+      next_page = tree.xpath(next_page_xpath) # look for a 'next 200' link
+      if not next_page:
+        page_number = 0
+      else:
+        url = mw_base_url + next_page[0]
+        page_number += 1
+
+    for j in xrange(omit):
+      del links[0]
+
+    all_links += links
+
+  return all_links
+
+gather_item_links_to_scrape()
