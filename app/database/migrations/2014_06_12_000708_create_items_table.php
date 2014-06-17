@@ -60,6 +60,9 @@ class CreateItemsTable extends Migration {
 			$table->smallInteger('numattacks')->unsigned()->nullable();
 
 			$table->smallInteger('upgradeclass')->unsigned()->nullable();
+			$table->boolean('specialupgradable')->nullable();
+			$table->boolean('reforgable')->nullable();
+			$table->boolean('enchantable')->nullable();
 
 			$table->smallInteger('setexplosion')->unsigned()->nullable(); //#Explosion Defense Set Effect
 			$table->smallInteger('setstomp')->unsigned()->nullable(); //#Stomp Resistance Set Effect
