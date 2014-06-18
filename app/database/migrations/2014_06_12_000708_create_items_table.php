@@ -21,6 +21,7 @@ class CreateItemsTable extends Migration {
 			$table->string('name',128);
 			$table->string('description', 1024);
 
+			$table->integer('npcvalue')->unsigned()->nullable(); #how much it sells for
 			$table->smallInteger('weaponmax')->nullable(); #
 			$table->smallInteger('weaponmin')->nullable(); #
 
