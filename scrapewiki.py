@@ -44,25 +44,7 @@ def mw_item_page_scrape(url):
   
   tree = html.fromstring(r.text) # parse html into tree
 
-  #DEBUG: keep for now
-  # CSS selectors for desired items; used with CSSSelect to produce the XPaths
-  # below
-#  table_css = 'div#mw-content-text > h2:contains("Base Stats and Information") + table.mabitable'
-#  table_alt_css = 'div#mw-content-text > h2:contains("Base Stats and Information") + div.tabdiv > div#tab1 > table.mabitable'
-#  # <tbody> element is invisible to this for some reason
-#  description_css = 'div#mw-content-text > h2:contains("Description") ~ p > i'
-#  description_bullets_css = description_css + ' + ul > li'
-#  icon_link_css = 'tr:nth-child(1) > td.image:nth-child(1) > a > img'
-#  all_th_css = 'tr:not(tr:nth-child(1)) > th'
-#  all_td_css = all_th_css + ' + td'
-#  enchant_types_css = 'tr > th:contains("Enchant Types") + td'
-#  other_info_css = 'tr > th:contains("Other Information") + td'
-#  obtained_from_css = 'tr > td > table > tr:nth-child(2) > td:nth-child(1) > div > ul > li'
-#  sold_by_css = table_css + ' tr > td > table > tr:nth-child(2) > td:nth-child(2) > div > ul > li'
-  #DEBUG: keep for now
-
   # do these first, 'cause it's the only thing needed for simple items
-
   # overly broad, but mostly safe because we only use the first one later
   description_xpath = "descendant-or-self::div[@id = 'mw-content-text']/h2[contains(., 'Description')]/following-sibling::p/i"
   # this is still a bit dangerous as it selects from all that match above
@@ -99,6 +81,7 @@ def mw_item_page_scrape(url):
 
   # the rest of the stuff, in the table
   icon_link_xpath = "*[name() = 'tr' and (position() = 1)]/*[@class and contains(concat(' ', normalize-space(@class), ' '), ' image ') and (name() = 'td') and (position() = 1)]/a/img/@src"
+  attack_type_xpath = "*[name() = 'tr' and (position() = 1)]/*[@class and contains(concat(' ', normalize-space(@class), ' '), ' image ') and (name() = 'td') and (position() = 1)]/text()[contains(., 'Hit Weapon')]" 
   all_th_xpath = "tr[not(name() = 'tr' and (position() = 1))]/th"
   all_td_xpath = "tr[not(name() = 'tr' and (position() = 1))]/th/following-sibling::*[name() = 'td' and (position() = 1)]"
   enchant_types_xpath = "tr/th[contains(., 'Enchant Types')]/following-sibling::*[name() = 'td' and (position() = 1)]"
@@ -107,6 +90,7 @@ def mw_item_page_scrape(url):
   sold_by_xpath = "tr/td/table/*[name() = 'tr' and (position() = 2)]/*[name() = 'td' and (position() = 2)]/div/ul/li"
 
   icon_link = tree.xpath(table_xpath + '/' + icon_link_xpath)
+  attack_type = tree.xpath(table_xpath + '/' + attack_type_xpath)
   all_th = tree.xpath(table_xpath + '/' + all_th_xpath)
   all_td = tree.xpath(table_xpath + '/' + all_td_xpath)
   enchant_types = tree.xpath(table_xpath + '/' + enchant_types_xpath)
@@ -131,6 +115,8 @@ def mw_item_page_scrape(url):
   if len(all_th) != len(all_td):
     print 'ERROR: all_th and all_td lengths unequal'
     return None
+  if len(attack_type) > 1:
+    print 'ERROR:', str(len(attack_type)), 'attack types selected'
   
   # remove 'Enchant Types' and 'Other Information' from all_th and all_td
   remove = [enchant_types[0], other_info[0]]
@@ -157,6 +143,11 @@ def mw_item_page_scrape(url):
     if got_icon > 1: # warn if multiple images in box found, but use first one
       print 'WARNING: Multiple images in first table box. Using first one.'
     icon = mw_base_url + icon_link[0]
+
+  # process attack_type
+  attack_type = attack_type[0].split()
+  attack_sp = ' '.join(attack_type[:-3])
+  attack_hits = attack_type[-3]
 
   # process Enchant Types
   types = [t.strip() for t in
@@ -186,6 +177,8 @@ def mw_item_page_scrape(url):
           'Description Bullets': [db.text_content().strip()
                                   for db in description_bullets],
           'Icon Link': icon,
+          'Attack Speed': attack_sp,
+          'Attack Hits': attack_hits,
           'Stats': stats,
           'Enchant Types': types,
           'Other Information': others,
@@ -200,6 +193,8 @@ def print_scrape(scrape_data):
     print ' o', db
   if 'Stats' in scrape_data:
     print 'Icon Link:', scrape_data['Icon Link']
+    print 'Attack Speed:', scrape_data['Attack Speed']
+    print 'Attack Hits:', scrape_data['Attack Hits']
     print 'Stats:'
     stats = scrape_data['Stats']
     for key in stats:
@@ -216,14 +211,13 @@ def print_scrape(scrape_data):
         print ' o', s
 
 def gather_item_links_to_scrape():
-  '''Scrapes all the required links from the Weapons, Equipment, and Items
+  '''Scrapes all the required links from the Equipment and Items
   category pages, and returns them in a list. The links are relative, and
   must be appended to mw_base_url.
   '''
-  weapons_url = "http://wiki.mabinogiworld.com/view/Category:Weapons"
   equipment_url = "http://wiki.mabinogiworld.com/view/Category:Equipment"
   items_url = "http://wiki.mabinogiworld.com/view/Category:Items"
-  urls = [weapons_url, equipment_url, items_url]
+  urls = [equipment_url, items_url]
 
   links_xpath = "descendant-or-self::div[@id = 'mw-pages']/div[@class and contains(concat(' ', normalize-space(@class), ' '), ' mw-content-ltr ')]/table/tr/td/ul/li/a/@href"
   # On the first page of Weapons and Equipment, the first ul is extraneous
@@ -245,7 +239,7 @@ def gather_item_links_to_scrape():
         return None
       tree = html.fromstring(r.text) # parse html into tree
       # add links on this page
-      if i < 2 and page_number == 1: # if first page of Weapons or Equipment
+      if i < 1 and page_number == 1: # if first page of Weapons or Equipment
         omit = len(tree.xpath(extraneous_links_xpath)) # mark for deletion
       links += tree.xpath(links_xpath) # add all links
       next_page = tree.xpath(next_page_xpath) # look for a 'next 200' link
@@ -262,4 +256,4 @@ def gather_item_links_to_scrape():
 
   return all_links
 
-gather_item_links_to_scrape()
+print_scrape(mw_item_page_scrape(mw_base_url + '/view/Knight_Lance'))
