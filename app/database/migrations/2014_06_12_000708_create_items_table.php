@@ -22,6 +22,18 @@ class CreateItemsTable extends Migration {
 			$table->string('description', 1024);
 
 			$table->integer('npcvalue')->unsigned()->nullable(); #how much it sells for
+
+			$table->double('stamswing', 4, 2)->nullable();
+			$table->double('stuntime', 4, 2)->nullable();
+			
+			$table->smallInteger('sdamage')->unsigned()->nullable();
+			$table->smallInteger('sangle')->unsigned()->nullable();
+			$table->smallInteger('sradius')->unsigned()->nullable();
+
+			$table->string('imgurl', 128);
+
+			$table->boolean('dualwieldable')->nullable();
+
 			$table->smallInteger('weaponmax')->nullable(); #
 			$table->smallInteger('weaponmin')->nullable(); #
 
@@ -66,6 +78,10 @@ class CreateItemsTable extends Migration {
 			$table->boolean('specialupgradable')->nullable();
 			$table->boolean('reforgable')->nullable();
 			$table->boolean('enchantable')->nullable();
+
+			$table->boolean('elf')->nullable();
+			$table->boolean('human')->nullable();
+			$table->boolean('giant')->nullable();
 
 			$table->smallInteger('upgrades')->unsigned()->nullable();
 			$table->smallInteger('gemupgrades')->unsigned()->nullable();

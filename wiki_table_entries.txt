@@ -103,33 +103,33 @@ WARNING: No table selected; treating as simple item.
 No Stats for /view/X_Sign
 Processing finished.
 
-Giant
-Reforge
-S. Angle
-Elf
-Damage
-Upgrade
-S. Radius
-Injury
-Stun
-Description
-Protection
-S. Damage
-Obtained From
-Worn On
-Other Information
-Spirit
-Defense
-Dual W.
-Sold By
-Description Bullets
-Icon Link
-Enchant Types
-NPC Value
-Balance
-Enchant
-SP/Swing
-Durability
-Sp. Up.
-Critical
-Human
+Giant ['giant']
+Reforge ['reforgable']
+S. Angle ['sangle']
+Elf ['elf']
+Damage ['weaponmax'] and ['weaponmin']
+Upgrade ['upgrades'] and ['gemupgrades']
+S. Radius ['sradius']
+Injury ['weaponinjurymax'] and ['weaponinjurymin']
+Stun ['stuntime']
+Description ['description']
+Protection ['protection']
+S. Damage ['sdamage']
+Obtained From #don't need this for now (just don't save it I guess)
+Worn On [just don't save it, may need later though if I decide to categorize]
+Other Information ['notes']
+Spirit [Don't worry about it]
+Defense ['defense']
+Dual W. ['dualwieldable']
+Sold By [Don't worry about it]
+Description Bullets [Don't think we need this]
+Icon Link ['imgurl']
+Enchant Types [Ignore]
+NPC Value ['npcvalue']
+Balance ['balance']
+Enchant ['enchantable']
+SP/Swing ['stamswing']
+Durability ['maxdurability']
+Sp. Up. ['specialupgradable']
+Critical ['critical']
+Human ['human']
