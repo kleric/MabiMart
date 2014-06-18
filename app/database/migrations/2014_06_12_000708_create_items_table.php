@@ -12,6 +12,8 @@ class CreateItemsTable extends Migration {
 	 */
 	public function up()
 	{
+		Schema::dropIfExists('items');
+
 		Schema::create('items', function(Blueprint $table)
 		{
 			$table->increments('id');

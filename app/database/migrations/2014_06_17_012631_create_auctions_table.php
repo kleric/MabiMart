@@ -12,13 +12,15 @@ class CreateAuctionsTable extends Migration {
 	 */
 	public function up()
 	{
+		Schema::dropIfExists('auctions');
+
 		Schema::create('auctions', function(Blueprint $table)
 		{
 			$table->increments('id');
 
 			$table->integer('item_id')->unsigned();
 			$table->integer('seller_id')->unsigned();
-			
+
 			$table->foreign('item_id')->references('id')->on('items');
 			$table->foreign('seller_id')->references('id')->on('users');
 

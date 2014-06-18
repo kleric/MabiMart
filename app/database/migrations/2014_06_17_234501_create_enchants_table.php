@@ -12,6 +12,8 @@ class CreateEnchantsTable extends Migration {
 	 */
 	public function up()
 	{
+		Schema::dropIfExists('enchants'); #get rid of it if we already have the table
+
 		Schema::create('enchants', function(Blueprint $table)
 		{
 			$table->increments('id');
@@ -30,7 +32,7 @@ class CreateEnchantsTable extends Migration {
 		{
 			$table->integer('prefix_enchant_id')->unsigned();
 			$table->integer('suffix_enchant_id')->unsigned();
-			
+
 			$table->foreign('prefix_enchant_id')->references('id')->on('enchants')->unsigned();
 			$table->foreign('suffix_enchant_id')->references('id')->on('enchants')->unsigned();
 		});

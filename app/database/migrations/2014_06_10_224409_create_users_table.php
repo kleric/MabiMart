@@ -12,6 +12,8 @@ class CreateUsersTable extends Migration {
 	 */
 	public function up()
 	{
+		Schema::dropIfExists('users');
+
 		Schema::create('users', function(Blueprint $table)
 		{
 			$table->increments('id');

@@ -12,6 +12,8 @@ class CreateReforgesTable extends Migration {
 	 */
 	public function up()
 	{
+		Schema::dropIfExists('reforges');
+
 		Schema::create('reforges', function(Blueprint $table)
 		{
 			$table->increments('id');
