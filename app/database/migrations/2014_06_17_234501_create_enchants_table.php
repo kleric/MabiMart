@@ -12,7 +12,7 @@ class CreateEnchantsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('items', function(Blueprint $table)
+		Schema::create('enchants', function(Blueprint $table)
 		{
 			$table->increments('id');
 
@@ -24,6 +24,15 @@ class CreateEnchantsTable extends Migration {
 
 			$table->string('wikilink', 256)->nullable();
 			$table->timestamps();
+		});
+
+		Schema::table('auctions', function($table)
+		{
+			$table->integer('prefix_enchant_id')->unsigned();
+			$table->integer('suffix_enchant_id')->unsigned();
+			
+			$table->foreign('prefix_enchant_id')->references('id')->on('enchants')->unsigned();
+			$table->foreign('suffix_enchant_id')->references('id')->on('enchants')->unsigned();
 		});
 	}
 

@@ -16,16 +16,13 @@ class CreateAuctionsTable extends Migration {
 		{
 			$table->increments('id');
 
+			$table->integer('item_id')->unsigned();
+			$table->integer('seller_id')->unsigned();
+			
 			$table->foreign('item_id')->references('id')->on('items');
 			$table->foreign('seller_id')->references('id')->on('users');
 
 			$table->string('description', 500);
-
-			$table->foreign('prefix_enchant_id')->references('id')->on('enchants')->unsigned();
-			$table->foreign('suffix_enchant_id')->references('id')->on('enchants')->unsigned();
-
-			$table->foreign('reforge_id')->references('id')->on('reforges');
-			$table->smallInteger('reforge_level')->unsigned()->nullable();
 
 			$table->smallInteger('weaponmax')->nullable(); #
 			$table->smallInteger('weaponmin')->nullable(); #

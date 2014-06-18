@@ -12,7 +12,7 @@ class CreateReforgesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('items', function(Blueprint $table)
+		Schema::create('reforges', function(Blueprint $table)
 		{
 			$table->increments('id');
 
@@ -26,6 +26,13 @@ class CreateReforgesTable extends Migration {
 			$table->string('effect_per_level', 128);
 			
 			$table->timestamps();
+		});
+
+		Schema::table('auctions', function($table)
+		{
+			$table->integer('reforge_id')->unsigned();
+			$table->foreign('reforge_id')->references('id')->on('reforges');
+			$table->smallInteger('reforge_level')->unsigned()->nullable();
 		});
 	}
 
