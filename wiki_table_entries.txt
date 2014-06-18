@@ -1,0 +1,135 @@
+Link list gathered.
+WARNING: No table selected; treating as simple item.
+No Stats for /view/8_Sign
+WARNING: No table selected; treating as simple item.
+No Stats for /view/Advanced_Colossus_Mini
+WARNING: No table selected; treating as simple item.
+No Stats for /view/Advanced_Pierrot_Mini
+100 links processed...
+ERROR: Unable to find a description.
+ERROR: Unable to find a description.
+200 links processed...
+WARNING: No table selected; treating as simple item.
+No Stats for /view/Beginner_Colossus_Mini
+WARNING: No table selected; treating as simple item.
+No Stats for /view/Beginner_Pierrot_Mini
+ERROR: Unable to find a description.
+ERROR: Unable to find a description.
+300 links processed...
+WARNING: More than one description matched; extraneous bullets may be included.
+WARNING: No table selected; treating as simple item.
+No Stats for /view/Butterfly_Suit
+400 links processed...
+WARNING: More than one description matched; extraneous bullets may be included.
+500 links processed...
+WARNING: No table selected; treating as simple item.
+No Stats for /view/Combat_Wand
+600 links processed...
+ERROR: Unable to find a description.
+ERROR: Unable to find a description.
+ERROR: Unable to find a description.
+ERROR: Unable to find a description.
+WARNING: More than one description matched; extraneous bullets may be included.
+700 links processed...
+ERROR: Unable to find a description.
+WARNING: More than one description matched; extraneous bullets may be included.
+800 links processed...
+WARNING: More than one description matched; extraneous bullets may be included.
+WARNING: No table selected; treating as simple item.
+No Stats for /view/Fomor_Battle_Sword
+900 links processed...
+WARNING: More than one description matched; extraneous bullets may be included.
+WARNING: More than one description matched; extraneous bullets may be included.
+WARNING: No table selected; treating as simple item.
+No Stats for /view/Gentleman_Colossus_Mini
+WARNING: No table selected; treating as simple item.
+No Stats for /view/Glowing_Ice_Sword
+1000 links processed...
+WARNING: No table selected; treating as simple item.
+No Stats for /view/Heart_Lightning_Wand
+1100 links processed...
+WARNING: No table selected; treating as simple item.
+No Stats for /view/Highlander_Claymore
+WARNING: No table selected; treating as simple item.
+No Stats for /view/Ice_Sword
+ERROR: Unable to find a description.
+ERROR: Unable to find a description.
+WARNING: No table selected; treating as simple item.
+No Stats for /view/Intermediate_Colossus_Mini
+WARNING: No table selected; treating as simple item.
+No Stats for /view/Intermediate_Pierrot_Mini
+WARNING: No table selected; treating as simple item.
+No Stats for /view/Iron_Man_Colossus_Mini
+1200 links processed...
+WARNING: No table selected; treating as simple item.
+No Stats for /view/Lady_Pierrot_Mini
+WARNING: No table selected; treating as simple item.
+No Stats for /view/Lady_Waffle_Cone_Dress
+WARNING: More than one description matched; extraneous bullets may be included.
+1300 links processed...
+WARNING: More than one description matched; extraneous bullets may be included.
+WARNING: No table selected; treating as simple item.
+No Stats for /view/Lord_Waffle_Cone_Suit
+1400 links processed...
+WARNING: No table selected; treating as simple item.
+No Stats for /view/Master_Colossus_Mini
+WARNING: No table selected; treating as simple item.
+No Stats for /view/Master_Pierrot_Mini
+1500 links processed...
+WARNING: No table selected; treating as simple item.
+No Stats for /view/Old_Friend_Mini
+1600 links processed...
+1700 links processed...
+WARNING: No table selected; treating as simple item.
+No Stats for /view/Prototype_Mini
+1800 links processed...
+1900 links processed...
+WARNING: No table selected; treating as simple item.
+No Stats for /view/User:Sakura502/TheWikiGuideForDummies
+2000 links processed...
+WARNING: More than one description matched; extraneous bullets may be included.
+2100 links processed...
+WARNING: No table selected; treating as simple item.
+No Stats for /view/Student_Pierrot_Mini
+WARNING: More than one description matched; extraneous bullets may be included.
+2200 links processed...
+ERROR: Unable to find a description.
+2300 links processed...
+WARNING: No table selected; treating as simple item.
+No Stats for /view/Unusual_Carrot
+2400 links processed...
+2500 links processed...
+WARNING: No table selected; treating as simple item.
+No Stats for /view/X_Sign
+Processing finished.
+
+Giant
+Reforge
+S. Angle
+Elf
+Damage
+Upgrade
+S. Radius
+Injury
+Stun
+Description
+Protection
+S. Damage
+Obtained From
+Worn On
+Other Information
+Spirit
+Defense
+Dual W.
+Sold By
+Description Bullets
+Icon Link
+Enchant Types
+NPC Value
+Balance
+Enchant
+SP/Swing
+Durability
+Sp. Up.
+Critical
+Human
