@@ -24,8 +24,7 @@ def process_number_datum(raw_num):
   '''Process the raw number data (in string form) from the Wiki's table cells,
   removing extraneous characters and converting to int or float.'''
   clean_num = remove_nondigits(raw_num)
-  if not clean_num:
-    clean_num = "-1"
+
   if '.' in clean_num:
     return float(clean_num)
   else:
@@ -145,9 +144,10 @@ def process_stats(stats):
       else:
         new_stats['specialupgradable'] = False
     elif key == 'Stun':
-      stun_time = process_number_datum(stats[key])
-      if stun_time != -1:
+      try:
         new_stats['stuntime'] = process_number_datum(stats[key])
+      except ValueError:
+        pass
     elif key == 'Upgrade':
       slash_index = string.find(stats[key], '/')
       if slash_index != -1: # if no slash, leave null
