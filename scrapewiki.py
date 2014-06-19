@@ -272,14 +272,19 @@ def mw_item_page_scrape(url):
     icon = mw_base_url + icon_link[0]
 
   # process Other Info (get raw HTML of ul)
-  others = html.tostring(other_info[0].cssselect('ul')[0])
+  others = other_info[0].cssselect('ul')
+  if others:
+    notes = html.tostring(others[0])
+  else:
+    notes = None
 
   # set up initial dictionary with the data from the table
   data = process_stats(stats)
   # add other data
   data['description'] = description[0].text_content().strip()
   data['imgurl'] = icon
-  data['notes'] = others
+  if notes is not None:
+    data['notes'] = notes
 
   # process and add attack_type for weapons
   if attack_type:
@@ -341,7 +346,7 @@ def gather_item_links_to_scrape():
     for j in xrange(omit):
       del links[0]
 
-    all_links += links
+    all_links += [l for l in links if l not in all_links]
 
   return all_links
 
