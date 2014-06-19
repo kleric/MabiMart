@@ -376,7 +376,7 @@ def scrape_datatable_format(scrape):
   '''Requires: scrape is not None'''
   item_line = 'Item::create(array('
   for key in scrape:
-    if key == 'name' or key == 'url' or key == 'imgurl' or key == 'notes': 
+    if key == 'name' or key == 'wikilink' or key == 'imgurl' or key == 'notes': 
       item_line += "'" + key + "' => '" + scrape[key] + "',"
     elif key == 'description':
       # a hack to make sure we don't have an extra comma on the last data line
