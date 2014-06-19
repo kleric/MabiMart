@@ -362,7 +362,7 @@ def print_scrape_datatable_form(scrape):
 def print_equipment_items_data():
   total_count = 0
   err_count = 0
-  for link in gather_item_links_to_scrape()[:5]:
+  for link in gather_item_links_to_scrape():
     scrape = mw_item_page_scrape(mw_base_url + link)
     if scrape is None:
       err_count += 1
