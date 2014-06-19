@@ -345,21 +345,32 @@ def gather_item_links_to_scrape():
 
   return all_links
 
-def print_scrape_database_form(scrape):
+def print_scrape_datatable_form(scrape):
+  '''Requires: scrape is not None'''
   print 'Item::create(array('
   for key in scrape:
-    if key == 'description' or key == 'imgurl': 
+    if key == 'notes' or key == 'imgurl': 
       print "'" + key + "'", '=>', "'" + scrape[key] + "',"
-    elif key == 'notes':
+    elif key == 'description':
       # a hack to make sure we don't have an extra comma on the last data line
       pass
     else:
       print "'" + key + "'", '=>', str(scrape[key]).lower()
-  print "'notes' => '" + scrape['notes'] + "')"
+  print "'description' => '" + scrape['description'] + "')"
   print ');'
 
-scrape = mw_item_page_scrape(mw_base_url + '/view/Amulet')
-print_scrape_database_form(scrape)
-print '--------------------------------------------------'
-scrape = mw_item_page_scrape(mw_base_url + '/view/0_Sign')
-print_scrape_database_form(scrape)
+def print_equipment_items_data():
+  total_count = 0
+  err_count = 0
+  for link in gather_item_links_to_scrape()[:5]:
+    scrape = mw_item_page_scrape(mw_base_url + link)
+    if scrape is None:
+      err_count += 1
+    else:
+      print_scrape_datatable_form(scrape)
+    total_count += 1
+    if total_count % 100 == 0:
+      sys.stdout.flush()
+  print 'Total ERRORs:', str(err_count)
+
+print_equipment_items_data()
