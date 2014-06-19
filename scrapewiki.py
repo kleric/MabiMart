@@ -367,15 +367,26 @@ def print_scrape_datatable_form(scrape):
 def print_equipment_items_data():
   total_count = 0
   err_count = 0
+  critical_count = 0
   for link in gather_item_links_to_scrape():
-    scrape = mw_item_page_scrape(mw_base_url + link)
+    try:
+      scrape = mw_item_page_scrape(mw_base_url + link)
+    except:
+      print 'ERROR: some error occurred in scraping'
+      scrape = None
     if scrape is None:
       err_count += 1
     else:
-      print_scrape_datatable_form(scrape)
-    total_count += 1
+      try:
+        print_scrape_datatable_form(scrape)
+      except:
+        print "CRITICAL: an error occured in printing this item's data; file may be corrupted at this point. Inspection and correction by hand necessary."
+        critical_count += 1
     if total_count % 100 == 0:
       sys.stdout.flush()
+    total_count += 1
   print 'Total ERRORs:', str(err_count)
+  print 'CRITICAL errors:', str(critical_count)
+  print 'These MUST be corrected by hand to restore file validity. Also be sure to remove ERROR and WARNING lines.'
 
 print_equipment_items_data()
