@@ -2,7 +2,7 @@ import sys
 import string
 from lxml import html
 import requests
-from cssselect import HTMLTranslator, SelectorError
+#from cssselect import HTMLTranslator, SelectorError
 
 
 mw_base_url = 'http://wiki.mabinogiworld.com'
@@ -17,21 +17,153 @@ def delete_mouseover(element):
     if x is not None:
       x.drop_tree()
 
+def remove_nondigits(num_string):
+  return filter(lambda c: c.isdigit() or c == '.', num_string)
+
+def process_number_datum(raw_num):
+  '''Process the raw number data (in string form) from the Wiki's table cells,
+  removing extraneous characters and converting to int or float.'''
+  clean_num = remove_nondigits(raw_num)
+  if '.' in clean_num:
+    return float(clean_num)
+  else:
+    return int(clean_num)
+
+def process_stats(stats):
+  '''Process the "raw" data scraped from the Wiki's table. Mostly just changing
+  the dictionary keys to the ones we'll use for the database, but also doing
+  some extra processing of special characters into understandable forms, and
+  changing some types.
+  '''
+  new_stats = {}
+  for key in stats:
+    if key == 'Balance':
+      new_stats['balance'] = process_number_datum(stats[key])
+    elif key == 'Critical':
+      new_stats['critical'] = process_number_datum(stats[key])
+    elif key == 'Damage':
+      tilde_index = string.find(stats[key], '~')
+      if tilde_index == -1:
+        print 'WARNING:', 'Unable to process Damage field correctly'
+      else:
+        new_stats['weaponmin'] = process_number_datum(stats[key][:tilde_index])
+        new_stats['weaponmax'] = process_number_datum(stats[key][tilde_index+1:])
+    elif key == 'Defense':
+      new_stats['defense'] = process_number_datum(stats[key])
+    elif key == 'Dual W.':
+      if stats[key] == u'\u2714':
+        new_stats['dualwieldable'] = True
+      else:
+        new_stats['dualwieldable'] = False
+    elif key == 'Durability':
+      new_stats['maxdurability'] = process_number_datum(stats[key])
+    elif key == 'Elf':
+      if stats[key] == u'\u2714':
+        new_stats['elfm'] = True
+        new_stats['elff'] = True
+      elif stats[key] == u'\u2718':
+        new_stats['elfm'] = False
+        new_stats['elff'] = False
+      else:
+        if 'M' in stats[key]:
+          new_stats['elfm'] = True
+        else:
+          new_stats['elfm'] = False
+        if 'F' in stats[key]:
+          new_stats['elff'] = True
+        else:
+          new_stats['elff'] = False
+    elif key == 'Enchant':
+      if stats[key] == u'\u2714':
+        new_stats['enchantable'] = True
+      else:
+        new_stats['enchantable'] = False
+    elif key == 'Giant':
+      if stats[key] == u'\u2714':
+        new_stats['giantm'] = True
+        new_stats['giantf'] = True
+      elif stats[key] == u'\u2718':
+        new_stats['giantm'] = False
+        new_stats['giantf'] = False
+      else:
+        if 'M' in stats[key]:
+          new_stats['giantm'] = True
+        else:
+          new_stats['giantm'] = False
+        if 'F' in stats[key]:
+          new_stats['giantf'] = True
+        else:
+          new_stats['giantf'] = False
+    elif key == 'Human':
+      if stats[key] == u'\u2714':
+        new_stats['humanm'] = True
+        new_stats['humanf'] = True
+      elif stats[key] == u'\u2718':
+        new_stats['humanm'] = False
+        new_stats['humanf'] = False
+      else:
+        if 'M' in stats[key]:
+          new_stats['humanm'] = True
+        else:
+          new_stats['humanm'] = False
+        if 'F' in stats[key]:
+          new_stats['humanf'] = True
+        else:
+          new_stats['humanf'] = False
+    elif key == 'Injury':
+      tilde_index = string.find(stats[key], '~')
+      if tilde_index == -1:
+        print 'WARNING:', 'Unable to process Injury field correctly'
+      else:
+        new_stats['weaponinjurymin'] = process_number_datum(stats[key][:tilde_index])
+        new_stats['weaponinjurymax'] = process_number_datum(stats[key][tilde_index+1:])
+    elif key == 'NPC Value':
+      try:
+        new_stats['npcvalue'] = process_number_datum(stats[key])
+      except ValueError:
+        pass
+    elif key == 'Protection':
+      new_stats['protection'] = process_number_datum(stats[key])
+    elif key == 'Reforge':
+      if stats[key] == u'\u2714':
+        new_stats['reforgable'] = True
+      else:
+        new_stats['reforgable'] = False
+    elif key == 'S. Angle':
+      new_stats['sangle'] = process_number_datum(stats[key])
+    elif key == 'S. Damage':
+      new_stats['sdamage'] = process_number_datum(stats[key])
+    elif key == 'S. Radius':
+      new_stats['sradius'] = process_number_datum(stats[key])
+    elif key == 'SP/Swing':
+      new_stats['stamswing'] = process_number_datum(stats[key])
+    elif key == 'Sp. Up.':
+      if stats[key] == u'\u2714':
+        new_stats['specialupgradable'] = True
+      else:
+        new_stats['specialupgradable'] = False
+    elif key == 'Stun':
+      new_stats['stuntime'] = process_number_datum(stats[key])
+    elif key == 'Upgrade':
+      slash_index = string.find(stats[key], '/')
+      if slash_index != -1: # if no slash, leave null
+        new_stats['upgrades'] = process_number_datum(stats[key][:slash_index])
+        new_stats['gemupgrades'] = process_number_datum(stats[key][slash_index+1:])
+
+  return new_stats
+
 def mw_item_page_scrape(url):
   '''Given a URL of an item page on Mabinogi World Wiki, scrapes the following
   info into a dictionary to return:
     Description
-    Description Bullets (as list; may be empty)
     Icon Link (link to the icon picture used on the website)
+    Attack Speed (weapons only)
+    Attack Hits (weapons only)
     Stats (and Limitations) (as dictionary)
-    Enchant Types
     Other Information
-    Obtained From
-    Sold By
 
   unless the item is a simple item that doesn't have the "Base Stats and
-  Information" table, in which case only Description and Description Bullets
-  are included.
+  Information" table, in which case only Description is included.
 
   If an error indicating an improper parse is encountered, prints an error
   message and returns None.
@@ -47,20 +179,15 @@ def mw_item_page_scrape(url):
   # do these first, 'cause it's the only thing needed for simple items
   # overly broad, but mostly safe because we only use the first one later
   description_xpath = "descendant-or-self::div[@id = 'mw-content-text']/h2[contains(., 'Description')]/following-sibling::p/i"
-  # this is still a bit dangerous as it selects from all that match above
-  description_bullets_xpath = description_xpath + "/following-sibling::*[name() = 'ul' and (position() = 1)]/li"
   # use this one for pages that don't have a "Description" header
   description_alt_xpath = "descendant-or-self::div[@id = 'mw-content-text']/p/i"
 
   description = tree.xpath(description_xpath)
-  description_bullets = tree.xpath(description_bullets_xpath)
-  if len(description) > 1:
-    print 'WARNING: More than one description matched; extraneous bullets may be included.'
-  elif len(description) == 0:
+  if len(description) == 0:
     description = tree.xpath(description_alt_xpath)
-  if len(description) == 0: # if both original and alt are empty
-    print 'ERROR: Unable to find a description.'
-    return None
+    if len(description) == 0: # if both original and alt are empty
+      print 'ERROR: Unable to find a description.'
+      return None
 
   table_xpath = "descendant-or-self::div[@id = 'mw-content-text']/h2[contains(., 'Base Stats and Information')]/following-sibling::*[@class and contains(concat(' ', normalize-space(@class), ' '), ' mabitable ') and (name() = 'table') and (position() = 1)]"
   table_alt_xpath = "descendant-or-self::div[@id = 'mw-content-text']/h2[contains(., 'Base Stats and Information')]/following-sibling::*[@class and contains(concat(' ', normalize-space(@class), ' '), ' tabdiv ') and (name() = 'div') and (position() = 1)]/div[@id = 'tab1']/table[@class and contains(concat(' ', normalize-space(@class), ' '), ' mabitable ')]"
@@ -75,9 +202,7 @@ def mw_item_page_scrape(url):
     return None
   elif len(table) == 0: # simple item; table processing omitted
     print 'WARNING:', 'No table selected; treating as simple item.'
-    return {'Description': description[0].text_content().strip(),
-            'Description Bullets': [db.text_content().strip()
-                                    for db in description_bullets]}
+    return {'description': description[0].text_content().strip()}
 
   # the rest of the stuff, in the table
   icon_link_xpath = "*[name() = 'tr' and (position() = 1)]/*[@class and contains(concat(' ', normalize-space(@class), ' '), ' image ') and (name() = 'td') and (position() = 1)]/a/img/@src"
@@ -86,8 +211,6 @@ def mw_item_page_scrape(url):
   all_td_xpath = "tr[not(name() = 'tr' and (position() = 1))]/th/following-sibling::*[name() = 'td' and (position() = 1)]"
   enchant_types_xpath = "tr/th[contains(., 'Enchant Types')]/following-sibling::*[name() = 'td' and (position() = 1)]"
   other_info_xpath = "tr/th[contains(., 'Other Information')]/following-sibling::*[name() = 'td' and (position() = 1)]"
-  obtained_from_xpath = "tr/td/table/*[name() = 'tr' and (position() = 2)]/*[name() = 'td' and (position() = 1)]/div/ul/li"
-  sold_by_xpath = "tr/td/table/*[name() = 'tr' and (position() = 2)]/*[name() = 'td' and (position() = 2)]/div/ul/li"
 
   icon_link = tree.xpath(table_xpath + '/' + icon_link_xpath)
   attack_type = tree.xpath(table_xpath + '/' + attack_type_xpath)
@@ -95,8 +218,6 @@ def mw_item_page_scrape(url):
   all_td = tree.xpath(table_xpath + '/' + all_td_xpath)
   enchant_types = tree.xpath(table_xpath + '/' + enchant_types_xpath)
   other_info = tree.xpath(table_xpath + '/' + other_info_xpath)
-  obtained_from = tree.xpath(table_xpath + '/' + obtained_from_xpath)
-  sold_by = tree.xpath(table_xpath + '/' + sold_by_xpath)
   
   # some invariants to check to make sure we selected the right elements:
 
@@ -115,6 +236,7 @@ def mw_item_page_scrape(url):
   if len(all_th) != len(all_td):
     print 'ERROR: all_th and all_td lengths unequal'
     return None
+  # check that only one attack type is selected (should be rarely violated)
   if len(attack_type) > 1:
     print 'ERROR:', str(len(attack_type)), 'attack types selected'
   
@@ -132,7 +254,12 @@ def mw_item_page_scrape(url):
     delete_mouseover(all_th[i])
     delete_mouseover(all_td[i])
     # set dictionary entry
-    stats[all_th[i].text_content().strip()] = all_td[i].text_content().strip()
+    key = all_th[i].text_content().strip()
+    value = all_td[i].text_content().strip()
+    if key in stats: # should only happen for Human: M and Human: F, etc.
+      stats[key] += value # append and cross fingers
+    else:
+      stats[key] = value
   
   # process Icon Link
   got_icon = len(icon_link)
@@ -144,41 +271,17 @@ def mw_item_page_scrape(url):
       print 'WARNING: Multiple images in first table box. Using first one.'
     icon = mw_base_url + icon_link[0]
 
-  # process Enchant Types
-  types = [t.strip() for t in
-    string.split(enchant_types[0].text_content(), '/') if len(t.strip()) > 0]
+  # process Other Info (get raw HTML of ul)
+  others = html.tostring(other_info[0].cssselect('ul')[0])
 
-  # process Other Info
-  others = [o.text_content().strip() for o in other_info[0].cssselect('ul > li')]
+  # set up initial dictionary with the data from the table
+  data = process_stats(stats)
+  # add other data
+  data['description'] = description[0].text_content().strip()
+  data['imgurl'] = icon
+  data['notes'] = others
 
-  # process Obtained From
-  obtained = [of.text_content().strip() for of in obtained_from]
-  if len(obtained) == 1 and obtained[0] == 'None':
-    obtained = []
-
-  # process Sold By data
-  solds = []
-  if sold_by[0].text_content().strip() != 'None':
-    for price in sold_by:
-      sellers = []
-      for seller in price.cssselect('ul > li'):
-        sellers.append(seller.text_content().strip())
-        seller.drop_tree() # we have to drop all of these after getting the
-                           # text so we can get the price text by itself
-      solds.append((price.text_content().strip(), sellers)) # add as a pair
-
-  # Here's all the data, finally compiled in a dictionary
-  data = {'description': description[0].text_content().strip(),
-          'Description Bullets': [db.text_content().strip()
-                                  for db in description_bullets],
-          'imgurl': icon,
-          'Stats': stats,
-          'Enchant Types': types,
-          'notes': others,
-          'Obtained From': obtained,
-          'Sold By': solds}
-
-  # process attack_type for weapons
+  # process and add attack_type for weapons
   if attack_type:
     attack_type = attack_type[0].split()
     attack_speed = ' '.join(attack_type[:-3])
@@ -192,7 +295,7 @@ def mw_item_page_scrape(url):
       data['attackrate'] = 4
     else: # attack_speed == 'Very Fast'
       data['attackrate'] = 5
-    data['numattacks'] = attack_type[-3]
+    data['numattacks'] = int(attack_type[-3])
 
   return data
 
@@ -241,3 +344,22 @@ def gather_item_links_to_scrape():
     all_links += links
 
   return all_links
+
+def print_scrape_database_form(scrape):
+  print 'Item::create(array('
+  for key in scrape:
+    if key == 'description' or key == 'imgurl': 
+      print "'" + key + "'", '=>', "'" + scrape[key] + "',"
+    elif key == 'notes':
+      # a hack to make sure we don't have an extra comma on the last data line
+      pass
+    else:
+      print "'" + key + "'", '=>', str(scrape[key]).lower()
+  print "'notes' => '" + scrape['notes'] + "')"
+  print ');'
+
+scrape = mw_item_page_scrape(mw_base_url + '/view/Amulet')
+print_scrape_database_form(scrape)
+print '--------------------------------------------------'
+scrape = mw_item_page_scrape(mw_base_url + '/view/0_Sign')
+print_scrape_database_form(scrape)
