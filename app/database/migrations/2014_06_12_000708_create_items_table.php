@@ -25,7 +25,7 @@ class CreateItemsTable extends Migration {
 
 			$table->double('stamswing', 4, 2)->nullable();
 			$table->double('stuntime', 4, 2)->nullable();
-			
+
 			$table->smallInteger('sdamage')->unsigned()->nullable();
 			$table->smallInteger('sangle')->unsigned()->nullable();
 			$table->smallInteger('sradius')->unsigned()->nullable();
@@ -79,9 +79,13 @@ class CreateItemsTable extends Migration {
 			$table->boolean('reforgable')->nullable();
 			$table->boolean('enchantable')->nullable();
 
-			$table->boolean('elf')->nullable();
-			$table->boolean('human')->nullable();
-			$table->boolean('giant')->nullable();
+			$table->boolean('elff')->nullable();
+			$table->boolean('humanf')->nullable();
+			$table->boolean('giantf')->nullable();
+
+			$table->boolean('elfm')->nullable();
+			$table->boolean('humanm')->nullable();
+			$table->boolean('giantm')->nullable();
 
 			$table->smallInteger('upgrades')->unsigned()->nullable();
 			$table->smallInteger('gemupgrades')->unsigned()->nullable();
