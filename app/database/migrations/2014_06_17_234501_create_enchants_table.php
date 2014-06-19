@@ -45,7 +45,12 @@ class CreateEnchantsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('enchants');
+		Schema::table('auctions', function($table)
+		{
+			$table->dropForeign('auctions_prefix_enchant_id_foreign');
+			$table->dropForeign('auctions_suffix_enchant_id_foreign');
+		});
+		Schema::dropIfExists('enchants');
 	}
 
 }

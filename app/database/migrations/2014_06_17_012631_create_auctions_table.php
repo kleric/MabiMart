@@ -102,7 +102,7 @@ class CreateAuctionsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('auctions');
+		Schema::dropIfExists('auctions');
 	}
 
 }

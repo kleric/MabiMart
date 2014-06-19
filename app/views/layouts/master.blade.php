@@ -6,7 +6,7 @@
 
 		<title>MabiMart | @yield('page-title')</title>
 		<link href="/css/bootstrap.min.css" rel="stylesheet">
-
+		<link rel="stylesheet" href="/css/font-awesome.min.css">
 		<link href="/css/style.css" rel="stylesheet">
 	</head>
 	<body>
@@ -34,19 +34,14 @@
 						<li><a href="{{ URL::route('items') }}">Items</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-        				<li class="dropdown">
-          					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Account</strong> <b class="caret"></b></a>
-          					<ul class="dropdown-menu">
-          						@if(Auth::check())
-          						<li role="presentation" class="dropdown-header">Hi Rhaenyx</li>
-          						<li role="presentation" class="divider"></li>
-          						<li><a href="{{ URL::route('logout') }}">Logout</a></li>
-          						@else
-          						<li><a href="{{ URL::route('login') }}">Login</a>
-          						<li><a href="{{ URL::route('register') }}">Register</a>
-          						@endif
-         				 	</ul>
-        				</li>
+          				@if(Auth::check())
+          				<li role="presentation" class="dropdown-header">Hi Rhaenyx</li>
+          				<li role="presentation" class="divider"></li>
+          				<li><a href="{{ URL::route('logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
+          				@else
+          				<li><a href="{{ URL::route('register') }}"><i class="fa fa-users"></i> Register</a>
+          				<li><a href="{{ URL::route('login') }}"><i class="fa fa-sign-in"></i> Login</a>
+          				@endif
       				</ul>
 				</div>
 			</div>

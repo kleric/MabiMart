@@ -38,7 +38,7 @@ class CreateBidsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('bids');
+		Schema::dropIfExists('bids');
 	}
 
 }
