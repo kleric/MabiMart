@@ -40,9 +40,6 @@
   <div class="panel panel-success">
     <div class="panel-heading">
       Item Details
-      <div class="pull-right">
-        <a href="" class="label label-success">Sell Yours</a>
-      </div>
     </div>
     <div class="panel-body">
       Sorry, auctions aren't implemented yet. I'm working on them!
@@ -50,23 +47,46 @@
   </div>
 </div>
 <div class="col-md-4">
-  <div class="panel panel-danger">
+  <div class="panel panel-default">
     <div class="panel-heading">
       Recent Offers
     </div>
     <div class="panel-body">
       Interested? Make a bid! 
+
+      <br>
+      <br>
+      <form>
+        <div class="input-group input-group-sm col-md-8 col-md-offset-2">
+          <input class="form-control" type="text" inputtype="numeric" name="amount">
+          <span class="input-group-btn">
+            <input type="submit" value="Bid" class="btn btn-default" type="button">
+          </span>
+        </div>
+      </form>
     </div>
     <table class="table">
       <thead>
         <tr>
-          <th>Amount</th>
-          <th><div class="pull-right">Bidder</div></th>
+          <th>Leading Bid</th>
+          <th></th>
+        </tr>
+        <tr class="success">
+          <td><img src="/images/gold.gif"> <small>450,000</small></td>
+          <td><div class="pull-right"><small>Rhaenyx</small></div></td>
+        </tr>
+        <tr>
+          <th>Previous Bids</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr class="danger">
           <td><small>450,000</small></td>
+          <td><div class="pull-right"><small>Rhaenyx</small></div></td>
+        </tr>
+        <tr class="danger">
+          <td><small>250,000</small></td>
           <td><div class="pull-right"><small>Rhaenyx</small></div></td>
         </tr>
       </tbody>
