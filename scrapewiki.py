@@ -180,6 +180,12 @@ def mw_item_page_scrape(url):
   
   tree = html.fromstring(r.text) # parse html into tree
 
+  name_xpath = "descendant-or-self::h1[@id = 'firstHeading']"
+  name = tree.xpath(name_xpath)
+  if len(name) == 0:
+    print 'ERROR Unable to find a name'
+    return None
+
   # do these first, 'cause it's the only thing needed for simple items
   # overly broad, but mostly safe because we only use the first one later
   description_xpath = "descendant-or-self::div[@id = 'mw-content-text']/h2[contains(., 'Description')]/following-sibling::p/i"
@@ -206,7 +212,7 @@ def mw_item_page_scrape(url):
     return None
   elif len(table) == 0: # simple item; table processing omitted
     print 'WARNING:', 'No table selected; treating as simple item.'
-    return {'description': description[0].text_content().strip()}
+    return {'name': name[0].text_content().strip(), 'description': description[0].text_content().strip()}
 
   # the rest of the stuff, in the table
   icon_link_xpath = "*[name() = 'tr' and (position() = 1)]/*[@class and contains(concat(' ', normalize-space(@class), ' '), ' image ') and (name() = 'td') and (position() = 1)]/a/img/@src"
@@ -286,6 +292,7 @@ def mw_item_page_scrape(url):
   data = process_stats(stats)
   # add other data
   data['description'] = description[0].text_content().strip()
+  data['name'] = name[0].text_content().strip()
   data['imgurl'] = icon
   if notes is not None:
     data['notes'] = notes
@@ -358,13 +365,13 @@ def print_scrape_datatable_form(scrape):
   '''Requires: scrape is not None'''
   print 'Item::create(array('
   for key in scrape:
-    if key == 'notes' or key == 'imgurl': 
+    if key == 'notes' or key == 'imgurl' or key == 'name': 
       print "'" + key + "'", '=>', "'" + scrape[key] + "',"
     elif key == 'description':
       # a hack to make sure we don't have an extra comma on the last data line
       pass
     else:
-      print "'" + key + "'", '=>', str(scrape[key]).lower()
+      print "'" + key + "'", '=>', str(scrape[key]).lower() + ","
   print "'description' => '" + scrape['description'] + "')"
   print ');'
 
