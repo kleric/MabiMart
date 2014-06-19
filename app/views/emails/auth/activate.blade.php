@@ -14,7 +14,7 @@
                   <table id="templateContent" style="border-spacing: 0; border-collapse: collapse; font-family: proxima-nova, 'helvetica neue', helvetica, arial, geneva, sans-serif; height: 100%; width: 100%; background: #ffffff; margin: 0; padding: 0; border: 0;">
                     <tr style="vertical-align: top; padding: 0;">
                       <td style="vertical-align: top; text-align: left; padding: 0;" align="left" valign="top">
-                        <h1 id="logo" style="color: #6E5BAA; display: block; font-family: hybrea, proxima-nova, 'helvetica neue', helvetica, arial, geneva, sans-serif; font-size: 32px; font-weight: 200; text-align: left; margin: 0 0 40px;" align="left"><img src="http://mabimart.com/images/logo.png" alt="heroku" style="outline: none; text-decoration: none; border: 0;" /></h1>
+                        <h1 id="logo" style="color: #6E5BAA; display: block; font-family: hybrea, proxima-nova, 'helvetica neue', helvetica, arial, geneva, sans-serif; font-size: 32px; font-weight: 200; text-align: left; margin: 0 0 40px;" align="left"><center><img src="http://mabimart.com/images/logo.png" alt="heroku" style="outline: none; text-decoration: none; border: 0;" /></center></h1>
                         <p style="margine: 20x 0;">Hiya {{ $username }}!</p>
                         <p style="margin: 20px 0;">Thanks for signing up for MabiMart! You must follow this link to activate your account:</p>
 
@@ -73,19 +73,3 @@ color: #4c4c4c; background-color: #ffffff; font-family: proxima-nova, 'helvetica
 </style>
 </body>
 </html>
-
-
-
-Thanks for registering for an account at MabiMart! All that's left is for you to activate your account. Don't worry, it's really easy :)
-<br>
-Just visit the URL below to activate your account.<br> <br>
----<br>
-{{ $link }}<br>
----
-<br>
-<br>
-Till then you won't be able to login,
-
-<br><br>
-Thanks,<br>
- - Rhaenyx
