@@ -37,10 +37,10 @@
           				@if(Auth::check())
           				<li role="presentation" class="dropdown-header">Hi Rhaenyx</li>
           				<li role="presentation" class="divider"></li>
-          				<li><a href="{{ URL::route('logout') }}">Logout</a></li>
+          				<li><a href="{{ URL::route('logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
           				@else
           				<li><a href="{{ URL::route('register') }}"><i class="fa fa-users"></i> Register</a>
-          				<li><a href="{{ URL::route('login') }}">Login</a>
+          				<li><a href="{{ URL::route('login') }}"><i class="fa fa-sign-in"></i> Login</a>
           				@endif
       				</ul>
 				</div>
