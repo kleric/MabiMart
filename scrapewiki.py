@@ -299,7 +299,7 @@ def mw_item_page_scrape(url):
   # add other data
   data['name'] = name[0].text_content().strip()
   data['description'] = description[0].text_content().strip()
-  data['url'] = url
+  data['wikilink'] = url
   if icon is not None:
     data['imgurl'] = icon
   if notes is not None:
@@ -395,7 +395,7 @@ def print_equipment_items_data():
     # gather_item_links_to_scrape will print 'FATAL_ERROR'
     return
   sys.stderr.write('Links gathered. Scraping data...\n')
-  for link in links[:20]: 
+  for link in links: 
     sys.stderr.write('Processing link ' + mw_base_url + link + '...\n')
     try:
       scrape = mw_item_page_scrape(mw_base_url + link)
