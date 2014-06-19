@@ -2,7 +2,7 @@ import sys
 import string
 from lxml import html
 import requests
-#from cssselect import HTMLTranslator, SelectorError
+from cssselect import HTMLTranslator, SelectorError
 
 
 mw_base_url = 'http://wiki.mabinogiworld.com'
@@ -46,7 +46,7 @@ def process_stats(stats):
       elif key == 'Damage':
         tilde_index = string.find(stats[key], '~')
         if tilde_index == -1:
-          print 'WARNING:', 'Unable to process Damage field correctly'
+          sys.stderr.write('WARNING: Unable to process Damage field correctly\n') 
         else:
           new_stats['weaponmin'] = process_number_datum(stats[key][:tilde_index])
           new_stats['weaponmax'] = process_number_datum(stats[key][tilde_index+1:])
@@ -115,7 +115,7 @@ def process_stats(stats):
       elif key == 'Injury':
         tilde_index = string.find(stats[key], '~')
         if tilde_index == -1:
-          print 'WARNING:', 'Unable to process Injury field correctly'
+          sys.stderr.write('WARNING: Unable to process Injury field correctly\n')
         else:
           new_stats['weaponinjurymin'] = process_number_datum(stats[key][:tilde_index])
           new_stats['weaponinjurymax'] = process_number_datum(stats[key][tilde_index+1:])
@@ -149,13 +149,15 @@ def process_stats(stats):
           new_stats['upgrades'] = process_number_datum(stats[key][:slash_index])
           new_stats['gemupgrades'] = process_number_datum(stats[key][slash_index+1:])
     except:
-      print 'WARNING: some exception thrown in data processing'
+      sys.stderr.write('WARNING: some exception thrown in stats processing\n')
 
   return new_stats
 
 def mw_item_page_scrape(url):
   '''Given a URL of an item page on Mabinogi World Wiki, scrapes the following
   info into a dictionary to return:
+    Name
+    URL on Wiki
     Description
     Icon Link (link to the icon picture used on the website)
     Attack Speed (weapons only)
@@ -164,36 +166,36 @@ def mw_item_page_scrape(url):
     Other Information
 
   unless the item is a simple item that doesn't have the "Base Stats and
-  Information" table, in which case only Description is included.
+  Information" table, in which case only Name, URL, Description, and Icon Link
+  are included.
 
-  If an error indicating an improper parse is encountered, prints an error
+  If an error indicating an improper parse is encountered, logs an error
   message and returns None.
   '''
 
   r = requests.get(url) # request desired webpage to scrape
   if r.status_code != requests.codes.ok: # confirm that request was successful
-    print 'ERROR: Request error'
+    sys.stderr.write('ERROR: Request error\n')
     return None
   
   tree = html.fromstring(r.text) # parse html into tree
 
-  name_xpath = "descendant-or-self::h1[@id = 'firstHeading']"
-  name = tree.xpath(name_xpath)
-  if len(name) == 0:
-    print 'ERROR Unable to find a name'
-    return None
-
   # do these first, 'cause it's the only thing needed for simple items
+  name_xpath = "descendant-or-self::h1[@id = 'firstHeading']"
   # overly broad, but mostly safe because we only use the first one later
   description_xpath = "descendant-or-self::div[@id = 'mw-content-text']/h2[contains(., 'Description')]/following-sibling::p/i"
   # use this one for pages that don't have a "Description" header
   description_alt_xpath = "descendant-or-self::div[@id = 'mw-content-text']/p/i"
 
+  name = tree.xpath(name_xpath)
+  if len(name) == 0:
+    sys.stderr.write('ERROR: Unable to find a name\n')
+    return None
   description = tree.xpath(description_xpath)
   if len(description) == 0:
     description = tree.xpath(description_alt_xpath)
     if len(description) == 0: # if both original and alt are empty
-      print 'ERROR: Unable to find a description.'
+      sys.stderr.write('ERROR: Unable to find a description\n')
       return None
 
   table_xpath = "descendant-or-self::div[@id = 'mw-content-text']/h2[contains(., 'Base Stats and Information')]/following-sibling::*[@class and contains(concat(' ', normalize-space(@class), ' '), ' mabitable ') and (name() = 'table') and (position() = 1)]"
@@ -205,11 +207,17 @@ def mw_item_page_scrape(url):
     table = tree.xpath(table_alt_xpath)
     table_xpath = table_alt_xpath
   if len(table) > 1:
-    print 'ERROR:', str(len(table)), 'tables selected!'
+    sys.stderr.write('ERROR: ' + str(len(table)) + ' tables selected\n')
     return None
   elif len(table) == 0: # simple item; table processing omitted
-    print 'WARNING:', 'No table selected; treating as simple item.'
-    return {'name': name[0].text_content().strip(), 'description': description[0].text_content().strip()}
+    sys.stderr.write('No table selected; treating as simple item...\n')
+    icon_link_xpath = "descendant-or-self::div[@id = 'mw-content-text']/table[@class and contains(concat(' ', normalize-space(@class), ' '), ' imagetable ')]/tr/td/a/img/@src"
+    icon_link = tree.xpath(icon_link_xpath)
+    if not icon_link:
+      sys.stderr.write('WARNING: Unable to find an icon link\n')
+      return {'name': name[0].text_content().strip(), 'url': url, 'description': description[0].text_content().strip()}
+    else:
+      return {'name': name[0].text_content().strip(), 'url': url, 'description': description[0].text_content().strip(), 'imgurl': mw_base_url + icon_link[0]}
 
   # the rest of the stuff, in the table
   icon_link_xpath = "*[name() = 'tr' and (position() = 1)]/*[@class and contains(concat(' ', normalize-space(@class), ' '), ' image ') and (name() = 'td') and (position() = 1)]/a/img/@src"
@@ -231,21 +239,22 @@ def mw_item_page_scrape(url):
   # check that there is exactly one <th> "Enchant Types" and one <th>
   # "Other Information", and that these are also selected in all_th
   if len(enchant_types) != 1:
-    print 'ERROR:', str(len(enchant_types)), '"Enchant Types" <td> selected'
+    sys.stderr.write('ERROR: ' + str(len(enchant_types)) + ' "Enchant Types" <td> selected\n')
     return None
   if len(other_info) != 1:
-    print 'ERROR:', str(len(other_info)), '"Other Information" <td> selected'
+    sys.stderr.write('ERROR: ' + str(len(other_info)) + ' "Other Info" <td> selected\n')
     return None
   if not (enchant_types[0] in all_td and other_info[0] in all_td):
-    print 'ERROR: "Enchant Types" or "Other Information" unaccounted for in all_td'
+    sys.stderr.write('ERROR: "Enchant Types" or "Other Information" unaccounted for in all_td\n')
     return None
   # check that every <th> has a corresponding <td>
   if len(all_th) != len(all_td):
-    print 'ERROR: all_th and all_td lengths unequal'
+    sys.stderr.write('ERROR: all_th and all_td lengths unequal\n')
     return None
   # check that only one attack type is selected (should be rarely violated)
   if len(attack_type) > 1:
-    print 'ERROR:', str(len(attack_type)), 'attack types selected'
+    sys.stderr.write('ERROR: ' + str(len(attack_type)) + ' attack types selected\n')
+    return None
   
   # remove 'Enchant Types' and 'Other Information' from all_th and all_td
   remove = [enchant_types[0], other_info[0]]
@@ -271,11 +280,11 @@ def mw_item_page_scrape(url):
   # process Icon Link
   got_icon = len(icon_link)
   if not got_icon: # test if image link was found
-    print 'WARNING: Has no icon image.'
+    sys.stderr.write('WARNING: Unable to find an icon link\n')
     icon = None
   else:
     if got_icon > 1: # warn if multiple images in box found, but use first one
-      print 'WARNING: Multiple images in first table box. Using first one.'
+      sys.stderr.write('WARNING: Multiple images in first table box. Using first one.\n')
     icon = mw_base_url + icon_link[0]
 
   # process Other Info (get raw HTML of ul)
@@ -288,9 +297,11 @@ def mw_item_page_scrape(url):
   # set up initial dictionary with the data from the table
   data = process_stats(stats)
   # add other data
-  data['description'] = description[0].text_content().strip()
   data['name'] = name[0].text_content().strip()
-  data['imgurl'] = icon
+  data['description'] = description[0].text_content().strip()
+  data['url'] = url
+  if icon is not None:
+    data['imgurl'] = icon
   if notes is not None:
     data['notes'] = notes
 
@@ -306,9 +317,12 @@ def mw_item_page_scrape(url):
       data['attackrate'] = 3
     elif attack_speed == 'Fast':
       data['attackrate'] = 4
-    else: # attack_speed == 'Very Fast'
+    elif attack_speed == 'Very Fast':
       data['attackrate'] = 5
-    data['numattacks'] = int(attack_type[-3])
+    try:
+      data['numattacks'] = int(attack_type[-3])
+    except ValueError: # skip this field if not an int
+      pass
 
   return data
 
@@ -337,7 +351,7 @@ def gather_item_links_to_scrape():
     while page_number:
       r = requests.get(url) # request desired webpage to scrape
       if r.status_code != requests.codes.ok: # confirm request successful
-        print 'ERROR: Request error'
+        sys.stderr.write('FATAL_ERROR: Link gathering request error')
         return None
       tree = html.fromstring(r.text) # parse html into tree
       # add links on this page
@@ -358,43 +372,57 @@ def gather_item_links_to_scrape():
 
   return all_links
 
-def print_scrape_datatable_form(scrape):
+def scrape_datatable_format(scrape):
   '''Requires: scrape is not None'''
-  print 'Item::create(array('
+  item_line = 'Item::create(array('
   for key in scrape:
-    if key == 'notes' or key == 'imgurl' or key == 'name': 
-      print "'" + key + "'", '=>', "'" + scrape[key] + "',"
+    if key == 'name' or key == 'url' or key == 'imgurl' or key == 'notes': 
+      item_line += "'" + key + "' => '" + scrape[key] + "',"
     elif key == 'description':
       # a hack to make sure we don't have an extra comma on the last data line
       pass
     else:
-      print "'" + key + "'", '=>', str(scrape[key]).lower() + ","
-  print "'description' => '" + scrape['description'] + "')"
-  print ');'
+      item_line +=  "'" + key + "' => " + str(scrape[key]).lower() + ","
+  item_line += "'description' => '" + scrape['description'] + "'));"
+  return item_line
 
 def print_equipment_items_data():
   total_count = 0
   err_count = 0
-  critical_count = 0
-  for link in gather_item_links_to_scrape():
+  sys.stderr.write('Gathering links...\n')
+  links = gather_item_links_to_scrape()
+  if not links:
+    # gather_item_links_to_scrape will print 'FATAL_ERROR'
+    return
+  sys.stderr.write('Links gathered. Scraping data...\n')
+  for link in links[:20]: 
+    sys.stderr.write('Processing link ' + mw_base_url + link + '...\n')
     try:
       scrape = mw_item_page_scrape(mw_base_url + link)
     except:
-      print 'ERROR: some error occurred in scraping'
+      sys.stderr.write('ERROR: some exception thrown in scraping\n')
       scrape = None
+      sys.stderr.write('Scrape FAILED.\n')
     if scrape is None:
       err_count += 1
     else:
       try:
-        print_scrape_datatable_form(scrape)
+        line = scrape_datatable_format(scrape)
+        print line
+        sys.stderr.write('Scrape successful.\n')
       except:
-        print "CRITICAL: an error occured in printing this item's data; file may be corrupted at this point. Inspection and correction by hand necessary."
-        critical_count += 1
+        sys.stderr.write('ERROR: some exception thrown in formatting scrape data\n')
+        sys.stderr.write('Scrape FAILED.\n')
+        err_count += 1
     if total_count % 100 == 0:
       sys.stdout.flush()
     total_count += 1
-  print 'Total ERRORs:', str(err_count)
-  print 'CRITICAL errors:', str(critical_count)
-  print 'These MUST be corrected by hand to restore file validity. Also be sure to remove ERROR and WARNING lines.'
+  sys.stderr.write('Data scrape complete.\n')
+  sys.stderr.write('Total links processed: ' + str(total_count) + '\n')
+  sys.stderr.write('Total ERRORs: ' + str(err_count))
 
 print_equipment_items_data()
+# run this command to write output to a file called scrape.data and {progress,
+# WARNINGs, and ERRORs} to scrape.log, while also printing the latter to the
+# terminal so you can watch its progress:
+# python scrapewiki.py 2>&1 >scrape.data | tee scrape.log
