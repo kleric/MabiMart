@@ -144,11 +144,6 @@ def mw_item_page_scrape(url):
       print 'WARNING: Multiple images in first table box. Using first one.'
     icon = mw_base_url + icon_link[0]
 
-  # process attack_type
-  attack_type = attack_type[0].split()
-  attack_sp = ' '.join(attack_type[:-3])
-  attack_hits = attack_type[-3]
-
   # process Enchant Types
   types = [t.strip() for t in
     string.split(enchant_types[0].text_content(), '/') if len(t.strip()) > 0]
@@ -173,42 +168,33 @@ def mw_item_page_scrape(url):
       solds.append((price.text_content().strip(), sellers)) # add as a pair
 
   # Here's all the data, finally compiled in a dictionary
-  data = {'Description': description[0].text_content().strip(),
+  data = {'description': description[0].text_content().strip(),
           'Description Bullets': [db.text_content().strip()
                                   for db in description_bullets],
-          'Icon Link': icon,
-          'Attack Speed': attack_sp,
-          'Attack Hits': attack_hits,
+          'imgurl': icon,
           'Stats': stats,
           'Enchant Types': types,
-          'Other Information': others,
+          'notes': others,
           'Obtained From': obtained,
           'Sold By': solds}
 
-  return data
+  # process attack_type for weapons
+  if attack_type:
+    attack_type = attack_type[0].split()
+    attack_speed = ' '.join(attack_type[:-3])
+    if attack_speed == 'Very Slow':
+      data['attackrate'] = 1
+    elif attack_speed == 'Slow':
+      data['attackrate'] = 2
+    elif attack_speed == 'Normal':
+      data['attackrate'] = 3
+    elif attack_speed == 'Fast':
+      data['attackrate'] = 4
+    else: # attack_speed == 'Very Fast'
+      data['attackrate'] = 5
+    data['numattacks'] = attack_type[-3]
 
-def print_scrape(scrape_data):
-  print 'Description:', scrape_data['Description']
-  for db in scrape_data['Description Bullets']:
-    print ' o', db
-  if 'Stats' in scrape_data:
-    print 'Icon Link:', scrape_data['Icon Link']
-    print 'Attack Speed:', scrape_data['Attack Speed']
-    print 'Attack Hits:', scrape_data['Attack Hits']
-    print 'Stats:'
-    stats = scrape_data['Stats']
-    for key in stats:
-      print key + ':', stats[key]
-    print 'Enchant Types:', scrape_data['Enchant Types']
-    print 'Other Information:'
-    for oi in scrape_data['Other Information']:
-      print ' o', oi
-    print 'Obtained From:', scrape_data['Obtained From']
-    print 'Sold By:'
-    for (price, sellers) in scrape_data['Sold By']:
-      print 'Price:', price
-      for s in sellers:
-        print ' o', s
+  return data
 
 def gather_item_links_to_scrape():
   '''Scrapes all the required links from the Equipment and Items
@@ -255,5 +241,3 @@ def gather_item_links_to_scrape():
     all_links += links
 
   return all_links
-
-print_scrape(mw_item_page_scrape(mw_base_url + '/view/Knight_Lance'))
