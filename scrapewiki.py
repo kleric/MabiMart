@@ -37,118 +37,118 @@ def process_stats(stats):
   '''
   new_stats = {}
   for key in stats:
-    if key == 'Balance':
-      new_stats['balance'] = process_number_datum(stats[key])
-    elif key == 'Critical':
-      new_stats['critical'] = process_number_datum(stats[key])
-    elif key == 'Damage':
-      tilde_index = string.find(stats[key], '~')
-      if tilde_index == -1:
-        print 'WARNING:', 'Unable to process Damage field correctly'
-      else:
-        new_stats['weaponmin'] = process_number_datum(stats[key][:tilde_index])
-        new_stats['weaponmax'] = process_number_datum(stats[key][tilde_index+1:])
-    elif key == 'Defense':
-      new_stats['defense'] = process_number_datum(stats[key])
-    elif key == 'Dual W.':
-      if stats[key] == u'\u2714':
-        new_stats['dualwieldable'] = True
-      else:
-        new_stats['dualwieldable'] = False
-    elif key == 'Durability':
-      new_stats['maxdurability'] = process_number_datum(stats[key])
-    elif key == 'Elf':
-      if stats[key] == u'\u2714':
-        new_stats['elfm'] = True
-        new_stats['elff'] = True
-      elif stats[key] == u'\u2718':
-        new_stats['elfm'] = False
-        new_stats['elff'] = False
-      else:
-        if 'M' in stats[key]:
+    try: # to catch all exceptions: just skip it and report a warning
+      if key == 'Balance':
+        new_stats['balance'] = process_number_datum(stats[key])
+      elif key == 'Critical':
+        new_stats['critical'] = process_number_datum(stats[key])
+      elif key == 'Damage':
+        tilde_index = string.find(stats[key], '~')
+        if tilde_index == -1:
+          print 'WARNING:', 'Unable to process Damage field correctly'
+        else:
+          new_stats['weaponmin'] = process_number_datum(stats[key][:tilde_index])
+          new_stats['weaponmax'] = process_number_datum(stats[key][tilde_index+1:])
+      elif key == 'Defense':
+        new_stats['defense'] = process_number_datum(stats[key])
+      elif key == 'Dual W.':
+        if stats[key] == u'\u2714':
+          new_stats['dualwieldable'] = True
+        else:
+          new_stats['dualwieldable'] = False
+      elif key == 'Durability':
+        new_stats['maxdurability'] = process_number_datum(stats[key])
+      elif key == 'Elf':
+        if stats[key] == u'\u2714':
           new_stats['elfm'] = True
-        else:
-          new_stats['elfm'] = False
-        if 'F' in stats[key]:
           new_stats['elff'] = True
-        else:
+        elif stats[key] == u'\u2718':
+          new_stats['elfm'] = False
           new_stats['elff'] = False
-    elif key == 'Enchant':
-      if stats[key] == u'\u2714':
-        new_stats['enchantable'] = True
-      else:
-        new_stats['enchantable'] = False
-    elif key == 'Giant':
-      if stats[key] == u'\u2714':
-        new_stats['giantm'] = True
-        new_stats['giantf'] = True
-      elif stats[key] == u'\u2718':
-        new_stats['giantm'] = False
-        new_stats['giantf'] = False
-      else:
-        if 'M' in stats[key]:
+        else:
+          if 'M' in stats[key]:
+            new_stats['elfm'] = True
+          else:
+            new_stats['elfm'] = False
+          if 'F' in stats[key]:
+            new_stats['elff'] = True
+          else:
+            new_stats['elff'] = False
+      elif key == 'Enchant':
+        if stats[key] == u'\u2714':
+          new_stats['enchantable'] = True
+        else:
+          new_stats['enchantable'] = False
+      elif key == 'Giant':
+        if stats[key] == u'\u2714':
           new_stats['giantm'] = True
-        else:
-          new_stats['giantm'] = False
-        if 'F' in stats[key]:
           new_stats['giantf'] = True
-        else:
+        elif stats[key] == u'\u2718':
+          new_stats['giantm'] = False
           new_stats['giantf'] = False
-    elif key == 'Human':
-      if stats[key] == u'\u2714':
-        new_stats['humanm'] = True
-        new_stats['humanf'] = True
-      elif stats[key] == u'\u2718':
-        new_stats['humanm'] = False
-        new_stats['humanf'] = False
-      else:
-        if 'M' in stats[key]:
+        else:
+          if 'M' in stats[key]:
+            new_stats['giantm'] = True
+          else:
+            new_stats['giantm'] = False
+          if 'F' in stats[key]:
+            new_stats['giantf'] = True
+          else:
+            new_stats['giantf'] = False
+      elif key == 'Human':
+        if stats[key] == u'\u2714':
           new_stats['humanm'] = True
-        else:
-          new_stats['humanm'] = False
-        if 'F' in stats[key]:
           new_stats['humanf'] = True
-        else:
+        elif stats[key] == u'\u2718':
+          new_stats['humanm'] = False
           new_stats['humanf'] = False
-    elif key == 'Injury':
-      tilde_index = string.find(stats[key], '~')
-      if tilde_index == -1:
-        print 'WARNING:', 'Unable to process Injury field correctly'
-      else:
-        new_stats['weaponinjurymin'] = process_number_datum(stats[key][:tilde_index])
-        new_stats['weaponinjurymax'] = process_number_datum(stats[key][tilde_index+1:])
-    elif key == 'NPC Value':
-      try:
+        else:
+          if 'M' in stats[key]:
+            new_stats['humanm'] = True
+          else:
+            new_stats['humanm'] = False
+          if 'F' in stats[key]:
+            new_stats['humanf'] = True
+          else:
+            new_stats['humanf'] = False
+      elif key == 'Injury':
+        tilde_index = string.find(stats[key], '~')
+        if tilde_index == -1:
+          print 'WARNING:', 'Unable to process Injury field correctly'
+        else:
+          new_stats['weaponinjurymin'] = process_number_datum(stats[key][:tilde_index])
+          new_stats['weaponinjurymax'] = process_number_datum(stats[key][tilde_index+1:])
+      elif key == 'NPC Value':
         new_stats['npcvalue'] = process_number_datum(stats[key])
-      except ValueError:
-        pass
-    elif key == 'Protection':
-      new_stats['protection'] = process_number_datum(stats[key])
-    elif key == 'Reforge':
-      if stats[key] == u'\u2714':
-        new_stats['reforgable'] = True
-      else:
-        new_stats['reforgable'] = False
-    elif key == 'S. Angle':
-      new_stats['sangle'] = process_number_datum(stats[key])
-    elif key == 'S. Damage':
-      new_stats['sdamage'] = process_number_datum(stats[key])
-    elif key == 'S. Radius':
-      new_stats['sradius'] = process_number_datum(stats[key])
-    elif key == 'SP/Swing':
-      new_stats['stamswing'] = process_number_datum(stats[key])
-    elif key == 'Sp. Up.':
-      if stats[key] == u'\u2714':
-        new_stats['specialupgradable'] = True
-      else:
-        new_stats['specialupgradable'] = False
-    elif key == 'Stun':
-      new_stats['stuntime'] = process_number_datum(stats[key])
-    elif key == 'Upgrade':
-      slash_index = string.find(stats[key], '/')
-      if slash_index != -1: # if no slash, leave null
-        new_stats['upgrades'] = process_number_datum(stats[key][:slash_index])
-        new_stats['gemupgrades'] = process_number_datum(stats[key][slash_index+1:])
+      elif key == 'Protection':
+        new_stats['protection'] = process_number_datum(stats[key])
+      elif key == 'Reforge':
+        if stats[key] == u'\u2714':
+          new_stats['reforgable'] = True
+        else:
+          new_stats['reforgable'] = False
+      elif key == 'S. Angle':
+        new_stats['sangle'] = process_number_datum(stats[key])
+      elif key == 'S. Damage':
+        new_stats['sdamage'] = process_number_datum(stats[key])
+      elif key == 'S. Radius':
+        new_stats['sradius'] = process_number_datum(stats[key])
+      elif key == 'SP/Swing':
+        new_stats['stamswing'] = process_number_datum(stats[key])
+      elif key == 'Sp. Up.':
+        if stats[key] == u'\u2714':
+          new_stats['specialupgradable'] = True
+        else:
+          new_stats['specialupgradable'] = False
+      elif key == 'Stun':
+        new_stats['stuntime'] = process_number_datum(stats[key])
+      elif key == 'Upgrade':
+        slash_index = string.find(stats[key], '/')
+        if slash_index != -1: # if no slash, leave null
+          new_stats['upgrades'] = process_number_datum(stats[key][:slash_index])
+          new_stats['gemupgrades'] = process_number_datum(stats[key][slash_index+1:])
+    except:
+      print 'WARNING: some exception thrown in data processing'
 
   return new_stats
 
