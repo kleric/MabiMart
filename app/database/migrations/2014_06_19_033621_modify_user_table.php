@@ -26,7 +26,7 @@ class ModifyUserTable extends Migration {
 	{
 		Schema::table('users', function($table) {
 			$table->dropColumn('contact_details');
-		})
+		});
 	}
 
 }

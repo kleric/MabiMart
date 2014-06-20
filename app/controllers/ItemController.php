@@ -28,12 +28,22 @@ class ItemController extends BaseController {
 			$description = 	$item->getDescription();
 			$stats = $item->getStats();
 			$wiki_link = $item->getWikiLink();
+			$imgurl = $item->imgurl;
+			
+			$imagefilename = $id . ".png";
+			$onserverimgurl = "http://mabimart.com/images/items/" . $imagefilename;
+			
+			//Download it onto the server if it doesn't exist :) so we don't strain wiki servers
+			if(@getimagesize($onserverimgurl)) {
+				$imgurl = $onserverimgurl;	
+			}
 
 			$this->layout->content = View::make('itemview', array(
 				'item_id' => $id,
 				'description' => $description,
 				'item_name' => $item_name,
 				'item_stats' => $stats,
+				'imgurl' => $imgurl,
 				'wiki_link' => $wiki_link));
 		}
 	}
