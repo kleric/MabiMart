@@ -29,6 +29,17 @@ class ItemController extends BaseController {
 			$stats = $item->getStats();
 			$wiki_link = $item->getWikiLink();
 			$imgurl = $item->imgurl;
+			
+			$imagefilename = $id . ".png";
+			$onserverimgurl = "http://mabimart.com/images/items/" . $imagefilename;
+			
+			//Download it onto the server if it doesn't exist :) so we don't strain wiki servers
+			if(!(@getimagesize($onserverimgurl))) {
+				file_put_contents("/images/items/" . $imagefilename, fopen($imgurl, 'r'));	
+			}
+			else {
+				$imgurl = $onserverimgurl;
+			}
 
 			$this->layout->content = View::make('itemview', array(
 				'item_id' => $id,
