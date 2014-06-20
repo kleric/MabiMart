@@ -23,7 +23,9 @@
                 <small>{{$item_stats}}</small><br>
                 @endif
                 @if(isset($item_notes))
-                <small>{{ $item_notes }}</small>
+                <div class="itemnotes">
+                	<small>{{ $item_notes }}</small>
+                </div>
                 @endif
               </div>
             </div>
