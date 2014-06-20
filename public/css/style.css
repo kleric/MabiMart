@@ -52,6 +52,11 @@ body {
 	color: #9acaf7;
 }
 
+.itemnotes ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
 
 .table tbody tr > td.success {
   background-color: #dff0d8 !important;
