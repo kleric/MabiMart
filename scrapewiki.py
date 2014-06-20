@@ -305,8 +305,8 @@ def mw_item_page_scrape(url):
   data['wikilink'] = url
   if icon is not None:
     data['imgurl'] = icon
-  #if notes is not None:
-  #  data['notes'] = notes
+  if notes is not None:
+    data['notes'] = notes
 
   # process and add attack_type for weapons
   if attack_type:
