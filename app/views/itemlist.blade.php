@@ -18,7 +18,7 @@ Items
 		@foreach ($itemlist as $item)
   		<a href="/item/view/{{{ $item->id }}}" class="list-group-item clearfix">
   			<div class="item-thumbnail pull-left">
-    			<center><img class="lazy" data-original="/images/items/{{{ $item->id }}}.png"></center>
+    			<center><img class="lazy" data-original="/images/items/{{{ $item->id }}}.png" width="48" height="48"></center>
     		</div>
     		<div>
 	    		<b class="list-group-item-heading">{{{ $item->name }}}</b>
