@@ -302,8 +302,8 @@ def mw_item_page_scrape(url):
   data['wikilink'] = url
   if icon is not None:
     data['imgurl'] = icon
-  if notes is not None:
-    data['notes'] = notes
+  #if notes is not None:
+  #  data['notes'] = notes
 
   # process and add attack_type for weapons
   if attack_type:
@@ -376,14 +376,14 @@ def scrape_datatable_format(scrape):
   '''Requires: scrape is not None'''
   item_line = 'Item::create(array('
   for key in scrape:
-    if key == 'name' or key == 'wikilink' or key == 'imgurl' or key == 'notes': 
-      item_line += "'" + key + "' => '" + scrape[key] + "',"
+    if key == 'name' or key == 'wikilink' or key == 'imgurl' or key == 'notes: 
+      item_line += "'" + key + "'" + ' => "' + scrape[key] + '",'
     elif key == 'description':
       # a hack to make sure we don't have an extra comma on the last data line
       pass
     else:
       item_line +=  "'" + key + "' => " + str(scrape[key]).lower() + ","
-  item_line += "'description' => '" + scrape['description'] + "'));"
+  item_line += "'description' => " + '"' + scrape['description'] + '"));'
   return item_line
 
 def print_equipment_items_data():
