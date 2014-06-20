@@ -96,8 +96,8 @@ class Item extends Eloquent {
 
 		$stats = $this->statToString($stats, $this->magicattack, "Magic Attack");
 
-		$stats = $this->statToString($stats, $this->maxdamage, "Max Damage");
-		$stats = $this->statToString($stats, $this->mindamage, "Min Damage");
+		$stats = $this->statToString($stats, $this->weaponmax, "Max Damage");
+		$stats = $this->statToString($stats, $this->weaponmin, "Min Damage");
 
 		$stats = $this->statToString($stats, $this->maxinjury, "Max Injury");
 		$stats = $this->statToString($stats, $this->mininjury, "Min Injury");
