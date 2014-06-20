@@ -52,7 +52,7 @@ class Item extends Eloquent {
 		return $statstring;
 	}
 	private function rangeToString($statstring, $statmin, $statmax, $statname) {
-		if ($statmin === null || $statmax) return $statstring;
+		if ($statmin === null || $statmax == null) return $statstring;
 
 		$statstring = $statstring . "<br>" . $statname . ": " . $statmin . " ~ " . $statmax;
 		return $statstring;
