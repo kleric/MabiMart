@@ -51,6 +51,7 @@ class ItemController extends BaseController {
 	}
 	public function getItems() 
 	{
-		$this->layout->content = View::make('itemlist');
+		$this->layout->content = View::make('itemlist', array(
+			'item_list' => Item::all()));
 	}
 }
