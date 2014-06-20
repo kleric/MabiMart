@@ -1,0 +1,2386 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" /><title>Mabinogi World Wiki</title>
+<meta name="generator" content="MediaWiki 1.22.7" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Wiki Home" href="/index.php?title=Special:ExportRDF/Wiki_Home&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="/favicon_mw.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="Mabinogi World Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.mabinogiworld.com/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Mabinogi World Wiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.mabinogiworld.com/load.php?debug=false&amp;lang=en&amp;modules=ext.rtlcite%7Cmediawiki.legacy.commonPrint%2Cshared%7Cskins.vector&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.mabinogiworld.com/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: mwwiki-mw_:resourceloader:filter:minify-css:7:b39d77285b7bb1cb0e57863950809697 */</style>
+
+<script src="http://wiki.mabinogiworld.com/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Wiki_Home","wgTitle":"Wiki Home","wgCurRevisionId":592228,"wgRevisionId":592228,"wgArticleId":652,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Wiki_Home","wgIsProbablyEditable":false,"wgRestrictionEdit":["sysop"],"wgRestrictionMove":["sysop"],"wgIsMainPage":true,"wgWikiEditorEnabledModules":{"toolbar":false,"dialogs":false,"hidesig":true,"templateEditor":false,"templates":false,"preview":false,"previewDialog":false,"publish":false,"toc":false},"sfgAutocompleteValues":[],"sfgAutocompleteOnAllChars":false,"sfgFieldProperties":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"vector-simplesearch":1,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,
+"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"useeditwarning":1,"prefershttps":1,"lqtnotifytalk":false,"lqtdisplaydepth":15,"lqtdisplaycount":25,"lqtcustomsignatures":true,"lqt-watch-threads":true,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs90":false,"searchNs91":false,"searchNs92":false,"searchNs93":false,"searchNs102":false,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":false,"searchNs107":false,"searchNs108":false,"searchNs109":false,"searchNs274":
+false,"searchNs275":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: mwwiki-mw_:resourceloader:filter:minify-js:7:998bedbd7bfd0947a550eaac520ca2d6 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["ext.smw.style","ext.smw.tooltips","mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!-- Project Wonderful Ad Box Loader -->
+<!-- Put this after the <body> tag at the top of your page -->
+<script type="text/javascript">
+   (function(){function pw_load(){
+      if(arguments.callee.z)return;else arguments.callee.z=true;
+      var d=document;var s=d.createElement('script');
+      var x=d.getElementsByTagName('script')[0];
+      s.type='text/javascript';s.async=true;
+      s.src='//www.projectwonderful.com/pwa.js';
+      x.parentNode.insertBefore(s,x);}
+  if (window.attachEvent){
+    window.attachEvent('DOMContentLoaded',pw_load);
+    window.attachEvent('onload',pw_load);}
+  else{
+    window.addEventListener('DOMContentLoaded',pw_load,false);
+    window.addEventListener('load',pw_load,false);}})();
+</script>
+<!-- End Project Wonderful Ad Box Loader -->
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Wiki_Home skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<div id="siteNotice"><!-- Project Wonderful Ad Box Code -->
+<div style="text-align:center;"><div style="display:inline-block;height:84px;" id="pw_adbox_65436_1_0"></div></div>
+<script type="text/javascript"></script>
+<noscript><div style="text-align:center;"><div style="display:inline-block;"><map name="admap65436" id="admap65436"><area href="http://www.projectwonderful.com/out_nojs.php?r=0&amp;c=0&amp;id=65436&amp;type=1" shape="rect" coords="0,0,468,60" title="" alt="" target="_blank" /></map>
+<table cellpadding="0" cellspacing="0" style="width:468px;border-style:none;background-color:#ffffff;height:84px;"><tr><td><img src="http://www.projectwonderful.com/nojs.php?id=65436&amp;type=1" style="width:468px;height:60px;border-style:none;" usemap="#admap65436" alt="" /></td></tr><tr><td style="background-color:#ffffff;" colspan="1"><center><a style="font-size:10px;color:#0000ff;text-decoration:none;line-height:1.2;font-weight:bold;font-family:Tahoma, verdana,arial,helvetica,sans-serif;text-transform: none;letter-spacing:normal;text-shadow:none;white-space:normal;word-spacing:normal;" href="http://www.projectwonderful.com/advertisehere.php?id=65436&amp;type=1" target="_blank">Ads by Project Wonderful!  Your ad here, right now: $0</a></center></td></tr></table></div></div>
+</noscript>
+<!-- End Project Wonderful Ad Box Code --></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Wiki Home</span></h1>
+			<div id="bodyContent">
+								<div id="siteSub">From Mabinogi World Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="width:100%;">
+<tr>
+<td style="width:50%; vertical-align:top;" colspan="2">
+<div class="floatleft"><a href="/view/File:WikiLogo2.png" class="image"><img alt="WikiLogo2.png" src="/images/3/38/WikiLogo2.png" width="316" height="148" /></a></div>
+<p><b>Mabinogi World Wiki</b> is a dedicated English database of Mabinogi, an MMO developed by devCAT Studio and distributed by Nexon North America.
+</p><p>The wiki is currently being maintained by various contributors and editors like you. First established in December of 2007, we have <a href="/view/Special:Statistics" title="Special:Statistics"><b>9,570</b></a> articles to date. 
+</p><p>If you would like to help out, please see <a href="/view/Wiki_Tips_for_New_Editors" title="Wiki Tips for New Editors">Wiki Tips for New Editors</a>. Use the discussion tab on this page to propose new projects or changes or to ask for formatting help. Lastly, please refer to the <a href="/view/Mabinogi_World_Wiki:Policy" title="Mabinogi World Wiki:Policy">Wiki Policy</a>, or visit our <a rel="nofollow" class="external text" href="http://www.mabinogiworld.com/forum">Forum</a> (webchat: <a rel="nofollow" class="external autonumber" href="http://webchat.ppirc.net/?channels=mabinogi">[1]</a>) for general guidance.
+</p>
+</td></tr>
+<tr>
+<td style="width:50%; vertical-align:top;">
+<h2><span class="mw-headline" id="Daily_Shadow_Missions">Daily Shadow Missions</span></h2>
+</td>
+<td style="width:50%; vertical-align:top;">
+<h2><span class="mw-headline" id="NA_Game_Server_Status">NA Game Server Status</span></h2>
+</td></tr>
+<tr>
+<td>
+<table class="mabitable" style="margin-left: auto; margin-right: auto; width: 400px;">
+<tr>
+<th colspan="2"> Today's <a href="/view/Daily_Mission" title="Daily Mission" class="mw-redirect">Daily Missions</a>
+</th></tr>
+<tr>
+<th> <a href="/view/Taillteann_Shadow_Missions_List" title="Taillteann Shadow Missions List">Taillteann</a>
+</th>
+<td style="width: 75%;"> <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;"><table class="mabitable">
+<tr>
+  <th></th>
+  <th># Players</th>
+  <th>Basic</th>
+  <th>Int.</th>
+  <th>Adv.</th>
+  <th>Hard</th>
+  <th>Elite</th>
+</tr>
+<tr>
+  <th>Experience</th>
+  <td>3~6</td>
+  <td><span style="display:none">000000080000&amp;</span>80,000</td>
+  <td><span style="display:none">000000144000&amp;</span>144,000</td>
+  <td><span style="display:none">000000240000&amp;</span>240,000</td>
+  <td><span style="display:none">000000400000&amp;</span>400,000</td>
+  <td><span style="display:none">000000560000&amp;</span>560,000</td>
+</tr>
+</table>
+<span style="font-size: 8pt;">The exp reward of a Daily Mission is 2x the normal reward.<br />The gold reward does not change.</span></div><div id="mouseover-trigger" style="display: inline;"><a href="/view/Taillteann_Defensive_Battle" title="Taillteann Defensive Battle">Taillteann Defensive Battle</a></div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>
+</td></tr>
+<tr>
+<th> Taillteann VIP
+</th>
+<td> <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;"><table class="mabitable">
+<tr>
+  <th></th>
+  <th># Players</th>
+  <th>Basic</th>
+  <th>Int.</th>
+  <th>Adv.</th>
+  <th>Hard</th>
+  <th>Elite</th>
+</tr>
+<tr>
+  <th>Experience</th>
+  <td>1~3</td>
+  <td><span style="display:none">000000060000&amp;</span>60,000</td>
+  <td><span style="display:none">000000108000&amp;</span>108,000</td>
+  <td><span style="display:none">000000180000&amp;</span>180,000</td>
+  <td><span style="display:none">000000300000&amp;</span>300,000</td>
+  <td><span style="display:none">000000420000&amp;</span>420,000</td>
+</tr>
+</table>
+<span style="font-size: 8pt;">The exp reward of a Daily Mission is 2x the normal reward.<br />The gold reward does not change.</span></div><div id="mouseover-trigger" style="display: inline;"><a href="/view/Dorren%27s_Request" title="Dorren's Request">Dorren's Request</a></div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>
+</td></tr>
+<tr>
+<th> <a href="/view/Tara_Shadow_Missions_List" title="Tara Shadow Missions List">Tara</a>
+</th>
+<td> <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;"><table class="mabitable">
+<tr>
+  <th></th>
+  <th># Players</th>
+  <th>Basic</th>
+  <th>Int.</th>
+  <th>Adv.</th>
+  <th>Hard</th>
+  <th>Elite</th>
+</tr>
+<tr>
+  <th>Experience</th>
+  <td>1~8</td>
+  <td><span style="display:none">000000056000&amp;</span>56,000</td>
+  <td><span style="display:none">000000100800&amp;</span>100,800</td>
+  <td><span style="display:none">000000168000&amp;</span>168,000</td>
+  <td><span style="display:none">000000280000&amp;</span>280,000</td>
+  <td><span style="display:none">000000392000&amp;</span>392,000</td>
+</tr>
+</table>
+<span style="font-size: 8pt;">The exp reward of a Daily Mission is 2x the normal reward.<br />The gold reward does not change.</span></div><div id="mouseover-trigger" style="display: inline;"><a href="/view/The_Sulfur_Spider_inside_Shadow_Realm" title="The Sulfur Spider inside Shadow Realm">The Sulfur Spider inside Shadow Realm</a></div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>
+</td></tr>
+<tr>
+<th> Tara VIP
+</th>
+<td> <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;"><table class="mabitable">
+<tr>
+  <th></th>
+  <th># Players</th>
+  <th>Basic</th>
+  <th>Int.</th>
+  <th>Adv.</th>
+  <th>Hard</th>
+  <th>Elite</th>
+</tr>
+<tr>
+  <th>Experience</th>
+  <td>1</td>
+  <td><span style="display:none">000000024000&amp;</span>24,000</td>
+  <td><span style="display:none">000000043200&amp;</span>43,200</td>
+  <td><span style="display:none">000000072000&amp;</span>72,000</td>
+  <td><span style="display:none">000000120000&amp;</span>120,000</td>
+  <td><span style="display:none">000000168000&amp;</span>168,000</td>
+</tr>
+</table>
+<span style="font-size: 8pt;">The exp reward of a Daily Mission is 2x the normal reward.<br />The gold reward does not change.</span></div><div id="mouseover-trigger" style="display: inline;"><a href="/view/Their_Method" title="Their Method">Their Method</a></div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>
+</td></tr></table><div style="text-align: center; font-size:9px; font-weight: normal; color:gray; line-height: 90%; margin-top: 2px;"><span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.mabinogiworld.com/view/Wiki_Home/Daily_Shadow_Mission">Edit</a></span> this section<br />Hover over missions for more information.<br />Daily missions are provided by users, not the actual servers themselves.</div>
+</td>
+<td>
+<table class="center" style="background-color: #a0c6e3; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; font-size: 11px;">
+
+<tr style="background-color: #a0c6e3;">
+<th style="width:200px;"> <a href="/view/Mabinogi_Game_Server" title="Mabinogi Game Server">Current Game Status</a>
+</th>
+<td> <img alt="Mabinogi server online.png" src="/images/8/84/Mabinogi_server_online.png" width="80" height="15" />
+</td></tr>
+<tr style="background-color: #a0c6e3;">
+<th style="width:200px;"> <a href="/view/Mabinogi_Game_Server" title="Mabinogi Game Server">Login Server</a>
+</th>
+<td> <img alt="Mabinogi server online.png" src="/images/8/84/Mabinogi_server_online.png" width="80" height="15" />
+</td></tr>
+<tr style="background-color: #a0c6e3;">
+<td>
+<table class="collapsible collapsed" style="background-color: #a0c6e3; width: 100%;">
+<tr>
+<th> <a href="/view/Alexina_Game_Server" title="Alexina Game Server">Alexina</a>
+</th></tr>
+<tr style="display: none;">
+<td>
+<table class="center" style="background-color: #a0c6e3; width: 100%; text-align: left; padding-left: 5px;">
+<tr>
+<th> <a href="/view/Alexina_Game_Server#Housing" title="Alexina Game Server">Housing Channel</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online.png" src="/images/8/84/Mabinogi_server_online.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Alexina_Game_Server#Channel_1" title="Alexina Game Server">Channel 1</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Alexina_Game_Server#Channel_2" title="Alexina Game Server">Channel 2</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Alexina_Game_Server#Channel_3" title="Alexina Game Server">Channel 3</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Alexina_Game_Server#Channel_4" title="Alexina Game Server">Channel 4</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Alexina_Game_Server#Channel_5" title="Alexina Game Server">Channel 5</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Alexina_Game_Server#Channel_6" title="Alexina Game Server">Channel 6</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Alexina_Game_Server#Channel_7" title="Alexina Game Server">Channel 7</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr></table>
+</td></tr></table>
+</td>
+<td style="padding-top:7px; vertical-align:top;"> <img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" />
+</td></tr>
+<tr style="background-color: #a0c6e3;">
+<td>
+<table class="collapsible collapsed" style="background-color: #a0c6e3; width: 100%;">
+<tr>
+<th> <a href="/view/Mari_Game_Server" title="Mari Game Server">Mari</a>
+</th></tr>
+<tr style="display: none;">
+<td>
+<table class="center" style="background-color: #a0c6e3; width: 100%; text-align: left; padding-left: 5px;">
+<tr>
+<th> <a href="/view/Mari_Game_Server#Housing" title="Mari Game Server">Housing Channel</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online.png" src="/images/8/84/Mabinogi_server_online.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Mari_Game_Server#Channel_1" title="Mari Game Server">Channel 1</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Mari_Game_Server#Channel_2" title="Mari Game Server">Channel 2</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Mari_Game_Server#Channel_3" title="Mari Game Server">Channel 3</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Mari_Game_Server#Channel_4" title="Mari Game Server">Channel 4</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Mari_Game_Server#Channel_5" title="Mari Game Server">Channel 5</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Mari_Game_Server#Channel_6" title="Mari Game Server">Channel 6</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Mari_Game_Server#Channel_7" title="Mari Game Server">Channel 7</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr></table>
+</td></tr></table>
+</td>
+<td style="padding-top:7px; vertical-align:top;"> <img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" />
+</td></tr>
+<tr style="background-color: #a0c6e3;">
+<td>
+<table class="collapsible collapsed" style="background-color: #a0c6e3; width: 100%;">
+<tr>
+<th> <a href="/view/Ruairi_Game_Server" title="Ruairi Game Server">Ruairi</a>
+</th></tr>
+<tr style="display: none;">
+<td>
+<table class="center" style="background-color: #a0c6e3; width: 100%; text-align: left; padding-left: 5px;">
+<tr>
+<th> <a href="/view/Ruairi_Game_Server#Housing" title="Ruairi Game Server">Housing Channel</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online.png" src="/images/8/84/Mabinogi_server_online.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Ruairi_Game_Server#Channel_1" title="Ruairi Game Server">Channel 1</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Ruairi_Game_Server#Channel_2" title="Ruairi Game Server">Channel 2</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Ruairi_Game_Server#Channel_3" title="Ruairi Game Server">Channel 3</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Ruairi_Game_Server#Channel_4" title="Ruairi Game Server">Channel 4</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Ruairi_Game_Server#Channel_5" title="Ruairi Game Server">Channel 5</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Ruairi_Game_Server#Channel_6" title="Ruairi Game Server">Channel 6</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Ruairi_Game_Server#Channel_7" title="Ruairi Game Server">Channel 7</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr></table>
+</td></tr></table>
+</td>
+<td style="padding-top:7px; vertical-align:top;"> <img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" />
+</td></tr>
+<tr style="background-color: #a0c6e3;">
+<td>
+<table class="collapsible collapsed" style="background-color: #a0c6e3; width: 100%;">
+<tr>
+<th> <a href="/view/Tarlach_Game_Server" title="Tarlach Game Server">Tarlach</a>
+</th></tr>
+<tr style="display: none;">
+<td>
+<table class="center" style="background-color: #a0c6e3; width: 100%; text-align: left; padding-left: 5px;">
+<tr>
+<th> <a href="/view/Tarlach_Game_Server#Housing" title="Tarlach Game Server">Housing Channel</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online.png" src="/images/8/84/Mabinogi_server_online.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Tarlach_Game_Server#Channel_1" title="Tarlach Game Server">Channel 1</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Tarlach_Game_Server#Channel_2" title="Tarlach Game Server">Channel 2</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Tarlach_Game_Server#Channel_3" title="Tarlach Game Server">Channel 3</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Tarlach_Game_Server#Channel_4" title="Tarlach Game Server">Channel 4</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Tarlach_Game_Server#Channel_5" title="Tarlach Game Server">Channel 5</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Tarlach_Game_Server#Channel_6" title="Tarlach Game Server">Channel 6</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr>
+<tr>
+<th> <a href="/view/Tarlach_Game_Server#Channel_7" title="Tarlach Game Server">Channel 7</a>
+</th>
+<td> <div class="floatright"><img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" /></div>
+</td></tr></table>
+</td></tr></table>
+</td>
+<td style="padding-top:7px; vertical-align:top;"> <img alt="Mabinogi server online event.png" src="/images/b/b0/Mabinogi_server_online_event.png" width="80" height="15" />
+</td></tr>
+<tr style="background-color: #a0c6e3;">
+<th> <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net">Nexon Website</a>
+</th>
+<td> <img alt="Mabinogi server online.png" src="/images/8/84/Mabinogi_server_online.png" width="80" height="15" />
+</td></tr></table>
+<div style="text-align: center; font-size:85%; color:gray; line-height: 90%;"><small><a href="/view/Wiki_Home/Server_Status" title="Wiki Home/Server Status">Edit</a> this section<br />Server statuses are provided by users, not the actual servers themselves.</small></div>
+</td></tr>
+<tr>
+<td style="width:50%; vertical-align:top;">
+<h2><span class="mw-headline" id="General_Mabinogi_News">General Mabinogi News</span></h2>
+<div style="max-height: 250px; overflow: auto; padding-right: 5px;"><span style="float:right;"><small><a rel="nofollow" class="external text" href="http://wiki.mabinogiworld.com/index.php?title=Wiki_Home/WikiUpdates&amp;action=edit">Edit</a> this section</small></span>
+<p><i>June 18<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li>Nexon has announced that a 2x AP Event will be held this weekend in compensation for the <a href="/view/Battle_School_Event" title="Battle School Event">Battle School Event</a>. For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/Events/1/00HpG">here</a>.
+</li>
+<li>Nexon has announced that the <a href="/view/Demonic_Box_Gachapon" title="Demonic Box Gachapon">Demonic Box Gachapon</a> sale will be extended to June 23<sup>rd</sup>, 2014 by popular demand. For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/All/1/00HqX/">here</a>.
+</li>
+<li>The <a href="/view/Liar_Game_Event" title="Liar Game Event">Liar Game Event</a> has ended.
+</li>
+</ul>
+<p><i>June 17<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li>Nexon has announced that Mabinogi will be taken down for a scheduled maintenance on June 18<sup>th</sup> at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 10:00am<br />GMT: 2:00pm<br />AEDT: 1:00am</div><div id="mouseover-trigger" style="display: inline;">7:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span> until the estimated conclusion time at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 12:30pm<br />GMT: 4:30pm<br />AEDT: 3:30am</div><div id="mouseover-trigger" style="display: inline;">9:30am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span> for a total of 2.5 hours.&#160;For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/Maintenances/1/00Hr8/">here</a>.
+<ul>
+<li>The maintenance has concluded.
+</li>
+</ul>
+</li>
+</ul>
+<p><i>June 16<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li>The <a href="/view/Triple_AP_Weekends_Event" title="Triple AP Weekends Event">Triple AP Weekends Event</a> for the last weekend has ended.
+</li>
+</ul>
+<p><i>June 14<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li>The <a href="/view/Triple_AP_Weekends_Event" title="Triple AP Weekends Event">Triple AP Weekends Event</a> for the last weekend has begun.
+</li>
+</ul>
+<p><i>June 11<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li>Nexon has announced that Mabinogi will be taken down for a scheduled maintenance on June 12<sup>th</sup> at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 10:00am<br />GMT: 2:00pm<br />AEDT: 1:00am</div><div id="mouseover-trigger" style="display: inline;">7:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span> until the estimated conclusion time at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 3:00pm<br />GMT: 7:00pm<br />AEDT: 6:00am</div><div id="mouseover-trigger" style="display: inline;">12:00pm PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span> for a total of 5 hours.&#160;For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/Maintenances/1/00Hqm/">here</a>.
+<ul>
+<li>The maintenance has concluded.
+</li>
+</ul>
+</li>
+<li>The <a href="/view/Battle_School_Event" title="Battle School Event">Battle School Event</a> has begun.
+</li>
+<li>The <a href="/view/Demonic_Box_Gachapon" title="Demonic Box Gachapon">Demonic Box Gachapon</a> is now available in the Web Shop until June 17<sup>th</sup>. For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/news/all/1/00HqX/return-of-the-demonic-box">here</a>.
+</li>
+<li>The <a href="/view/Lorraine%27s_Strange_Dream_Event" title="Lorraine's Strange Dream Event">Lorraine's Strange Dream Event</a> and <a href="/view/Pillow_Fighting_Event_(May_2014)" title="Pillow Fighting Event (May 2014)">Pillow Fighting Event (May 2014)</a> have ended. 
+</li>
+</ul>
+<p><i>June 10<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li>Nexon has announced that the sale of <a href="/view/Rebel_Battle_Bag_(M)" title="Rebel Battle Bag (M)">Rebel Battle Bag (M)</a> and <a href="/view/Rebel_Battle_Bag_(F)" title="Rebel Battle Bag (F)">Rebel Battle Bag (F)</a> will extend 1 more day to Wednesday, June 11. For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/Events/1/00HpG">here</a>.
+</li>
+</ul>
+<p><i>June 9<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li>The <a href="/view/Triple_AP_Weekends_Event" title="Triple AP Weekends Event">Triple AP Weekends Event</a> for the third weekend has ended.
+</li>
+</ul>
+<p><i>June 7<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li>The <a href="/view/Triple_AP_Weekends_Event" title="Triple AP Weekends Event">Triple AP Weekends Event</a> for the third weekend has begun.
+</li>
+</ul>
+<p><i>June 4<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li>The <a href="/view/Liar_Game_Event" title="Liar Game Event">Liar Game Event</a> has begun.
+</li>
+</ul>
+<p><i>June 3<sup>rd</sup>, 2014</i>
+</p>
+<ul>
+<li>Nexon has announced that Mabinogi will be taken down for a scheduled maintenance on June 5<sup>th</sup> at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 10:00am<br />GMT: 2:00pm<br />AEDT: 1:00am</div><div id="mouseover-trigger" style="display: inline;">7:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span> until the estimated conclusion time at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 1:00pm<br />GMT: 5:00pm<br />AEDT: 4:00am</div><div id="mouseover-trigger" style="display: inline;">10:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span> for a total of 3 hours.&#160;For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/Maintenances/1/00Hq2/">here</a>.
+<ul>
+<li>The maintenance has concluded.
+</li>
+</ul>
+</li>
+<li>Nexon has announced that the <a href="/view/Liar_Game_Event" title="Liar Game Event">Liar Game Event</a> will begin on June 4<sup>th</sup>, 2014. For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/Events/1/00HpQ">here</a>.
+</li>
+</ul>
+<p><i>June 2<sup>nd</sup>, 2014</i>
+</p>
+<ul>
+<li>The <a href="/view/Triple_AP_Weekends_Event" title="Triple AP Weekends Event">Triple AP Weekends Event</a> for the second weekend has ended.
+</li>
+</ul>
+<p><i>May 31<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li>The <a href="/view/Triple_AP_Weekends_Event" title="Triple AP Weekends Event">Triple AP Weekends Event</a> for the second weekend has begun.
+</li>
+<li>Nexon has announced that the <a href="/view/Pillow_Fighting_Event_(May_2014)" title="Pillow Fighting Event (May 2014)">Pillow Fighting Event (May 2014)</a> will be extended to June 10<sup>th</sup>, 2014 in compensation of technical difficulties. For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/Events/1/00HnG">here</a>.
+</li>
+</ul>
+<p><i>May 30<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li>Nexon has announced that Mabinogi will be taken down for an unscheduled maintenance on May 30<sup>th</sup> at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 2:00pm<br />GMT: 6:00pm<br />AEDT: 5:00am</div><div id="mouseover-trigger" style="display: inline;">11:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span> until the estimated conclusion time at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 3:00pm<br />GMT: 7:00pm<br />AEDT: 6:00am</div><div id="mouseover-trigger" style="display: inline;">12:00pm PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span> for a total of 1 hour.&#160;For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/Maintenances/1/00Hpb/">here</a>.
+<ul>
+<li>The maintenance has concluded.
+</li>
+</ul>
+</li>
+</ul>
+<p><i>May 28<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li>The <a href="/view/Rebel_Battle_Bag_(F)" title="Rebel Battle Bag (F)">Rebel Battle Bag (F)</a> and <a href="/view/Rebel_Battle_Bag_(M)" title="Rebel Battle Bag (M)">Rebel Battle Bag (M)</a> are now available in the <a href="/view/Item_Shop" title="Item Shop">Item Shop</a> until June 10<sup>th</sup>, 2014. For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/All/1/00HpG">here</a>.
+</li>
+<li>Nexon has announced that the <a href="/view/Battle_School_Event" title="Battle School Event">Battle School Event</a> will begin on June 11<sup>th</sup>, 2014. For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/Events/1/00HpG">here</a>.
+</li>
+</ul>
+<p><i>May 27<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li>The <a href="/view/Triple_AP_Weekends_Event" title="Triple AP Weekends Event">Triple AP Weekends Event</a> for the first weekend has ended.
+</li>
+<li>Nexon has announced that Mabinogi will be taken down for a scheduled maintenance on May 28<sup>th</sup> at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 10:00am<br />GMT: 2:00pm<br />AEDT: 1:00am</div><div id="mouseover-trigger" style="display: inline;">7:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span> until the estimated conclusion time at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 1:00pm<br />GMT: 5:00pm<br />AEDT: 4:00am</div><div id="mouseover-trigger" style="display: inline;">10:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span> for a total of 3 hours.&#160;For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/Maintenances/1/00HpF/">here</a>.
+<ul>
+<li>The maintenance has concluded.
+</li>
+</ul>
+</li>
+</ul>
+<p><i>May 24<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li>The <a href="/view/Triple_AP_Weekends_Event" title="Triple AP Weekends Event">Triple AP Weekends Event</a> for the first weekend has begun.
+<ul>
+<li>Due to delayed activation of the event, the <a href="/view/Triple_AP_Weekends_Event" title="Triple AP Weekends Event">Triple AP Weekends Event</a> for the first weekend has been extended until May 26<sup>th</sup>, 2014.
+</li>
+</ul>
+</li>
+</ul>
+<p><i>May 22<sup>nd</sup>, 2014</i>
+</p>
+<ul>
+<li>Nexon has announced that every weekend between May 24, 2014 to June 15, 2014 will reward 3x AP per level. For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/Events/1/00Hon">here</a>.
+</li>
+</ul>
+<p><i>May 21<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li>The <a href="/view/Lorraine%27s_Strange_Dream_Event" title="Lorraine's Strange Dream Event">Lorraine's Strange Dream Event</a> has begun.
+</li>
+<li>The <a href="/view/Pillow_Fighting_Event_(May_2014)" title="Pillow Fighting Event (May 2014)">Pillow Fighting Event (May 2014)</a> has begun. For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/Events/1/00HnG">here</a>.
+</li>
+<li>The <a href="/view/Flying_Food_Truck" title="Flying Food Truck">Flying Food Truck</a> is now available in the Web Shop until June 3<sup>rd</sup>. For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/Announcements/1/00Hnm">here</a>.
+</li>
+<li>The <a href="/view/Torchlight_Bazaar_Event_(May_2014)" title="Torchlight Bazaar Event (May 2014)">Torchlight Bazaar Event (May 2014)</a> has ended.
+</li>
+</ul>
+<p><i>May 20<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li>Nexon has announced that Mabinogi will be taken down for a scheduled maintenance on May 21<sup>st</sup> at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 10:00am<br />GMT: 2:00pm<br />AEDT: 1:00am</div><div id="mouseover-trigger" style="display: inline;">7:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span> until the estimated conclusion time at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 1:30pm<br />GMT: 5:30pm<br />AEDT: 4:30am</div><div id="mouseover-trigger" style="display: inline;">10:30am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span> for a total of 3.5 hours.&#160;For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/Maintenances/1/00Ho6/">here</a>.
+<ul>
+<li>The maintenance has concluded.
+</li>
+</ul>
+</li>
+<li>Nexon has announced that the <a href="/view/Lorraine%27s_Strange_Dream_Event" title="Lorraine's Strange Dream Event">Lorraine's Strange Dream Event</a> will begin on May 21<sup>st</sup>, 2014. For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/Events/1/00Hnx">here</a>.
+</li>
+</ul>
+<p><i>May 14<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li>The <a href="/view/Dressing_Room_Hoarder_Event" title="Dressing Room Hoarder Event">Dressing Room Hoarder Event</a> and <a href="/view/Era_of_the_Chef" title="Era of the Chef">Era of the Chef</a> events have ended.
+</li>
+<li>The <a href="/view/Torchlight_Bazaar_Event_(May_2014)" title="Torchlight Bazaar Event (May 2014)">Torchlight Bazaar Event (May 2014)</a> has begun.
+</li>
+<li>From May 14 to the 27, the following pets will be on for 50% off regular price: <a href="/view/White_Elephant" title="White Elephant">White Elephant</a>, <a href="/view/Mini_Bear" title="Mini Bear">Mini Bear</a>, <a href="/view/Yellow_Tiger_Cub" title="Yellow Tiger Cub">Yellow Tiger Cub</a>, <a href="/view/Red_Panda" title="Red Panda">Red Panda</a>, and <a href="/view/Brown_Fox_(Pet)" title="Brown Fox (Pet)">Brown Fox (Pet)</a>. After May 27th, the pets will return to regular price. For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/Announcements/1/00HnA">here</a>.
+</li>
+<li>Nexon has announced that Mabinogi will be taken down for a scheduled maintenance on May 15<sup>th</sup> at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 9:30am<br />GMT: 1:30pm<br />AEDT: 12:30am</div><div id="mouseover-trigger" style="display: inline;">6:30am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span> until the estimated conclusion time at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 1:00pm<br />GMT: 5:00pm<br />AEDT: 4:00am</div><div id="mouseover-trigger" style="display: inline;">10:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span> for a total of 3.5 hours.&#160;For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/Maintenances/1/00Hnk/">here</a>.
+<ul>
+<li>The maintenance has concluded.
+</li>
+</ul>
+</li>
+</ul>
+<p><i>May 13<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li>Nexon has announced that the <a href="/view/Torchlight_Bazaar_Event_(May_2014)" title="Torchlight Bazaar Event (May 2014)">Torchlight Bazaar Event (May 2014)</a> will begin on May 14<sup>th</sup>, 2014. For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/Events/1/00Hn7">here</a>.
+</li>
+</ul>
+<p><i>May 11<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li>The <a href="/view/Double_Rainbow_Event" title="Double Rainbow Event">Double Rainbow Event</a> has ended.
+</li>
+<li>The <a href="/view/Era_of_the_Chef" title="Era of the Chef">Era of the Chef</a> event has resumed.
+</li>
+</ul>
+<p><i>May 10<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li>The <a href="/view/Double_Rainbow_Event" title="Double Rainbow Event">Double Rainbow Event</a> has begun.
+</li>
+<li>The <a href="/view/Era_of_the_Chef" title="Era of the Chef">Era of the Chef</a> event has paused.
+</li>
+</ul>
+<p><i>May 6<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li>Nexon has announced that Mabinogi will be taken down for a scheduled maintenance on May 7<sup>th</sup> at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 10:00am<br />GMT: 2:00pm<br />AEDT: 1:00am</div><div id="mouseover-trigger" style="display: inline;">7:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span> until the estimated conclusion time at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 1:00pm<br />GMT: 5:00pm<br />AEDT: 4:00am</div><div id="mouseover-trigger" style="display: inline;">10:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span> for a total of 3 hours.&#160;For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/Maintenances/1/00Hmj/">here</a>.
+<ul>
+<li>The maintenance has concluded.
+</li>
+</ul>
+</li>
+</ul>
+<p><i>May 4<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li><a href="/view/The_Gift_of_the_Culinary_Artist:_Cutlery_Giveaway" title="The Gift of the Culinary Artist: Cutlery Giveaway">The Gift of the Culinary Artist: Cutlery Giveaway</a> event has ended.
+</li>
+</ul>
+<p><i>May 3<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li><a href="/view/The_Gift_of_the_Culinary_Artist:_Cutlery_Giveaway" title="The Gift of the Culinary Artist: Cutlery Giveaway">The Gift of the Culinary Artist: Cutlery Giveaway</a> event has begun.
+</li>
+</ul>
+<p><i>May 2<sup>nd</sup>, 2014</i>
+</p>
+<ul>
+<li>The <a href="/view/99_NX_Gachapon" title="99 NX Gachapon">99 NX Gachapon</a> is now available in the <a href="/view/Web_Shop" title="Web Shop">Web Shop</a> for 99 NX from the 2<sup>nd</sup> to the 11<sup>th</sup>. For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/Announcements/1/00HmS">here</a>.
+</li>
+</ul>
+<p><i>May 1<sup>st</sup>, 2014</i>
+</p>
+<ul>
+<li>Nexon has announced that a <a href="/view/Double_Rainbow_Event" title="Double Rainbow Event">Double Rainbow Event</a> will occur on May 10<sup>th</sup>, 2014. For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/Events/1/00HmV">here</a>.
+</li>
+</ul>
+<p><i>April 30<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li>The <a href="/view/Dressing_Room_Hoarder_Event" title="Dressing Room Hoarder Event">Dressing Room Hoarder Event</a> and the <a href="/view/Era_of_the_Chef" title="Era of the Chef">Era of the Chef</a> events have begun.
+</li>
+<li>The <a href="/view/Doki_Doki_Island_Event" title="Doki Doki Island Event">Doki Doki Island Event</a>, <a href="/view/Treasure_Box_Event_(April_2014)" title="Treasure Box Event (April 2014)">Treasure Box Event (April 2014)</a>, and the <a href="/view/Pets_Only_Animal_Dungeon!_Event" title="Pets Only Animal Dungeon! Event">Pets Only Animal Dungeon! Events</a> have ended.
+</li>
+<li>Nexon has announced that <a href="/view/The_Gift_of_the_Culinary_Artist:_Cutlery_Giveaway" title="The Gift of the Culinary Artist: Cutlery Giveaway">The Gift of the Culinary Artist: Cutlery Giveaway</a> event will occur on May 3<sup>rd</sup>, 2014. For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/Events/1/00Hm6">here</a>.
+</li>
+</ul>
+<p><i>April 29<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li>Nexon has announced that Mabinogi will be taken down for a scheduled maintenance on April 30<sup>th</sup> at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 10:00am<br />GMT: 2:00pm<br />AEDT: 1:00am</div><div id="mouseover-trigger" style="display: inline;">7:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span> until the estimated conclusion time at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 1:30pm<br />GMT: 5:30pm<br />AEDT: 4:30am</div><div id="mouseover-trigger" style="display: inline;">10:30am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span> for a total of 3.5 hours.&#160;For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/Maintenances/1/00Hm7/">here</a>.
+<ul>
+<li>The maintenance has concluded.
+</li>
+</ul>
+</li>
+<li>Nexon has announced that the that the <a href="/view/Dressing_Room_Hoarder_Event" title="Dressing Room Hoarder Event">Dressing Room Hoarder Event</a> will occur on April 30<sup>th</sup>, 2014. For more information, see <a rel="nofollow" class="external text" href="http://mabinogi.nexon.net/News/Events/1/00Hll">here</a>.
+</li>
+<li>Nexon held a live <a href="/view/Nexon_Q%26A_10" title="Nexon Q&amp;A 10">Q&amp;A session</a> from <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 8:15pm<br />GMT: 12:15am<br />AEDT: 11:15am</div><div id="mouseover-trigger" style="display: inline;">5:15pm PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span> to <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 9:05pm<br />GMT: 1:05am<br />AEDT: 12:05pm</div><div id="mouseover-trigger" style="display: inline;">6:05pm PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+(<b><a href="/view/Wiki_Home/WikiUpdatesOld" title="Wiki Home/WikiUpdatesOld">Older News</a>...</b>)</div>
+</td>
+<td style="width:50%; vertical-align:top;">
+<h2><span class="mw-headline" id="Mabinogi_Server_Updates">Mabinogi Server Updates</span></h2>
+<div style="max-height: 250px; overflow: auto; padding-right: 5px;"><span style="float:right;"><small><a rel="nofollow" class="external text" href="http://wiki.mabinogiworld.com/index.php?title=Wiki_Home/ServerUpdates&amp;action=edit">Edit</a> this section</small></span>
+<div style="width: 285px; background: #eff; border: 1px solid #B6B6B6; margin-left: 0px; padding: 0px 5px 0px 5px;"><b>Client Version</b> 186<b><br />Launcher Version </b>147<b><br />The latest patch was on </b>June 12<sup>th</sup>, 2014<b></div></b>
+<p><i>April 30<sup>th</sup>, 2014</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Culinary_Artist" title="Patches">Aces: Culinary Artist</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 12:00pm<br />GMT: 4:00pm<br />AEDT: 3:00am</div><div id="mouseover-trigger" style="display: inline;">9:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>January 23<sup>rd</sup>, 2014</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Professor_J" title="Patches">Aces: Professor J</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EST: 1:55pm<br />GMT: 5:55pm<br />AEST: 4:55am</div><div id="mouseover-trigger" style="display: inline;">10:55am PST</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>December 19<sup>th</sup>, 2013</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Starlet" title="Patches">Aces: Starlet</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EST: 5:00am<br />GMT: 9:00am<br />AEST: 8:00pm</div><div id="mouseover-trigger" style="display: inline;">2:00am PST</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>November 14<sup>th</sup>, 2013</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Merlin" title="Patches">Aces: Merlin</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EST: 2:30pm<br />GMT: 6:30pm<br />AEST: 5:30am</div><div id="mouseover-trigger" style="display: inline;">11:30am PST</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>September 18<sup>th</sup>, 2013</i>
+</p>
+<ul>
+<li><a href="/view/Patches#The_Enlightenment" title="Patches">The Enlightenment</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 2:30pm<br />GMT: 6:30pm<br />AEDT: 5:30am</div><div id="mouseover-trigger" style="display: inline;">11:30am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>August 30<sup>th</sup>, 2013</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_18:_Episode_10_-_Divine_Fury:_The_Advent" title="Patches">Generation 18: Episode 10 - Divine Fury: The Advent</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 9:00pm<br />GMT: 1:00am<br />AEDT: 12:00pm</div><div id="mouseover-trigger" style="display: inline;">6:00pm PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>August 23<sup>rd</sup>, 2013</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_18:_Episode_9_-_Fate.27s_Design:_The_Stand" title="Patches">Generation 18: Episode 9 - Fate's Design: The Stand</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 9:00pm<br />GMT: 1:00am<br />AEDT: 12:00pm</div><div id="mouseover-trigger" style="display: inline;">6:00pm PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>August 16<sup>th</sup>, 2013</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_18:_Episode_8_-_Holy_Land:_The_Sacrifice" title="Patches">Generation 18: Episode 8 - Holy Land: The Sacrifice</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 9:00pm<br />GMT: 1:00am<br />AEDT: 12:00pm</div><div id="mouseover-trigger" style="display: inline;">6:00pm PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>August 9<sup>th</sup>, 2013</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_18:_Episode_7_-_Heroic_Path:_The_Choice" title="Patches">Generation 18: Episode 7 - Heroic Path: The Choice</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 9:00pm<br />GMT: 1:00am<br />AEDT: 12:00pm</div><div id="mouseover-trigger" style="display: inline;">6:00pm PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>August 7<sup>th</sup>, 2013</i>
+</p>
+<ul>
+<li>The <a href="/view/Patches#Skill_Update" title="Patches">Skill Update</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 2:00pm<br />GMT: 6:00pm<br />AEDT: 5:00am</div><div id="mouseover-trigger" style="display: inline;">11:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>August 2<sup>nd</sup>, 2013</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_18:_Episode_6_-_Demon_Night:_The_Truth" title="Patches">Generation 18: Episode 6 - Demon Night: The Truth</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 9:00pm<br />GMT: 1:00am<br />AEDT: 12:00pm</div><div id="mouseover-trigger" style="display: inline;">6:00pm PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>July 26<sup>th</sup>, 2013</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_18:_Episode_5_-_Proud_Heritage:_The_Battle" title="Patches">Generation 18: Episode 5 - Proud Heritage: The Battle</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 9:00pm<br />GMT: 1:00am<br />AEDT: 12:00pm</div><div id="mouseover-trigger" style="display: inline;">6:00pm PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>July 19<sup>th</sup>, 2013</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_18:_Episode_4_-_Mystic_Training:_The_Ritual" title="Patches">Generation 18: Episode 4 - Mystic Training: The Ritual</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 9:00pm<br />GMT: 1:00am<br />AEDT: 12:00pm</div><div id="mouseover-trigger" style="display: inline;">6:00pm PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>July 17<sup>th</sup>, 2013</i>
+</p>
+<ul>
+<li>The <a href="/view/Patches#White_Dragon_Raid" title="Patches">White Dragon Raid implementation</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 2:00pm<br />GMT: 6:00pm<br />AEDT: 5:00am</div><div id="mouseover-trigger" style="display: inline;">11:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>July 12<sup>th</sup>, 2013</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_18:_Episode_3_-_Waking_Nightmare:_The_Chase" title="Patches">Generation 18, Episode 3 - Walking Nightmare: The Chase</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 9:00pm<br />GMT: 1:00am<br />AEDT: 12:00pm</div><div id="mouseover-trigger" style="display: inline;">6:00pm PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>July 5<sup>th</sup>, 2013</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_18.2C_Episode_2_-_Hero.27s_Return:_The_Trap" title="Patches">Generation 18, Episode 2 - Hero's Return: The Trap</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 9:00pm<br />GMT: 1:00am<br />AEDT: 12:00pm</div><div id="mouseover-trigger" style="display: inline;">6:00pm PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>June 27<sup>th</sup>, 2013</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_18.2C_Episode_1_-_Fate.27s_Origin:_The_Demon" title="Patches">Generation 18, Episode 1 - Fate's Origin: The Demon</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 7:00am<br />GMT: 11:00am<br />AEDT: 10:00pm</div><div id="mouseover-trigger" style="display: inline;">4:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>June 26<sup>th</sup>, 2013</i>
+</p>
+<ul>
+<li>The <a href="/view/Patches#Iria_Update" title="Patches">Iria Update</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 7:00am<br />GMT: 11:00am<br />AEDT: 10:00pm</div><div id="mouseover-trigger" style="display: inline;">4:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>
+</li>
+</ul>
+<p><i>May 22<sup>nd</sup>, 2013</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_17.2C_Season_4:_Nightmare" title="Patches">Generation 17, Season 4: Nightmare (Part 2)</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 2:00pm<br />GMT: 6:00pm<br />AEDT: 5:00am</div><div id="mouseover-trigger" style="display: inline;">11:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>April 24<sup>th</sup>, 2013</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_17.2C_Season_4:_Nightmare" title="Patches">Generation 17, Season 4: Nightmare (Part 1)</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 2:56pm<br />GMT: 6:56pm<br />AEDT: 5:56am</div><div id="mouseover-trigger" style="display: inline;">11:56am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>December 20<sup>th</sup>, 2012</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_17.2C_Season_3:_Shamala" title="Patches">Generation 17, Season 3: Shamala</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EST: 3:18pm<br />GMT: 7:18pm<br />AEST: 6:18am</div><div id="mouseover-trigger" style="display: inline;">12:18pm PST</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>October 26<sup>th</sup>, 2012</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_17.2C_Season_1:_Grandmaster" title="Patches">Generation 17, Season 1: Grandmaster</a> &amp; <a href="/view/Patches#Generation_17.2C_Season_2:_Bound_in_Destiny:_Puppeteer" title="Patches">Generation 17, Season 2: Bound in Destiny: Puppeteer</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 1:00pm<br />GMT: 5:00pm<br />AEDT: 4:00am</div><div id="mouseover-trigger" style="display: inline;">10:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>July 26<sup>th</sup>, 2012</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_16.2C_Season_2:_The_Maestro_of_the_Battlefield" title="Patches">Generation 16, Season 2 (Extra): The Maestro of the Battlefield</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 10:05am<br />GMT: 2:05pm<br />AEDT: 1:05am</div><div id="mouseover-trigger" style="display: inline;">7:05am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>June 29<sup>th</sup>, 2012</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_16.2C_Season_2:_Genesis" title="Patches">Generation 16, Season 2: Genesis</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 4:30pm<br />GMT: 8:30pm<br />AEDT: 7:30am</div><div id="mouseover-trigger" style="display: inline;">1:30pm PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>May 31<sup>st</sup>, 2012</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_16.2C_Season_1" title="Patches">Generation 16, Season 1</a> (<a href="/view/Generation_16:_Macbeth" title="Generation 16: Macbeth">Macbeth</a>) began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 5:30pm<br />GMT: 9:30pm<br />AEDT: 8:30am</div><div id="mouseover-trigger" style="display: inline;">2:30pm PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>April 4<sup>th</sup>, 2012</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_15.2C_Season_3" title="Patches">Generation 15, Season 3</a> &amp; <a href="/view/Patches#Generation_15.2C_Season_4" title="Patches">Season 4</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 8:00am<br />GMT: 12:00pm<br />AEDT: 11:00pm</div><div id="mouseover-trigger" style="display: inline;">5:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>December 21<sup>st</sup>, 2011</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_15.2C_Season_2" title="Patches">Generation 15, Season 2</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EST: 11:00am<br />GMT: 4:00pm<br />AEST: 2:00am</div><div id="mouseover-trigger" style="display: inline;">8:00am PST</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>October 29<sup>th</sup>, 2011</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_15.2C_Season_1" title="Patches">Generation 15, Season 1</a> (<a href="/view/Generation_15:_Merchant_of_Venice" title="Generation 15: Merchant of Venice">Merchant of Venice</a>) began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 3:00pm<br />GMT: 7:00pm<br />AEDT: 6:00am</div><div id="mouseover-trigger" style="display: inline;">12:00pm PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>July 20<sup>th</sup>, 2011</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_14.2C_Season_4" title="Patches">Generation 14, Season 4</a>  began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 8:30am<br />GMT: 12:30pm<br />AEDT: 11:30pm</div><div id="mouseover-trigger" style="display: inline;">5:30am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>June 22<sup>nd</sup>, 2011</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_14.2C_Season_3" title="Patches">Generation 14, Season 3</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 6:00am<br />GMT: 10:00am<br />AEDT: 9:00pm</div><div id="mouseover-trigger" style="display: inline;">3:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>April 27<sup>th</sup>, 2011</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_14.2C_Season_1" title="Patches">Generation 14, Season 1</a> &amp; <a href="/view/Patches#Generation_14.2C_Season_2" title="Patches">Season 2</a> (<a href="/view/Generation_14:_Romeo_and_Juliet" title="Generation 14: Romeo and Juliet">Romeo and Juliet</a>) began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 7:00am<br />GMT: 11:00am<br />AEDT: 10:00pm</div><div id="mouseover-trigger" style="display: inline;">4:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>February 23<sup>rd</sup>, 2011</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_13.2C_Season_2" title="Patches">Generation 13, Season 2</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EST: 5:00am<br />GMT: 10:00am<br />AEST: 8:00pm</div><div id="mouseover-trigger" style="display: inline;">2:00am PST</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>January 19<sup>th</sup>, 2011</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_13.2C_Season_1" title="Patches">Generation 13, Season 1</a> (<a href="/view/Generation_13:_Hamlet" title="Generation 13: Hamlet">Hamlet</a>) began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EST: 9:30am<br />GMT: 2:30pm<br />AEST: 12:30am</div><div id="mouseover-trigger" style="display: inline;">6:30am PST</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>October 20<sup>th</sup>, 2010</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_12_-_Return_of_the_Hero" title="Patches">Generation 12</a> (<a href="/view/Generation_12:_Return_of_the_Hero" title="Generation 12: Return of the Hero">Return of the Hero</a>) began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 2:30pm<br />GMT: 6:30pm<br />AEDT: 5:30am</div><div id="mouseover-trigger" style="display: inline;">11:30am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>August 11t<sup>th</sup>, 2010</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_11_-_Sword_of_the_Gods" title="Patches">Generation 11</a> (<a href="/view/Generation_11:_Sword_of_the_Gods" title="Generation 11: Sword of the Gods">Sword of the Gods</a>) began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 4:30pm<br />GMT: 8:30pm<br />AEDT: 7:30am</div><div id="mouseover-trigger" style="display: inline;">1:30pm PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>June 9<sup>th</sup>, 2010</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_10_-_Goddess_of_Light" title="Patches">Generation 10</a> (<a href="/view/Generation_10:_Goddess_of_Light" title="Generation 10: Goddess of Light">Goddess of Light</a>) began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EST: 2:30pm<br />GMT: 7:30pm<br />AEST: 5:30am</div><div id="mouseover-trigger" style="display: inline;">11:30am PST</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>February 10<sup>th</sup>, 2010</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_9_-_Alchemist" title="Patches">Generation 9</a> (<a href="/view/Generation_9:_Alchemist" title="Generation 9: Alchemist">Alchemist</a>) began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EST: 2:00am<br />GMT: 7:00am<br />AEST: 5:00pm</div><div id="mouseover-trigger" style="display: inline;">11:00pm PST</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>October 14<sup>th</sup>, 2009</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_8_-_Dragon" title="Patches">Generation 8</a> (<a href="/view/Generation_8:_Dragon" title="Generation 8: Dragon">Dragon</a>) began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 8:00am<br />GMT: 12:00pm<br />AEDT: 11:00pm</div><div id="mouseover-trigger" style="display: inline;">5:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>July 16<sup>th</sup>, 2009</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_7_-_Ancient_Secrets_of_Irinid" title="Patches">Generation 7</a> (<a href="/view/Ancient_Secrets_of_Irinid" title="Ancient Secrets of Irinid" class="mw-redirect">Ancient Secrets of Irinid</a>) began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 8:00am<br />GMT: 12:00pm<br />AEDT: 11:00pm</div><div id="mouseover-trigger" style="display: inline;">5:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>February 26<sup>th</sup>, 2009</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_4_-_Iria" title="Patches">Generation 4</a>, <a href="/view/Patches#Generation_5_-_Desert_Elves" title="Patches">Generation 5</a>, &amp; <a href="/view/Patches#Generation_6_-_Giants" title="Patches">Generation 6</a> (Pioneers of Iria) began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 2:45pm<br />GMT: 6:45pm<br />AEDT: 5:45am</div><div id="mouseover-trigger" style="display: inline;">11:45am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>December 17<sup>th</sup>, 2008</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_3.2C_Season_4" title="Patches">Generation 3, Season 5</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EST: 5:00pm<br />GMT: 10:00pm<br />AEST: 8:00am</div><div id="mouseover-trigger" style="display: inline;">2:00pm PST</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>November 7<sup>th</sup>, 2008</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_3.2C_Season_4" title="Patches">Generation 3, Season 4</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EST: 7:00am<br />GMT: 12:00pm<br />AEST: 10:00pm</div><div id="mouseover-trigger" style="display: inline;">4:00am PST</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>October 16<sup>th</sup>, 2008</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_3.2C_Season_3" title="Patches">Generation 3, Season 3</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 7:00am<br />GMT: 11:00am<br />AEDT: 10:00pm</div><div id="mouseover-trigger" style="display: inline;">4:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>September 24<sup>th</sup>, 2008</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_3.2C_Season_2" title="Patches">Generation 3, Season 2</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 7:00am<br />GMT: 11:00am<br />AEDT: 10:00pm</div><div id="mouseover-trigger" style="display: inline;">4:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>August 22<sup>nd</sup>, 2008</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_3.2C_Season_1" title="Patches">Generation 3, Season 1</a> (<a href="/view/Generation_3:_Dark_Knight" title="Generation 3: Dark Knight">Dark Knight</a>) began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 12:35pm<br />GMT: 4:35pm<br />AEDT: 3:35am</div><div id="mouseover-trigger" style="display: inline;">9:35am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>July 31<sup>st</sup>, 2008</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_2.2C_Season_4" title="Patches">Generation 2, Season 4</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 8:00am<br />GMT: 12:00pm<br />AEDT: 11:00pm</div><div id="mouseover-trigger" style="display: inline;">5:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>June 25<sup>th</sup>, 2008</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_2.2C_Season_3" title="Patches">Generation 2, Season 3</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 8:00am<br />GMT: 12:00pm<br />AEDT: 11:00pm</div><div id="mouseover-trigger" style="display: inline;">5:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>June 5<sup>th</sup>, 2008</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_2.2C_Season_2" title="Patches">Generation 2, Season 2</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 6:00am<br />GMT: 10:00am<br />AEDT: 9:00pm</div><div id="mouseover-trigger" style="display: inline;">3:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>May 15<sup>th</sup>, 2008</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_2.2C_Season_1" title="Patches">Generation 2, Season 1</a> (<a href="/view/Generation_2:_Paladin" title="Generation 2: Paladin">Paladin</a>) began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 2:00pm<br />GMT: 6:00pm<br />AEDT: 5:00am</div><div id="mouseover-trigger" style="display: inline;">11:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>May 1<sup>st</sup>, 2008</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_1.2C_Season_2" title="Patches">Generation 1, Season 2</a> began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EDT: 6:00am<br />GMT: 10:00am<br />AEDT: 9:00pm</div><div id="mouseover-trigger" style="display: inline;">3:00am PDT</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>March 27<sup>th</sup>, 2008</i>
+</p>
+<ul>
+<li><a href="/view/Patches#Generation_1.2C_Season_1" title="Patches">Generation 1, Season 1</a> (<a href="/view/Generation_1:_Advent_of_the_Goddess" title="Generation 1: Advent of the Goddess">Advent of the Goddess</a>) began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EST: 1:00pm<br />GMT: 6:00pm<br />AEST: 4:00am</div><div id="mouseover-trigger" style="display: inline;">10:00am PST</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>March 26<sup>th</sup>, 2008</i>
+</p>
+<ul>
+<li>Open beta test ended at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EST: 8:00pm<br />GMT: 1:00am<br />AEST: 11:00am</div><div id="mouseover-trigger" style="display: inline;">5:00pm PST</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>March 5<sup>th</sup>, 2008</i>
+</p>
+<ul>
+<li>Open beta test began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EST: 6:00am<br />GMT: 11:00am<br />AEST: 9:00pm</div><div id="mouseover-trigger" style="display: inline;">3:00am PST</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>February 25<sup>nd</sup>, 2008</i>
+</p>
+<ul>
+<li>Pre-open beta test ended at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EST: 1:00pm<br />GMT: 6:00pm<br />AEST: 4:00am</div><div id="mouseover-trigger" style="display: inline;">10:00am PST</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>February 23<sup>nd</sup>, 2008</i>
+</p>
+<ul>
+<li>Pre-open beta test began at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EST: 1:00pm<br />GMT: 6:00pm<br />AEST: 4:00am</div><div id="mouseover-trigger" style="display: inline;">10:00am PST</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>February 22<sup>nd</sup>, 2008</i>
+</p>
+<ul>
+<li>Client version .6 was uploaded to the patch server.
+</li>
+</ul>
+<p><i>February 6<sup>th</sup>, 2008</i>
+</p>
+<ul>
+<li>Pre-open beta test was officially announced.
+</li>
+</ul>
+<p><i>February 5<sup>th</sup>, 2008</i>
+</p>
+<ul>
+<li>The official closed beta ended at <span class="mouseover-wrapper" style="display: inline;"><div id="mouseover-content" style="display: none;">EST: 12:00am<br />GMT: 5:00am<br />AEST: 3:00pm</div><div id="mouseover-trigger" style="display: inline;">9:00pm PST</div><div id="mouseover-custom">	<span id="mouseover-custom-style"></span>	<span id="mouseover-custom-anchor"></span>	<span id="mouseover-custom-modx"></span>	<span id="mouseover-custom-mody"></span>	<span id="mouseover-custom-fade-length">100</span></div></span>.
+</li>
+</ul>
+<p><i>January 29<sup>th</sup>, 2008</i>
+</p>
+<ul>
+<li>The first closed beta server, Nao, opened. 
+</li>
+</ul>
+<p><i>January 25<sup>th</sup>, 2008</i>
+</p>
+<ul>
+<li>Closed beta registration process ended.
+</li>
+</ul>
+<p><i>January 4<sup>th</sup>, 2008</i>
+</p>
+<ul>
+<li>First Lorna &amp; Pan Episode published on official website.
+</li>
+</ul>
+<p><i>December 19<sup>th</sup>, 2007</i>
+</p>
+<ul>
+<li>Nexon America released its NA Mabinogi teaser site.</div>
+</li>
+</ul>
+</td></tr>
+<tr>
+<td colspan="2">
+<h2><span class="mw-headline" id="Wiki_Navigation">Wiki Navigation</span></h2>
+<table style="width: 100%;">
+<tr>
+<td style="width: 50%; padding: .4em .9em .9em; vertical-align:top;">
+<table style="width: 100%;">
+
+<tr>
+<th style="text-align: left; margin: 1; background-color:#fcc; font-size: 120%; font-weight: bold; border:1px solid #aaa; padding:0.2em 0.4em;"><a href="/view/Category:General_Information" title="Category:General Information">General Information</a>
+</th></tr>
+<tr>
+<td>
+<table style="width: 100%;">
+<tr>
+<td style="vertical-align: top;">
+<p><b><a href="/view/Patches" title="Patches">Server Updates</a></b><br />
+<b><a href="/view/Foreign_Content" title="Foreign Content">Foreign Content</a></b><br />
+<b><a href="/view/Category:Game_System" title="Category:Game System">Game System</a></b><br />
+<b><a href="/view/Category:NPCs" title="Category:NPCs">List of NPCs</a></b>
+</p>
+</td>
+<td style="vertical-align: top;">
+<p><b>Miscellaneous</b>
+</p>
+<ul>
+<li><a href="/view/Category:Battle_Tactics" title="Category:Battle Tactics">Battle Tactics</a>
+</li>
+<li><a href="/view/Collection_Books" title="Collection Books">Collection Books</a>
+</li>
+<li><a href="/view/Collection_Journal" title="Collection Journal">Collection Journal</a>
+</li>
+<li><a href="/view/Commerce" title="Commerce">Commerce</a>
+</li>
+<li><a href="/view/Current_Bugs" title="Current Bugs">Current Bugs</a>
+</li>
+</ul>
+</td>
+<td style="vertical-align: top;">
+<ul>
+<li><a href="/view/Gachapon" title="Gachapon" class="mw-redirect">Gachapon</a>
+</li>
+<li><a href="/view/Glossary" title="Glossary">Glossary</a>
+</li>
+<li><a href="/view/Homestead" title="Homestead">Homestead</a>
+</li>
+<li><a href="/view/Category:In-game_Books" title="Category:In-game Books">In-game Books</a>
+</li>
+<li><a href="/view/Journal" title="Journal">Journal</a>
+</li>
+<li><a href="/view/Category:Nexon_Events" title="Category:Nexon Events">Nexon Events</a>
+</li>
+</ul>
+</td>
+<td style="vertical-align: top;">
+<ul>
+<li><a href="/view/OSTs" title="OSTs">OSTs</a>
+</li>
+<li><a href="/view/Premium_Shop" title="Premium Shop" class="mw-redirect">Premium Shop</a>
+</li>
+<li><a href="/view/Service_Comparison" title="Service Comparison">Service Comparison</a>
+</li>
+<li><a href="/view/Stats" title="Stats">Stats</a>
+</li>
+<li><a href="/view/Talent" title="Talent">Talent</a>
+</li>
+<li><a href="/view/Titles" title="Titles">Titles</a>
+</li>
+</ul>
+</td></tr></table>
+</td></tr></table>
+<table style="width: 100%;">
+
+<tr>
+<th style="text-align: left; margin: 0; background-color:#eea; font-size: 120%; font-weight: bold; border:1px solid #aaa; padding:0.2em 0.4em;"><a href="/view/Category:Erinn" title="Category:Erinn">World of Erinn</a>
+</th></tr>
+<tr>
+<td>
+<table style="width: 100%;">
+<tr>
+<td style="vertical-align: top;">
+<p><b><a href="/view/Category:Dungeons" title="Category:Dungeons">Dungeons</a></b>
+</p>
+<ul>
+<li><a href="/view/Abb_Neagh_Castle_Dungeon" title="Abb Neagh Castle Dungeon">Abb Neagh Castle</a>
+</li>
+<li><a href="/view/Albey_Dungeon" title="Albey Dungeon">Albey</a>
+</li>
+<li><a href="/view/Alby" title="Alby" class="mw-redirect">Alby</a> (<a href="/view/Alby_Hardmode_Dungeon" title="Alby Hardmode Dungeon">Hardmode</a>)
+</li>
+<li><a href="/view/Baol" title="Baol" class="mw-redirect">Baol</a>
+</li>
+<li><a href="/view/Barri" title="Barri" class="mw-redirect">Barri</a>
+</li>
+<li><a href="/view/Ciar" title="Ciar" class="mw-redirect">Ciar</a> (<a href="/view/Ciar_Hardmode_Dungeon" title="Ciar Hardmode Dungeon">Hardmode</a>)
+</li>
+<li><a href="/view/Coill" title="Coill" class="mw-redirect">Coill</a>
+</li>
+<li><a href="/view/Sliab_Cuilin_Castle_Dungeon" title="Sliab Cuilin Castle Dungeon">Cuilin Castle</a>
+</li>
+<li><a href="/view/Dugald_Castle_Dungeon" title="Dugald Castle Dungeon">Dugald Castle</a>
+</li>
+<li><a href="/view/Fiodh" title="Fiodh" class="mw-redirect">Fiodh</a>
+</li>
+<li><a href="/view/Karu_Forest_Ruins" title="Karu Forest Ruins">Karu Forest Ruins</a>
+</li>
+<li><a href="/view/Kitchen_Dungeon" title="Kitchen Dungeon">Kitchen Dungeon</a>
+</li>
+<li><a href="/view/Longa_Desert_Ruins" title="Longa Desert Ruins">Longa Desert Ruins</a>
+</li>
+<li><a href="/view/Maiz_Prairie_Ruins" title="Maiz Prairie Ruins">Maiz Prairie Ruins</a>
+</li>
+<li><a href="/view/Math" title="Math" class="mw-redirect">Math</a>
+</li>
+<li><a href="/view/Par_Ruins" title="Par Ruins">Par Ruins</a>
+</li>
+<li><a href="/view/Peaca" title="Peaca" class="mw-redirect">Peaca</a>
+</li>
+<li><a href="/view/Rabbie" title="Rabbie" class="mw-redirect">Rabbie</a>
+</li>
+<li><a href="/view/Rundal" title="Rundal" class="mw-redirect">Rundal</a> (<a href="/view/Rundal_Hardmode_Dungeon" title="Rundal Hardmode Dungeon">Hardmode</a>)
+</li>
+<li><a href="/view/Scary_Library" title="Scary Library">Scary Library</a>
+</li>
+<li><a href="/view/Sen_Mag_Castle_Dungeon" title="Sen Mag Castle Dungeon">Sen Mag Castle</a>
+</li>
+</ul>
+<p><b><a href="/view/Avon" title="Avon">Avon</a></b>
+</p>
+</td>
+<td style="vertical-align: top;">
+<p><b><a href="/view/Category:Uladh" title="Category:Uladh">Uladh Continent</a></b>
+</p>
+<ul>
+<li><a href="/view/Abb_Neagh" title="Abb Neagh">Abb Neagh</a>
+</li>
+<li><a href="/view/Bangor" title="Bangor">Bangor</a>
+</li>
+<li><a href="/view/Blago_Prairie" title="Blago Prairie">Blago Prairie</a>
+</li>
+<li><a href="/view/Ceo_Island" title="Ceo Island">Ceo Island</a>
+</li>
+<li><a href="/view/Corrib_Valley" title="Corrib Valley">Corrib Valley</a>
+</li>
+<li><a href="/view/Dugald_Aisle" title="Dugald Aisle">Dugald Aisle</a>
+</li>
+<li><a href="/view/Dunbarton" title="Dunbarton">Dunbarton</a>
+</li>
+<li><a href="/view/Emain_Macha" title="Emain Macha">Emain Macha</a>
+</li>
+<li><a href="/view/Forest_of_Souls" title="Forest of Souls">Forest of Souls</a>
+</li>
+<li><a href="/view/Gairech_Hill" title="Gairech Hill">Gairech Hill</a>
+</li>
+<li><a href="/view/Morva_Aisle" title="Morva Aisle">Morva Aisle</a>
+</li>
+<li><a href="/view/Osna_Sail" title="Osna Sail">Osna Sail</a>
+</li>
+<li><a href="/view/Port_Cobh" title="Port Cobh">Port Cobh</a>
+</li>
+<li><a href="/view/Port_Ceann" title="Port Ceann">Port Ceann</a>
+</li>
+<li><a href="/view/Sen_Mag_Plateau" title="Sen Mag Plateau">Sen Mag Plateau</a>
+</li>
+<li><a href="/view/Sidhe_Sneachta" title="Sidhe Sneachta">Sidhe Sneachta</a>
+</li>
+<li><a href="/view/Sliab_Cuilin" title="Sliab Cuilin">Sliab Cuilin</a>
+</li>
+<li><a href="/view/Taillteann" title="Taillteann">Taillteann</a>
+</li>
+<li><a href="/view/Tara" title="Tara">Tara</a>
+<ul>
+<li><a href="/view/Rath_Royal_Castle" title="Rath Royal Castle">Rath Royal Castle</a>
+</li>
+</ul>
+</li>
+<li><a href="/view/Tir_Chonaill" title="Tir Chonaill">Tir Chonaill</a>
+</li>
+</ul>
+<p><b><a href="/view/Falias" title="Falias">Falias</a></b>
+</p>
+</td>
+<td style="vertical-align: top;">
+<p><b><a href="/view/Category:Iria" title="Category:Iria">Iria Continent</a></b>
+</p>
+<ul>
+<li><a href="/view/Connous" title="Connous">Connous</a>
+<ul>
+<li><a href="/view/Connous_Underground_Maze" title="Connous Underground Maze">Connous Underground Maze</a>
+</li>
+<li><a href="/view/Shyllien_Nature_Reserve" title="Shyllien Nature Reserve">Shyllien Nature Reserve</a>
+</li>
+</ul>
+</li>
+<li><a href="/view/Courcle" title="Courcle" class="mw-redirect">Courcle</a>
+<ul>
+<li><a href="/view/Cor" title="Cor">Cor</a>
+</li>
+</ul>
+</li>
+<li><a href="/view/Physis" title="Physis">Physis</a>
+<ul>
+<li><a href="/view/Hillwen_Mine" title="Hillwen Mine">Hillwen Mine</a>
+</li>
+</ul>
+</li>
+<li><a href="/view/Rano" title="Rano" class="mw-redirect">Rano</a>
+<ul>
+<li><a href="/view/Port_Qilla" title="Port Qilla">Port Qilla</a>
+</li>
+<li><a href="/view/Qilla_Base_Camp" title="Qilla Base Camp">Qilla Base Camp</a>
+</li>
+</ul>
+</li>
+<li><a href="/view/Solea" title="Solea">Solea</a>
+</li>
+<li><a href="/view/Zardine" title="Zardine">Zardine</a>
+</li>
+</ul>
+<p><b><a href="/view/Category:Belvast_Island" title="Category:Belvast Island">Belvast Island</a></b>
+</p>
+<ul>
+<li><a href="/view/Beach_of_Scathach" title="Beach of Scathach">Beach of Scathach</a>
+</li>
+<li><a href="/view/Commonwealth_of_Belvast" title="Commonwealth of Belvast">Commonwealth of Belvast</a>
+</li>
+</ul>
+<p><b><a href="/view/Category:Another_World" title="Category:Another World">Another World</a></b>
+</p>
+<ul>
+<li><a href="/view/Bangor_(Another_World)" title="Bangor (Another World)">Bangor (A)</a>
+</li>
+<li><a href="/view/Crossroad" title="Crossroad">Crossroad</a>
+</li>
+<li><a href="/view/Gairech_(Another_World)" title="Gairech (Another World)">Gairech (A)</a>
+</li>
+<li><a href="/view/Tir_Chonaill_(Another_World)" title="Tir Chonaill (Another World)">Tir Chonaill (A)</a>
+</li>
+</ul>
+<p><b><a href="/view/Soul_Stream_(Location)" title="Soul Stream (Location)">Soul Stream</a></b>
+</p>
+</td></tr></table>
+</td></tr></table>
+<table style="width: 100%;">
+
+<tr>
+<th style="text-align: left; margin: 0; background-color:#efe; font-size: 120%; font-weight: bold; border:1px solid #aaa; padding:0.2em 0.4em;"><a href="/view/Category:Equipment" title="Category:Equipment">Equipment</a>
+</th></tr>
+<tr>
+<td>
+<table style="width: 100%;">
+<tr>
+<td style="vertical-align: top;">
+<p><b><a href="/view/Category:Equipment" title="Category:Equipment">Equipment</a></b>
+</p>
+<ul>
+<li><a href="/view/Category:Accessories" title="Category:Accessories">Accessories</a>
+<ul>
+<li><a href="/view/Category:Magical_Accessories" title="Category:Magical Accessories">Magical Accessories</a>
+</li>
+</ul>
+</li>
+<li><a href="/view/Category:Clothing/Armor" title="Category:Clothing/Armor">Clothing/Armor</a>
+</li>
+<li><a href="/view/Category:Designer_Sets" title="Category:Designer Sets">Designer Sets</a>
+</li>
+<li><a href="/view/Category:Gloves" title="Category:Gloves">Gloves</a>
+</li>
+<li><a href="/view/Category:Guard_Cylinders" title="Category:Guard Cylinders">Guard Cylinders</a>
+</li>
+<li><a href="/view/Category:Headgear" title="Category:Headgear">Headgear</a>
+</li>
+<li><a href="/view/Category:Robes" title="Category:Robes">Robes</a>
+</li>
+<li><a href="/view/Category:Shields" title="Category:Shields">Shields</a>
+</li>
+<li><a href="/view/Category:Shoes" title="Category:Shoes">Shoes</a>
+</li>
+<li><a href="/view/Category:Wings" title="Category:Wings">Wings</a>
+</li>
+</ul>
+<p><b><a href="/view/Category:Demonic_Equipment" title="Category:Demonic Equipment">Demonic Equipment</a></b>
+</p>
+</td>
+<td style="vertical-align: top;">
+<p><b><a href="/view/Category:Upgrades" title="Category:Upgrades">Upgrades</a></b>
+</p>
+<ul>
+<li><a href="/view/Armor_Upgrades" title="Armor Upgrades">Armor</a>
+</li>
+<li><a href="/view/Blunt_Weapon_Upgrades" title="Blunt Weapon Upgrades">Blunt</a>
+</li>
+<li><a href="/view/Bow_and_Crossbow_Upgrades" title="Bow and Crossbow Upgrades">Bow and Crossbow</a>
+</li>
+<li><a href="/view/Clothing_Upgrades" title="Clothing Upgrades">Clothing</a>
+</li>
+<li><a href="/view/Control_Bar_Upgrades" title="Control Bar Upgrades">Control Bar</a>
+</li>
+<li><a href="/view/Cylinder_Upgrades" title="Cylinder Upgrades">Cylinder</a>
+</li>
+<li><a href="/view/Dual_Gun_Upgrades" title="Dual Gun Upgrades">Dual Gun</a>
+</li>
+<li><a href="/view/Guard_Cylinder_Upgrades" title="Guard Cylinder Upgrades">Guard Cylinder</a>
+</li>
+<li><a href="/view/Instrument_Upgrades" title="Instrument Upgrades">Instrument</a>
+</li>
+<li><a href="/view/Knuckle_Upgrades" title="Knuckle Upgrades">Knuckle</a>
+</li>
+<li><a href="/view/Lance_Upgrades" title="Lance Upgrades">Lance</a>
+</li>
+<li><a href="/view/Microphone_Upgrades" title="Microphone Upgrades">Microphone</a>
+</li>
+<li><a href="/view/Shield_Upgrade_Comparisons" title="Shield Upgrade Comparisons">Shield</a>
+</li>
+<li><a href="/view/Staff_Upgrades" title="Staff Upgrades">Staff</a>
+</li>
+<li><a href="/view/Sword_Upgrades" title="Sword Upgrades">Sword</a>
+</li>
+<li><a href="/view/Tool_Upgrades" title="Tool Upgrades">Tool</a>
+</li>
+<li><a href="/view/Wand_Upgrades" title="Wand Upgrades">Wand</a>
+</li>
+<li><b><a href="/view/Artisan_Upgrade" title="Artisan Upgrade">Artisan Upgrades</a></b>
+</li>
+<li><b><a href="/view/Special_Upgrade" title="Special Upgrade">Special Upgrades</a></b>
+</li>
+</ul>
+</td>
+<td style="vertical-align: top;">
+<p><b><a href="/view/Category:Weapons" title="Category:Weapons">Weapons</a></b>
+</p>
+<ul>
+<li><a href="/view/Category:Atlatls" title="Category:Atlatls">Atlatls</a>
+</li>
+<li><a href="/view/Category:Arrows" title="Category:Arrows">Arrows</a>
+</li>
+<li><a href="/view/Category:Axes" title="Category:Axes">Axes</a>
+</li>
+<li><a href="/view/Category:Ballista_Bolts" title="Category:Ballista Bolts">Ballista Bolts</a>
+</li>
+<li><a href="/view/Category:Blunt_Weapons" title="Category:Blunt Weapons">Blunts</a>
+</li>
+<li><a href="/view/Category:Bolts" title="Category:Bolts">Bolts</a>
+</li>
+<li><a href="/view/Category:Bows" title="Category:Bows">Bows</a>
+</li>
+<li><a href="/view/Category:Control_Bars" title="Category:Control Bars">Control Bars</a>
+</li>
+<li><a href="/view/Category:Crossbows" title="Category:Crossbows">Crossbows</a>
+</li>
+<li><a href="/view/Category:Cylinders" title="Category:Cylinders">Cylinders</a>
+</li>
+<li><a href="/view/Category:Dual_Guns" title="Category:Dual Guns">Dual Guns</a>
+</li>
+<li><a href="/view/Category:Instruments" title="Category:Instruments">Instruments</a>
+</li>
+<li><a href="/view/Category:Javelins" title="Category:Javelins">Javelins</a>
+</li>
+<li><a href="/view/Category:Knuckles" title="Category:Knuckles">Knuckles</a>
+</li>
+<li><a href="/view/Category:Lances" title="Category:Lances">Lances</a>
+</li>
+<li><a href="/view/Category:Mana_Bullets" title="Category:Mana Bullets">Mana Bullets</a>
+</li>
+<li><a href="/view/Category:Marionettes" title="Category:Marionettes">Marionettes</a>
+</li>
+<li><a href="/view/Category:Microphones" title="Category:Microphones">Microphones</a>
+</li>
+<li><a href="/view/Category:Pillows" title="Category:Pillows">Pillows</a>
+</li>
+<li><a href="/view/Category:Rag_Dolls" title="Category:Rag Dolls">Rag Dolls</a>
+</li>
+<li><a href="/view/Category:Scythes" title="Category:Scythes">Scythes</a>
+</li>
+<li><a href="/view/Category:Staves" title="Category:Staves">Staves</a>
+</li>
+<li><a href="/view/Category:Swords" title="Category:Swords">Swords</a>
+</li>
+<li><a href="/view/Category:Wands" title="Category:Wands">Wands</a>
+</li>
+</ul>
+<p><b><a href="/view/Category:Weapons_(Fomor)" title="Category:Weapons (Fomor)">Fomor Weapons</a></b><br />
+<b><a href="/view/Category:Legendary_Weapons" title="Category:Legendary Weapons">Legendary Weapons</a></b>
+</p>
+</td>
+<td style="vertical-align: top;">
+<p><b><a href="/view/Spirit_Weapon" title="Spirit Weapon">Spirit Weapons</a></b>
+</p>
+<ul>
+<li><b><a href="/view/Giving_to_your_Spirit_Weapon" title="Giving to your Spirit Weapon">Spirit Feeding Guide</a></b>
+</li>
+<li><a href="/view/Blunt_Spirit_Item_List" title="Blunt Spirit Item List" class="mw-redirect">Blunt Spirit Item List</a>
+</li>
+<li><a href="/view/Bow_Spirit_Item_List" title="Bow Spirit Item List" class="mw-redirect">Bow Spirit Item List</a>
+</li>
+<li><a href="/view/Cylinder_Spirit_Item_List" title="Cylinder Spirit Item List" class="mw-redirect">Cylinder Spirit Item List</a>
+</li>
+<li><a href="/view/Sword_Spirit_Item_List" title="Sword Spirit Item List" class="mw-redirect">Sword Spirit Item List</a>
+</li>
+<li><a href="/view/Wand_Spirit_Item_List" title="Wand Spirit Item List" class="mw-redirect">Wand Spirit Item List</a>
+</li>
+</ul>
+<p><b><a href="/view/Category:Miscellaneous_Items" title="Category:Miscellaneous Items">Misc. Items</a></b><br />
+<b><a href="/view/Category:Equipped_Tools" title="Category:Equipped Tools">Equipped Tools</a></b>
+</p>
+</td></tr></table>
+</td></tr></table>
+<table style="width: 100%;">
+
+<tr>
+<th style="text-align: left; margin: 0; background-color:#fcc; font-size: 120%; font-weight: bold; border:1px solid #aaa; padding:0.2em 0.4em;"><a href="/view/Category:Enchants" title="Category:Enchants">Enchants</a>
+</th></tr>
+<tr>
+<td>
+<table style="width: 100%;">
+<tr>
+<td>
+<ul>
+<li><a href="/view/List_of_Enchants" title="List of Enchants" class="mw-redirect">All Enchants</a>
+</li>
+<li><a href="/view/Rank_2" title="Rank 2" class="mw-redirect">Rank 2</a>
+</li>
+<li><a href="/view/Rank_3" title="Rank 3" class="mw-redirect">Rank 3</a>
+</li>
+<li><a href="/view/Rank_4" title="Rank 4" class="mw-redirect">Rank 4</a>
+</li>
+<li><a href="/view/Rank_5" title="Rank 5" class="mw-redirect">Rank 5</a>
+</li>
+</ul>
+</td>
+<td style="vertical-align: top;">
+<ul>
+<li><a href="/view/Rank_6" title="Rank 6" class="mw-redirect">Rank 6</a>
+</li>
+<li><a href="/view/Rank_7" title="Rank 7" class="mw-redirect">Rank 7</a>
+</li>
+<li><a href="/view/Rank_8" title="Rank 8" class="mw-redirect">Rank 8</a>
+</li>
+<li><a href="/view/Rank_9" title="Rank 9" class="mw-redirect">Rank 9</a>
+</li>
+<li><a href="/view/Rank_A" title="Rank A" class="mw-redirect">Rank A</a>
+</li>
+</ul>
+</td>
+<td style="vertical-align: top;">
+<ul>
+<li><a href="/view/Rank_B" title="Rank B" class="mw-redirect">Rank B</a>
+</li>
+<li><a href="/view/Rank_C" title="Rank C" class="mw-redirect">Rank C</a>
+</li>
+<li><a href="/view/Rank_D" title="Rank D" class="mw-redirect">Rank D</a>
+</li>
+<li><a href="/view/Rank_E" title="Rank E" class="mw-redirect">Rank E</a>
+</li>
+<li><a href="/view/Rank_F" title="Rank F" class="mw-redirect">Rank F</a>
+</li>
+</ul>
+</td></tr></table>
+</td></tr></table>
+<table style="width: 100%;">
+
+<tr>
+<th style="text-align: left; margin: 0; background-color:#fc6; font-size: 120%; font-weight: bold; border:1px solid #aaa; padding:0.2em 0.4em;">Species
+</th></tr>
+<tr>
+<td>
+<table style="width: 100%;">
+<tr>
+<td style="vertical-align: top;">
+<p><b><a href="/view/Category:Player_Races" title="Category:Player Races">Player Races</a></b>
+</p>
+<ul>
+<li><a href="/view/Elf" title="Elf">Elf</a>
+</li>
+<li><a href="/view/Giant" title="Giant">Giant</a>
+</li>
+<li><a href="/view/Human" title="Human">Human</a>
+</li>
+</ul>
+</td>
+<td style="vertical-align: top;">
+<p><b><a href="/view/Category:Monsters" title="Category:Monsters">Monster</a></b>
+</p>
+<ul>
+<li><a href="/view/Category:Dungeon_Monsters" title="Category:Dungeon Monsters">Dungeons</a>
+</li>
+<li><a href="/view/Category:Field_Monsters" title="Category:Field Monsters">Fields</a>
+</li>
+<li><a href="/view/Category:Shadow_Monsters" title="Category:Shadow Monsters">Shadow Missions</a>
+</li>
+<li><a href="/view/Category:Theater_Mission_Monsters" title="Category:Theater Mission Monsters">Theater Missions</a>
+</li>
+</ul>
+</td>
+<td style="vertical-align: top;">
+<p><b><a href="/view/Category:Boss" title="Category:Boss">Bosses</a></b>
+</p>
+<ul>
+<li><a href="/view/Category:Dungeon_Boss" title="Category:Dungeon Boss">Dungeon Boss</a>
+</li>
+<li><a href="/view/Category:Field_Boss" title="Category:Field Boss">Field Boss</a>
+</li>
+<li><a href="/view/Category:Mainstream_Bosses" title="Category:Mainstream Bosses">Mainstream Bosses</a>
+</li>
+<li><a href="/view/Category:Raid_Boss" title="Category:Raid Boss">Raid Boss</a>
+</li>
+</ul>
+</td></tr></table>
+</td></tr></table>
+</td>
+<td style="width: 50%; padding: .4em .9em .9em; vertical-align:top;">
+<table style="width: 100%;">
+
+<tr>
+<th style="text-align: left; margin: 0; background-color:#eea; font-size: 120%; font-weight: bold; border:1px solid #aaa; padding:0.2em 0.4em;"><a href="/view/Category:Quests" title="Category:Quests">Quests</a>
+</th></tr>
+<tr>
+<td>
+<table style="width: 100%;">
+<tr>
+<td>
+<p><b><a href="/view/Mainstream_Quests" title="Mainstream Quests">Mainstream Quests</a></b>
+</p>
+<ul>
+<li><b>Chapter 1</b>
+<ul>
+<li><a href="/view/Generation_1:_Advent_of_the_Goddess" title="Generation 1: Advent of the Goddess">Generation 1: Advent of the Goddess</a>
+</li>
+<li><a href="/view/Generation_2:_Paladin" title="Generation 2: Paladin">Generation 2: Paladin</a>
+</li>
+<li><a href="/view/Generation_3:_Dark_Knight" title="Generation 3: Dark Knight">Generation 3: Dark Knight</a>
+</li>
+</ul>
+</li>
+<li><b>Chapter 2</b>
+<ul>
+<li><a href="/view/Generation_7:_Ancient_Secrets_of_Irinid" title="Generation 7: Ancient Secrets of Irinid">Generation 7: Ancient Secrets of Irinid</a>
+</li>
+<li><a href="/view/Generation_8:_Dragon" title="Generation 8: Dragon">Generation 8: Dragon</a>
+</li>
+</ul>
+</li>
+<li><b>Chapter 3</b>
+<ul>
+<li><a href="/view/Generation_9:_Alchemist" title="Generation 9: Alchemist">Generation 9: Alchemist</a>
+</li>
+<li><a href="/view/Generation_10:_Goddess_of_Light" title="Generation 10: Goddess of Light">Generation 10: Goddess of Light</a>
+</li>
+<li><a href="/view/Generation_11:_Sword_of_the_Gods" title="Generation 11: Sword of the Gods">Generation 11: Sword of the Gods</a>
+</li>
+<li><a href="/view/Generation_12:_Return_of_the_Hero" title="Generation 12: Return of the Hero">Generation 12: Return of the Hero</a>
+</li>
+</ul>
+</li>
+<li><b>Chapter 4</b>
+<ul>
+<li><a href="/view/Generation_13:_Hamlet" title="Generation 13: Hamlet">Generation 13: Hamlet</a>
+</li>
+<li><a href="/view/Generation_14:_Romeo_and_Juliet" title="Generation 14: Romeo and Juliet">Generation 14: Romeo and Juliet</a>
+</li>
+<li><a href="/view/Generation_15:_Merchant_of_Venice" title="Generation 15: Merchant of Venice">Generation 15: Merchant of Venice</a>
+</li>
+<li><a href="/view/Generation_16:_Macbeth" title="Generation 16: Macbeth">Generation 16: Macbeth</a>
+</li>
+<li><a href="/view/Generation_17:_Shamala_and_Nightmare" title="Generation 17: Shamala and Nightmare">Generation 17: Shamala and Nightmare</a>
+</li>
+</ul>
+</li>
+<li><b><a href="/view/The_Saga:_Iria" title="The Saga: Iria">The Saga: Iria</a></b>
+</li>
+</ul>
+</td>
+<td style="vertical-align: top;">
+<ul>
+<li><a href="/view/Category:Beginner_Quests" title="Category:Beginner Quests">Beginner Quests</a>
+</li>
+<li><a href="/view/Collection_Journal_Quests" title="Collection Journal Quests">Collection Journal Quests</a>
+</li>
+<li><a href="/view/Daily_Quests" title="Daily Quests">Daily Quests</a>
+</li>
+<li><a href="/view/Category:Exploration_Quests" title="Category:Exploration Quests">Exploration Quests</a>
+</li>
+<li><a href="/view/Hunting_Quests" title="Hunting Quests">Fomor Scroll Quests</a>
+</li>
+<li><a href="/view/Guild_Quests" title="Guild Quests">Guild Quests</a>
+</li>
+<li><a href="/view/Category:Iria_Raid" title="Category:Iria Raid">Iria Raid</a>
+</li>
+<li><a href="/view/Miscellaneous_Quests" title="Miscellaneous Quests" class="mw-redirect">Miscellaneous Quests</a>
+</li>
+<li><a href="/view/Part-time_Jobs" title="Part-time Jobs">Part-time Jobs</a>
+</li>
+<li><a href="/view/Party_Quests" title="Party Quests">Party Quests</a>
+</li>
+<li><a href="/view/Role-Playing_Quests" title="Role-Playing Quests">Role-Playing Quests</a>
+</li>
+<li><a href="/view/Skill_Quests" title="Skill Quests">Skill Quests</a>
+</li>
+<li><a href="/view/Category:Shadow_Missions" title="Category:Shadow Missions">Shadow Missions</a>
+</li>
+<li><a href="/view/Category:Theater_Missions" title="Category:Theater Missions" class="mw-redirect">Theater Missions</a>
+</li>
+<li><a href="/view/Category:Transformation_Quests" title="Category:Transformation Quests">Transformation Quests</a>
+</li>
+</ul>
+</td></tr></table>
+</td></tr></table>
+<table style="width: 100%;">
+
+<tr>
+<th style="text-align: left; margin: 0; background-color:#cef; font-size: 120%; font-weight: bold; border:1px solid #aaa; padding:0.2em 0.4em;"><a href="/view/Category:Skills" title="Category:Skills">Skills</a>
+</th></tr>
+<tr>
+<td style="vertical-align: top;">
+<table style="width: 100%;">
+<tr>
+<td style="vertical-align: top;">
+<p><b><a href="/view/Category:Combat" title="Category:Combat" class="mw-redirect">Combat</a></b>
+</p>
+<ul>
+<li><a href="/view/Arrow_Revolver" title="Arrow Revolver">Arrow Revolver</a>
+</li>
+<li><a href="/view/Assault_Slash" title="Assault Slash">Assault Slash</a>
+</li>
+<li><a href="/view/Axe_Mastery" title="Axe Mastery">Axe Mastery</a>
+</li>
+<li><a href="/view/Blunt_Mastery" title="Blunt Mastery">Blunt Mastery</a>
+</li>
+<li><a href="/view/Bow_Mastery" title="Bow Mastery">Bow Mastery</a>
+</li>
+<li><a href="/view/Charge" title="Charge">Charge</a>
+</li>
+<li><a href="/view/Combat_Mastery" title="Combat Mastery">Combat Mastery</a>
+</li>
+<li><a href="/view/Counterattack" title="Counterattack">Counterattack</a>
+</li>
+<li><a href="/view/Crash_Shot" title="Crash Shot">Crash Shot</a>
+</li>
+<li><a href="/view/Critical_Hit" title="Critical Hit">Critical Hit</a>
+</li>
+<li><a href="/view/Crossbow_Mastery" title="Crossbow Mastery">Crossbow Mastery</a>
+</li>
+<li><a href="/view/Defense" title="Defense">Defense</a>
+</li>
+<li><a href="/view/Evasion" title="Evasion">Evasion</a>
+</li>
+<li><a href="/view/Final_Hit" title="Final Hit">Final Hit</a>
+</li>
+<li><a href="/view/Final_Shot" title="Final Shot">Final Shot</a>
+</li>
+<li><a href="/view/Gold_Strike" title="Gold Strike">Gold Strike</a>
+</li>
+<li><a href="/view/Heavy_Armor_Mastery" title="Heavy Armor Mastery">Heavy Armor Mastery</a>
+</li>
+<li><a href="/view/Lance_Charge" title="Lance Charge">Lance Charge</a>
+</li>
+<li><a href="/view/Lance_Counter" title="Lance Counter">Lance Counter</a>
+</li>
+<li><a href="/view/Lance_Mastery" title="Lance Mastery">Lance Mastery</a>
+</li>
+<li><a href="/view/Light_Armor_Mastery" title="Light Armor Mastery">Light Armor Mastery</a>
+</li>
+<li><a href="/view/Magnum_Shot" title="Magnum Shot">Magnum Shot</a>
+</li>
+<li><a href="/view/Mirage_Missile" title="Mirage Missile">Mirage Missile</a>
+</li>
+<li><a href="/view/Elf_Ranged_Attack" title="Elf Ranged Attack">Ranged Attack (Elf)</a>
+</li>
+<li><a href="/view/Human_Ranged_Attack" title="Human Ranged Attack">Ranged Attack (Human)</a>
+</li>
+<li><a href="/view/Sharp_Mind" title="Sharp Mind">Sharp Mind</a>
+</li>
+<li><a href="/view/Shield_Mastery" title="Shield Mastery">Shield Mastery</a>
+</li>
+<li><a href="/view/Smash" title="Smash">Smash</a>
+</li>
+<li><a href="/view/Spirit_Weapon_Awakening" title="Spirit Weapon Awakening">Spirit Weapon Awakening</a>
+</li>
+<li><a href="/view/Stomp" title="Stomp">Stomp</a>
+</li>
+<li><a href="/view/Support_Shot" title="Support Shot">Support Shot</a>
+</li>
+<li><a href="/view/Sword_Mastery" title="Sword Mastery">Sword Mastery</a>
+</li>
+<li><a href="/view/Taunt" title="Taunt">Taunt</a>
+</li>
+<li><a href="/view/Throwing_Attack" title="Throwing Attack">Throwing Attack</a>
+</li>
+<li><a href="/view/Wind_Guard" title="Wind Guard">Wind Guard</a>
+</li>
+<li><a href="/view/Windmill" title="Windmill">Windmill</a>
+</li>
+</ul>
+</td>
+<td style="vertical-align: top;">
+<p><b><a href="/view/Category:Magic" title="Category:Magic">Magic</a></b>
+</p>
+<ul>
+<li><a href="/view/Blaze" title="Blaze">Blaze</a>
+</li>
+<li><a href="/view/Bolt_Mastery" title="Bolt Mastery">Bolt Mastery</a>
+</li>
+<li><a href="/view/Enchant" title="Enchant">Enchant</a>
+</li>
+<li><a href="/view/Fireball" title="Fireball">Fireball</a>
+</li>
+<li><a href="/view/Firebolt" title="Firebolt">Firebolt</a>
+</li>
+<li><a href="/view/Fire_Mastery" title="Fire Mastery">Fire Mastery</a>
+</li>
+<li><a href="/view/Fire_Shield" title="Fire Shield">Fire Shield</a>
+</li>
+<li><a href="/view/Fusion_Bolt" title="Fusion Bolt">Fusion Bolt</a>
+</li>
+<li><a href="/view/Hail_Storm" title="Hail Storm">Hail Storm</a>
+</li>
+<li><a href="/view/Healing" title="Healing">Healing</a>
+</li>
+<li><a href="/view/Icebolt" title="Icebolt">Icebolt</a>
+</li>
+<li><a href="/view/Ice_Mastery" title="Ice Mastery">Ice Mastery</a>
+</li>
+<li><a href="/view/Ice_Shield" title="Ice Shield">Ice Shield</a>
+</li>
+<li><a href="/view/Ice_Spear" title="Ice Spear">Ice Spear</a>
+</li>
+<li><a href="/view/Lightning_Bolt" title="Lightning Bolt">Lightning Bolt</a>
+</li>
+<li><a href="/view/Lightning_Mastery" title="Lightning Mastery">Lightning Mastery</a>
+</li>
+<li><a href="/view/Lightning_Shield" title="Lightning Shield">Lightning Shield</a>
+</li>
+<li><a href="/view/Magic_Fusion" title="Magic Fusion">Magic Fusion</a>
+</li>
+<li><a href="/view/Magic_Mastery" title="Magic Mastery">Magic Mastery</a>
+</li>
+<li><a href="/view/Magic_Weapon_Mastery" title="Magic Weapon Mastery">Magic Weapon Mastery</a>
+</li>
+<li><a href="/view/Mana_Shield" title="Mana Shield">Mana Shield</a>
+</li>
+<li><a href="/view/Meditation" title="Meditation">Meditation</a>
+</li>
+<li><a href="/view/Meteor_Strike" title="Meteor Strike">Meteor Strike</a>
+</li>
+<li><a href="/view/Natural_Shield" title="Natural Shield">Natural Shield</a>
+</li>
+<li><a href="/view/Party_Healing" title="Party Healing">Party Healing</a>
+</li>
+<li><a href="/view/Snap_Cast" title="Snap Cast">Snap Cast</a>
+</li>
+<li><a href="/view/Spellwalk" title="Spellwalk">Spellwalk</a>
+</li>
+<li><a href="/view/Thunder" title="Thunder">Thunder</a>
+</li>
+</ul>
+<p><b><a href="/view/Category:Hidden_Talent_Skills" title="Category:Hidden Talent Skills">Hidden</a></b>
+</p>
+<ul>
+<li><a href="/view/Berserk" title="Berserk">Berserk</a>
+</li>
+<li><a href="/view/Chain:_Counter_Punch" title="Chain: Counter Punch">Chain: Counter Punch</a>
+</li>
+<li><a href="/view/Doppelganger" title="Doppelganger">Doppelganger</a>
+</li>
+<li><a href="/view/Shockwave" title="Shockwave">Shockwave</a>
+</li>
+<li><a href="/view/Spider_Shot" title="Spider Shot">Spider Shot</a>
+</li>
+<li><a href="/view/Study:_Potion_Lore" title="Study: Potion Lore">Study: Potion Lore</a>
+</li>
+</ul>
+</td>
+<td style="vertical-align: top;">
+<p><b><a href="/view/Category:Life_Skills" title="Category:Life Skills">Life</a></b>
+</p>
+<ul>
+<li><a href="/view/Blacksmithing" title="Blacksmithing">Blacksmithing</a>
+</li>
+<li><a href="/view/Campfire" title="Campfire">Campfire</a>
+</li>
+<li><a href="/view/Carpentry" title="Carpentry">Carpentry</a>
+</li>
+<li><a href="/view/Catering" title="Catering">Catering</a>
+</li>
+<li><a href="/view/Commerce_Mastery" title="Commerce Mastery">Commerce Mastery</a>
+</li>
+<li><a href="/view/Cooking" title="Cooking">Cooking</a>
+</li>
+<li><a href="/view/Egg_Gathering" title="Egg Gathering">Egg Gathering</a>
+</li>
+<li><a href="/view/First_Aid" title="First Aid">First Aid</a>
+</li>
+<li><a href="/view/Fishing" title="Fishing">Fishing</a>
+</li>
+<li><a href="/view/Handicraft" title="Handicraft">Handicraft</a>
+</li>
+<li><a href="/view/Harvesting" title="Harvesting">Harvesting</a>
+</li>
+<li><a href="/view/Herbalism" title="Herbalism">Herbalism</a>
+</li>
+<li><a href="/view/Hillwen_Engineering" title="Hillwen Engineering">Hillwen Engineering</a>
+</li>
+<li><a href="/view/Hoeing" title="Hoeing">Hoeing</a>
+</li>
+<li><a href="/view/Ingredient_Hunting" title="Ingredient Hunting">Ingredient Hunting</a>
+</li>
+<li><a href="/view/Magic_Craft" title="Magic Craft">Magic Craft</a>
+</li>
+<li><a href="/view/Metallurgy" title="Metallurgy">Metallurgy</a>
+</li>
+<li><a href="/view/Milking" title="Milking">Milking</a>
+</li>
+<li><a href="/view/Mining" title="Mining">Mining</a>
+</li>
+<li><a href="/view/Mushroom_Gathering" title="Mushroom Gathering">Mushroom Gathering</a>
+</li>
+<li><a href="/view/Potion_Making" title="Potion Making">Potion Making</a>
+</li>
+<li><a href="/view/Production_Mastery" title="Production Mastery">Production Mastery</a>
+</li>
+<li><a href="/view/Rare_Mineralogy" title="Rare Mineralogy">Rare Mineralogy</a>
+</li>
+<li><a href="/view/Refining" title="Refining">Refining</a>
+</li>
+<li><a href="/view/Rest" title="Rest">Rest</a>
+</li>
+<li><a href="/view/Sheep_Shearing" title="Sheep Shearing">Sheep Shearing</a>
+</li>
+<li><a href="/view/Shyllien_Ecology" title="Shyllien Ecology">Shyllien Ecology</a>
+</li>
+<li><a href="/view/Tailoring" title="Tailoring">Tailoring</a>
+</li>
+<li><a href="/view/Taming_Wild_Animals" title="Taming Wild Animals">Taming Wild Animals</a>
+</li>
+<li><a href="/view/Tasting" title="Tasting">Tasting</a>
+</li>
+<li><a href="/view/Transformation_Mastery" title="Transformation Mastery">Transformation Mastery</a>
+</li>
+<li><a href="/view/Weaving" title="Weaving">Weaving</a>
+</li>
+<li><a href="/view/Wine_Making" title="Wine Making">Wine Making</a>
+</li>
+</ul>
+<p><b><a href="/view/Category:Dual_Gun_Skills" title="Category:Dual Gun Skills">Dual Gun</a></b>
+</p>
+<ul>
+<li><a href="/view/Bullet_Slide" title="Bullet Slide">Bullet Slide</a>
+</li>
+<li><a href="/view/Bullet_Storm" title="Bullet Storm">Bullet Storm</a>
+</li>
+<li><a href="/view/Dual_Gun_Mastery" title="Dual Gun Mastery">Dual Gun Mastery</a>
+</li>
+<li><a href="/view/Flash_Launcher" title="Flash Launcher">Flash Launcher</a>
+</li>
+<li><a href="/view/Grapple_Shot" title="Grapple Shot">Grapple Shot</a>
+</li>
+<li><a href="/view/Reload" title="Reload">Reload</a>
+</li>
+<li><a href="/view/Shooting_Rush" title="Shooting Rush">Shooting Rush</a>
+</li>
+<li><a href="/view/Way_of_the_Gun" title="Way of the Gun">Way of the Gun</a>
+</li>
+</ul>
+</td>
+<td style="vertical-align: top;">
+<p><b><a href="/view/Category:Alchemy" title="Category:Alchemy">Alchemy</a></b>
+</p>
+<ul>
+<li><a href="/view/Alchemy_Mastery" title="Alchemy Mastery">Alchemy Mastery</a>
+</li>
+<li><a href="/view/Barrier_Spikes" title="Barrier Spikes">Barrier Spikes</a>
+</li>
+<li><a href="/view/Chain_Cylinder" title="Chain Cylinder">Chain Cylinder</a>
+</li>
+<li><a href="/view/Clay_Alchemy" title="Clay Alchemy">Clay Alchemy</a>
+</li>
+<li><a href="/view/Elemental_Wave" title="Elemental Wave">Elemental Wave</a>
+</li>
+<li><a href="/view/Fire_Alchemy" title="Fire Alchemy">Fire Alchemy</a>
+</li>
+<li><a href="/view/Flame_Burst" title="Flame Burst">Flame Burst</a>
+</li>
+<li><a href="/view/Fragmentation" title="Fragmentation">Fragmentation</a>
+</li>
+<li><a href="/view/Frozen_Blast" title="Frozen Blast">Frozen Blast</a>
+</li>
+<li><a href="/view/Golden_Time" title="Golden Time">Golden Time</a>
+</li>
+<li><a href="/view/Guard_Cylinder_Mastery" title="Guard Cylinder Mastery">Guard Cylinder Mastery</a>
+</li>
+<li><a href="/view/Heat_Buster" title="Heat Buster">Heat Buster</a>
+</li>
+<li><a href="/view/Hydra_Transmutation" title="Hydra Transmutation">Hydra Transmutation</a>
+</li>
+<li><a href="/view/Life_Drain" title="Life Drain">Life Drain</a>
+</li>
+<li><a href="/view/Mana_Crystallization" title="Mana Crystallization">Mana Crystallization</a>
+</li>
+<li><a href="/view/Metal_Conversion" title="Metal Conversion">Metal Conversion</a>
+</li>
+<li><a href="/view/Rain_Casting" title="Rain Casting">Rain Casting</a>
+</li>
+<li><a href="/view/Sand_Burst" title="Sand Burst">Sand Burst</a>
+</li>
+<li><a href="/view/Shock" title="Shock">Shock</a>
+</li>
+<li><a href="/view/Summon_Golem" title="Summon Golem">Summon Golem</a>
+</li>
+<li><a href="/view/Synthesis" title="Synthesis">Synthesis</a>
+</li>
+<li><a href="/view/Transmutation" title="Transmutation">Transmutation</a>
+</li>
+<li><a href="/view/Water_Alchemy" title="Water Alchemy">Water Alchemy</a>
+</li>
+<li><a href="/view/Water_Cannon" title="Water Cannon">Water Cannon</a>
+</li>
+<li><a href="/view/Wind_Alchemy" title="Wind Alchemy">Wind Alchemy</a>
+</li>
+<li><a href="/view/Wind_Blast" title="Wind Blast">Wind Blast</a>
+</li>
+</ul>
+<p><b><a href="/view/Category:Music_Skills" title="Category:Music Skills">Music</a></b>
+</p>
+<ul>
+<li><a href="/view/Battlefield_Overture" title="Battlefield Overture">Battlefield Overture</a>
+</li>
+<li><a href="/view/Composing" title="Composing">Composing</a>
+</li>
+<li><a href="/view/Dischord" title="Dischord">Dischord</a>
+</li>
+<li><a href="/view/Encore" title="Encore">Encore</a>
+</li>
+<li><a href="/view/Enduring_Melody" title="Enduring Melody">Enduring Melody</a>
+</li>
+<li><a href="/view/Enthralling_Performance" title="Enthralling Performance">Enthralling Performance</a>
+</li>
+<li><a href="/view/Fantastic_Chorus" title="Fantastic Chorus">Fantastic Chorus</a>
+</li>
+<li><a href="/view/Harvest_Song" title="Harvest Song">Harvest Song</a>
+</li>
+<li><a href="/view/Lullaby" title="Lullaby">Lullaby</a>
+</li>
+<li><a href="/view/March_Song" title="March Song">March Song</a>
+</li>
+<li><a href="/view/Musical_Knowledge" title="Musical Knowledge">Musical Knowledge</a>
+</li>
+<li><a href="/view/Playing_Instrument" title="Playing Instrument">Playing Instrument</a>
+</li>
+<li><a href="/view/Song" title="Song">Song</a>
+</li>
+<li><a href="/view/Vivace" title="Vivace">Vivace</a>
+</li>
+</ul>
+</td>
+<td style="vertical-align: top;">
+<p><b><a href="/view/Category:Fighter_Skills" title="Category:Fighter Skills">Fighter</a></b>
+</p>
+<ul>
+<li><a href="/view/Chain_Mastery" title="Chain Mastery">Chain Mastery</a>
+</li>
+<li><a href="/view/Charging_Strike" title="Charging Strike">Charging Strike</a>
+</li>
+<li><a href="/view/Drop_Kick" title="Drop Kick">Drop Kick</a>
+</li>
+<li><a href="/view/Focused_Fist" title="Focused Fist">Focused Fist</a>
+</li>
+<li><a href="/view/Knuckle_Mastery" title="Knuckle Mastery">Knuckle Mastery</a>
+</li>
+<li><a href="/view/Pummel" title="Pummel">Pummel</a>
+</li>
+<li><a href="/view/Respite" title="Respite">Respite</a>
+</li>
+<li><a href="/view/Somersault_Kick" title="Somersault Kick">Somersault Kick</a>
+</li>
+<li><a href="/view/Spinning_Uppercut" title="Spinning Uppercut">Spinning Uppercut</a>
+</li>
+<li><a href="/view/Tumble" title="Tumble">Tumble</a>
+</li>
+</ul>
+<p><b><a href="/view/Category:Puppetry_Skills" title="Category:Puppetry Skills">Puppetry</a></b>
+</p>
+<ul>
+<li><a href="/view/Act_1:_Inciting_Incident" title="Act 1: Inciting Incident">Act 1: Inciting Incident</a>
+</li>
+<li><a href="/view/Act_2:_Threshold_Cutter" title="Act 2: Threshold Cutter">Act 2: Threshold Cutter</a>
+</li>
+<li><a href="/view/Act_4:_Rising_Action" title="Act 4: Rising Action">Act 4: Rising Action</a>
+</li>
+<li><a href="/view/Act_6:_Crisis" title="Act 6: Crisis">Act 6: Crisis</a>
+</li>
+<li><a href="/view/Act_7:_Climactic_Crash" title="Act 7: Climactic Crash">Act 7: Climactic Crash</a>
+</li>
+<li><a href="/view/Act_9:_Invigorating_Encore" title="Act 9: Invigorating Encore">Act 9: Invigorating Encore</a>
+</li>
+<li><a href="/view/Colossus_Marionette" title="Colossus Marionette">Colossus Marionette</a>
+</li>
+<li><a href="/view/Control_Marionette" title="Control Marionette">Control Marionette</a>
+</li>
+<li><a href="/view/Pierrot_Marionette" title="Pierrot Marionette">Pierrot Marionette</a>
+</li>
+<li><a href="/view/Puppet%27s_Snare" title="Puppet's Snare">Puppet's Snare</a>
+</li>
+<li><a href="/view/Wire_Pull" title="Wire Pull">Wire Pull</a>
+</li>
+</ul>
+<p><b><a href="/view/Transformations" title="Transformations">Transformations</a></b>
+</p>
+<ul>
+<li><a href="/view/Beast" title="Beast">Beast</a>
+</li>
+<li><a href="/view/Dark_Knight" title="Dark Knight">Dark Knight</a>
+</li>
+<li><a href="/view/Falcon" title="Falcon">Falcon</a>
+</li>
+<li><a href="/view/Paladin" title="Paladin">Paladin</a>
+</li>
+</ul>
+<p><b><a href="/view/Demigod" title="Demigod">Demigod</a></b>
+</p>
+<ul>
+<li><a href="/view/Awakening_of_Light" title="Awakening of Light">Awakening of Light</a>
+</li>
+<li><a href="/view/Spear_of_Light" title="Spear of Light">Spear of Light</a>
+</li>
+<li><a href="/view/Fury_of_Light" title="Fury of Light">Fury of Light</a>
+</li>
+<li><a href="/view/Shadow_Spirit" title="Shadow Spirit">Shadow Spirit</a>
+</li>
+<li><a href="/view/Wings_of_Eclipse" title="Wings of Eclipse">Wings of Eclipse</a>
+</li>
+<li><a href="/view/Wings_of_Rage" title="Wings of Rage">Wings of Rage</a>
+</li>
+</ul>
+</td></tr></table>
+</td></tr></table>
+<table style="width: 100%;">
+
+<tr>
+<th style="text-align: left; margin: 0; background-color:#efe; font-size: 120%; font-weight: bold; border:1px solid #aaa; padding:0.2em 0.4em;"><a href="/view/Category:Production" title="Category:Production">Production</a>
+</th></tr>
+<tr>
+<td>
+<table style="width: 100%;">
+<tr>
+<td>
+<ul>
+<li><a href="/view/Blacksmith_List" title="Blacksmith List" class="mw-redirect">Blacksmith List</a>
+</li>
+<li><a href="/view/Carpentry_List" title="Carpentry List">Carpentry List</a>
+</li>
+<li><a href="/view/Cooking_List" title="Cooking List" class="mw-redirect">Cooking List</a>
+</li>
+<li><a href="/view/Fishing_List" title="Fishing List" class="mw-redirect">Fishing List</a>
+</li>
+<li><a href="/view/Handicraft_List" title="Handicraft List">Handicraft List</a>
+</li>
+<li><a href="/view/Herb_List" title="Herb List">Herb List</a>
+</li>
+</ul>
+</td>
+<td style="vertical-align: top;">
+<ul>
+<li><a href="/view/Hillwen_Engineering_List" title="Hillwen Engineering List">Hillwen Engineering List</a>
+</li>
+<li><a href="/view/Magic_Craft_List" title="Magic Craft List">Magic Craft List</a>
+</li>
+<li><a href="/view/Potion_Making_List" title="Potion Making List">Potion Making List</a>
+</li>
+<li><a href="/view/Refining_List" title="Refining List">Refining List</a>
+</li>
+<li><a href="/view/Tailoring_List" title="Tailoring List" class="mw-redirect">Tailoring List</a>
+</li>
+<li><a href="/view/Weaving_List" title="Weaving List">Weaving List</a>
+</li>
+</ul>
+</td>
+<td style="vertical-align: top;">
+<ul>
+<li><a href="/view/Fragmentation_List" title="Fragmentation List">Fragmentation List</a>
+</li>
+<li><a href="/view/Metal_Conversion_List" title="Metal Conversion List">Metal Conversion List</a>
+</li>
+<li><a href="/view/Synthesis_List" title="Synthesis List">Synthesis List</a>
+</li>
+</ul>
+</td></tr></table>
+</td></tr></table>
+<table style="width: 100%;">
+
+<tr>
+<th style="text-align: left; margin: 0; background-color:#cef; font-size: 120%; font-weight: bold; border:1px solid #aaa; padding:0.2em 0.4em;"><a href="/view/Pets" title="Pets">Pets</a> and <a href="/view/Partners" title="Partners">Partners</a>
+</th></tr>
+<tr>
+<td>
+<table style="width: 100%;">
+<tr>
+<td style="vertical-align: top;">
+<ul>
+<li><a href="/view/Category:Animal_Humanoid" title="Category:Animal Humanoid">Animal Humanoid</a>
+</li>
+<li><a href="/view/Category:Mounts" title="Category:Mounts">Mounts</a>
+</li>
+<li><a href="/view/Category:Flying_Mounts" title="Category:Flying Mounts">Flying Mounts</a>
+</li>
+<li><a href="/view/Category:Collection" title="Category:Collection">Collection</a>
+</li>
+</ul>
+</td>
+<td style="vertical-align: top;">
+<ul>
+<li><a href="/view/Category:Mini_Pets" title="Category:Mini Pets">Mini</a>
+</li>
+<li><a href="/view/List_of_Pets" title="List of Pets" class="mw-redirect">List of Pets</a>
+</li>
+</ul>
+</td>
+<td style="vertical-align: top;">
+<p><b><a href="/view/Category:Partners" title="Category:Partners">Partners</a></b>
+</p>
+<ul>
+<li><a href="/view/Butler_(Partner)" title="Butler (Partner)">Butler</a>
+</li>
+<li><a href="/view/Commerce_Partner" title="Commerce Partner">Commerce Partner</a>
+</li>
+<li><a href="/view/Maid" title="Maid">Maid</a>
+</li>
+</ul>
+</td></tr></table>
+</td></tr></table>
+</td></tr></table>
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.820 seconds
+Real time usage: 0.843 seconds
+Preprocessor visited node count: 7866/1000000
+Preprocessor generated node count: 9654/1000000
+Post‐expand include size: 202720/2097152 bytes
+Template argument size: 11564/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 4/200
+ExtLoops count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwwiki-mw_:pcache:idhash:652-0!*!0!!*!2!* and timestamp 20140620152210
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.mabinogiworld.com/index.php?title=Wiki_Home&amp;oldid=592228">http://wiki.mabinogiworld.com/index.php?title=Wiki_Home&amp;oldid=592228</a>"				</div>
+												<div id='catlinks' class='catlinks catlinks-allhidden'></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-createaccount"><a href="/index.php?title=Special:UserLogin&amp;returnto=Wiki+Home&amp;type=signup">Create account</a></li><li id="pt-login"><a href="/index.php?title=Special:UserLogin&amp;returnto=Wiki+Home" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="/view/Wiki_Home"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk"><span><a href="/view/Talk:Wiki_Home"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="/view/Wiki_Home" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="/index.php?title=Wiki_Home&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="/index.php?title=Wiki_Home&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="/index.php" id="searchform">
+				<div id="simpleSearch">
+						<input name="search" placeholder="Search" title="Search Mabinogi World Wiki [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="Search the pages for this text" id="searchButton"><img src="/skins/vector/images/search-ltr.png?303" alt="Search" width="12" height="13" /></button>								<input type='hidden' name="title" value="Special:Search"/>
+		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(/skins/common/images/mw/mwiki.png);" href="/view/Wiki_Home"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-Navigation' aria-labelledby='p-Navigation-label'>
+	<h3 id='p-Navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-Wiki-Main-Page"><a href="/view/Wiki_Home">Wiki Main Page</a></li>
+			<li id="n-M-World-Forums"><a href="http://www.mabinogiworld.com/" rel="nofollow">M-World Forums</a></li>
+			<li id="n-Recent-Changes"><a href="/view/Special:RecentChanges">Recent Changes</a></li>
+			<li id="n-Random-Page"><a href="/view/Special:Random">Random Page</a></li>
+			<li id="n-Wiki-Policy"><a href="/view/Mabinogi_World_Wiki:Policy">Wiki Policy</a></li>
+			<li id="n-Wiki-Editing-Tips"><a href="/view/Wiki_Tips_for_New_Editors">Wiki Editing Tips</a></li>
+			<li id="n-Facebook"><a href="http://www.facebook.com/mabinogiworld" rel="nofollow">Facebook</a></li>
+			<li id="n-Donate"><a href="http://www.mabinogiworld.com/misc.php?do=donate" rel="nofollow">Donate</a></li>
+			<li id="n-IRC-Webchat"><a href="http://webchat.ppirc.net/?channels=mabinogi" rel="nofollow">IRC Webchat</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-Categories' aria-labelledby='p-Categories-label'>
+	<h3 id='p-Categories-label'>Categories</h3>
+	<div class="body">
+		<ul>
+			<li id="n-General-Information"><a href="/view/Category:General_Information">General Information</a></li>
+			<li id="n-Game-System"><a href="/view/Category:Game_System">Game System</a></li>
+			<li id="n-User-Guides"><a href="/view/Category:User_Guides">User Guides</a></li>
+			<li id="n-Skills"><a href="/view/Category:Skills">Skills</a></li>
+			<li id="n-Uladh-Continent"><a href="/view/Category:Uladh">Uladh Continent</a></li>
+			<li id="n-Iria-Continent"><a href="/view/Category:Iria">Iria Continent</a></li>
+			<li id="n-Dungeons"><a href="/view/Category:Dungeons">Dungeons</a></li>
+			<li id="n-NPCs"><a href="/view/NPCs">NPCs</a></li>
+			<li id="n-Items"><a href="/view/Category:Items">Items</a></li>
+			<li id="n-Equipment"><a href="/view/Category:Equipment">Equipment</a></li>
+			<li id="n-Weapons"><a href="/view/Category:Weapons">Weapons</a></li>
+			<li id="n-Library"><a href="/view/Category:In-game_Books">Library</a></li>
+			<li id="n-Upgrades"><a href="/view/Category:Upgrades">Upgrades</a></li>
+			<li id="n-Enchants"><a href="/view/Category:Enchants">Enchants</a></li>
+			<li id="n-Monsters"><a href="/view/Category:Monsters">Monsters</a></li>
+			<li id="n-Production"><a href="/view/Category:Production">Production</a></li>
+			<li id="n-Pets"><a href="/view/Category:Pets">Pets</a></li>
+			<li id="n-Quests"><a href="/view/Category:Quests">Quests</a></li>
+			<li id="n-Exploration"><a href="/view/Category:Exploration">Exploration</a></li>
+			<li id="n-Shadow-Missions"><a href="/view/Category:Shadow_Missions">Shadow Missions</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="/view/Special:WhatLinksHere/Wiki_Home" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="/view/Special:RecentChangesLinked/Wiki_Home" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="/view/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="/index.php?title=Wiki_Home&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="/index.php?title=Wiki_Home&amp;oldid=592228" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="/index.php?title=Wiki_Home&amp;action=info">Page information</a></li>
+			<li id="t-smwbrowselink"><a href="/view/Special:Browse/Wiki_Home" rel="smw-browse">Browse properties</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-Affiliates' aria-labelledby='p-Affiliates-label'>
+	<h3 id='p-Affiliates-label'>Affiliates</h3>
+	<div class="body">
+		<ul>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 22 April 2014, at 15:51.</li>
+											<li id="footer-info-viewcount">This page has been accessed 36,166,203 times.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-Noncommercial-Share Alike 3.0 Unported</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="/view/Mabinogi_World_Wiki:Privacy_policy" title="Mabinogi World Wiki:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="/view/Mabinogi_World_Wiki:About" title="Mabinogi World Wiki:About">About Mabinogi World Wiki</a></li>
+											<li id="footer-places-disclaimer"><a href="/view/Mabinogi_World_Wiki:General_disclaimer" title="Mabinogi World Wiki:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0 Unported" width="88" height="31" /></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="//www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+						<a href="https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki"><img src="/extensions/SemanticMediaWiki/includes/../resources/images/smw_button.png" alt="Powered by Semantic MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.cite","ext.mabinogiWorldAds","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.mabinogiworld.com/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-32391473-1']);
+_gaq.push(['_setDomainName', 'mabinogiworld.com']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script><!-- Served in 0.984 secs. -->
+	</body>
+<!-- Cached 20140620152211 -->
+</html>

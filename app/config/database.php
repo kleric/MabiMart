@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'mabimart',
 			'username'  => 'root',
-			'password'  => 'secret',
+			'password'  => '!Ranger1024#',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
