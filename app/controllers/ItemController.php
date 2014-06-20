@@ -34,11 +34,8 @@ class ItemController extends BaseController {
 			$onserverimgurl = "http://mabimart.com/images/items/" . $imagefilename;
 			
 			//Download it onto the server if it doesn't exist :) so we don't strain wiki servers
-			if(!(@getimagesize($onserverimgurl))) {
-				file_put_contents("/images/items/" . $imagefilename, fopen($imgurl, 'r'));	
-			}
-			else {
-				$imgurl = $onserverimgurl;
+			if(@getimagesize($onserverimgurl)) {
+				$imgurl = $onserverimgurl;	
 			}
 
 			$this->layout->content = View::make('itemview', array(
