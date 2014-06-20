@@ -16,7 +16,7 @@
           </div>
           <div class="panel-body">
             <div class="media">
-              <img class="media-object pull-left" src="/images/items/{{{$item_id or '2'}}}.png">
+              <img class="media-object pull-left" src="{{{ $imgurl }}}">
               <div class="media-body">
                 <small><i>{{ $description or 'No description'}}</small></i> </br>
                 @if(isset($item_stats))
