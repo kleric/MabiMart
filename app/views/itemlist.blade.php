@@ -3,6 +3,11 @@
 Items
 @stop
 @section('content')
+	<script>
+		$(function() {
+    			$("img.lazy").lazyload();
+		});
+	</script>
 	<div class="page-header">
 		<h1>All Items</h1>
 	</div>
@@ -13,7 +18,7 @@ Items
 		@foreach ($itemlist as $item)
   		<a href="/item/view/{{{ $item->id }}}" class="list-group-item clearfix">
   			<div class="item-thumbnail pull-left">
-    			<center><img src="/images/items/{{{ $item->id }}}.png"></center>
+    			<center><img class="lazy" data-original="/images/items/{{{ $item->id }}}.png"></center>
     		</div>
     		<div>
 	    		<b class="list-group-item-heading">{{{ $item->name }}}</b>
