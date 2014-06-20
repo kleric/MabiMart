@@ -49,9 +49,15 @@ class ItemController extends BaseController {
 				'wiki_link' => $wiki_link));
 		}
 	}
-	public function getItems() 
+	public function getCategory($category) 
 	{
-		$this->layout->content = View::make('itemlist', array(
-			'itemlist' => Item::all()));
+		if($category == "all") {
+			$this->layout->content = View::make('itemlist', array(
+				'itemlist' => Item::all()));
+		}	
+	}
+	public function getCategories() 
+	{
+		$this->layout->content = View::make('categorylist');
 	}
 }

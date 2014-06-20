@@ -15,9 +15,13 @@ Route::get('/', function()
 {
 	return View::make('welcome');
 });
-Route::get('/items', array(
+Route::get('/items/{category}', array(
 	'as' => 'items',
-	'uses' => 'ItemController@getItems')
+	'uses' => 'ItemController@getCategory')
+);
+Route::get('/items', array(
+	'as' => 'categories',
+	'uses' => 'ItemController@getCategories')
 );
 
 Route::get('/item/view/{id}', array(
