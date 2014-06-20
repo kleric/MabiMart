@@ -153,6 +153,9 @@ def process_stats(stats):
 
   return new_stats
 
+def sanitize_text(raw_text):
+  return raw_text.strip().replace('"', r'\"')
+
 def mw_item_page_scrape(url):
   '''Given a URL of an item page on Mabinogi World Wiki, scrapes the following
   info into a dictionary to return:
@@ -290,15 +293,15 @@ def mw_item_page_scrape(url):
   # process Other Info (get raw HTML of ul)
   others = other_info[0].cssselect('ul')
   if others:
-    notes = html.tostring(others[0])
+    notes = sanitize_text(html.tostring(others[0]))
   else:
     notes = None
 
   # set up initial dictionary with the data from the table
   data = process_stats(stats)
   # add other data
-  data['name'] = name[0].text_content().strip()
-  data['description'] = description[0].text_content().strip()
+  data['name'] = sanitize_text(name[0].text_content())
+  data['description'] = sanitize_text(description[0].text_content())
   data['wikilink'] = url
   if icon is not None:
     data['imgurl'] = icon
@@ -377,13 +380,13 @@ def scrape_datatable_format(scrape):
   item_line = 'Item::create(array('
   for key in scrape:
     if key == 'name' or key == 'url' or key == 'imgurl' or key == 'notes': 
-      item_line += "'" + key + "' => '" + scrape[key] + "',"
+      item_line += "'" + key + "' => \"" + scrape[key] + "\","
     elif key == 'description':
       # a hack to make sure we don't have an extra comma on the last data line
       pass
     else:
       item_line +=  "'" + key + "' => " + str(scrape[key]).lower() + ","
-  item_line += "'description' => '" + scrape['description'] + "'));"
+  item_line += "'description' => \"" + scrape['description'] + "\"));"
   return item_line
 
 def print_equipment_items_data():
