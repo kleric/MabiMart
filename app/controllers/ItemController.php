@@ -28,12 +28,14 @@ class ItemController extends BaseController {
 			$description = 	$item->getDescription();
 			$stats = $item->getStats();
 			$wiki_link = $item->getWikiLink();
+			$imgurl = $item->imgurl;
 
 			$this->layout->content = View::make('itemview', array(
 				'item_id' => $id,
 				'description' => $description,
 				'item_name' => $item_name,
 				'item_stats' => $stats,
+				'imgurl' => $imgurl,
 				'wiki_link' => $wiki_link));
 		}
 	}
