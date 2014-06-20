@@ -11,22 +11,27 @@
 |
 */
 
-Route::get('/', function()
+Route::any('/', function()
 {
 	return View::make('welcome');
 });
-Route::get('/items/{category}', array(
+Route::any('/items/{category}', array(
 	'as' => 'items',
 	'uses' => 'ItemController@getCategory')
 );
-Route::get('/items', array(
+Route::any('/items', array(
 	'as' => 'categories',
 	'uses' => 'ItemController@getCategories')
 );
 
-Route::get('/item/view/{id}', array(
+Route::any('/view/{item}', array(
+	'as' => 'wikiredirect',
+	'uses' => 'ItemController@getWikiPage'));
+
+Route::any('/item/view/{id}', array(
 	'as' => 'item',
 	'uses' => 'ItemController@getItem'));
+	
 Route::get('/auction/view/{id}', array(
 	'as' => 'auction',
 	'uses' => 'AuctionController@getAuction'));
