@@ -3,9 +3,6 @@
 Items
 @stop
 @section('content')
-	<script>
-    		$("img.lazy").lazyload();
-	</script>
 	<div class="page-header">
 		<h1>All Items</h1>
 	</div>
@@ -25,5 +22,10 @@ Items
   		</a>
   		@endforeach
 	</div>
-	
+	<script src="/js/jquery.lazyload.min.js" type="text/javascript"></script>
+	<script type="text/javascript" charset="utf-8">
+  		$(function() {
+     			$("img.lazy").lazyload();
+  		});
+  	</script>
 @stop
