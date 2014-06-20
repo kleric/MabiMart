@@ -22,7 +22,6 @@ Items
   		</a>
   		@endforeach
 	</div>
-	<script src="/js/jquery.lazyload.min.js" type="text/javascript"></script>
 	<script type="text/javascript" charset="utf-8">
   		$(function() {
      			$("img.lazy").lazyload();
