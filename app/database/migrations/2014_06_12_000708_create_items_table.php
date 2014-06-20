@@ -114,7 +114,7 @@ class CreateItemsTable extends Migration {
 			$table->smallInteger('setassaultslash')->unsigned()->nullable(); //Assault Slash
 			$table->smallInteger('setdemigod')->unsigned()->nullable(); //DEMI GOD
 
-			$table->string('notes', 1024)->nullable(); //E.g. part of the nuadha set
+			$table->string('notes', 2048)->nullable(); //E.g. part of the nuadha set
 			$table->string('wikilink', 256)->nullable();
 			$table->timestamps();
 		});
