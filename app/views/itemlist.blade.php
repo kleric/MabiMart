@@ -4,9 +4,7 @@ Items
 @stop
 @section('content')
 	<script>
-		$(function() {
-    			$("img.lazy").lazyload();
-		});
+    		$("img.lazy").lazyload();
 	</script>
 	<div class="page-header">
 		<h1>All Items</h1>
