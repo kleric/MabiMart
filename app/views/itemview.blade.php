@@ -23,6 +23,7 @@
                 <small>{{$item_stats}}</small><br>
                 @endif
                 @if(isset($item_notes))
+                <br>
                 <div class="itemnotes">
                 	<small>{{ $item_notes }}</small>
                 </div>
