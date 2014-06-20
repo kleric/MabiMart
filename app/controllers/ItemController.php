@@ -45,7 +45,7 @@ class ItemController extends BaseController {
 				'item_name' => $item_name,
 				'item_stats' => $stats,
 				'imgurl' => $imgurl,
-				'notes' => $notes,
+				'item_notes' => $notes,
 				'wiki_link' => $wiki_link));
 		}
 	}
