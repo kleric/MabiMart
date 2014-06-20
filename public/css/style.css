@@ -19,8 +19,8 @@ body {
 	box-shadow:0px 2px 2px 2px #d7ebff;
 }
 .item-thumbnail {
-	width: 48px;
-	height:48px;
+	width: 96px;
+	height:96px;
 	overflow: hidden;
 }
 #userpanel {
