@@ -17,6 +17,6 @@ cur.execute("SELECT id,imgurl FROM items")
 for row in cur.fetchall():
   localpath = "public/images/" + row[0] + ".png"
   urllib.urlretrieve(row[1], localpath)
-  print "Downloaded " + row[1] + " successfully!"
+  print "Downloaded " + str(row[1]) + " successfully!"
 
 cur.close()
