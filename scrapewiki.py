@@ -215,9 +215,9 @@ def mw_item_page_scrape(url):
     icon_link = tree.xpath(icon_link_xpath)
     if not icon_link:
       sys.stderr.write('WARNING: Unable to find an icon link\n')
-      return {'name': name[0].text_content().strip(), 'url': url, 'description': description[0].text_content().strip()}
+      return {'name': name[0].text_content().strip(), 'wikilink': url, 'description': description[0].text_content().strip()}
     else:
-      return {'name': name[0].text_content().strip(), 'url': url, 'description': description[0].text_content().strip(), 'imgurl': mw_base_url + icon_link[0]}
+      return {'name': name[0].text_content().strip(), 'wikilink': url, 'description': description[0].text_content().strip(), 'imgurl': mw_base_url + icon_link[0]}
 
   # the rest of the stuff, in the table
   icon_link_xpath = "*[name() = 'tr' and (position() = 1)]/*[@class and contains(concat(' ', normalize-space(@class), ' '), ' image ') and (name() = 'td') and (position() = 1)]/a/img/@src"
