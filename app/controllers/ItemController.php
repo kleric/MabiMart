@@ -17,7 +17,7 @@ class ItemController extends BaseController {
 	protected $layout = 'layouts.master';
 	public function getWikiPage($item) 
 	{
-		$newurl = "http://http://wiki.mabinogiworld.com/view/" . $item;
+		$newurl = "http://wiki.mabinogiworld.com/view/" . $item;
 		return Redirect::to($newurl);
 	}
 	public function getItem($id) 
