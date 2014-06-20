@@ -29,6 +29,7 @@ class ItemController extends BaseController {
 			$stats = $item->getStats();
 			$wiki_link = $item->getWikiLink();
 			$imgurl = $item->imgurl;
+			$notes = $item->getNotes();
 			
 			$imagefilename = $id . ".png";
 			$onserverimgurl = "http://mabimart.com/images/items/" . $imagefilename;
@@ -44,6 +45,7 @@ class ItemController extends BaseController {
 				'item_name' => $item_name,
 				'item_stats' => $stats,
 				'imgurl' => $imgurl,
+				'notes' => $notes,
 				'wiki_link' => $wiki_link));
 		}
 	}
