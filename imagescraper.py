@@ -11,5 +11,8 @@ db = MySQLdb.connect(host=hst, user=usr, passwd=passwrd,db=database)
 
 cur = db.cursor()
 
-cur.execute("SELECT * FROM items")
+cur.execute("SELECT id,imgurl FROM items")
+
+for row in cur.fetchall():
+  print row[0]
 
