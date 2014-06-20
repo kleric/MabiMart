@@ -15,8 +15,11 @@ cur = db.cursor()
 cur.execute("SELECT id,imgurl FROM items")
 
 for row in cur.fetchall():
-  localpath = "public/images/" + str(row[0]) + ".png"
-  urllib.urlretrieve(row[1], localpath)
-  print "Downloaded " + row[1] + " successfully!"
+  try:
+    localpath = "public/images/" + str(row[0]) + ".png"
+    urllib.urlretrieve(row[1], localpath)
+    print "Downloaded " + row[1] + " successfully!"
+  except IOError, e:
+    print str(row[1])
 
 cur.close()
