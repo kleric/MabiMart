@@ -10,7 +10,7 @@ Items
   		<li>All Items</li>
 	</ol>
 	<div class="list-group">
-		@foreach ($itemlist as $item) {
+		@foreach ($itemlist as $item)
   		<a href="/item/view/{{{ $item->id }}}" class="list-group-item clearfix">
   			<div class="item-thumbnail pull-left">
     			<center><img src="/images/items/{{{ $item->id }}}.png"></center>
