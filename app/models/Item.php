@@ -24,6 +24,13 @@ class Item extends Eloquent {
 		}
 		return $description;
 	}
+	public function getNotes() {
+		$notes = $this->notes;
+		if(null === $notes) {
+			$notes = "";
+		}
+		return $notes;
+	}
 	public function getName() {
 		$name = $this->name;
 
