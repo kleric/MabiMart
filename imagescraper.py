@@ -3,8 +3,8 @@ import MySQLdb
 import getpass
 import urllib
 
-hst = raw_input("Host:")
-usr = raw_input("User:")
+hst = "localhost"
+usr = "root"
 passwrd = getpass.getpass()
 database = raw_input("Database:")
 
@@ -16,7 +16,7 @@ cur.execute("SELECT id,imgurl FROM items")
 
 for row in cur.fetchall():
   try:
-    localpath = "public/images/" + str(row[0]) + ".png"
+    localpath = "public/images/items/" + str(row[0]) + ".png"
     urllib.urlretrieve(row[1], localpath)
     print "Downloaded " + row[1] + " successfully!"
   except IOError, e:
