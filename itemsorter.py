@@ -42,7 +42,7 @@ cur = db.cursor()
 
 printheader()
 
-cur.execute("SELECT * FROM items WHERE weaponmax is NOT NULL AND weaponmax > 0")
+cur.execute("SELECT * FROM items WHERE (name not like \"%Staff%\" AND name not like \"%Wand%\") AND weaponmax is NOT NULL AND weaponmax > 0")
 
 weapons = []
 
@@ -61,7 +61,7 @@ cur.execute("SELECT * FROM items WHERE (name like \"%Staff%\" OR name like \"%Wa
 
 printcategory("magicweapons", cur)
 
-cur.execute("SELECT * FROM items WHERE name like \"%Shield%\" OR name like \"%Holy Eagle Mask%\"")
+cur.execute("SELECT * FROM items WHERE wornon = 7") #name like \"%Shield%\" OR name like \"%Holy Eagle Mask%\"")
 
 printcategory("shields", cur)
 
@@ -69,7 +69,7 @@ cur.execute("SELECT * FROM items WHERE defense is NOT NULL AND defense = 2 AND u
 
 printcategory("clothing", cur)
 
-cur.execute("SELECT * FROM items WHERE defense is NOT NULL AND defense = 0 AND protection is NOT NULL AND protection = 0 AND reforgable = 0 AND enchantable = 0 AND (name like \"%Robe%\" OR name like \"%Wings%\" OR name like \"%Overcoat%\")")
+cur.execute("SELECT * FROM items WHERE wornon = 5")#defense is NOT NULL AND defense = 0 AND protection is NOT NULL AND protection = 0 AND reforgable = 0 AND enchantable = 0 AND (name like \"%Robe%\" OR name like \"%Wings%\" OR name like \"%Overcoat%\")")
 
 printcategory("robes", cur)
 
