@@ -62,6 +62,7 @@ class ItemController extends BaseController {
 	}
 	public function getCategories() 
 	{
-		$this->layout->content = View::make('categorylist');
+		$this->layout->content = View::make('categorylist', array(
+			'categorylist' => Category::all()));
 	}
 }

@@ -10,14 +10,14 @@ Items
   		<li>All Items</li>
 	</ol>
 	<div class="list-group">
-		@foreach ($itemlist as $item)
-  		<a href="/item/view/{{{ $item->id }}}" class="list-group-item clearfix">
+		@foreach ($categorylist as $category)
+  		<a href="/items/{{{ $category->urlname }}}" class="list-group-item clearfix">
   			<div class="item-thumbnail pull-left">
-    			<center><img class="lazy" data-original="/images/items/{{{ $item->id }}}.png"></center>
+    			<center><img class="lazy" data-original="/images/items/{{{ $category->thumbnail_item_id }}}.png"></center>
     		</div>
     		<div>
-	    		<b class="list-group-item-heading">{{{ $item->name }}}</b>
-	    		<i class="list-group-item-text">{{{ $item->description }}}</i>
+	    		<b class="list-group-item-heading">{{{ $category->name }}}</b>
+	    		<i class="list-group-item-text">{{{ $category->description }}}</i>
 	    	</div>
   		</a>
   		@endforeach

@@ -34,7 +34,10 @@
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
 						<li><a href="/">Home</a></li>
-						<li><a href="{{ URL::route('items') }}">Items</a></li>
+						<li><a href="{{ URL::route('categories') }}">Items</a></li>
+						<li><a href="">Enchants</a></li>
+						<li><a href="">Reforges</a></li>
+						<li><a href="">Auctions</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
           				@if(Auth::check())
