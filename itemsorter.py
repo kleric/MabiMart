@@ -73,19 +73,19 @@ cur.execute("SELECT * FROM items WHERE defense is NOT NULL AND defense = 0 AND p
 
 printcategory("robes", cur)
 
-cur.execute("SELECT * FROM items WHERE (name like \"%Shoes%\" OR name like \"%Boots%\" OR name like \"%Pumps%\" OR name like \"%Sandals%\" OR name like \"%Greaves%\" OR name like \"%Slippers%\")")
+cur.execute("SELECT * FROM items WHERE wornon = 4")#(name like \"%Shoes%\" OR name like \"%Boots%\" OR name like \"%Pumps%\" OR name like \"%Sandals%\" OR name like \"%Greaves%\" OR name like \"%Slippers%\")")
 
 printcategory("shoes", cur)
 
-cur.execute("SELECT * FROM items WHERE (name like \"%Glove%\" OR name like \"%Bracelet%\" OR name like \"%Wristband%\" OR name like \"%Gauntlet%\" OR name like \"%Bracer%\" OR name like \"%Paws%\" OR name like \"%Protector%\" OR name like \"%Vambrace%\" OR name like \"%Wrist Guard%\") AND (name NOT LIKE \"%Bracer Knuckle%\" AND name NOT LIKE \"%Matching Couples Bracelet%\")")
+cur.execute("SELECT * FROM items WHERE wornon = 3")#(name like \"%Glove%\" OR name like \"%Bracelet%\" OR name like \"%Wristband%\" OR name like \"%Gauntlet%\" OR name like \"%Bracer%\" OR name like \"%Paws%\" OR name like \"%Protector%\" OR name like \"%Vambrace%\" OR name like \"%Wrist Guard%\") AND (name NOT LIKE \"%Bracer Knuckle%\" AND name NOT LIKE \"%Matching Couples Bracelet%\")")
 
 printcategory("gloves", cur)
 
-cur.execute("SELECT * FROM items WHERE (name like \"%Glove%\" OR name like \"%Bracelet%\" OR name like \"%Wristband%\" OR name like \"%Gauntlet%\" OR name like \"%Bracer%\" OR name like \"%Paws%\" OR name like \"%Protector%\" OR name like \"%Vambrace%\" OR name like \"%Wrist Guard%\") AND (name NOT LIKE \"%Bracer Knuckle%\" AND name NOT LIKE \"%Matching Couples Bracelet%\")")
+cur.execute("SELECT * FROM items WHERE wornon = 2")#(name like \"%Glove%\" OR name like \"%Bracelet%\" OR name like \"%Wristband%\" OR name like \"%Gauntlet%\" OR name like \"%Bracer%\" OR name like \"%Paws%\" OR name like \"%Protector%\" OR name like \"%Vambrace%\" OR name like \"%Wrist Guard%\") AND (name NOT LIKE \"%Bracer Knuckle%\" AND name NOT LIKE \"%Matching Couples Bracelet%\")")
 
 printcategory("hats", cur)
 
-cur.execute("SELECT * FROM items WHERE (name like \"%Flying Puppet%\" OR name like \"%Support Puppet%\" OR name like \"%Balloon%  \" OR (((defense = 2 AND protection = 0) OR (defense = 1 AND protection = 1) OR (defense = 0 AND protection = 2) OR (defense = 2 AND protection = 2)) AND maxdurability = 5 AND upgrades IS NULL AND name NOT LIKE \"%Helm%\" AND name NOT LIKE \"%Hat%\" AND name NOT LIKE \"%Glove%\")) ")
+cur.execute("SELECT * FROM items WHERE wornon = 1")  #(name like \"%Flying Puppet%\" OR name like \"%Support Puppet%\" OR name like \"%Balloon%  \" OR (((defense = 2 AND protection = 0) OR (defense = 1 AND protection = 1) OR (defense = 0 AND protection = 2) OR (defense = 2 AND protection = 2)) AND maxdurability = 5 AND upgrades IS NULL AND name NOT LIKE \"%Helm%\" AND name NOT LIKE \"%Hat%\" AND name NOT LIKE \"%Glove%\")) ")
 
 printcategory("accessories", cur)
 
