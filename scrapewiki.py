@@ -17,6 +17,26 @@ def delete_mouseover(element):
     if x is not None:
       x.drop_tree()
 
+def convert_worn_on(worn_string):
+  '''Converts a string describing the Worn On table entry to a number
+  representing the same, for consistency and easier processing.'''
+  if worn_string == 'Accessory':
+    return 1
+  elif worn_string == 'Head':
+    return 2
+  elif worn_string == 'Hand':
+    return 3
+  elif worn_string == 'Foot':
+    return 4
+  elif worn_string == 'Robe':
+    return 5
+  elif worn_string == 'Body':
+    return 6
+  elif worn_string == 'Left Hand':
+    return 7
+  else:
+    return 0
+
 def remove_nondigits(num_string):
   return filter(lambda c: c.isdigit() or c == '.', num_string)
 
@@ -148,6 +168,12 @@ def process_stats(stats):
         if slash_index != -1: # if no slash, leave null
           new_stats['upgrades'] = process_number_datum(stats[key][:slash_index])
           new_stats['gemupgrades'] = process_number_datum(stats[key][slash_index+1:])
+      elif key == 'Worn On':
+        worn_num = convert_worn_on(stats[key])
+        if worn_num > 0:
+          new_stats['wornon'] = worn_num
+        else:
+          sys.stderr.write('WARNING: Unable to convert "Worn On" value to a number; omitting field')
     except:
       sys.stderr.write('WARNING: some exception thrown in stats processing\n')
 
@@ -425,6 +451,8 @@ def print_equipment_items_data():
   sys.stderr.write('Total ERRORs: ' + str(err_count))
 
 print_equipment_items_data()
+# TODO: change table XPath to select based on contained words for better
+# reliability.
 # run this command to write output to a file called scrape.data and {progress,
 # WARNINGs, and ERRORs} to scrape.log, while also printing the latter to the
 # terminal so you can watch its progress:
