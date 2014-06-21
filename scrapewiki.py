@@ -227,8 +227,8 @@ def mw_item_page_scrape(url):
       sys.stderr.write('ERROR: Unable to find a description\n')
       return None
 
-  table_xpath = "descendant-or-self::div[@id = 'mw-content-text']/h2[contains(., 'Base Stats and Information')]/following-sibling::*[@class and contains(concat(' ', normalize-space(@class), ' '), ' mabitable ') and (name() = 'table') and (position() = 1)]"
-  table_alt_xpath = "descendant-or-self::div[@id = 'mw-content-text']/h2[contains(., 'Base Stats and Information')]/following-sibling::*[@class and contains(concat(' ', normalize-space(@class), ' '), ' tabdiv ') and (name() = 'div') and (position() = 1)]/div[@id = 'tab1']/table[@class and contains(concat(' ', normalize-space(@class), ' '), ' mabitable ')]"
+  table_xpath = "descendant-or-self::div[@id = 'mw-content-text']/h2[contains(., 'Base Stats and Information')]/following-sibling::*[@class and contains(concat(' ', normalize-space(@class), ' '), ' mabitable ') and (name() = 'table') and (position() < 3)]"
+  table_alt_xpath = "descendant-or-self::div[@id = 'mw-content-text']/h2[contains(., 'Base Stats and Information')]/following-sibling::*[@class and contains(concat(' ', normalize-space(@class), ' '), ' tabdiv ') and (name() = 'div') and (position() < 3)]/div[@id = 'tab1']/table[@class and contains(concat(' ', normalize-space(@class), ' '), ' mabitable ')]"
   
   # see if the table exists (check two paths to cover Spirit Weapons)
   table = tree.xpath(table_xpath)
@@ -451,8 +451,6 @@ def print_equipment_items_data():
   sys.stderr.write('Total ERRORs: ' + str(err_count))
 
 print_equipment_items_data()
-# TODO: change table XPath to select based on contained words for better
-# reliability.
 # run this command to write output to a file called scrape.data and {progress,
 # WARNINGs, and ERRORs} to scrape.log, while also printing the latter to the
 # terminal so you can watch its progress:
