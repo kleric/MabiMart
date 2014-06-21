@@ -5,7 +5,7 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class Category extends Eloquent {
+class SortedItem extends Eloquent {
 
 	protected $guarded = array('id');
 
@@ -14,10 +14,6 @@ class Category extends Eloquent {
 	 *
 	 * @var string
 	 */
-	protected $table = 'categories';
+	protected $table = 'sorteditems';
 
-	public function items() 
-	{
-		return $this->morphedByMany('Item', 'sorteditem');
-	}
 }

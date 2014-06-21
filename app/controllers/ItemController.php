@@ -55,10 +55,18 @@ class ItemController extends BaseController {
 	}
 	public function getCategory($category) 
 	{
+		$itemlist;
+		$cat = Category::where('urlname', '=', $category)->firstOrFail();
 		if($category == "all") {
-			$this->layout->content = View::make('itemlist', array(
-				'itemlist' => Item::all()));
+			$itemlist = Item::all();
 		}	
+		else {
+			$itemlist = $cat->items;
+		}
+		$this->layout->content = View::make('itemlist', array(
+				'itemlist' => $itemlist,
+				'category_name' => $cat->name,
+				'description' => $cat->description));
 	}
 	public function getCategories() 
 	{

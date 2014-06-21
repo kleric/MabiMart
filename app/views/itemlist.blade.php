@@ -1,14 +1,19 @@
 @extends('layouts.master')
 @section('page-title')
-Items
+{{{ $category_name }}}
 @stop
 @section('content')
 	<div class="page-header">
-		<h1>All Items</h1>
+		<h1>{{{ $category_name }}}</h1>
 	</div>
 	<ol class="breadcrumb">
-  		<li>All Items</li>
+		<li><a href="{{ URL::route('categories') }}">Categories</a></li>
+  		<li>{{{ $category_name }}}</li>
 	</ol>
+	@if(isset($description))
+	{{{ $description }}}
+	<br><br>
+	@endif
 	<div class="list-group">
 		@foreach ($itemlist as $item)
   		<a href="/item/view/{{{ $item->id }}}" class="list-group-item clearfix">

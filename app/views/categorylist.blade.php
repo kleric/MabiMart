@@ -1,14 +1,15 @@
 @extends('layouts.master')
 @section('page-title')
-Items
+Categories
 @stop
 @section('content')
 	<div class="page-header">
-		<h1>All Items</h1>
+		<h1>Categories</h1>
 	</div>
 	<ol class="breadcrumb">
-  		<li>All Items</li>
+  		<li>Categories</li>
 	</ol>
+	<p>All the items are sorted into categories of some sort. Click on the one you're interested in.</p>
 	<div class="list-group">
 		@foreach ($categorylist as $category)
   		<a href="/items/{{{ $category->urlname }}}" class="list-group-item clearfix">

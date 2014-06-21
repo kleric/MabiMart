@@ -16,6 +16,10 @@ class Item extends Eloquent {
 	 */
 	protected $table = 'items';
 
+	public function categories() {
+		return $this->morphToMany('Category', 'sorteditem');
+	}
+
 	public function getDescription() {
 		$description = $this->description;
 
@@ -44,10 +48,10 @@ class Item extends Eloquent {
 
 		return $wiki;
 	}
-	private function statToString($statstring, $stat, $statname) {
+	private function statToString($statstring, $stat, $statname, $sign = true, $percent = false) {
 		if ($stat === null) return $statstring;
 
-		if ($stat > 0) {
+		if ($stat >= 0 && $sign) {
 			$statstring = $statstring . "<br>" . $statname . ": +" . $stat; 
 		}
 		else if ($stat < 0) {
@@ -56,12 +60,21 @@ class Item extends Eloquent {
 		else {
 			$statstring = $statstring . "<br>" . $statname . ": " . $stat;
 		}
+		if ($percent) {
+			$statstring .= "%";
+		}
 		return $statstring;
 	}
-	private function rangeToString($statstring, $statmin, $statmax, $statname) {
+	private function rangeToString($statstring, $statmin, $statmax, $statname, $percentage = false) {
 		if ($statmin === null || $statmax == null) return $statstring;
 
-		$statstring = $statstring . "<br>" . $statname . ": " . $statmin . " ~ " . $statmax;
+		if(!$percentage)
+		{
+			$statstring = $statstring . "<br>" . $statname . ": " . $statmin . " ~ " . $statmax;
+		}
+		else {
+			$statstring = $statstring . "<br>" . $statname . ": " . $statmin . "% ~ " . $statmax . "%";
+		}
 		return $statstring;
 	}
 	public function getStats() {
@@ -96,10 +109,10 @@ class Item extends Eloquent {
 		}
 
 		$stats = $this->rangeToString($stats, $this->weaponmin, $this->weaponmax, "Attack");
-		$stats = $this->rangeToString($stats, $this->weaponinjurymin, $this->weaponinjurymax, "Injury");
+		$stats = $this->rangeToString($stats, $this->weaponinjurymin, $this->weaponinjurymax, "Injury", true);
 
-		$stats = $this->statToString($stats, $this->critical, "Critical");
-		$stats = $this->statToString($stats, $this->balance, "Balance");
+		$stats = $this->statToString($stats, $this->critical, "Critical", false, true);
+		$stats = $this->statToString($stats, $this->balance, "Balance", false, true);
 
 		$stats = $this->statToString($stats, $this->magicattack, "Magic Attack");
 
@@ -128,9 +141,9 @@ class Item extends Eloquent {
 
 		$stats = $this->statToString($stats, $this->pierce, "Pierce");
 
-		$stats = $this->statToString($stats, $this->maxdurability, "Durability");
+		$stats = $this->statToString($stats, $this->maxdurability, "Durability", false);
 
-		$stats = $this->statToString($stats, $this->setexplosion, "Explosion Resistance");
+		/*$stats = $this->statToString($stats, $this->setexplosion, "Explosion Resistance");
 		$stats = $this->statToString($stats, $this->setstomp, "Stomp Resistance");
 		$stats = $this->statToString($stats, $this->setpoison, "Poison Resistance");
 		$stats = $this->statToString($stats, $this->setmpred, "Mana Usage Reduction");
@@ -155,7 +168,7 @@ class Item extends Eloquent {
 		$stats = $this->statToString($stats, $this->setrefine, "Refining Enhancement");
 		$stats = $this->statToString($stats, $this->setsmash, "Smash Enhancement");
 		$stats = $this->statToString($stats, $this->setassaultslash, "Assault Slash Enhancement");
-		$stats = $this->statToString($stats, $this->setdemigod, "Demigod Enhancement");
+		$stats = $this->statToString($stats, $this->setdemigod, "Demigod Enhancement");*/
 
 
 		return $stats;
