@@ -8,6 +8,7 @@
 		<link href="/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="/css/font-awesome.min.css">
 		<link href="/css/style.css" rel="stylesheet">
+		<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
 	</head>
 	<body>
 		<div class="container" id="logoarea">
