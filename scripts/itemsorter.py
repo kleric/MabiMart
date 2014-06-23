@@ -5,6 +5,9 @@
 #
 # To add more categories, just create a SELECT statement, then edit
 # print the category. (The category has to exist in the table, it'll automatically pull the ID of the category.
+#
+# It is hard coded to use the homestead (development) DB. Don't you dare run it on the production server, even 
+# if it weren't hard coded.
 ######
 import MySQLdb
 import getpass
