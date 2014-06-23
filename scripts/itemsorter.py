@@ -1,4 +1,11 @@
 #!/usr/bin/python
+######
+# Will sort all of the items into their respective categories based
+# on a certain number of criteria. 
+#
+# To add more categories, just create a SELECT statement, then edit
+# print the category. (The category has to exist in the table, it'll automatically pull the ID of the category.
+######
 import MySQLdb
 import getpass
 import urllib
