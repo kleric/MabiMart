@@ -98,5 +98,5 @@ print """
 cur.close()
 
 #TO RUN, JUST DO
-#python itemsorter.py > app/database/seeds/SortedItemTableSeeder.php
+#python itemsorter.py > ../app/database/seeds/SortedItemTableSeeder.php
 
