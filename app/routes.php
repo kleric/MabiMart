@@ -41,6 +41,16 @@ Route::group(array('before' => 'auth'), function() {
 		'as' => 'logout',
 		'uses' => 'AccountController@getLogout')
 	);
+
+	Route::get('/auction/create/{itemid}', array(
+		'as' => 'createauction-get',
+		'uses' => 'AuctionController@getCreateAuction')
+	);
+
+	Route::post('/auction/create/{itemid}', array(
+		'as' => 'createauction-post',
+		'uses' => 'AuctionController@postCreateAuction')
+	);
 });
 
 Route::group(array('before' => 'guest'), function() {

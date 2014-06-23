@@ -10,9 +10,6 @@
 		<link href="/css/style.css" rel="stylesheet">
 	</head>
 	<body>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="/js/bootstrap.min.js"></script>
-		<script src="/js/jquery.lazyload.min.js" type="text/javascript"></script>
 		<div class="container" id="logoarea">
 			<div class="col-xs-2 col-md-2">
 					<img src="/images/logo.png">
@@ -58,6 +55,10 @@
 				Copyright &copy; 2014 MabiMart. Built lovingly with <a href="http://getbootstrap.com/">Bootstrap</a>.
 			</div>
 		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/jquery.lazyload.min.js" type="text/javascript"></script>
+		@yield('script')
 		<script>
   			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
