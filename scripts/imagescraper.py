@@ -1,4 +1,11 @@
 #!/usr/bin/python
+#########################
+#
+# Will pull all images of the items and save them in /images/items/{id}.png
+# Pulls the items from the database, so we don't have to do any work.
+#
+#
+
 import MySQLdb
 import getpass
 import urllib
