@@ -528,15 +528,15 @@ def print_enchant_data():
   sys.stderr.write('Links gathered. Scraping data...\n')
   for link in links: 
     sys.stderr.write('Processing link ' + link + '...\n')
-    #try:
-    enchants = mw_enchant_page_scrape(link)
-    if enchants is None:
+    try:
+      enchants = mw_enchant_page_scrape(link)
+      if enchants is None:
+        return
+          raise Exception('Scrape failed')
+    except Exception as e:
+      sys.stderr.write('FATAL_ERROR: page scrape FAILED\n')
+      sys.stderr.write('Exception message: ' + str(e.args))
       return
-        #raise Exception('Scrape failed')
-    #except Exception as e:
-    #  sys.stderr.write('FATAL_ERROR: page scrape FAILED\n')
-    #  sys.stderr.write('Exception message: ' + str(e.args))
-    #  return
     sys.stderr.write('Page scrape successful.\n')
     for enchant in enchants:
       try:
@@ -551,12 +551,14 @@ def print_enchant_data():
   sys.stderr.write('Total ERRORs: ' + str(err_count) + '\n')
   sys.stderr.write('Wait! ERROR count is probably innacurate, since enchants are processed by page. Use grep -c ERROR enchants.log to see the real number of errors.')
 
+# TO SCRAPE EQUIPMENT AND ITEMS DATA:
 # print_equipment_items_data()
 # run this command to write output to a file called scrape.data and {progress,
 # WARNINGs, and ERRORs} to scrape.log, while also printing the latter to the
 # terminal so you can watch its progress:
 # python scrapewiki.py 2>&1 >scrape.data | tee scrape.log
 
+# TO SCRAPE ENCHANTS DATA:
 print_enchant_data()
 # make sure above statement is commented, then
 # run python scrapewiki.py 2>&1 >enchants.data | tee enchants.log
