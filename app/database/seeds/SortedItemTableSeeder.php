@@ -44,11 +44,6 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 2));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 95,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
 			'sorteditem_id' => 115,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
@@ -229,16 +224,6 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 2));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 208,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 209,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
 			'sorteditem_id' => 210,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
@@ -279,17 +264,7 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 2));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 221,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
 			'sorteditem_id' => 223,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 248,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
 
@@ -339,22 +314,12 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 2));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 284,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
 			'sorteditem_id' => 291,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
 
 		SortedItem::create(array(
 			'sorteditem_id' => 295,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 297,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
 
@@ -449,11 +414,6 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 2));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 377,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
 			'sorteditem_id' => 396,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
@@ -495,11 +455,6 @@ class SortedItemTableSeeder extends Seeder {
 
 		SortedItem::create(array(
 			'sorteditem_id' => 420,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 443,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
 
@@ -569,22 +524,12 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 2));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 552,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
 			'sorteditem_id' => 554,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
 
 		SortedItem::create(array(
 			'sorteditem_id' => 558,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 559,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
 
@@ -674,11 +619,6 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 2));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 615,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
 			'sorteditem_id' => 616,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
@@ -710,11 +650,6 @@ class SortedItemTableSeeder extends Seeder {
 
 		SortedItem::create(array(
 			'sorteditem_id' => 645,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 646,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
 
@@ -809,11 +744,6 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 2));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 762,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
 			'sorteditem_id' => 763,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
@@ -849,21 +779,6 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 2));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 795,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 796,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 797,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
 			'sorteditem_id' => 799,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
@@ -885,11 +800,6 @@ class SortedItemTableSeeder extends Seeder {
 
 		SortedItem::create(array(
 			'sorteditem_id' => 829,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 830,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
 
@@ -1024,16 +934,6 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 2));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 883,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 884,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
 			'sorteditem_id' => 885,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
@@ -1055,11 +955,6 @@ class SortedItemTableSeeder extends Seeder {
 
 		SortedItem::create(array(
 			'sorteditem_id' => 889,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 890,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
 
@@ -1099,11 +994,6 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 2));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 898,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
 			'sorteditem_id' => 899,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
@@ -1114,17 +1004,7 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 2));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 901,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
 			'sorteditem_id' => 902,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 903,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
 
@@ -1259,27 +1139,7 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 2));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1067,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 1070,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 1071,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
 			'sorteditem_id' => 1075,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 1082,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
 
@@ -1310,11 +1170,6 @@ class SortedItemTableSeeder extends Seeder {
 
 		SortedItem::create(array(
 			'sorteditem_id' => 1104,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 1108,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
 
@@ -1375,16 +1230,6 @@ class SortedItemTableSeeder extends Seeder {
 
 		SortedItem::create(array(
 			'sorteditem_id' => 1204,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 1208,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 1209,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
 
@@ -1495,11 +1340,6 @@ class SortedItemTableSeeder extends Seeder {
 
 		SortedItem::create(array(
 			'sorteditem_id' => 1286,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 1294,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
 
@@ -1619,11 +1459,6 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 2));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1431,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
 			'sorteditem_id' => 1433,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
@@ -1640,21 +1475,6 @@ class SortedItemTableSeeder extends Seeder {
 
 		SortedItem::create(array(
 			'sorteditem_id' => 1448,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 1450,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 1451,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 1452,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
 
@@ -1744,17 +1564,7 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 2));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1575,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
 			'sorteditem_id' => 1579,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 1583,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
 
@@ -1770,11 +1580,6 @@ class SortedItemTableSeeder extends Seeder {
 
 		SortedItem::create(array(
 			'sorteditem_id' => 1609,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 1610,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
 
@@ -1835,11 +1640,6 @@ class SortedItemTableSeeder extends Seeder {
 
 		SortedItem::create(array(
 			'sorteditem_id' => 1760,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 1769,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
 
@@ -1919,11 +1719,6 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 2));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1875,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
 			'sorteditem_id' => 1876,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
@@ -1940,21 +1735,6 @@ class SortedItemTableSeeder extends Seeder {
 
 		SortedItem::create(array(
 			'sorteditem_id' => 1900,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 1919,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 1920,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 1921,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
 
@@ -2094,11 +1874,6 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 2));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2117,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
 			'sorteditem_id' => 2166,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
@@ -2149,11 +1924,6 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 2));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2242,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
 			'sorteditem_id' => 2243,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
@@ -2180,11 +1950,6 @@ class SortedItemTableSeeder extends Seeder {
 
 		SortedItem::create(array(
 			'sorteditem_id' => 2294,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 2314,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
 
@@ -2230,11 +1995,6 @@ class SortedItemTableSeeder extends Seeder {
 
 		SortedItem::create(array(
 			'sorteditem_id' => 2370,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 2390,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
 
@@ -2305,11 +2065,6 @@ class SortedItemTableSeeder extends Seeder {
 
 		SortedItem::create(array(
 			'sorteditem_id' => 2455,
-			'sorteditem_type' => "Item",
-			'category_id' => 2));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 2466,
 			'sorteditem_type' => "Item",
 			'category_id' => 2));
 
@@ -3279,6 +3034,26 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 6));
 
 		SortedItem::create(array(
+			'sorteditem_id' => 52,
+			'sorteditem_type' => "Item",
+			'category_id' => 7));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 54,
+			'sorteditem_type' => "Item",
+			'category_id' => 7));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 205,
+			'sorteditem_type' => "Item",
+			'category_id' => 7));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 217,
+			'sorteditem_type' => "Item",
+			'category_id' => 7));
+
+		SortedItem::create(array(
 			'sorteditem_id' => 222,
 			'sorteditem_type' => "Item",
 			'category_id' => 7));
@@ -3289,12 +3064,27 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 7));
 
 		SortedItem::create(array(
+			'sorteditem_id' => 347,
+			'sorteditem_type' => "Item",
+			'category_id' => 7));
+
+		SortedItem::create(array(
 			'sorteditem_id' => 498,
 			'sorteditem_type' => "Item",
 			'category_id' => 7));
 
 		SortedItem::create(array(
 			'sorteditem_id' => 505,
+			'sorteditem_type' => "Item",
+			'category_id' => 7));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 507,
+			'sorteditem_type' => "Item",
+			'category_id' => 7));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 508,
 			'sorteditem_type' => "Item",
 			'category_id' => 7));
 
@@ -3324,6 +3114,16 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 7));
 
 		SortedItem::create(array(
+			'sorteditem_id' => 944,
+			'sorteditem_type' => "Item",
+			'category_id' => 7));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1017,
+			'sorteditem_type' => "Item",
+			'category_id' => 7));
+
+		SortedItem::create(array(
 			'sorteditem_id' => 1077,
 			'sorteditem_type' => "Item",
 			'category_id' => 7));
@@ -3335,6 +3135,21 @@ class SortedItemTableSeeder extends Seeder {
 
 		SortedItem::create(array(
 			'sorteditem_id' => 1092,
+			'sorteditem_type' => "Item",
+			'category_id' => 7));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1121,
+			'sorteditem_type' => "Item",
+			'category_id' => 7));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1122,
+			'sorteditem_type' => "Item",
+			'category_id' => 7));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1126,
 			'sorteditem_type' => "Item",
 			'category_id' => 7));
 
@@ -3354,7 +3169,37 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 7));
 
 		SortedItem::create(array(
+			'sorteditem_id' => 1217,
+			'sorteditem_type' => "Item",
+			'category_id' => 7));
+
+		SortedItem::create(array(
 			'sorteditem_id' => 1288,
+			'sorteditem_type' => "Item",
+			'category_id' => 7));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1429,
+			'sorteditem_type' => "Item",
+			'category_id' => 7));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1432,
+			'sorteditem_type' => "Item",
+			'category_id' => 7));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1554,
+			'sorteditem_type' => "Item",
+			'category_id' => 7));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1754,
+			'sorteditem_type' => "Item",
+			'category_id' => 7));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1797,
 			'sorteditem_type' => "Item",
 			'category_id' => 7));
 
@@ -3375,6 +3220,11 @@ class SortedItemTableSeeder extends Seeder {
 
 		SortedItem::create(array(
 			'sorteditem_id' => 1971,
+			'sorteditem_type' => "Item",
+			'category_id' => 7));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2125,
 			'sorteditem_type' => "Item",
 			'category_id' => 7));
 
@@ -6384,6 +6234,11 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 8));
 
 		SortedItem::create(array(
+			'sorteditem_id' => 1519,
+			'sorteditem_type' => "Item",
+			'category_id' => 8));
+
+		SortedItem::create(array(
 			'sorteditem_id' => 1522,
 			'sorteditem_type' => "Item",
 			'category_id' => 8));
@@ -6984,6 +6839,16 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 9));
 
 		SortedItem::create(array(
+			'sorteditem_id' => 503,
+			'sorteditem_type' => "Item",
+			'category_id' => 9));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 504,
+			'sorteditem_type' => "Item",
+			'category_id' => 9));
+
+		SortedItem::create(array(
 			'sorteditem_id' => 515,
 			'sorteditem_type' => "Item",
 			'category_id' => 9));
@@ -7224,6 +7089,11 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 9));
 
 		SortedItem::create(array(
+			'sorteditem_id' => 818,
+			'sorteditem_type' => "Item",
+			'category_id' => 9));
+
+		SortedItem::create(array(
 			'sorteditem_id' => 834,
 			'sorteditem_type' => "Item",
 			'category_id' => 9));
@@ -7359,6 +7229,11 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 9));
 
 		SortedItem::create(array(
+			'sorteditem_id' => 1028,
+			'sorteditem_type' => "Item",
+			'category_id' => 9));
+
+		SortedItem::create(array(
 			'sorteditem_id' => 1032,
 			'sorteditem_type' => "Item",
 			'category_id' => 9));
@@ -7400,6 +7275,11 @@ class SortedItemTableSeeder extends Seeder {
 
 		SortedItem::create(array(
 			'sorteditem_id' => 1098,
+			'sorteditem_type' => "Item",
+			'category_id' => 9));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1106,
 			'sorteditem_type' => "Item",
 			'category_id' => 9));
 
@@ -7734,6 +7614,11 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 9));
 
 		SortedItem::create(array(
+			'sorteditem_id' => 1558,
+			'sorteditem_type' => "Item",
+			'category_id' => 9));
+
+		SortedItem::create(array(
 			'sorteditem_id' => 1560,
 			'sorteditem_type' => "Item",
 			'category_id' => 9));
@@ -7985,6 +7870,11 @@ class SortedItemTableSeeder extends Seeder {
 
 		SortedItem::create(array(
 			'sorteditem_id' => 1906,
+			'sorteditem_type' => "Item",
+			'category_id' => 9));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1910,
 			'sorteditem_type' => "Item",
 			'category_id' => 9));
 
@@ -8449,6 +8339,11 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 9));
 
 		SortedItem::create(array(
+			'sorteditem_id' => 2496,
+			'sorteditem_type' => "Item",
+			'category_id' => 9));
+
+		SortedItem::create(array(
 			'sorteditem_id' => 2508,
 			'sorteditem_type' => "Item",
 			'category_id' => 9));
@@ -8549,6 +8444,11 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 10));
 
 		SortedItem::create(array(
+			'sorteditem_id' => 139,
+			'sorteditem_type' => "Item",
+			'category_id' => 10));
+
+		SortedItem::create(array(
 			'sorteditem_id' => 158,
 			'sorteditem_type' => "Item",
 			'category_id' => 10));
@@ -8599,17 +8499,17 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 10));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 265,
-			'sorteditem_type' => "Item",
-			'category_id' => 10));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 266,
-			'sorteditem_type' => "Item",
-			'category_id' => 10));
-
-		SortedItem::create(array(
 			'sorteditem_id' => 275,
+			'sorteditem_type' => "Item",
+			'category_id' => 10));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 307,
+			'sorteditem_type' => "Item",
+			'category_id' => 10));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 308,
 			'sorteditem_type' => "Item",
 			'category_id' => 10));
 
@@ -8650,6 +8550,11 @@ class SortedItemTableSeeder extends Seeder {
 
 		SortedItem::create(array(
 			'sorteditem_id' => 405,
+			'sorteditem_type' => "Item",
+			'category_id' => 10));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 429,
 			'sorteditem_type' => "Item",
 			'category_id' => 10));
 
@@ -8799,11 +8704,6 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 10));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 711,
-			'sorteditem_type' => "Item",
-			'category_id' => 10));
-
-		SortedItem::create(array(
 			'sorteditem_id' => 725,
 			'sorteditem_type' => "Item",
 			'category_id' => 10));
@@ -8939,6 +8839,11 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 10));
 
 		SortedItem::create(array(
+			'sorteditem_id' => 1099,
+			'sorteditem_type' => "Item",
+			'category_id' => 10));
+
+		SortedItem::create(array(
 			'sorteditem_id' => 1109,
 			'sorteditem_type' => "Item",
 			'category_id' => 10));
@@ -8970,6 +8875,11 @@ class SortedItemTableSeeder extends Seeder {
 
 		SortedItem::create(array(
 			'sorteditem_id' => 1193,
+			'sorteditem_type' => "Item",
+			'category_id' => 10));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1221,
 			'sorteditem_type' => "Item",
 			'category_id' => 10));
 
@@ -9064,11 +8974,6 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 10));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1365,
-			'sorteditem_type' => "Item",
-			'category_id' => 10));
-
-		SortedItem::create(array(
 			'sorteditem_id' => 1386,
 			'sorteditem_type' => "Item",
 			'category_id' => 10));
@@ -9119,11 +9024,6 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 10));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1576,
-			'sorteditem_type' => "Item",
-			'category_id' => 10));
-
-		SortedItem::create(array(
 			'sorteditem_id' => 1578,
 			'sorteditem_type' => "Item",
 			'category_id' => 10));
@@ -9145,11 +9045,6 @@ class SortedItemTableSeeder extends Seeder {
 
 		SortedItem::create(array(
 			'sorteditem_id' => 1595,
-			'sorteditem_type' => "Item",
-			'category_id' => 10));
-
-		SortedItem::create(array(
-			'sorteditem_id' => 1598,
 			'sorteditem_type' => "Item",
 			'category_id' => 10));
 
@@ -9224,7 +9119,12 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 10));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1753,
+			'sorteditem_id' => 1751,
+			'sorteditem_type' => "Item",
+			'category_id' => 10));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1752,
 			'sorteditem_type' => "Item",
 			'category_id' => 10));
 
@@ -9349,11 +9249,6 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 10));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2033,
-			'sorteditem_type' => "Item",
-			'category_id' => 10));
-
-		SortedItem::create(array(
 			'sorteditem_id' => 2039,
 			'sorteditem_type' => "Item",
 			'category_id' => 10));
@@ -9370,6 +9265,11 @@ class SortedItemTableSeeder extends Seeder {
 
 		SortedItem::create(array(
 			'sorteditem_id' => 2059,
+			'sorteditem_type' => "Item",
+			'category_id' => 10));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2070,
 			'sorteditem_type' => "Item",
 			'category_id' => 10));
 
@@ -9435,6 +9335,16 @@ class SortedItemTableSeeder extends Seeder {
 
 		SortedItem::create(array(
 			'sorteditem_id' => 2222,
+			'sorteditem_type' => "Item",
+			'category_id' => 10));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2235,
+			'sorteditem_type' => "Item",
+			'category_id' => 10));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2236,
 			'sorteditem_type' => "Item",
 			'category_id' => 10));
 
@@ -9524,137 +9434,252 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 10));
 
 		SortedItem::create(array(
+			'sorteditem_id' => 2440,
+			'sorteditem_type' => "Item",
+			'category_id' => 10));
+
+		SortedItem::create(array(
 			'sorteditem_id' => 2462,
 			'sorteditem_type' => "Item",
 			'category_id' => 10));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2932,
+			'sorteditem_id' => 2501,
 			'sorteditem_type' => "Item",
 			'category_id' => 10));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 7,
+			'sorteditem_id' => 17,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 8,
+			'sorteditem_id' => 25,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 13,
+			'sorteditem_id' => 27,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 14,
+			'sorteditem_id' => 32,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 29,
+			'sorteditem_id' => 33,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 34,
+			'sorteditem_id' => 36,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 35,
+			'sorteditem_id' => 37,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 59,
+			'sorteditem_id' => 43,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 64,
+			'sorteditem_id' => 44,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 67,
+			'sorteditem_id' => 45,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 81,
+			'sorteditem_id' => 51,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 122,
+			'sorteditem_id' => 68,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 126,
+			'sorteditem_id' => 72,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 134,
+			'sorteditem_id' => 73,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 137,
+			'sorteditem_id' => 77,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 158,
+			'sorteditem_id' => 83,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 182,
+			'sorteditem_id' => 86,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 183,
+			'sorteditem_id' => 97,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 191,
+			'sorteditem_id' => 104,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 231,
+			'sorteditem_id' => 105,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 232,
+			'sorteditem_id' => 109,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 236,
+			'sorteditem_id' => 111,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 252,
+			'sorteditem_id' => 112,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 259,
+			'sorteditem_id' => 114,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 262,
+			'sorteditem_id' => 116,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 123,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 124,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 130,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 131,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 132,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 151,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 165,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 170,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 171,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 181,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 184,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 204,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 224,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 225,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 233,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 237,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 238,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 247,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 251,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 257,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 263,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 264,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
@@ -9669,512 +9694,1252 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 275,
+			'sorteditem_id' => 267,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 322,
+			'sorteditem_id' => 272,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 327,
+			'sorteditem_id' => 276,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 330,
+			'sorteditem_id' => 285,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 354,
+			'sorteditem_id' => 286,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 373,
+			'sorteditem_id' => 293,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 392,
+			'sorteditem_id' => 303,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 393,
+			'sorteditem_id' => 304,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 405,
+			'sorteditem_id' => 309,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 437,
+			'sorteditem_id' => 310,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 438,
+			'sorteditem_id' => 318,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 439,
+			'sorteditem_id' => 323,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 460,
+			'sorteditem_id' => 328,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 462,
+			'sorteditem_id' => 329,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 480,
+			'sorteditem_id' => 338,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 485,
+			'sorteditem_id' => 340,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 488,
+			'sorteditem_id' => 350,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 490,
+			'sorteditem_id' => 360,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 496,
+			'sorteditem_id' => 361,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 501,
+			'sorteditem_id' => 365,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 502,
+			'sorteditem_id' => 378,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 511,
+			'sorteditem_id' => 391,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 522,
+			'sorteditem_id' => 395,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 530,
+			'sorteditem_id' => 399,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 534,
+			'sorteditem_id' => 407,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 535,
+			'sorteditem_id' => 415,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 540,
+			'sorteditem_id' => 416,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 571,
+			'sorteditem_id' => 419,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 595,
+			'sorteditem_id' => 421,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 621,
+			'sorteditem_id' => 425,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 634,
+			'sorteditem_id' => 426,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 635,
+			'sorteditem_id' => 440,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 643,
+			'sorteditem_id' => 441,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 666,
+			'sorteditem_id' => 444,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 672,
+			'sorteditem_id' => 445,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 675,
+			'sorteditem_id' => 446,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 700,
+			'sorteditem_id' => 449,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 707,
+			'sorteditem_id' => 474,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 711,
+			'sorteditem_id' => 486,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 725,
+			'sorteditem_id' => 492,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 751,
+			'sorteditem_id' => 500,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 785,
+			'sorteditem_id' => 514,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 786,
+			'sorteditem_id' => 517,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 787,
+			'sorteditem_id' => 520,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 788,
+			'sorteditem_id' => 524,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 800,
+			'sorteditem_id' => 525,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 821,
+			'sorteditem_id' => 526,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 822,
+			'sorteditem_id' => 527,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 823,
+			'sorteditem_id' => 529,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 824,
+			'sorteditem_id' => 537,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 825,
+			'sorteditem_id' => 538,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 826,
+			'sorteditem_id' => 543,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 827,
+			'sorteditem_id' => 546,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 828,
+			'sorteditem_id' => 549,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 840,
+			'sorteditem_id' => 557,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 856,
+			'sorteditem_id' => 562,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 979,
+			'sorteditem_id' => 570,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 980,
+			'sorteditem_id' => 585,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 981,
+			'sorteditem_id' => 587,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1003,
+			'sorteditem_id' => 588,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1020,
+			'sorteditem_id' => 589,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1043,
+			'sorteditem_id' => 596,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1061,
+			'sorteditem_id' => 603,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1062,
+			'sorteditem_id' => 624,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1079,
+			'sorteditem_id' => 625,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1090,
+			'sorteditem_id' => 626,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1109,
+			'sorteditem_id' => 627,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1128,
+			'sorteditem_id' => 628,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1129,
+			'sorteditem_id' => 629,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1178,
+			'sorteditem_id' => 636,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1184,
+			'sorteditem_id' => 637,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1188,
+			'sorteditem_id' => 639,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1193,
+			'sorteditem_id' => 644,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1225,
+			'sorteditem_id' => 655,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1228,
+			'sorteditem_id' => 657,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1229,
+			'sorteditem_id' => 663,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1243,
+			'sorteditem_id' => 665,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1260,
+			'sorteditem_id' => 668,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1261,
+			'sorteditem_id' => 677,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1264,
+			'sorteditem_id' => 684,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1265,
+			'sorteditem_id' => 692,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1270,
+			'sorteditem_id' => 698,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1287,
+			'sorteditem_id' => 705,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1301,
+			'sorteditem_id' => 714,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1303,
+			'sorteditem_id' => 715,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1318,
+			'sorteditem_id' => 716,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1326,
+			'sorteditem_id' => 720,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1331,
+			'sorteditem_id' => 726,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1343,
+			'sorteditem_id' => 736,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1350,
+			'sorteditem_id' => 737,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1351,
+			'sorteditem_id' => 738,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1365,
+			'sorteditem_id' => 759,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1386,
+			'sorteditem_id' => 760,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1417,
+			'sorteditem_id' => 774,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1418,
+			'sorteditem_id' => 775,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1441,
+			'sorteditem_id' => 780,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1458,
+			'sorteditem_id' => 791,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1503,
+			'sorteditem_id' => 792,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1512,
+			'sorteditem_id' => 798,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1513,
+			'sorteditem_id' => 803,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1534,
+			'sorteditem_id' => 805,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1550,
+			'sorteditem_id' => 814,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 820,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 831,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 839,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 846,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 850,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 855,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 871,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 912,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 914,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 926,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 931,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 932,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 950,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 951,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 958,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 959,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 962,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 975,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 977,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 985,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 986,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 987,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 990,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 995,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 999,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1005,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1008,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1009,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1010,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1021,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1024,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1025,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1030,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1033,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1035,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1039,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1044,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1046,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1051,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1052,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1054,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1055,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1056,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1060,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1063,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1064,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1068,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1069,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1076,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1078,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1091,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1094,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1100,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1101,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1102,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1105,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1110,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1111,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1118,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1123,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1124,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1127,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1145,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1147,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1148,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1151,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1152,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1156,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1157,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1161,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1162,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1175,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1187,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1194,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1196,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1199,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1206,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1207,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1218,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1227,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1230,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1231,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1242,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1248,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1254,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1255,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1257,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1258,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1262,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1271,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1278,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1295,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1305,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1306,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1308,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1311,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1312,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1320,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1327,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1344,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1352,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1353,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1354,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1355,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1359,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1360,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1377,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1379,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1387,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1388,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1393,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1396,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1397,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1405,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1416,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1419,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1430,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1442,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1445,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1455,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1462,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1463,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1471,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1472,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1473,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1475,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1476,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1477,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1478,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1479,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1481,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1482,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1483,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1486,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1487,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1488,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1489,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1495,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1496,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1514,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1515,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1518,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1530,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1533,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1540,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1553,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1561,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1568,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
@@ -10184,27 +10949,32 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1578,
+			'sorteditem_id' => 1577,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1580,
+			'sorteditem_id' => 1581,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1590,
+			'sorteditem_id' => 1585,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1594,
+			'sorteditem_id' => 1591,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1595,
+			'sorteditem_id' => 1596,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1597,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
@@ -10214,382 +10984,1007 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1604,
+			'sorteditem_id' => 1608,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1607,
+			'sorteditem_id' => 1617,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1615,
+			'sorteditem_id' => 1619,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1645,
+			'sorteditem_id' => 1620,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1651,
+			'sorteditem_id' => 1625,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1664,
+			'sorteditem_id' => 1626,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1687,
+			'sorteditem_id' => 1627,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1698,
+			'sorteditem_id' => 1628,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1722,
+			'sorteditem_id' => 1631,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1737,
+			'sorteditem_id' => 1637,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1738,
+			'sorteditem_id' => 1648,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1742,
+			'sorteditem_id' => 1649,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1745,
+			'sorteditem_id' => 1656,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1746,
+			'sorteditem_id' => 1657,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1753,
+			'sorteditem_id' => 1658,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1762,
+			'sorteditem_id' => 1659,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1774,
+			'sorteditem_id' => 1667,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1775,
+			'sorteditem_id' => 1669,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1778,
+			'sorteditem_id' => 1671,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1783,
+			'sorteditem_id' => 1674,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1790,
+			'sorteditem_id' => 1677,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1796,
+			'sorteditem_id' => 1680,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1808,
+			'sorteditem_id' => 1699,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1813,
+			'sorteditem_id' => 1700,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1814,
+			'sorteditem_id' => 1725,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1828,
+			'sorteditem_id' => 1732,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1834,
+			'sorteditem_id' => 1739,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1835,
+			'sorteditem_id' => 1741,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1867,
+			'sorteditem_id' => 1747,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1880,
+			'sorteditem_id' => 1748,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1884,
+			'sorteditem_id' => 1761,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1888,
+			'sorteditem_id' => 1767,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1892,
+			'sorteditem_id' => 1768,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1916,
+			'sorteditem_id' => 1771,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1935,
+			'sorteditem_id' => 1781,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1952,
+			'sorteditem_id' => 1784,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1960,
+			'sorteditem_id' => 1806,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 1990,
+			'sorteditem_id' => 1809,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2029,
+			'sorteditem_id' => 1815,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2033,
+			'sorteditem_id' => 1816,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2039,
+			'sorteditem_id' => 1829,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2040,
+			'sorteditem_id' => 1833,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2058,
+			'sorteditem_id' => 1847,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2059,
+			'sorteditem_id' => 1850,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2080,
+			'sorteditem_id' => 1851,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2123,
+			'sorteditem_id' => 1854,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2132,
+			'sorteditem_id' => 1861,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2152,
+			'sorteditem_id' => 1881,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2168,
+			'sorteditem_id' => 1887,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2172,
+			'sorteditem_id' => 1891,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2180,
+			'sorteditem_id' => 1897,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2192,
+			'sorteditem_id' => 1903,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2193,
+			'sorteditem_id' => 1904,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2194,
+			'sorteditem_id' => 1915,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2195,
+			'sorteditem_id' => 1917,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2211,
+			'sorteditem_id' => 1923,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2222,
+			'sorteditem_id' => 1924,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2239,
+			'sorteditem_id' => 1925,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2240,
+			'sorteditem_id' => 1926,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2246,
+			'sorteditem_id' => 1929,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2254,
+			'sorteditem_id' => 1937,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2295,
+			'sorteditem_id' => 1956,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2312,
+			'sorteditem_id' => 1961,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2317,
+			'sorteditem_id' => 1965,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2339,
+			'sorteditem_id' => 1966,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2349,
+			'sorteditem_id' => 1967,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2357,
+			'sorteditem_id' => 1968,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2368,
+			'sorteditem_id' => 1972,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2369,
+			'sorteditem_id' => 1979,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2374,
+			'sorteditem_id' => 1987,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2375,
+			'sorteditem_id' => 1989,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2381,
+			'sorteditem_id' => 1991,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2411,
+			'sorteditem_id' => 1992,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2420,
+			'sorteditem_id' => 1993,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2462,
+			'sorteditem_id' => 1994,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
 		SortedItem::create(array(
-			'sorteditem_id' => 2932,
+			'sorteditem_id' => 1999,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2000,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2001,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2003,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2004,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2005,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2006,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2008,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2025,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2027,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2028,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2035,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2036,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2048,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2049,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2060,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2071,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2072,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2074,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2075,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2085,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2090,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2093,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2096,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2097,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2098,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2099,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2102,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2103,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2106,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2107,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2109,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2111,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2113,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2114,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2115,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2116,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2118,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2120,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2128,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2133,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2137,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2146,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2147,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2150,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2153,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2156,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2161,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2174,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2182,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2196,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2197,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2198,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2199,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2201,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2204,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2205,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2206,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2207,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2208,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2223,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2224,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2226,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2229,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2231,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2234,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2249,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2251,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2257,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2267,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2268,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2269,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2270,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2275,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2276,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2291,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2292,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2296,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2300,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2301,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2309,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2311,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2320,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2323,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2326,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2327,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2332,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2333,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2334,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2340,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2341,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2345,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2351,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2376,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2377,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2394,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2395,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2398,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2400,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2401,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2402,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2403,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2404,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2406,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2409,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2413,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2417,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2427,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2428,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2437,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2438,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2449,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2450,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2461,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2467,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2475,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2476,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2477,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2481,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2485,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2486,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2489,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2502,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2520,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2521,
+			'sorteditem_type' => "Item",
+			'category_id' => 11));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2526,
 			'sorteditem_type' => "Item",
 			'category_id' => 11));
 
@@ -10644,12 +12039,32 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 12));
 
 		SortedItem::create(array(
+			'sorteditem_id' => 555,
+			'sorteditem_type' => "Item",
+			'category_id' => 12));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 563,
+			'sorteditem_type' => "Item",
+			'category_id' => 12));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 622,
+			'sorteditem_type' => "Item",
+			'category_id' => 12));
+
+		SortedItem::create(array(
 			'sorteditem_id' => 623,
 			'sorteditem_type' => "Item",
 			'category_id' => 12));
 
 		SortedItem::create(array(
 			'sorteditem_id' => 685,
+			'sorteditem_type' => "Item",
+			'category_id' => 12));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 690,
 			'sorteditem_type' => "Item",
 			'category_id' => 12));
 
@@ -10664,6 +12079,11 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 12));
 
 		SortedItem::create(array(
+			'sorteditem_id' => 922,
+			'sorteditem_type' => "Item",
+			'category_id' => 12));
+
+		SortedItem::create(array(
 			'sorteditem_id' => 1133,
 			'sorteditem_type' => "Item",
 			'category_id' => 12));
@@ -10674,12 +12094,27 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 12));
 
 		SortedItem::create(array(
+			'sorteditem_id' => 1334,
+			'sorteditem_type' => "Item",
+			'category_id' => 12));
+
+		SortedItem::create(array(
 			'sorteditem_id' => 1337,
 			'sorteditem_type' => "Item",
 			'category_id' => 12));
 
 		SortedItem::create(array(
+			'sorteditem_id' => 1338,
+			'sorteditem_type' => "Item",
+			'category_id' => 12));
+
+		SortedItem::create(array(
 			'sorteditem_id' => 1374,
+			'sorteditem_type' => "Item",
+			'category_id' => 12));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1490,
 			'sorteditem_type' => "Item",
 			'category_id' => 12));
 
@@ -10714,6 +12149,11 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 12));
 
 		SortedItem::create(array(
+			'sorteditem_id' => 1573,
+			'sorteditem_type' => "Item",
+			'category_id' => 12));
+
+		SortedItem::create(array(
 			'sorteditem_id' => 1600,
 			'sorteditem_type' => "Item",
 			'category_id' => 12));
@@ -10730,6 +12170,16 @@ class SortedItemTableSeeder extends Seeder {
 
 		SortedItem::create(array(
 			'sorteditem_id' => 1606,
+			'sorteditem_type' => "Item",
+			'category_id' => 12));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1678,
+			'sorteditem_type' => "Item",
+			'category_id' => 12));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 1765,
 			'sorteditem_type' => "Item",
 			'category_id' => 12));
 
@@ -10774,6 +12224,11 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 12));
 
 		SortedItem::create(array(
+			'sorteditem_id' => 1902,
+			'sorteditem_type' => "Item",
+			'category_id' => 12));
+
+		SortedItem::create(array(
 			'sorteditem_id' => 1954,
 			'sorteditem_type' => "Item",
 			'category_id' => 12));
@@ -10784,7 +12239,22 @@ class SortedItemTableSeeder extends Seeder {
 			'category_id' => 12));
 
 		SortedItem::create(array(
+			'sorteditem_id' => 2045,
+			'sorteditem_type' => "Item",
+			'category_id' => 12));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2054,
+			'sorteditem_type' => "Item",
+			'category_id' => 12));
+
+		SortedItem::create(array(
 			'sorteditem_id' => 2083,
+			'sorteditem_type' => "Item",
+			'category_id' => 12));
+
+		SortedItem::create(array(
+			'sorteditem_id' => 2308,
 			'sorteditem_type' => "Item",
 			'category_id' => 12));
 

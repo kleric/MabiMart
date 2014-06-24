@@ -26,6 +26,12 @@ class CreateAuctionsTable extends Migration {
 
 			$table->string('description', 500);
 
+			$table->integer('autowin')->unsigned()->nullable();
+			$table->integer('minprice')->unsigned()->nullable();
+
+			$table->datetime('auctionendtime');
+			$table->boolean('sniperprotection')->default(false);
+
 			$table->smallInteger('weaponmax')->nullable(); #
 			$table->smallInteger('weaponmin')->nullable(); #
 

@@ -1,17 +1,4 @@
-<?php
-
-class ItemTableSeeder extends Seeder {
-
-	/**
-	 * Run the database seeds.
-	 *
-	 * @return void
-	 */
-	public function run()
-	{
-		DB::table('items')->delete();
-
-		Item::create(array('weaponmin' => 0,'humanm' => true,'upgrades' => 5,'humanf' => true,'gemupgrades' => 0,'imgurl' => "http://wiki.mabinogiworld.com/images/4/40/0_Sign.png",'attackrate' => 3,'elfm' => true,'elff' => true,'weaponinjurymin' => 0,'stamswing' => 0.5,'critical' => 0,'dualwieldable' => false,'sdamage' => 35,'weaponinjurymax' => 0,'reforgable' => false,'giantf' => true,'specialupgradable' => false,'sangle' => 15,'giantm' => true,'enchantable' => false,'maxdurability' => 7,'stuntime' => 1.6,'name' => "0 Sign",'notes' => "<ul>
+Item::create(array('weaponmin' => 0,'humanm' => true,'upgrades' => 5,'humanf' => true,'gemupgrades' => 0,'imgurl' => "http://wiki.mabinogiworld.com/images/4/40/0_Sign.png",'attackrate' => 3,'elfm' => true,'elff' => true,'weaponinjurymin' => 0,'stamswing' => 0.5,'critical' => 0,'dualwieldable' => false,'sdamage' => 35,'weaponinjurymax' => 0,'reforgable' => false,'giantf' => true,'specialupgradable' => false,'sangle' => 15,'giantm' => true,'enchantable' => false,'maxdurability' => 7,'stuntime' => 1.6,'name' => "0 Sign",'notes' => "<ul>
 <li>Cannot be <a href=\"/view/Dye\" title=\"Dye\" class=\"mw-redirect\">dyed</a>.
 </li>
 </ul>",'numattacks' => 3,'sradius' => 100,'balance' => 0,'wikilink' => "http://wiki.mabinogiworld.com/view/0_Sign",'weaponmax' => 0,'description' => "Number 0 sign. Displays 0. (Not available for repair)"));
@@ -14154,6 +14141,3 @@ Item::create(array('wikilink' => "http://wiki.mabinogiworld.com/view/Zardine%27s
 Item::create(array('wikilink' => "http://wiki.mabinogiworld.com/view/Zardine%27s_Artifact_9",'name' => "Zardine's Artifact 9",'imgurl' => "http://wiki.mabinogiworld.com/images/f/f5/Zardine%27s_Artifact_9.png",'description' => "Looks like Zardine's ninth artifact. Put it in the Collection Book!"));
 Item::create(array('wikilink' => "http://wiki.mabinogiworld.com/view/Zardine%27s_Artifact_Collection_Book_(2011)",'name' => "Zardine's Artifact Collection Book (2011)",'imgurl' => "http://wiki.mabinogiworld.com/images/8/89/Zardine%27s_Artifact_Collection_Book.png",'description' => "Allows you to collect and store 9 of Zardine's Artifacts. You can receive a special reward after completing the collection."));
 Item::create(array('wikilink' => "http://wiki.mabinogiworld.com/view/Zinc_Ore_Fragment",'name' => "Zinc Ore Fragment",'imgurl' => "http://wiki.mabinogiworld.com/images/8/8c/Zinc_Ore_Fragment.png",'description' => "A rare ore obtained through metal conversion. It is very pure and can be used without refining."));
-
-	}
-}

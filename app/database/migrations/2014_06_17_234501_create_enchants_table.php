@@ -18,13 +18,13 @@ class CreateEnchantsTable extends Migration {
 		{
 			$table->increments('id');
 
-			$table->string('name',128);
-			$table->smallInteger('rank');
-			$table->string('effect', 1024);
-			$table->string('onto', 256);
-			$table->string('from', 256);
+			$table->string('name',128); //Name of enchant
+			$table->smallInteger('rank')->unsigned(); //What rank is the scroll do direct HEX conversion, A = 10, B = 11, C = 12, etc.
+			$table->tinyInteger('type')->unsigned(); //1 is prefix, 2 is suffix
+			$table->boolean('personalized'); // Can it be traded
+			$table->string('effects', 2048); //What does it do
+			$table->string('enchantsonto', 256); //What can we enchant it on
 
-			$table->string('wikilink', 256)->nullable();
 			$table->timestamps();
 		});
 

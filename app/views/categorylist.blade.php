@@ -23,9 +23,11 @@ Categories
   		</a>
   		@endforeach
 	</div>
+	@section('script')
 	<script type="text/javascript" charset="utf-8">
   		$(function() {
      			$("img.lazy").lazyload();
   		});
   	</script>
+  	@stop
 @stop
