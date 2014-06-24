@@ -73,10 +73,7 @@ def process_stats(stats):
       elif key == 'Defense':
         new_stats['defense'] = process_number_datum(stats[key])
       elif key == 'Dual W.':
-        if stats[key] == u'\u2714':
-          new_stats['dualwieldable'] = True
-        else:
-          new_stats['dualwieldable'] = False
+        new_stats['dualwieldable'] = (stats[key] == u'\u2714')
       elif key == 'Durability':
         new_stats['maxdurability'] = process_number_datum(stats[key])
       elif key == 'Elf':
@@ -96,10 +93,7 @@ def process_stats(stats):
           else:
             new_stats['elff'] = False
       elif key == 'Enchant':
-        if stats[key] == u'\u2714':
-          new_stats['enchantable'] = True
-        else:
-          new_stats['enchantable'] = False
+        new_stats['enchantable'] = (stats[key] == u'\u2714')
       elif key == 'Giant':
         if stats[key] == u'\u2714':
           new_stats['giantm'] = True
@@ -144,10 +138,7 @@ def process_stats(stats):
       elif key == 'Protection':
         new_stats['protection'] = process_number_datum(stats[key])
       elif key == 'Reforge':
-        if stats[key] == u'\u2714':
-          new_stats['reforgable'] = True
-        else:
-          new_stats['reforgable'] = False
+        new_stats['reforgable'] = (stats[key] == u'\u2714')
       elif key == 'S. Angle':
         new_stats['sangle'] = process_number_datum(stats[key])
       elif key == 'S. Damage':
@@ -157,10 +148,7 @@ def process_stats(stats):
       elif key == 'SP/Swing':
         new_stats['stamswing'] = process_number_datum(stats[key])
       elif key == 'Sp. Up.':
-        if stats[key] == u'\u2714':
-          new_stats['specialupgradable'] = True
-        else:
-          new_stats['specialupgradable'] = False
+        new_stats['specialupgradable'] = (stats[key] == u'\u2714')
       elif key == 'Stun':
         new_stats['stuntime'] = process_number_datum(stats[key])
       elif key == 'Upgrade':
@@ -178,9 +166,6 @@ def process_stats(stats):
       sys.stderr.write('WARNING: some exception thrown in stats processing\n')
 
   return new_stats
-
-def sanitize_text(raw_text):
-  return raw_text.strip().replace('"', r'\"')
 
 def mw_item_page_scrape(url):
   '''Given a URL of an item page on Mabinogi World Wiki, scrapes the following
@@ -319,15 +304,15 @@ def mw_item_page_scrape(url):
   # process Other Info (get raw HTML of ul)
   others = other_info[0].cssselect('ul')
   if others:
-    notes = sanitize_text(html.tostring(others[0]))
+    notes = html.tostring(others[0])
   else:
     notes = None
 
   # set up initial dictionary with the data from the table
   data = process_stats(stats)
   # add other data
-  data['name'] = sanitize_text(name[0].text_content())
-  data['description'] = sanitize_text(description[0].text_content())
+  data['name'] = name[0].text_content()
+  data['description'] = description[0].text_content()
   data['wikilink'] = url
   if icon is not None:
     data['imgurl'] = icon
@@ -354,6 +339,84 @@ def mw_item_page_scrape(url):
       pass
 
   return data
+
+def process_effects(effects):
+  '''Processes the raw text from the Effects cell, figuring out where to
+  separate the items and adding HTML tags to turn it into a <ul> containing
+  several <li>s. Be warned: this requires some mad hax.
+  '''
+  effects = effects.replace(u'\xa0', ' ').strip()
+  lis = ''
+
+  plus = string.rfind(effects, '+')
+  minus = string.rfind(effects, '-')
+  while plus > -1 or minus > -1:
+    # loop invariant: effects has zero whitespace at the front and back
+    # if + is at end of string or has extra text after it (Rank 7: Refined)
+    while plus == len(effects)-1 or (plus > -1 and not effects[plus+1].isdigit()):
+      plus = string.rfind(effects, '+', 0, plus) # ignore this +
+    # if - is at end of string... or is actually a sneaky HYPHEN!
+    while minus == len(effects)-1 or (minus > -1 and not effects[minus+1].isdigit()):
+      minus = string.rfind(effects, '-', 0, minus) # ignore this -
+    closest_sign = plus if plus > minus else minus
+    if not effects[closest_sign+1].isdigit():
+      sys.stderr.write('ERROR: Something\'s mad screwed up, yo.\n')
+      sys.stderr.write('Here\'s where: ' + effects)
+    lis = '\n<li>' + effects[closest_sign:] + '</li>' + lis
+    # remove last item and strip whitespace
+    effects = effects[:closest_sign].strip()
+    plus = string.rfind(effects, '+')
+    minus = string.rfind(effects, '-')
+
+  return '<ul>' + lis + '\n</ul>'
+
+
+def mw_enchant_page_scrape(url):
+  '''Scrapes a rank page of Enchants, returning a list of dictionaries
+  containing the following data under these keys:
+  name [string]
+  effects [string (raw HTML)]
+  enchantsonto [string]
+  personalized [boolean]
+  rank [int]
+  type [int]
+  '''
+
+  r = requests.get(url) # request desired webpage to scrape
+  if r.status_code != requests.codes.ok: # confirm that request was successful
+    sys.stderr.write('ERROR: Request error\n')
+    return None
+  
+  tree = html.fromstring(r.text) # parse html into tree
+
+  rows_xpath = "descendant-or-self::div[@id = 'mw-content-text']/table[@class and contains(concat(' ', normalize-space(@class), ' '), ' mabitable ') and (@class and contains(concat(' ', normalize-space(@class), ' '), ' sortable ')) and (@class and contains(concat(' ', normalize-space(@class), ' '), ' center '))]/tr[not(name() = 'tr' and (position() = 1))]"
+
+  enchants_data = []
+  rows = tree.xpath(rows_xpath)
+  for row in rows:
+    enchant = {}
+    table_cells = row.cssselect('td')
+    if len(table_cells) < 5:
+      sys.stderr.write('ERROR: Table row has incorrect number of cells\n')
+      return None
+    name = table_cells[0].cssselect('b')
+    if len(name) > 1:
+      sys.stderr.write('WARNING: Multiple names selected. Using first.\n')
+    elif len(name) == 0:
+      sys.stderr.write('ERROR: Unable to find a name\n')
+      return None
+    enchant['name'] = name[0].text_content()
+    enchant['personalized'] = ('Personalize' in table_cells[0].text_content())
+    if 'Prefix' in table_cells[1].text_content().strip():
+      enchant['type'] = 1
+    else:
+      enchant['type'] = 2 # represents Suffix
+    enchant['rank'] = int(url[-10], 16)
+    enchant['enchantsonto'] = table_cells[2].text_content()
+    enchant['effects'] = process_effects(table_cells[3].text_content())
+    enchants_data.append(enchant)
+
+  return enchants_data
 
 def gather_item_links_to_scrape():
   '''Scrapes all the required links from the Equipment and Items
@@ -401,18 +464,23 @@ def gather_item_links_to_scrape():
 
   return all_links
 
+def sanitize_text(raw_text):
+  '''Slash-escapes double quotes to prepare this string for database seeding'''
+  return raw_text.strip().replace('"', r'\"')
+
 def scrape_datatable_format(scrape):
   '''Requires: scrape is not None'''
   item_line = 'Item::create(array('
   for key in scrape:
-    if key == 'name' or key == 'wikilink' or key == 'imgurl' or key == 'notes': 
-      item_line += "'" + key + "' => \"" + scrape[key] + "\","
-    elif key == 'description':
+    if key in ['description', 'wikilink', 'imgurl', 'notes', #rest for Enchants
+               'enchantsonto', 'effects']:
+      item_line += "'" + key + "' => \"" + sanitize_text(scrape[key]) + "\","
+    elif key == 'name':
       # a hack to make sure we don't have an extra comma on the last data line
       pass
     else:
       item_line +=  "'" + key + "' => " + str(scrape[key]).lower() + ","
-  item_line += "'description' => \"" + scrape['description'] + "\"));"
+  item_line += "'name' => \"" + sanitize_text(scrape['name']) + "\"));"
   return item_line
 
 def print_equipment_items_data():
@@ -450,8 +518,45 @@ def print_equipment_items_data():
   sys.stderr.write('Total links processed: ' + str(total_count) + '\n')
   sys.stderr.write('Total ERRORs: ' + str(err_count))
 
-print_equipment_items_data()
+def print_enchant_data():
+  total_count = 0
+  err_count = 0
+  sys.stderr.write('Gathering links...\n')
+  links = []
+  for n in (range(2,10) + ['A','B','C','D','E','F']):
+    links.append('http://wiki.mabinogiworld.com/view/Rank_' + str(n) + '_Enchants')
+  sys.stderr.write('Links gathered. Scraping data...\n')
+  for link in links: 
+    sys.stderr.write('Processing link ' + link + '...\n')
+    #try:
+    enchants = mw_enchant_page_scrape(link)
+    if enchants is None:
+      return
+        #raise Exception('Scrape failed')
+    #except Exception as e:
+    #  sys.stderr.write('FATAL_ERROR: page scrape FAILED\n')
+    #  sys.stderr.write('Exception message: ' + str(e.args))
+    #  return
+    sys.stderr.write('Page scrape successful.\n')
+    for enchant in enchants:
+      try:
+        line = scrape_datatable_format(enchant)
+        print line
+      except:
+        sys.stderr.write('ERROR: some exception thrown in formatting enchant data\n')
+        err_count += 1
+      total_count += 1
+  sys.stderr.write('Data scrape complete.\n')
+  sys.stderr.write('Total enchants processed: ' + str(total_count) + '\n')
+  sys.stderr.write('Total ERRORs: ' + str(err_count) + '\n')
+  sys.stderr.write('Wait! ERROR count is probably innacurate, since enchants are processed by page. Use grep -c ERROR enchants.log to see the real number of errors.')
+
+# print_equipment_items_data()
 # run this command to write output to a file called scrape.data and {progress,
 # WARNINGs, and ERRORs} to scrape.log, while also printing the latter to the
 # terminal so you can watch its progress:
 # python scrapewiki.py 2>&1 >scrape.data | tee scrape.log
+
+print_enchant_data()
+# make sure above statement is commented, then
+# run python scrapewiki.py 2>&1 >enchants.data | tee enchants.log
