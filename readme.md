@@ -5,9 +5,6 @@ MabiMart is an online auction site for the free-to-play game Mabinogi. Built to 
 
 MabiMart is built on top of Laravel (PHP Framework) backend and Bootstrap frontend. So far it's been tons of fun to develop, and hopefully it'll be really useful!
 
-## Credit
-This site is currently being developed by Jemmin Chang and Clark Chen.
-
 ## Contributing
 Honestly, just try to keep code clean, simple, and logical. If some parts of the code may be difficult to understand or read, add comments. If you're stuck with a merge conflict, and you're not sure how to resolve it, just ask.
 
