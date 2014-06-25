@@ -4,10 +4,10 @@ Home
 @stop
 @section('content')
 	<br>
-	<div class="jumbotron">
+	<div class="jumbotron" id="jumbo-intro">
 		<h1>Hello, world!</h1>
 		<p>MabiMart has arrived! An online item trading site for Mabinogi! Finally, a convenient way to buy and sell items with gold.</p>
-		<p><a class="btn btn-success" role="button">Get Trading!</a></p>
+		<p><a href="{{{ URL::route('register') }}}" class="btn btn-success" role="button">Get Trading!</a></p>
 	</div>
 	<div class="page-header">
 		<h1>Welcome!</h1>
