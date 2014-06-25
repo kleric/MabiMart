@@ -25,11 +25,8 @@ body {
 }
 .jumbotron {
     margin-bottom: 0px;
-    background-image: url("http://static.zerochan.net/Mabinogi.full.293973.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: url("../images/banner-repeat.png");
     color: white;
-    text-shadow: black 0.3em 0.3em 0.3em;
 }
 #userpanel {
 	padding-top: 10px;
