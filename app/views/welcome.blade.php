@@ -8,14 +8,12 @@ Home
 		MabiMart is currently underdevelopment, so don't be surprised if everything explodes suddenly.
 	</div>
 	<div class="page-header">
-		<h1>What is MabiMart?</h1>
+		<h1>Welcome!</h1>
 	</div>
 	
-	<div>
-		MabiMart is in short a web app to help auction off items in Mabinogi (for in game money of course). Similar to Basil Market, it's purpose is to provide an easy to use site where you can sell your items more easily, and spend more time playing the actual game.
-		<br>
-		Development started on 6/5/2014, and currently I've got a Registration and Login page working. Stay tuned, things will be uploaded as they get completed.
-		<br>
-		<br>
+	<div class="jumbotron">
+		<h1>Hello, world!</h1>
+		<p>MabiMart has arrived! An online item trading site for Mabinogi! Finally, a convenient way to buy and sell items with gold.</p>
+		<p><a class="btn btn-success" role="button">Get Trading!</a></p>
 	</div>
 @stop
