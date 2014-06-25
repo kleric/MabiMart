@@ -23,7 +23,7 @@ body {
 	height:48px;
 	overflow: hidden;
 }
-.jumbo-intro {
+#jumbo-intro {
 	background-image: url(http://www.wallcoo.net/game/Mabinogi/wallpapers/Del_1024x768.jpg);
 	background-position: 0% 25%;
 	background-size: cover;
