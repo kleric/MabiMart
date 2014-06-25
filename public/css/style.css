@@ -25,7 +25,7 @@ body {
 }
 .jumbotron {
     margin-bottom: 0px;
-    background-image: url("http://www.wallcoo.net/game/Mabinogi/wallpapers/Del_1024x768.jpg");
+    background-image: url("../images/banner.png");
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
