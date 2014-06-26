@@ -35,6 +35,7 @@
 						<li><a href="{{ URL::route('categories') }}">Items</a></li>
 						<li><a href="">Enchants</a></li>
 						<li><a href="">Auctions</a></li>
+						<li><a href="http://forums.mabimart.com/">Forums</a></li>
 						@if(Auth::check())
 						<li><a href="">My Auctions</a></li>
 						@endif
