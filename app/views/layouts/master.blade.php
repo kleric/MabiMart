@@ -34,17 +34,18 @@
 						<li><a href="/">Home</a></li>
 						<li><a href="{{ URL::route('categories') }}">Items</a></li>
 						<li><a href="">Enchants</a></li>
-						<li><a href="">Reforges</a></li>
 						<li><a href="">Auctions</a></li>
+						@if(Auth::check())
+						<li><a href="">My Auctions</a></li>
+						@endif
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
           				@if(Auth::check())
-          				<li role="presentation" class="dropdown-header">Hi Rhaenyx</li>
-          				<li role="presentation" class="divider"></li>
+          				<li><a href="">Rhaenyx</a></li>
           				<li><a href="{{ URL::route('logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
           				@else
-          				<li><a href="{{ URL::route('register') }}">Register</a>
-          				<li><a href="{{ URL::route('login') }}">Login</a>
+          				<li><a href="{{ URL::route('register') }}">Register</a></li>
+          				<li><a href="{{ URL::route('login') }}">Login</a></li>
           				@endif
       				</ul>
 				</div>
