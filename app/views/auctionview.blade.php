@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('page-title')
-{{{ $item_name or 'Invalid Item'}}}
+{{{ $user_name or 'Invalid User ID'}}}'s {{{ $item_name or 'Invalid Item'}}}
 @stop
 @section('content')
 </br>
@@ -14,20 +14,13 @@
     </div>
     <div class="panel-body">
       <div class="text-center">
-        {{{ $user_name or 'Invalid User ID'}}}
+        <small>{{{ $user_name or 'Invalid User ID'}}}</small>
       </div>
       <div class="text-center">
         <span class="label label-success">+500</span>
         <span class="label label-danger">-5</span>
       </div>
       <div>
-        <small><i>{{ $description or 'No description'}}</small></i> </br>
-        @if(isset($item_stats))
-        <small>{{$item_stats}}</small><br>
-        @endif
-        @if(isset($item_notes))
-        <small>{{ $item_notes }}</small>
-        @endif
       </div>
     </div>
   </div>
@@ -39,11 +32,30 @@
 <div class="col-md-5">
   <div class="panel panel-success">
     <div class="panel-heading">
-      Item Details
-    </div>
-    <div class="panel-body">
-      Sorry, auctions aren't implemented yet. I'm working on them!
-    </div>
+            {{{ $item_name or 'Not a valid item'}}}
+            <div class="pull-right">
+              @if(isset($wiki_link)) 
+              <a href="{{{ $wiki_link }}}" class="label label-success">View Wiki</a>
+              @endif
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="media">
+              <img class="media-object pull-left" src="{{{ $imgurl }}}">
+              <div class="media-body">
+                <small><i>{{ $item_description or 'No description'}}</small></i> </br>
+                @if(isset($item_stats))
+                <small>{{$item_stats}}</small><br>
+                @endif
+                @if(isset($item_notes))
+                <br>
+                <div class="itemnotes">
+                  <small>{{ $item_notes }}</small>
+                </div>
+                @endif
+              </div>
+            </div>
+          </div>
   </div>
 </div>
 <div class="col-md-4">
@@ -66,14 +78,15 @@
       </form>
     </div>
     <table class="table">
+      @if(isset($leading_bid_amount))
       <thead>
         <tr>
           <th>Leading Bid</th>
           <th></th>
         </tr>
         <tr class="success">
-          <td><img src="/images/gold.gif"> <small>450,000</small></td>
-          <td><div class="pull-right"><small>Rhaenyx</small></div></td>
+          <td><img src="/images/gold.gif"> <small>{{{ $leading_bid_amount }}}</small></td>
+          <td><div class="pull-right"><small>{{{ $leading_bid_username }}}</small></div></td>
         </tr>
         <tr>
           <th>Previous Bids</th>
@@ -90,6 +103,16 @@
           <td><div class="pull-right"><small>Rhaenyx</small></div></td>
         </tr>
       </tbody>
+      @else
+      <thead>
+        <tr>
+          <th>Starting Price</th>
+        </tr>
+        <tr class="warning">
+          <td><span class="pull-right" >400,000 <img src="/images/gold.gif"></span></td>
+        </tr>
+      </thead>
+      @endif
     </table>
   </div>
 </div>

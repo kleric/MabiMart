@@ -77,6 +77,16 @@ class Item extends Eloquent {
 		}
 		return $statstring;
 	}
+	public function getDamageRange() {
+		if($this->weaponmax === null || $this->weaponmin === null) return null;
+
+		return $this->weaponmin . " - " . $this->weaponmax;
+	}
+	public function getInjuryRate() {
+		if($this->weaponinjurymin === null || $this->weaponinjurymax === null) return null;
+
+		return $this->weaponinjurymin . " - " . $this->weaponinjurymax; 
+	}
 	public function getStats() {
 		$stats = "";
 

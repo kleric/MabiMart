@@ -6,7 +6,7 @@ Home
 	<br>
 	<div class="jumbotron" id="jumbo-intro">
 		<h1>Hello, world!</h1>
-		<p>MabiMart has arrived! An online item trading site for Mabinogi! Finally, a convenient way to buy and sell items with gold.</p>
+		<p>MabiMart has arrived! An online item trading site for Mabinogi! A way to buy and sell items without all the hassle.</p>
 		<p><a href="{{{ URL::route('register') }}}" class="btn btn-success" role="button">Get Trading!</a></p>
 	</div>
 	<div class="page-header">
