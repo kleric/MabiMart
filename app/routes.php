@@ -51,6 +51,10 @@ Route::group(array('before' => 'auth'), function() {
 		'as' => 'createauction-post',
 		'uses' => 'AuctionController@postCreateAuction')
 	);
+
+	Route::post('/auction/view/{id}', array(
+	'as' => 'auction-post',
+	'uses' => 'AuctionController@postAuction'));
 });
 
 Route::group(array('before' => 'guest'), function() {

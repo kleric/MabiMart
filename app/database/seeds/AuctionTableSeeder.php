@@ -22,6 +22,7 @@ class AuctionTableSeeder extends Seeder {
 			'description' => "Cool item",
 			'weaponmax' => 500,
 			'weaponmin' => 200,
+			'starting_price' => 400000,
 			'prefix_enchant_id' => 2,
 			'suffix_enchant_id' => 3
 			));

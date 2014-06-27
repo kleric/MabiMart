@@ -16,6 +16,10 @@ class Auction extends Eloquent {
 	 */
 	protected $table = 'auctions';
 
+	public function getStartingPrice() {
+		return number_format($this->starting_price);
+	}
+	
 	public function getDescription() {
 		return $this->description;
 	}

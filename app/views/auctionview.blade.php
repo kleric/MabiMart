@@ -64,11 +64,26 @@
       Recent Offers
     </div>
     <div class="panel-body">
+      @if($seller_id == Auth::user()->id)
+        You can't bid on your own item!
+      @else
+      @if($errors->count() > 0)
+      <div class="alert alert-danger" role="alert">
+      @foreach ($errors->all('<li>:message</li>') as $err)
+        @if ($err == "<li>The confirmpassword and password must match.</li>")
+          <li>Password Confirmation does not match.</li>
+        @else 
+          {{ $err }}
+        @endif
+        @endforeach
+      </div>
+      <br/>
+      @endif
       Interested? Make a bid! 
 
       <br>
       <br>
-      <form>
+      <form action="{{ URL::route('auction-post', $auction_id) }}" method="post">
         <div class="input-group input-group-sm col-md-8 col-md-offset-2">
           <input class="form-control" type="text" inputtype="numeric" name="amount">
           <span class="input-group-btn">
@@ -76,17 +91,18 @@
           </span>
         </div>
       </form>
+      @endif
     </div>
     <table class="table">
-      @if(isset($leading_bid_amount))
+      @if(isset($leading_bid))
       <thead>
         <tr>
           <th>Leading Bid</th>
           <th></th>
         </tr>
         <tr class="success">
-          <td><img src="/images/gold.gif"> <small>{{{ $leading_bid_amount }}}</small></td>
-          <td><div class="pull-right"><small>{{{ $leading_bid_username }}}</small></div></td>
+          <td><img src="/images/gold.gif"> <small>{{{ $leading_bid->getAmount() }}}</small></td>
+          <td><div class="pull-right"><small>{{{ $leading_bid->getBidder() }}}</small></div></td>
         </tr>
         <tr>
           <th>Previous Bids</th>
@@ -94,14 +110,19 @@
         </tr>
       </thead>
       <tbody>
+        @if($bid_offers->count() > 1)
+        @foreach ($bid_offers as $bid)
         <tr class="danger">
-          <td><small>450,000</small></td>
-          <td><div class="pull-right"><small>Rhaenyx</small></div></td>
+          <td><small>{{{ $bid->getAmount() }}}</small></td>
+          <td><div class="pull-right"><small>{{{ $bid->getBidder() }}}</small></div></td>
         </tr>
-        <tr class="danger">
-          <td><small>250,000</small></td>
-          <td><div class="pull-right"><small>Rhaenyx</small></div></td>
+        @endforeach
+        @else
+        <tr>
+          <td><small>No other bids</small></td>
+          <td></td>
         </tr>
+        @endif
       </tbody>
       @else
       <thead>
@@ -109,7 +130,7 @@
           <th>Starting Price</th>
         </tr>
         <tr class="warning">
-          <td><span class="pull-right" >400,000 <img src="/images/gold.gif"></span></td>
+          <td><span class="pull-right" >{{{ $auction->getStartingPrice() }}} <img src="/images/gold.gif"></span></td>
         </tr>
       </thead>
       @endif

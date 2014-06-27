@@ -15,4 +15,19 @@ class Bid extends Eloquent {
 	 * @var string
 	 */
 	protected $table = 'bids';
+
+	public function getAmount() {
+		return number_format($this->amount);
+	}
+
+	public function getBidder() {
+		$bidder = User::where('id', '=', $this->bidder_id)->first();
+
+		return $bidder->username;
+	}
+	public function getBidderId() {
+		$bidder = User::where('id', '=', $this->bidder_id)->first();
+
+		return $bidder->id;
+	}
 }

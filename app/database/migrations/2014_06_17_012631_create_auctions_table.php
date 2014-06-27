@@ -26,6 +26,7 @@ class CreateAuctionsTable extends Migration {
 
 			$table->string('description', 500);
 
+			$table->integer('starting_price')->unsigned();
 			$table->integer('autowin')->unsigned()->nullable();
 			$table->integer('minprice')->unsigned()->nullable();
 

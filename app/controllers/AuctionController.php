@@ -15,7 +15,49 @@ class AuctionController extends BaseController {
 	|
 	*/
 	protected $layout = 'layouts.master';
+	public function postAuction($id)
+	{
+		$auction = Auction::where('id', '=', $id);
+		$minamount;
+		if($auction->count()) {
+			$auction = $auction->first();
+			$all_bids = Bid::where('auction_id', '=', $auction->id)->orderBy('amount', 'desc');
+			$leading_bid = ($all_bids->count()) ? $all_bids->first() : null;
+			if(!isset($leading_bid)) {
+				$minamount = $auction->startingprice;
+			}
+			else {
+				$minamount = $leading_bid->amount;
+			}
+			$minamount = $minamount + (0.1 * $minamount);
+			$validator = Validator::make(
+				array(
+					'amount' => Input::get('amount'),
+					'bidder' => Auth::user()->id
+				),
+				array(
+					'amount' => 'required|numeric|min:' . $minamount,
+					'bidder' => ('not_in:' . $auction->seller_id . "," . $leading_bid->getBidderId())
+				),
+				array(
+					'not_in' => "You can't make a bid... ")
+			);
+			if($validator->fails()) {
+				return Redirect::route('auction', $id)
+						->withErrors($validator)
+						->withInput();
+			}
+			else if (Auth::check()){
+				$amount = Input::get('amount');
 
+				$bid = Bid::create(array(
+					'auction_id' => $auction->id,
+					'amount' => $amount,
+					'bidder_id' => Auth::user()->id));
+			}
+		}
+		$this->getAuction($id);
+	}
 	public function getAuction($id) 
 	{
 		$auction = Auction::where('id', '=', $id);
@@ -23,8 +65,11 @@ class AuctionController extends BaseController {
 		if($auction->count())
 		{
 			$auction = $auction->first();
+			$all_bids = Bid::where('auction_id', '=', $auction->id)->orderBy('amount', 'desc');
+			$leading_bid = ($all_bids->count()) ? $all_bids->first() : null;
 
-			$description = 	$auction->getDescription();
+			$all_bids = Bid::where('auction_id', '=', $auction->id)->where('id', '<>', $leading_bid->id)->orderBy('amount', 'desc')->get();
+
 			$item_imgurl = "";
 			$item_wiki_link = "";
 			$item_description = "";
@@ -43,12 +88,16 @@ class AuctionController extends BaseController {
 				$user = $user->first();
 			}
 			$this->layout->content = View::make('auctionview', array(
+				'auction_id' => $auction->id,
+				'seller_id' => $auction->seller_id,
 				'item_id' => $id,
 				'item_stats' => $item_stats,
-				'user_name' => $user->username,
-				'description' => $description,
 				'item_description' => $item_description,
 				'imgurl' => $item_imgurl,
+				'auction' => $auction,
+				'leading_bid' => $leading_bid,
+				'bid_offers' => $all_bids,
+				'user_name' => $user->username,
 				'wiki_link' => $item_wiki_link,
 				'item_name' => $item->name));
 		}
