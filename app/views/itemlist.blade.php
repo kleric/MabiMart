@@ -17,7 +17,7 @@
 <div>
 	@foreach ($itemlist as $item)
 	<a href="/item/view/{{{ $item->id }}}">
-		<div class="col-md-2 col-sm-3 col-xs-4 item-container">
+		<div class="col-md-2 col-sm-3 col-xs-6 item-container">
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<center>
