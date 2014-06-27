@@ -12,7 +12,7 @@ Categories
 <div>
 	@foreach ($categorylist as $category)
 	<a href="/items/{{{ $category->urlname }}}">
-		<div class="col-md-2 col-sm-3 col-xs-4">
+		<div class="col-md-2 col-sm-3 col-xs-6">
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<center>
