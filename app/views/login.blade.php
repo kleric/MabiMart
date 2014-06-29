@@ -10,16 +10,6 @@ Login
 		Don't have an account? Register <a href="/register">here</a>! It's guaranteed to be 98.3% painless!
 	</div>
 	<div class="col-md-4 col-md-offset-4">
-		@if (Session::has('success_message'))
-		<div class="alert alert-success">
-			{{{Session::get('success_message')}}}
-		</div>
-		@endif
-		@if (Session::has('error_message'))
-		<div class="alert alert-danger">
-			{{{Session::get('error_message')}}}
-		</div>
-		@endif
 		<form method="post">
 			@if ($errors->count() > 0)
 			<div class="alert alert-danger">

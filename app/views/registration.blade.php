@@ -46,7 +46,7 @@ Register
 			</ul>
 		</div>
 		@endif
-		<form action="{{ URL::route('register-post') }}" method="post">
+		<form method="post">
 			<div class="form-group">
 				<label for="inputUsername">Username</label>
         		<input type="text" required class="form-control" id="inputUsername" name="username" 

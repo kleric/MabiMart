@@ -112,10 +112,6 @@ class AccountController extends BaseController {
 					$message->to($user->email, $user->username)->subject('Activate your MabiMart Account');
 				});
 
-				if(Auth::check())
-				{
-					Auth::logout();
-				}
 				return Redirect::route('login')->with('success_message', 'Your account has been created. Please visit your e-mail address and activate it.');
 
 			}
