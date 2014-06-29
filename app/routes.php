@@ -19,10 +19,17 @@ Route::any('/items/{category}', array(
 	'as' => 'items',
 	'uses' => 'ItemController@getCategory')
 );
+
+Route::any('/enchants/{category}', array(
+	'as' => 'enchants',
+	'uses' => 'EnchantController@getRank'));
 Route::any('/items', array(
 	'as' => 'categories',
 	'uses' => 'ItemController@getCategories')
 );
+Route::any('/enchants', array(
+	'as' => 'enchantlist',
+	'uses' => 'EnchantController@getRanks'));
 
 Route::any('/view/{item}', array(
 	'as' => 'wikiredirect',
@@ -31,6 +38,10 @@ Route::any('/view/{item}', array(
 Route::any('/item/view/{id}', array(
 	'as' => 'item',
 	'uses' => 'ItemController@getItem'));
+
+Route::any('/enchant/view/{id}', array(
+	'as' => 'enchant', 
+	'uses' => 'EnchantController@getEnchant'));
 	
 Route::get('/auction/view/{id}', array(
 	'as' => 'auction',
@@ -55,6 +66,11 @@ Route::group(array('before' => 'auth'), function() {
 	Route::post('/auction/view/{id}', array(
 	'as' => 'auction-post',
 	'uses' => 'AuctionController@postAuction'));
+
+	Route::any('/dashboard', array(
+		'as' => 'dashboard',
+		'uses' => 'AuctionController@getMyAuctions')
+	);
 });
 
 Route::group(array('before' => 'guest'), function() {

@@ -43,6 +43,8 @@ class ItemController extends BaseController {
 				$imgurl = $onserverimgurl;	
 			}
 
+			$auctions = Auction::where('item_id', '=', $id)->where('auctionendtime', '>', time())->orderBy('auctionendtime', 'asc')->get();
+
 			$this->layout->content = View::make('itemview', array(
 				'item_id' => $id,
 				'description' => $description,
@@ -50,7 +52,8 @@ class ItemController extends BaseController {
 				'item_stats' => $stats,
 				'imgurl' => $imgurl,
 				'item_notes' => $notes,
-				'wiki_link' => $wiki_link));
+				'wiki_link' => $wiki_link,
+				'auctions' => $auctions));
 		}
 	}
 	public function getCategory($category) 

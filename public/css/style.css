@@ -4,6 +4,9 @@ body {
 	background-position: left top, center top;
 	background-color: #fefaed;
 }
+.clickableRow {
+	cursor: pointer;
+}
 #logoarea {
 	margin-bottom: 19px;
 	margin-top:10px;
@@ -25,13 +28,19 @@ body {
     float:none;
 }
 .item-thumbnail {
-	width: 64px;
-	height:64px;
+	position: relative;
+	width: 96px;
+	height:96px;
 	vertical-align: middle;
 	overflow: hidden;
 }
+.item-thumbnail img{
+    position: absolute;
+    top:-100%; left:0; right: 0; bottom:-100%;
+    margin: auto;
+}
 .item-container {
-	height: 220px;
+	height: 250px;
 }
 .jumbotron {
     margin-bottom: 0px;

@@ -29,6 +29,7 @@ class CreateAuctionsTable extends Migration {
 			$table->integer('starting_price')->unsigned();
 			$table->integer('autowin')->unsigned()->nullable();
 			$table->integer('minprice')->unsigned()->nullable();
+			$table->tinyInteger('server')->unsigned();
 
 			$table->datetime('auctionendtime');
 			$table->boolean('sniperprotection')->default(false);
@@ -98,6 +99,12 @@ class CreateAuctionsTable extends Migration {
 			$table->smallInteger('setassaultslash')->unsigned()->nullable(); //Assault Slash
 			$table->smallInteger('setdemigod')->unsigned()->nullable(); //DEMI GOD
 
+			$table->tinyInteger('reforgelevel')->unsigned()->nullable();
+			$table->string('reforgeone', 100)->nullable();
+			$table->string('reforgetwo', 100)->nullable();
+			$table->string('reforgethree', 100)->nullable();
+
+			$table->string('specialup', 2)->nullable();
 			$table->timestamps();
 		});
 	}

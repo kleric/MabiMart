@@ -15,4 +15,17 @@ class Enchant extends Eloquent {
 	 * @var string
 	 */
 	protected $table = 'enchants';
+
+	public function getListText() 
+	{
+		$str = "";
+
+		$str .= $this->name;
+		$str .= " - ";
+		$str .= "Rank " . strtoupper(dechex($this->rank));
+		$type = ($this->rank == 1) ? "Prefix" : "Suffix";
+		$str .= " " . $type;
+
+		return $str;
+	}
 }

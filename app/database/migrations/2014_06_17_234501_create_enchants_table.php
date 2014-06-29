@@ -30,8 +30,8 @@ class CreateEnchantsTable extends Migration {
 
 		Schema::table('auctions', function($table)
 		{
-			$table->integer('prefix_enchant_id')->unsigned();
-			$table->integer('suffix_enchant_id')->unsigned();
+			$table->integer('prefix_enchant_id')->unsigned()->nullable();
+			$table->integer('suffix_enchant_id')->unsigned()->nullable();
 
 			$table->foreign('prefix_enchant_id')->references('id')->on('enchants')->unsigned();
 			$table->foreign('suffix_enchant_id')->references('id')->on('enchants')->unsigned();

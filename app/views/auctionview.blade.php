@@ -14,6 +14,7 @@
     </div>
     <div class="panel-body">
       <div class="text-center">
+        <img src="{{{ $seller->getGravatarUrl() }}}"/><br/>
         <small>{{{ $user_name or 'Invalid User ID'}}}</small>
       </div>
       <div class="text-center">
@@ -32,30 +33,56 @@
 <div class="col-md-5">
   <div class="panel panel-success">
     <div class="panel-heading">
-            {{{ $item_name or 'Not a valid item'}}}
-            <div class="pull-right">
-              @if(isset($wiki_link)) 
-              <a href="{{{ $wiki_link }}}" class="label label-success">View Wiki</a>
-              @endif
-            </div>
+      Item Details
+      <div class="pull-right">
+        @if(isset($wiki_link)) 
+        <a href="{{{ $wiki_link }}}" class="label label-success">View Wiki</a>
+        @endif
+      </div>
+    </div>
+    <div class="panel-body">
+      {{{ $item_name or 'Not a valid item'}}} <br/>
+      <div class="media">
+        <img class="media-object pull-left" src="{{{ $imgurl }}}">
+        <div class="media-body">
+          <small><i>{{ $item_description or 'No description'}}</small></i> </br>
+          @if(isset($item_stats))
+          <small>{{$item_stats}}</small><br>
+          @endif
+          @if(isset($item_notes))
+          <br>
+          <div class="itemnotes">
+            <small>{{ $item_notes }}</small>
           </div>
-          <div class="panel-body">
-            <div class="media">
-              <img class="media-object pull-left" src="{{{ $imgurl }}}">
-              <div class="media-body">
-                <small><i>{{ $item_description or 'No description'}}</small></i> </br>
-                @if(isset($item_stats))
-                <small>{{$item_stats}}</small><br>
-                @endif
-                @if(isset($item_notes))
-                <br>
-                <div class="itemnotes">
-                  <small>{{ $item_notes }}</small>
-                </div>
-                @endif
-              </div>
-            </div>
-          </div>
+          @endif
+        </div>
+      </div>
+      @if(isset($auction->prefix_enchant_id) || isset($auction->suffix_enchant_id))
+      <br/>
+      Enchants <br/>
+      @if(isset($auction->prefix_enchant_id))
+      <div class="col-md-6 col-sm-6">
+      <small>Prefix</small>
+      {{ $auction->getPrefixDescription()}}
+      </div>
+      @endif
+      @if(isset($auction->suffix_enchant_id))
+      <div class="col-md-6 col-sm-6">
+      <small>Suffix</small>
+      {{ $auction->getSuffixDescription()}}
+      </div>
+      @endif
+      @endif
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      Auction Details
+    </div>
+    <div class="panel-body">
+      <strong>Description</strong><br/>
+      {{{ $auction->description }}}
+    </div>
   </div>
 </div>
 <div class="col-md-4">
@@ -64,16 +91,18 @@
       Recent Offers
     </div>
     <div class="panel-body">
-      @if($seller_id == Auth::user()->id)
-        You can't bid on your own item!
+      @if(!Auth::check()) 
+      You must be logged in to bid.
+      @elseif($seller_id == Auth::user()->id)
+      You can't bid on your own item!
       @else
       @if($errors->count() > 0)
       <div class="alert alert-danger" role="alert">
-      @foreach ($errors->all('<li>:message</li>') as $err)
+        @foreach ($errors->all('<li>:message</li>') as $err)
         @if ($err == "<li>The confirmpassword and password must match.</li>")
-          <li>Password Confirmation does not match.</li>
+        <li>Password Confirmation does not match.</li>
         @else 
-          {{ $err }}
+        {{ $err }}
         @endif
         @endforeach
       </div>
@@ -93,6 +122,16 @@
       </form>
       @endif
     </div>
+    @if (isset($auction->minprice))
+    <div class="panel-heading">
+      <small>Reserve Price: {{{ number_format($auction->minprice) }}}</small>
+    </div>
+    @endif
+    @if(isset($auction->autowin))
+    <div class="panel-heading">
+      Autowin: {{{ number_format($auction->autowin) }}}
+    </div>
+    @endif
     <table class="table">
       @if(isset($leading_bid))
       <thead>
@@ -110,7 +149,7 @@
         </tr>
       </thead>
       <tbody>
-        @if($bid_offers->count() > 1)
+        @if(count($bid_offers) > 1)
         @foreach ($bid_offers as $bid)
         <tr class="danger">
           <td><small>{{{ $bid->getAmount() }}}</small></td>

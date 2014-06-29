@@ -16,10 +16,65 @@ class Auction extends Eloquent {
 	 */
 	protected $table = 'auctions';
 
+	public function getEndTime() {
+		return date_format(new DateTime($this->auctionendtime), 'F jS \a\t g:i:s A');
+	}
 	public function getStartingPrice() {
 		return number_format($this->starting_price);
 	}
-	
+	private function getEnchantDescription($id) {
+		$enchant = Enchant::where('id', '=', $id)->first();
+
+		if(isset($enchant)) {
+			$str = "<br/>";
+
+			$str .= $enchant->name;
+
+			return $str;
+		}
+		return "";
+	}
+	public function getPrefixDescription() {
+		if(isset($this->prefix_enchant_id)) {
+			return $this->getEnchantDescription($this->prefix_enchant_id);
+		}
+		else {
+			return "Invalid enchant";
+		}
+	}
+	public function getSuffixDescription() {
+		if(isset($this->suffix_enchant_id)) {
+			return $this->getEnchantDescription($this->suffix_enchant_id);
+		}
+		else {
+			return "Invalid enchant";
+		}
+	}
+	public function getCurrentPrice() {
+		$all_bids = Bid::where('auction_id', '=', $this->id)->orderBy('amount', 'desc');
+		$leading_bid = ($all_bids->count()) ? $all_bids->first() : null;
+
+		if(isset($leading_bid)) {
+			return $leading_bid->getAmount();
+		}
+
+		return $this->getStartingPrice();
+	}
+
+	public function getSeller() {
+		$user = User::where('id', '=', $this->seller_id)->first();
+
+		if(isset($user)) {
+			return $user->username;
+		}
+
+		return "Invalid ID";
+	}
+	public function getItemName() {
+		$item = Item::where('id', '=', $this->item_id)->first();
+
+		return $item->name;
+	}
 	public function getDescription() {
 		return $this->description;
 	}

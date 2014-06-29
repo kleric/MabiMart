@@ -10,7 +10,11 @@ class EnchantTableSeeder extends Seeder {
 	public function run()
 	{
 		DB::table('enchants')->delete();
-		
+		Enchant::create(array(
+			'enchantsonto' => 'Nothing', 
+			'rank' => 15,'effects' =>'None', 
+			'personalized' => false,
+			'type' => 3, 'name' => 'NOTHING'));
 		Enchant::create(array('enchantsonto' => "Weapons",'rank' => 2,'effects' => "<ul>
 			<li>+1000 CP</li>
 			<li>-6% Repair Cost</li>

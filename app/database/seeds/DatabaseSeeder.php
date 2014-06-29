@@ -22,9 +22,6 @@ class DatabaseSeeder extends Seeder {
 
 		$this->call('EnchantTableSeeder');
 		$this->command->info('Enchants now added');
-
-		$this->call('AuctionTableSeeder');
-		$this->command->info('Test Auctions added REMOVE IN PROD');
 	}
 
 }
