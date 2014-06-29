@@ -62,7 +62,7 @@
 		<div class="container" id="content">
 			<br/>
 			<div class="alert alert-danger">
-				Please keep in mind this site is still a work in progress. I've only been able to spend a three weeks (and mostly only time on the weekends) on this so far, so quite a few things aren't really implemented yet (and some things aren't entirely implemented as well as I'd like). I will add a link to a forum post in a bit with some more explanation. 
+				Please keep in mind this site is semi-working prototype. Please checkout this forum <a href="http://forums.mabimart.com/t/mabimart-is-just-a-prototype/21">post</a> for more information. 
 			</div>
 			@if(null !== Session::get('success_message'))
 			<br/>
