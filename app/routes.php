@@ -47,6 +47,10 @@ Route::get('/auction/view/{id}', array(
 	'as' => 'auction',
 	'uses' => 'AuctionController@getAuction'));
 
+Route::any('/profile/view/{id}', array(
+	'as' => 'profile',
+	'uses' => 'ProfileController@getProfile'));
+
 Route::group(array('before' => 'auth'), function() {
 	Route::get('/logout', array(
 		'as' => 'logout',

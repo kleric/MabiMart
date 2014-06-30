@@ -33,4 +33,21 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		$url = 'http://www.gravatar.com/avatar/' . md5($email) . "?r=pg";
 		return $url;
 	}
+
+	public function getContactDetails()
+	{
+		return $this->contact_details;
+	}
+	public function getAboutMe()
+	{
+		return $this->about_me;
+	}
+	public function getUsername()
+	{
+		return $this->username;
+	}
+	public function getAverageRating()
+	{
+		
+	}
 }

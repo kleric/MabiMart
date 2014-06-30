@@ -1,9 +1,9 @@
 <?php
-#Simply adds a contact details section
+
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ModifyUserTable extends Migration {
+class ModifyUserTableAboutMe extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -13,7 +13,7 @@ class ModifyUserTable extends Migration {
 	public function up()
 	{
 		Schema::table('users', function($table) {
-			$table->string('contact_details', 1000);
+			$table->string('about_me', 1000);
 		});
 	}
 
@@ -25,7 +25,7 @@ class ModifyUserTable extends Migration {
 	public function down()
 	{
 		Schema::table('users', function($table) {
-			$table->dropColumn('contact_details');
+			$table->dropColumn('about_me');
 		});
 	}
 

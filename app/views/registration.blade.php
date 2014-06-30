@@ -18,7 +18,7 @@ Register
 				Password Requirements
 			</div>
 			<div class="panel-body">
-				Passwords must be more than 8 characters long and must contain special characters, numbers, uppercase letters, and lowercase letters.
+				Passwords must be more than 12 characters.
 			</div>
 		</div>
 		<div class="panel panel-info">

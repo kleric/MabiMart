@@ -10,14 +10,15 @@ Home
 		<p><a href="{{{ URL::route('register') }}}" class="btn btn-success" role="button">Get Trading!</a></p>
 	</div>
 	<div>
-		<div class="col-md-4 col-sm-4">
+		<div class="col-md-8 col-sm-8">
 			<div class="page-header">
 				<h2>News  <small> Recent Updates</small></h2>
 			</div>
 		</div>
 		<div class="col-md-4 col-sm-4">
-		</div>
-		<div class="col-md-4 col-sm-4">
+			<div class="page-header">
+				<h2>Useful Sites</h2> 
+			</div>
 		</div>
 	</div>
 @stop

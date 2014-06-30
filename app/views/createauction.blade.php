@@ -89,6 +89,7 @@ Create an Auction
 							<option value="3">3 days</option>
 							<option value="4">4 days</option>
 							<option value="5">5 days</option>
+							<option value="10">10 days</option>
 						</select>
 					</div>
 					<div class="col-md-4 col-sm-4">

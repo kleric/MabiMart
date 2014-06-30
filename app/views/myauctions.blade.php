@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
     <div class="panel-heading">
       My Auctions (Selling)
     </div>
-    @if(isset($auctions_selling))
+    @if(isset($auctions_selling) && count($auctions_selling) > 0)
     <table class="table table-hover">
       <thead>
         <tr class="success">
@@ -42,7 +42,7 @@ jQuery(document).ready(function($) {
     @else
     <div class="panel-body">
       You aren't selling anything!
-    </table>
+    </div>
     @endif
   </div>
   <div class="panel panel-warning">
@@ -73,6 +73,12 @@ jQuery(document).ready(function($) {
       You aren't bidding on anything!
     </div>
     @endif
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      Completed Auctions
+    </div>
+    
   </div>
 </div>
 

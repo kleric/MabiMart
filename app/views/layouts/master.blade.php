@@ -41,6 +41,7 @@
 								<li><a href="{{ URL::route('dashboard') }}">My Auctions</a></li>
 								<li><a href="{{ URL::route('categories') }}">Add Auction</a></li>
 								@endif
+								<li><a href="#">All auctions</a></li>
 								<li><a href="#">Ending Soon</a></li>
 								<li><a href="#">Search</a></li>
 							</ul>
@@ -49,7 +50,15 @@
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						@if(Auth::check())
-						<li><a href="">{{{ Auth::user()->username}}} </a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{{ Auth::user()->username }}}</a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="{{ URL::route('profile', Auth::user()->id) }}"><span class="fa fa-user"></span> My Profile</a></li>
+								<li><a href="#"><span class="fa fa-pencil"></span> Edit Profile</a></li>
+								<li><a href="#"><span class="fa fa-cog"></span> Account Settings</a></li>
+							</ul>
+						</li>
+						<li><a href="#"><span class="fa fa-inbox"></span> Inbox <span class="badge">0</span></a></a></li>
 						<li><a href="{{ URL::route('logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
 						@else
 						<li><a href="{{ URL::route('register') }}">Register</a></li>
@@ -78,6 +87,10 @@
 			@endif
 			@yield('content')
 			<div id="footer" class="col-md-12 col-xs-12">
+				<center>
+					About Us | Contact Us | Give Feedback
+				</center>
+				<br/>
 				Copyright &copy; 2014 MabiMart. Built lovingly with <a href="http://getbootstrap.com/">Bootstrap</a>.
 			</div>
 		</div>
