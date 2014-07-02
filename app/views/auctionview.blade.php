@@ -9,7 +9,7 @@
     <div class="panel-heading">
       Seller
       <div class="pull-right">
-        <a href="" class="label label-primary">View Profile</a>
+        <a href="{{{ URL::route('profile', $user_id) }}}" class="label label-primary">View Profile</a>
       </div>
     </div>
     <div class="panel-body">
