@@ -31,4 +31,32 @@ class ProfileController extends BaseController {
 				'user' => $user));
 		}
 	}
+	public function getEditProfile() {
+		$user = User::where('id', '=', Auth::user()->id)->first();
+
+		$this->layout->content = View::make('profileedit', array(
+			'contact' => $user->contact_details,
+			'about' => $user->about_me));
+	}
+	public function postEditProfile() {
+		if(Auth::check()) {
+			$user = User::where('id', '=', Auth::user()->id)->first();
+			$validator = Validator::make(Input::all(),
+				array(
+					'contact_details' => 'required|max:1000',
+					'about_you' => 'max:1000'
+				)
+			);
+			if($validator->fails()) {
+				return Redirect::route('profile-edit')
+						->withErrors($validator)
+						->withInput();
+			}	
+			$user->contact_details = Input::get('contact_details');
+			$user->about_me = Input::get('about_you');
+			$user->save();
+
+			return Redirect::route('profile', $user->id)->with('success_message', 'Changes saved successfully :)');
+		}
+	}
 }

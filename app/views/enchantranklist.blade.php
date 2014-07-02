@@ -17,7 +17,7 @@ Categories
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<center>
-					<div class="item-thumbnail">
+					<div class="item-thumbnail center-y">
 						<center><img class="lazy" data-original="/images/items/2890.png"></center>
 					</div>
 					</center>
@@ -34,7 +34,7 @@ Categories
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<center>
-					<div class="item-thumbnail">
+					<div class="item-thumbnail center-y">
 						<center><img class="lazy" data-original="/images/items/2890.png"></center>
 					</div>
 					</center>

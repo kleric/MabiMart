@@ -25,6 +25,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password', 'remember_token');
 
+	public function getUnreadInboxCount()
+	{
+		$count = PM::where('reciever_id', '=', $this->id)->where('read', '=', false)->where('sent', '=', true)->count();
+		return $count;
+	}
 	public function getGravatarUrl()
 	{
 		$email = trim($this->email);

@@ -32,6 +32,11 @@
   <div class="panel panel-info">
     <div class="panel-heading">
       Recent Feedback
+      @if(isset($reviews) && count($reviews) > 0)
+      <div class="pull-right">
+        <a href="#" class="label label-primary">See All</a>
+      </div>
+      @endif
     </div>
     <div class="panel-body">
     @if(isset($reviews) && count($reviews) > 0)
@@ -42,15 +47,16 @@
         </a>
         <div class="media-body">
           <h4 class="media-heading">
-            <a href="{{ URL::route('profile', $review->getReviewer()->id) }}">{{{ $review->getReviewer()->getUsername() }}}</a> <small><i> says...</i></small>
+            @if ($review->getRating() > 0) 
+          <span class="label label-success">Positive</span>
+          @elseif ($review->getRating() < 0)
+          <span class="label label-danger">Positive</span>
+          @else
+          <span class="label label-default">Positive</span>
+          @endif
+            <a href="{{ URL::route('profile', $review->getReviewer()->id) }}">{{{ $review->getReviewer()->getUsername() }}}</a>
           </h4>
-          @for($i = 0; $i < $review->getRating(); $i++)
-            <i class="fa fa-star"></i>
-          @endfor
-          @for($i = $review->getRating(); $i < 5; $i++)
-            <i class="fa fa-star-o"></i>
-          @endfor
-          <br/>
+ 
           {{{ $review->getReview()}}}
         </div>
       </div>

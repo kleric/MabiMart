@@ -74,7 +74,7 @@ jQuery(document).ready(function($) {
             </table>
             @if(count($auctions) == 0)
             <div class="panel-body">
-              <p>Sorry, no one is selling this :(</p>
+              <center><p>Sorry, no one is selling this :(</p></center>
             </div>
             @endif
 

@@ -119,6 +119,7 @@
             <input type="submit" value="Bid" class="btn btn-default" type="button">
           </span>
         </div>
+        {{ Form::token() }}
       </form>
       @endif
     </div>

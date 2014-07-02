@@ -66,7 +66,7 @@ jQuery(document).ready(function($) {
             </table>
             @if(count($auctions) == 0)
             <div class="panel-body">
-              <p>Sorry, no one is selling this :(</p>
+              <center>Sorry, no one is selling items with this enchant. :(</center>
             </div>
             @endif
 

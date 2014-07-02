@@ -16,7 +16,7 @@ Categories
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<center>
-					<div class="item-thumbnail">
+					<div class="item-thumbnail center-y">
 						<center><img class="lazy" data-original="/images/items/{{{ $category->thumbnail_item_id }}}.png"></center>
 					</div>
 					</center>

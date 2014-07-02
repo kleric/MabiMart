@@ -45,12 +45,12 @@ class CreateReforgesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('auctions', function($table) 
+		/*Schema::table('auctions', function($table) 
 		{
 			$table->dropForeign('auctions_reforge_id_foreign');
 
 			$table->dropColumn('reforge_level');
-		});
+		});*/
 		Schema::dropIfExists('reforges');
 	}
 

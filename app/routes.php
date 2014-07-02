@@ -52,24 +52,43 @@ Route::any('/profile/view/{id}', array(
 	'uses' => 'ProfileController@getProfile'));
 
 Route::group(array('before' => 'auth'), function() {
+	Route::group(array('before' => 'csrf'), function() {
+		Route::post('/auction/create/{itemid}', array(
+			'as' => 'createauction-post',
+			'uses' => 'AuctionController@postCreateAuction')
+		);
+		Route::post('/auction/view/{id}', array(
+			'as' => 'auction-post',
+			'uses' => 'AuctionController@postAuction'));
+
+		Route::post('/profile/edit', array(
+			'as' => 'profile-edit-post',
+			'uses' => 'ProfileController@postEditProfile'));
+	});
 	Route::get('/logout', array(
 		'as' => 'logout',
 		'uses' => 'AccountController@getLogout')
+	);
+
+	Route::get('/profile/edit', array(
+		'as' => 'profile-edit',
+		'uses' => 'ProfileController@getEditProfile')
+	);
+
+	Route::get('/messages/inbox', array(
+		'as' => 'inbox',
+		'uses' => 'MessageController@getInbox')
+	);
+
+	Route::get('/messages/sent', array(
+		'as' => 'sent',
+		'uses' => 'MessageController@getSent')
 	);
 
 	Route::get('/auction/create/{itemid}', array(
 		'as' => 'createauction-get',
 		'uses' => 'AuctionController@getCreateAuction')
 	);
-
-	Route::post('/auction/create/{itemid}', array(
-		'as' => 'createauction-post',
-		'uses' => 'AuctionController@postCreateAuction')
-	);
-
-	Route::post('/auction/view/{id}', array(
-	'as' => 'auction-post',
-	'uses' => 'AuctionController@postAuction'));
 
 	Route::any('/dashboard', array(
 		'as' => 'dashboard',

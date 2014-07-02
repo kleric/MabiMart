@@ -84,6 +84,14 @@ class AuctionController extends BaseController {
 				$item_wiki_link = $item->wikilink;
 				$item_description = $item->description;
 			}
+			$imagefilename = $auction->item_id . ".png";
+			$onserverimgurl = "http://mabimart.com/images/items/" . $imagefilename;
+			
+			//Download it onto the server if it doesn't exist :) so we don't strain wiki servers
+			if(@getimagesize($onserverimgurl)) {
+				$item_imgurl = $onserverimgurl;	
+			}
+
 			$user = User::where('id', '=', $auction->seller_id);
 			if($user->count()) {
 				$user = $user->first();

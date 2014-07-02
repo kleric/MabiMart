@@ -2,9 +2,18 @@
 @section('page-title')
 Create an Auction
 @stop
+@section('css')
+<link href="/css/bootstrap-combobox.css" media="screen" rel="stylesheet" type="text/css">
+@stop
 @section('script')
+<script src="/js/bootstrap-combobox.js" type="text/javascript"></script>
 <script type="text/javascript">
 	$('.stat_label').tooltip();
+</script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.combobox').combobox();
+  });
 </script>
 @stop
 @section('content')
@@ -154,8 +163,8 @@ Create an Auction
 			<div class="panel-body">
 				<div class="col-md-6 col-sm-6">
 					Prefix<br/>
-					<select class="form-control" name="prefix">
-						<option value="-1">None</option>
+					<select class="combobox form-control" data-placeholder="None" name="prefix">
+						<option value="-1"></option>
 						@foreach ($prefix_enchants as $enchant)
 						<option value="{{{ $enchant->id }}}">{{{ $enchant->getListText() }}}</option>
 						@endforeach
@@ -163,8 +172,8 @@ Create an Auction
 				</div>
 				<div class="col-md-6 col-sm-6">
 					Suffix<br>
-					<select class="form-control" name="suffix">
-						<option value="-1">None</option>
+					<select class="combobox form-control" name="suffix" data-placeholder="None">
+						<option value="-1"></option>
 						@foreach ($suffix_enchants as $enchant)
 						<option value="{{{ $enchant->id }}}">{{{ $enchant->getListText() }}}</option>
 						@endforeach

@@ -6,6 +6,7 @@
 
 	<title>MabiMart | @yield('page-title')</title>
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	@yield('css')
 	<link rel="stylesheet" href="/css/font-awesome.min.css">
 	<link href="/css/style.css" rel="stylesheet">
 	<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
@@ -54,11 +55,11 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{{ Auth::user()->username }}}</a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="{{ URL::route('profile', Auth::user()->id) }}"><span class="fa fa-user"></span> My Profile</a></li>
-								<li><a href="#"><span class="fa fa-pencil"></span> Edit Profile</a></li>
+								<li><a href="{{ URL::route('profile-edit') }}"><span class="fa fa-pencil"></span> Edit Profile</a></li>
 								<li><a href="#"><span class="fa fa-cog"></span> Account Settings</a></li>
 							</ul>
 						</li>
-						<li><a href="#"><span class="fa fa-inbox"></span> Inbox <span class="badge">0</span></a></a></li>
+						<li><a href="{{ URL::route('inbox') }}"><span class="fa fa-inbox"></span> Inbox <span class="badge">{{ Auth::user()->getUnreadInboxCount() }}</span></a></a></li>
 						<li><a href="{{ URL::route('logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
 						@else
 						<li><a href="{{ URL::route('register') }}">Register</a></li>
