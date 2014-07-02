@@ -19,6 +19,10 @@ Home
 			<div class="page-header">
 				<h2>Useful Sites</h2> 
 			</div>
+			<ul>
+				<li><a href="https://www.facebook.com/groups/Alexinaserver/">Alexina Facebook Group</a></li>
+				<li><a href="http://wiki.mabinogiworld.com/">Mabinogi Wiki</a></li>
+			</ul>
 		</div>
 	</div>
 @stop
