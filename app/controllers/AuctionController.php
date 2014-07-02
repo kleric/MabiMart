@@ -108,6 +108,7 @@ class AuctionController extends BaseController {
 				'leading_bid' => $leading_bid,
 				'bid_offers' => $all_bids,
 				'user_name' => $user->username,
+				'user_id' => $user->id,
 				'wiki_link' => $item_wiki_link,
 				'item_name' => $item->name));
 		}
