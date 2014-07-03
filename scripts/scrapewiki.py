@@ -4,6 +4,7 @@ from lxml import html
 import requests
 from cssselect import HTMLTranslator, SelectorError
 
+#START COMMON CODE
 
 mw_base_url = 'http://wiki.mabinogiworld.com'
 
@@ -16,6 +17,10 @@ def delete_mouseover(element):
   for x in to_delete:
     if x is not None:
       x.drop_tree()
+
+#END COMMON CODE
+
+#START EQUIPMENT/ITEMS SCRAPE CODE
 
 def convert_worn_on(worn_string):
   '''Converts a string describing the Worn On table entry to a number
@@ -340,6 +345,56 @@ def mw_item_page_scrape(url):
 
   return data
 
+def gather_item_links_to_scrape():
+  '''Scrapes all the required links from the Equipment and Items
+  category pages, and returns them in a list. The links are relative, and
+  must be appended to mw_base_url.
+  '''
+  equipment_url = "http://wiki.mabinogiworld.com/view/Category:Equipment"
+  items_url = "http://wiki.mabinogiworld.com/view/Category:Items"
+  urls = [equipment_url, items_url]
+
+  links_xpath = "descendant-or-self::div[@id = 'mw-pages']/div[@class and contains(concat(' ', normalize-space(@class), ' '), ' mw-content-ltr ')]/table/tr/td/ul/li/a/@href"
+  # On the first page of Weapons and Equipment, the first ul is extraneous
+  extraneous_links_xpath = "descendant-or-self::div[@id = 'mw-pages']/div[@class and contains(concat(' ', normalize-space(@class), ' '), ' mw-content-ltr ')]/table/tr/*[name() = 'td' and (position() = 1)]/ul[position() = 1]/li"
+  next_page_xpath = "descendant-or-self::div[@id = 'mw-pages']/a[position() = last() and (contains(., 'next 200'))]/@href"
+
+  all_links = []
+
+  for i in xrange(len(urls)): 
+    links = []
+    url = urls[i]
+    page_number = 1
+
+    # bit hacky, but it works nicely; we set page_number = 0 to end the loop
+    while page_number:
+      r = requests.get(url) # request desired webpage to scrape
+      if r.status_code != requests.codes.ok: # confirm request successful
+        sys.stderr.write('FATAL_ERROR: Link gathering request error')
+        return None
+      tree = html.fromstring(r.text) # parse html into tree
+      # add links on this page
+      if i < 1 and page_number == 1: # if first page of Weapons or Equipment
+        omit = len(tree.xpath(extraneous_links_xpath)) # mark for deletion
+      links += tree.xpath(links_xpath) # add all links
+      next_page = tree.xpath(next_page_xpath) # look for a 'next 200' link
+      if not next_page:
+        page_number = 0
+      else:
+        url = mw_base_url + next_page[0]
+        page_number += 1
+
+    for j in xrange(omit):
+      del links[0]
+
+    all_links += [l for l in links if l not in all_links]
+
+  return all_links
+
+#END EQUIPMENT/ITEMS SCRAPE CODE
+
+#START ENCHANTS SCRAPE CODE
+
 def process_effects(effects):
   '''Processes the raw text from the Effects cell, figuring out where to
   separate the items and adding HTML tags to turn it into a <ul> containing
@@ -369,7 +424,6 @@ def process_effects(effects):
     minus = string.rfind(effects, '-')
 
   return '<ul>' + lis + '\n</ul>'
-
 
 def mw_enchant_page_scrape(url):
   '''Scrapes a rank page of Enchants, returning a list of dictionaries
@@ -418,70 +472,80 @@ def mw_enchant_page_scrape(url):
 
   return enchants_data
 
-def gather_item_links_to_scrape():
-  '''Scrapes all the required links from the Equipment and Items
-  category pages, and returns them in a list. The links are relative, and
-  must be appended to mw_base_url.
-  '''
-  equipment_url = "http://wiki.mabinogiworld.com/view/Category:Equipment"
-  items_url = "http://wiki.mabinogiworld.com/view/Category:Items"
-  urls = [equipment_url, items_url]
+#END ENCHANTS SCRAPE CODE
 
-  links_xpath = "descendant-or-self::div[@id = 'mw-pages']/div[@class and contains(concat(' ', normalize-space(@class), ' '), ' mw-content-ltr ')]/table/tr/td/ul/li/a/@href"
-  # On the first page of Weapons and Equipment, the first ul is extraneous
-  extraneous_links_xpath = "descendant-or-self::div[@id = 'mw-pages']/div[@class and contains(concat(' ', normalize-space(@class), ' '), ' mw-content-ltr ')]/table/tr/*[name() = 'td' and (position() = 1)]/ul[position() = 1]/li"
-  next_page_xpath = "descendant-or-self::div[@id = 'mw-pages']/a[position() = last() and (contains(., 'next 200'))]/@href"
+#START REFORGES SCRAPE CODE
 
-  all_links = []
+def reforges_scrape():
+  '''Scrapes the reforges into a list of dictionaries, with the following data
+  under these keys:
 
-  for i in xrange(len(urls)): 
-    links = []
-    url = urls[i]
-    page_number = 1
+  name [Attribute]
+  description [Effect Limitation]'''
 
-    # bit hacky, but it works nicely; we set page_number = 0 to end the loop
-    while page_number:
-      r = requests.get(url) # request desired webpage to scrape
-      if r.status_code != requests.codes.ok: # confirm request successful
-        sys.stderr.write('FATAL_ERROR: Link gathering request error')
-        return None
-      tree = html.fromstring(r.text) # parse html into tree
-      # add links on this page
-      if i < 1 and page_number == 1: # if first page of Weapons or Equipment
-        omit = len(tree.xpath(extraneous_links_xpath)) # mark for deletion
-      links += tree.xpath(links_xpath) # add all links
-      next_page = tree.xpath(next_page_xpath) # look for a 'next 200' link
-      if not next_page:
-        page_number = 0
+  reforges_url = 'http://wiki.mabinogiworld.com/view/Reforges'
+
+  r = requests.get(reforges_url) # request desired webpage to scrape
+  if r.status_code != requests.codes.ok: # confirm that request was successful
+    sys.stderr.write('ERROR: Request error\n')
+    return None
+  
+  tree = html.fromstring(r.text) # parse html into tree
+
+  table_row_xpath = "descendant-or-self::div[@id = 'mw-content-text']/table/tr"
+  rows = tree.xpath(table_row_xpath)
+
+  row_datas = []
+
+  for row in rows:
+    row_data = {}
+    name_cell = row.cssselect('td:first-child')
+    if len(name_cell) > 1:
+      sys.stderr.write('WARNING: more than one first td selected (how is that even possible?)\n')
+    elif len(name_cell) < 1:
+      pass # these are the th rows; skip them
+    else:
+      row_data['name'] = name_cell[0].text_content()
+
+      description_cell = row.cssselect('td:nth-child(3)')
+      if len(description_cell) > 1:
+        sys.stderr.write('WARNING: more than one third td selected (how is that even possible?)\n')
+      elif len(description_cell) < 1:
+        sys.stderr.write('ERROR: unable to find a third td\n')
+        sys.stderr.write('in ' + row.text_content())
       else:
-        url = mw_base_url + next_page[0]
-        page_number += 1
+        row_data['description'] = description_cell[0].text_content()
+      row_datas.append(row_data)
 
-    for j in xrange(omit):
-      del links[0]
+  return row_datas
 
-    all_links += [l for l in links if l not in all_links]
+#END REFORGES SCRAPE CODE
 
-  return all_links
+#START COMMON CODE
 
 def sanitize_text(raw_text):
   '''Slash-escapes double quotes to prepare this string for database seeding'''
   return raw_text.strip().replace('"', r'\"')
 
-def scrape_datatable_format(scrape):
-  '''Requires: scrape is not None'''
-  item_line = 'Item::create(array('
+def scrape_datatable_format(scrape, thing_type):
+  '''Requires: scrape is not None, thing_type is a string that will be used to
+  begin each line'''
+  thing_line = thing_type + '::create(array('
   for key in scrape:
     if key in ['description', 'wikilink', 'imgurl', 'notes', #rest for Enchants
                'enchantsonto', 'effects']:
-      item_line += "'" + key + "' => \"" + sanitize_text(scrape[key]) + "\","
+      thing_line += "'" + key + "' => \"" + sanitize_text(scrape[key]) + "\","
     elif key == 'name':
       # a hack to make sure we don't have an extra comma on the last data line
       pass
     else:
-      item_line +=  "'" + key + "' => " + str(scrape[key]).lower() + ","
-  item_line += "'name' => \"" + sanitize_text(scrape['name']) + "\"));"
-  return item_line
+      thing_line +=  "'" + key + "' => " + str(scrape[key]).lower() + ","
+  thing_line += "'name' => \"" + sanitize_text(scrape['name']) + "\"));"
+  return thing_line
+
+#END COMMON CODE
+
+#START PRINTING CODE
 
 def print_equipment_items_data():
   total_count = 0
@@ -504,7 +568,7 @@ def print_equipment_items_data():
       err_count += 1
     else:
       try:
-        line = scrape_datatable_format(scrape)
+        line = scrape_datatable_format(scrape, 'Item')
         print line
         sys.stderr.write('Scrape successful.\n')
       except:
@@ -531,16 +595,15 @@ def print_enchant_data():
     try:
       enchants = mw_enchant_page_scrape(link)
       if enchants is None:
-        return
-          raise Exception('Scrape failed')
+        raise Exception('Scrape failed')
     except Exception as e:
       sys.stderr.write('FATAL_ERROR: page scrape FAILED\n')
-      sys.stderr.write('Exception message: ' + str(e.args))
+      sys.stderr.write('Exception message: ' + str(e.args) + '\n')
       return
     sys.stderr.write('Page scrape successful.\n')
     for enchant in enchants:
       try:
-        line = scrape_datatable_format(enchant)
+        line = scrape_datatable_format(enchant, 'Enchant')
         print line
       except:
         sys.stderr.write('ERROR: some exception thrown in formatting enchant data\n')
@@ -551,14 +614,37 @@ def print_enchant_data():
   sys.stderr.write('Total ERRORs: ' + str(err_count) + '\n')
   sys.stderr.write('Wait! ERROR count is probably innacurate, since enchants are processed by page. Use grep -c ERROR enchants.log to see the real number of errors.')
 
+def print_reforges_data():
+  sys.stderr.write('Scraping data...\n')
+  reforges = reforges_scrape()
+  if reforges is None:
+    return
+  else:
+    for reforge in reforges:
+      try:
+        line = scrape_datatable_format(reforge, 'Reforge')
+        print line
+      except:
+        sys.stderr.write('ERROR: some exception thrown in formatting reforge data\n')
+  sys.stderr.write('Data scrape complete.')
+
+#END PRINTING CODE
+
+# MAIN CODE
+
 # TO SCRAPE EQUIPMENT AND ITEMS DATA:
 # print_equipment_items_data()
 # run this command to write output to a file called scrape.data and {progress,
 # WARNINGs, and ERRORs} to scrape.log, while also printing the latter to the
 # terminal so you can watch its progress:
-# python scrapewiki.py 2>&1 >scrape.data | tee scrape.log
+# python scrapewiki.py 2>&1 >equipitems.data | tee equipitems.log
 
 # TO SCRAPE ENCHANTS DATA:
-print_enchant_data()
+# print_enchant_data()
 # make sure above statement is commented, then
 # run python scrapewiki.py 2>&1 >enchants.data | tee enchants.log
+
+# TO SCRAPE REFORGES:
+print_reforges_data()
+# make sure everything else is commented, then
+# run python scrapewiki.py 2>&1 >reforges.data | tee reforges.log
