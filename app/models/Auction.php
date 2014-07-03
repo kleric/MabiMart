@@ -45,6 +45,16 @@ class Auction extends Eloquent {
 			return "Invalid enchant";
 		}
 	}
+	public function getCurrentOffer() {
+		$all_bids = Bid::where('auction_id', '=', $this->id)->orderBy('amount', 'desc');
+		$leading_bid = ($all_bids->count()) ? $all_bids->first() : null;
+
+		if(isset($leading_bid)) {
+			return $leading_bid->getAmount();
+		}
+
+		return "";
+	}
 	public function getCurrentPrice() {
 		$all_bids = Bid::where('auction_id', '=', $this->id)->orderBy('amount', 'desc');
 		$leading_bid = ($all_bids->count()) ? $all_bids->first() : null;
@@ -212,5 +222,9 @@ class Auction extends Eloquent {
 
 
 		return $stats;
+	}
+	public static function getAuctionCount() 
+	{
+		return Auction::where('auctionendtime', '>', new DateTime('NOW'))->count();
 	}
 }

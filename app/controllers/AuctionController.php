@@ -357,6 +357,13 @@ class AuctionController extends BaseController {
 	public function getAllAuctions($page = 1)
 	{
 		$auctions_per_page = 50;
+		$lastpage = intval(Auction::getAuctionCount()/$auctions_per_page) + 1;
+		if($page <= 0) {
+			$page = 1;
+		}
+		else if($page > $lastpage) {
+			$page = $lastpage;
+		}
 		$all_auctions = Auction::where('auctionendtime', '>', new DateTime('NOW'))
 			->orderBy('auctionendtime', 'asc')
 			->skip($auctions_per_page * ($page - 1))->take($auctions_per_page)->get();
@@ -364,12 +371,9 @@ class AuctionController extends BaseController {
 		$this->layout->content = View::make('allauctions',
 			array(
 				'page' => $page,
+				'lastpage' => $lastpage,
 				'all_auctions' => $all_auctions
 			)
 		);
-	}
-	public function getAllAuctionPages() 
-	{
-		$all_auctions = Auction::where('auctionendtime', '>', new DateTime('NOW'))->whereIn('id', $auction_ids)->get();
 	}
 }

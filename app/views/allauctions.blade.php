@@ -15,17 +15,11 @@ jQuery(document).ready(function($) {
 <div class="page-header">
   <h2>All Auctions <small>Page {{{ $page }}}</h2>
 </div>
-<div class="col-md-3 col-sm-3">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      Sort Options
-    </div>
-    <div class="panel-body">
-      Thinking of putting some sort options for the auctions here. But those will have to come later.
-    </div>
-  </div>
-</div>
-<div class="col-md-9 col-sm-9">
+<ul class="pager">
+  <li class="previous {{{ $page == 1 ? "disabled" : "" }}}"><a href="#">&larr; Previous</a></li>
+  <li class="next {{{ $page == $lastpage ? "disabled" : "" }}}"><a href="{{{ $page == $lastpage ? "#" : URL::route('auctions', $page + 1) }}}">Next &rarr;</a></li>
+</ul>
+<div class="col-md-12 col-sm-12">
   <div class="panel panel-success">
     <div class="panel-heading">
       Page {{{ $page }}}
@@ -34,7 +28,9 @@ jQuery(document).ready(function($) {
     <table class="table table-hover">
       <thead>
         <tr class="success">
+          <td><strong>Seller</strong></td>
           <td><strong>Item Name</strong></td>
+          <td><strong>Starting Price</strong></td>
           <td><strong>Current Offer</strong></td>
           <td><strong>Autowin</strong></td>
           <td><strong>End Time</strong></td>
@@ -43,8 +39,10 @@ jQuery(document).ready(function($) {
       <tbody>
       @foreach($all_auctions as $auction)
         <tr class="clickableRow" href="{{ URL::route('auction', $auction->id)}}">
+          <td>{{{$auction->getSeller() }}}</td>
           <td>{{{$auction->getItemName()}}}</td>
-          <td>{{{$auction->getCurrentPrice() }}}</td>
+          <td>{{{$auction->getStartingPrice() }}}</td>
+          <td>{{{$auction->getCurrentOffer() }}}</td>
           <td>{{{$auction->getAutowinPrice() }}}</td>
           <td>{{{$auction->getEndTime() }}}</td>
         </tr>
