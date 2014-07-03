@@ -16,10 +16,20 @@ jQuery(document).ready(function($) {
   <h2>All Auctions <small>Page {{{ $page }}}</h2>
 </div>
 <ul class="pager">
-  <li class="previous {{{ $page == 1 ? "disabled" : "" }}}"><a href="#">&larr; Previous</a></li>
+  <li class="previous {{{ $page == 1 ? "disabled" : "" }}}"><a href="{{{ $page == 1 ? "#" : URL::route('auctions', $page - 1) }}}">&larr; Previous</a></li>
   <li class="next {{{ $page == $lastpage ? "disabled" : "" }}}"><a href="{{{ $page == $lastpage ? "#" : URL::route('auctions', $page + 1) }}}">Next &rarr;</a></li>
 </ul>
-<div class="col-md-12 col-sm-12">
+<div class="col-md-3 col-sm-3">
+  <div class="panel panel-default">
+  <div class="panel-heading">
+    Sort Options
+  </div>
+  <div class="panel-body">
+    Considering Adding Sort options... we'll see.
+  </div>
+  </div>
+</div>
+<div class="col-md-9 col-sm-9">
   <div class="panel panel-success">
     <div class="panel-heading">
       Page {{{ $page }}}
