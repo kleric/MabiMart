@@ -29,6 +29,11 @@ class AuctionController extends BaseController {
 			else {
 				$minamount = $leading_bid->amount;
 			}
+			$invalid_bidders = $auction->seller_id;
+
+			if(isset($leading_bid)) {
+				$invalid_bidders .= "," . $leading_bid->getBidderId();
+			}
 			$minamount = $minamount + (0.1 * $minamount);
 			$validator = Validator::make(
 				array(
@@ -37,10 +42,10 @@ class AuctionController extends BaseController {
 					),
 				array(
 					'amount' => 'required|numeric|min:' . $minamount,
-					'bidder' => ('not_in:' . $auction->seller_id . "," . $leading_bid->getBidderId())
+					'bidder' => ('not_in:' . $invalid_bidders)
 					),
 				array(
-					'not_in' => "You can't make a bid... ")
+					'not_in' => "You can't you're already winning.")
 				);
 			if($validator->fails()) {
 				return Redirect::route('auction', $id)
