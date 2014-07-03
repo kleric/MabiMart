@@ -14,19 +14,12 @@ class CreateReforgesTable extends Migration {
 	{
 		Schema::dropIfExists('reforges');
 
-		/*Schema::create('reforges', function(Blueprint $table)
+		Schema::create('reforges', function(Blueprint $table)
 		{
 			$table->increments('id');
 
 			$table->string('name',64);
 
-			$table->smallInteger('rank_one_cap')->unsigned();
-			$table->smallInteger('rank_two_cap')->unsigned();
-			$table->smallInteger('rank_three_cap')->unsigned();
-
-			$table->string('effects', 128);
-			$table->string('effect_per_level', 128);
-			
 			$table->timestamps();
 		});
 
@@ -35,7 +28,7 @@ class CreateReforgesTable extends Migration {
 			$table->integer('reforge_id')->unsigned();
 			$table->foreign('reforge_id')->references('id')->on('reforges');
 			$table->smallInteger('reforge_level')->unsigned()->nullable();
-		});*/
+		});
 	}
 
 	/**
@@ -45,12 +38,12 @@ class CreateReforgesTable extends Migration {
 	 */
 	public function down()
 	{
-		/*Schema::table('auctions', function($table) 
+		Schema::table('auctions', function($table) 
 		{
 			$table->dropForeign('auctions_reforge_id_foreign');
 
 			$table->dropColumn('reforge_level');
-		});*/
+		});
 		Schema::dropIfExists('reforges');
 	}
 
