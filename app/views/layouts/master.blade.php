@@ -16,9 +16,9 @@
 		<div class="col-xs-2 col-md-2">
 			<img src="/images/logo.png">
 		</div>
-			<!--<div class="col-xs-3 pull-right col-md-2 text-right" id="userpanel">
-				Welcome, <b>Guest</b>. </br> Please <a href="/login">Login</a> or <a href="/register">Register</a>.
-			</div>-->
+		<div class="hidden-phone pull-right col-md-2 text-right" id="timepanel">
+				<center>Mart Time: <span id="servertime">{{ date("H:i:s", time()) }}</span></center>
+		</div>
 		</div>
 		<div class="navbar-default" role="navigation" id="navbar">
 			<div class="container">
@@ -42,7 +42,7 @@
 								<li><a href="{{ URL::route('dashboard') }}">My Auctions</a></li>
 								<li><a href="{{ URL::route('categories') }}">Add Auction</a></li>
 								@endif
-								<li><a href="#">All auctions</a></li>
+								<li><a href="{{ URL::route('all-auctions') }}">All auctions</a></li>
 								<li><a href="#">Ending Soon</a></li>
 								<li><a href="#">Search</a></li>
 							</ul>
@@ -98,6 +98,27 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
 		<script src="/js/jquery.lazyload.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+var currenttime = '{{ date("F d, Y H:i:s", time()) }}'; //PHP method of getting server date
+
+var serverdate=new Date(currenttime);
+
+function padlength(what){
+var output=(what.toString().length==1)? "0"+what : what;
+return output;
+}
+
+function displaytime(){
+serverdate.setSeconds(serverdate.getSeconds()+1);
+var timestring=padlength(serverdate.getHours())+":"+padlength(serverdate.getMinutes())+":"+padlength(serverdate.getSeconds());
+document.getElementById("servertime").innerHTML = timestring;
+}
+
+window.onload=function(){
+setInterval("displaytime()", 1000);
+}
+
+</script>
 		@yield('script')
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

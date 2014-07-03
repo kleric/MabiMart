@@ -55,6 +55,9 @@ class Auction extends Eloquent {
 
 		return $this->getStartingPrice();
 	}
+	public function getAutowinPrice() {
+		return ($this->autowin == 0 ? "" : number_format($this->autowin));
+	}
 
 	public function getSeller() {
 		$user = User::where('id', '=', $this->seller_id)->first();

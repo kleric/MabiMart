@@ -51,8 +51,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	{
 		return $this->username;
 	}
-	public function getAverageRating()
+	public function getFeedbackInfo()
 	{
-		
+		$str = "";
 	}
 }

@@ -51,6 +51,10 @@ Route::any('/profile/view/{id}', array(
 	'as' => 'profile',
 	'uses' => 'ProfileController@getProfile'));
 
+Route::any('/auctions', array(
+	'as' => 'all-auctions',
+	'uses' => 'AuctionController@getAllAuctions'));
+
 Route::group(array('before' => 'auth'), function() {
 	Route::group(array('before' => 'csrf'), function() {
 		Route::post('/auction/create/{itemid}', array(

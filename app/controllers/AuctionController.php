@@ -353,4 +353,22 @@ class AuctionController extends BaseController {
 			)
 		);
 	}
+	public function getAllAuctions($page = 1)
+	{
+		$auctions_per_page = 50;
+		$all_auctions = Auction::where('auctionendtime', '>', new DateTime('NOW'))
+			->orderBy('auctionendtime', 'asc')
+			->skip($auctions_per_page * ($page - 1))->take($auctions_per_page)->get();
+
+		$this->layout->content = View::make('allauctions',
+			array(
+				'page' => $page,
+				'all_auctions' => $all_auctions
+			)
+		);
+	}
+	public function getAllAuctionPages() 
+	{
+		$all_auctions = Auction::where('auctionendtime', '>', new DateTime('NOW'))->whereIn('id', $auction_ids)->get();
+	}
 }
