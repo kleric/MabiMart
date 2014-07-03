@@ -67,7 +67,7 @@ jQuery(document).ready(function($) {
         </tr>
       @endforeach
       </tbody>
-    </tr>
+    </table>
     @else
     <div class="panel-body">
       You aren't bidding on anything!
