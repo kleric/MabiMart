@@ -19,6 +19,7 @@ class CreateReforgesTable extends Migration {
 			$table->increments('id');
 
 			$table->string('name',64);
+			$table->string('description', 256);
 
 			$table->timestamps();
 		});
