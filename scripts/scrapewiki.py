@@ -521,6 +521,89 @@ def reforges_scrape():
 
 #END REFORGES SCRAPE CODE
 
+#START POTIONS SCRAPE CODE
+
+def gather_links_to_scrape(category_url):
+  '''Given a valid category page with a list of pages in the category, scrapes
+  all the links listed into a list. The links are relative, and must be
+  appended to mw_base_url. This function CANNOT be used for Equipment and
+  Items, as they have a few extraneous links at the top (there is a special
+  function for these two categories).
+  '''
+  links_xpath = "descendant-or-self::div[@id = 'mw-pages']/div[@class and contains(concat(' ', normalize-space(@class), ' '), ' mw-content-ltr ')]/table/tr/td/ul/li/a/@href"
+  next_page_xpath = "descendant-or-self::div[@id = 'mw-pages']/a[position() = last() and (contains(., 'next 200'))]/@href"
+
+  all_links = []
+  page_number = 1
+  # bit hacky, but it works nicely; we set page_number = 0 to end the loop
+  while page_number:
+    r = requests.get(category_url) # request desired webpage to scrape
+    if r.status_code != requests.codes.ok: # confirm request successful
+      sys.stderr.write('FATAL_ERROR: Link gathering request error')
+      return None
+    tree = html.fromstring(r.text) # parse html into tree
+    # add links on this page
+    all_links += tree.xpath(links_xpath) # add all links
+    next_page = tree.xpath(next_page_xpath) # look for a 'next 200' link
+    if not next_page:
+      page_number = 0
+    else:
+      category_url = mw_base_url + next_page[0]
+      page_number += 1
+
+  return all_links
+
+def mw_potion_page_scrape(url):
+  '''Given a URL of a potion page, scrapes the following data into a dictionary
+  under these keys:
+
+  name
+  description
+  imgurl
+  wikilink'''
+  r = requests.get(url) # request desired webpage to scrape
+  if r.status_code != requests.codes.ok: # confirm that request was successful
+    sys.stderr.write('ERROR: Request error\n')
+    return None
+  
+  tree = html.fromstring(r.text) # parse html into tree
+
+  name_xpath = "descendant-or-self::h1[@id = 'firstHeading']"
+  description_xpath = "descendant-or-self::div[@id = 'mw-content-text']/p/i"
+  imgurl_xpath = "descendant-or-self::div[@id = 'mw-content-text']/table/*[name() = 'tr' and (position() = 1)]/*[@class and contains(concat(' ', normalize-space(@class), ' '), ' image ') and (name() = 'td') and (position() = 1)]/a/img/@src"
+  name = tree.xpath(name_xpath)
+  description = tree.xpath(description_xpath)
+  imgurl = tree.xpath(imgurl_xpath)
+
+  data = {}
+  if len(name) == 0:
+    sys.stderr.write('ERROR: Unable to find a name\n')
+    return None
+  else:
+    if len(name) > 1:
+      sys.stderr.write('WARNING: More than one name selected. Using first\n')
+    data['name'] = name[0].text_content()
+
+  if len(description) == 0:
+    sys.stderr.write('ERROR: Unable to find a description\n')
+    return None
+  else:
+    if len(description) > 1:
+      sys.stderr.write('WARNING: More than one description selected. Using first\n')
+    data['description'] = description[0].text_content()
+
+  if len(imgurl) == 0:
+    sys.stderr.write('WARNING: Unable to find a imgurl\n')
+  else:
+    if len(imgurl) > 1:
+      sys.stderr.write('WARNING: More than one imgurl selected. Using first\n')
+    data['imgurl'] = mw_base_url + imgurl[0]
+
+  data['wikilink'] = url
+  return data
+
+#END POTIONS SCRAPE CODE
+
 #START COMMON CODE
 
 def sanitize_text(raw_text):
@@ -547,19 +630,19 @@ def scrape_datatable_format(scrape, thing_type):
 
 #START PRINTING CODE
 
-def print_equipment_items_data():
+def print_items_data(gather_links_func, page_scraping_func):
   total_count = 0
   err_count = 0
   sys.stderr.write('Gathering links...\n')
-  links = gather_item_links_to_scrape()
+  links = gather_links_func()
   if not links:
-    # gather_item_links_to_scrape will print 'FATAL_ERROR'
+    # gather_links_func will print 'FATAL_ERROR'
     return
   sys.stderr.write('Links gathered. Scraping data...\n')
   for link in links: 
     sys.stderr.write('Processing link ' + mw_base_url + link + '...\n')
     try:
-      scrape = mw_item_page_scrape(mw_base_url + link)
+      scrape = page_scraping_func(mw_base_url + link)
     except:
       sys.stderr.write('ERROR: some exception thrown in scraping\n')
       scrape = None
@@ -615,6 +698,8 @@ def print_enchant_data():
   sys.stderr.write('Wait! ERROR count is probably innacurate, since enchants are processed by page. Use grep -c ERROR enchants.log to see the real number of errors.')
 
 def print_reforges_data():
+  total_count = 0
+  err_count = 0
   sys.stderr.write('Scraping data...\n')
   reforges = reforges_scrape()
   if reforges is None:
@@ -626,14 +711,18 @@ def print_reforges_data():
         print line
       except:
         sys.stderr.write('ERROR: some exception thrown in formatting reforge data\n')
-  sys.stderr.write('Data scrape complete.')
+        err_count += 1
+      total_count += 1
+  sys.stderr.write('Data scrape complete.\n')
+  sys.stderr.write('Total reforges processed: ' + str(total_count) + '\n')
+  sys.stderr.write('Total ERRORs: ' + str(err_count))
 
 #END PRINTING CODE
 
 # MAIN CODE
 
 # TO SCRAPE EQUIPMENT AND ITEMS DATA:
-# print_equipment_items_data()
+# print_items_data(gather_item_links_to_scrape, mw_item_page_scrape)
 # run this command to write output to a file called scrape.data and {progress,
 # WARNINGs, and ERRORs} to scrape.log, while also printing the latter to the
 # terminal so you can watch its progress:
@@ -641,10 +730,15 @@ def print_reforges_data():
 
 # TO SCRAPE ENCHANTS DATA:
 # print_enchant_data()
-# make sure above statement is commented, then
-# run python scrapewiki.py 2>&1 >enchants.data | tee enchants.log
+# make sure above statement is commented, then run
+# python scrapewiki.py 2>&1 >enchants.data | tee enchants.log
 
 # TO SCRAPE REFORGES:
-print_reforges_data()
-# make sure everything else is commented, then
-# run python scrapewiki.py 2>&1 >reforges.data | tee reforges.log
+# print_reforges_data()
+# make sure everything else is commented, then run
+# python scrapewiki.py 2>&1 >reforges.data | tee reforges.log
+
+# TO SCRAPE POTIONS:
+print_items_data(lambda: gather_links_to_scrape("http://wiki.mabinogiworld.com/view/Category:Potions"), mw_potion_page_scrape)
+# make sure everything else is commented, then run
+# python scrapewiki.py 2>&1 >potions.data | tee potions.log
