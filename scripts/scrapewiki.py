@@ -18,6 +18,36 @@ def delete_mouseover(element):
     if x is not None:
       x.drop_tree()
 
+def gather_links_to_scrape(category_url):
+  '''Given a valid category page with a list of pages in the category, scrapes
+  all the links listed into a list. The links are relative, and must be
+  appended to mw_base_url. This function CANNOT be used for Equipment and
+  Items, as they have a few extraneous links at the top (there is a special
+  function for these two categories).
+  '''
+  links_xpath = "descendant-or-self::div[@id = 'mw-pages']/div[@class and contains(concat(' ', normalize-space(@class), ' '), ' mw-content-ltr ')]/table/tr/td/ul/li/a/@href"
+  next_page_xpath = "descendant-or-self::div[@id = 'mw-pages']/a[position() = last() and (contains(., 'next 200'))]/@href"
+
+  all_links = []
+  page_number = 1
+  # bit hacky, but it works nicely; we set page_number = 0 to end the loop
+  while page_number:
+    r = requests.get(category_url) # request desired webpage to scrape
+    if r.status_code != requests.codes.ok: # confirm request successful
+      sys.stderr.write('FATAL_ERROR: Link gathering request error')
+      return None
+    tree = html.fromstring(r.text) # parse html into tree
+    # add links on this page
+    all_links += tree.xpath(links_xpath) # add all links
+    next_page = tree.xpath(next_page_xpath) # look for a 'next 200' link
+    if not next_page:
+      page_number = 0
+    else:
+      category_url = mw_base_url + next_page[0]
+      page_number += 1
+
+  return all_links
+
 #END COMMON CODE
 
 #START EQUIPMENT/ITEMS SCRAPE CODE
@@ -523,36 +553,6 @@ def reforges_scrape():
 
 #START POTIONS SCRAPE CODE
 
-def gather_links_to_scrape(category_url):
-  '''Given a valid category page with a list of pages in the category, scrapes
-  all the links listed into a list. The links are relative, and must be
-  appended to mw_base_url. This function CANNOT be used for Equipment and
-  Items, as they have a few extraneous links at the top (there is a special
-  function for these two categories).
-  '''
-  links_xpath = "descendant-or-self::div[@id = 'mw-pages']/div[@class and contains(concat(' ', normalize-space(@class), ' '), ' mw-content-ltr ')]/table/tr/td/ul/li/a/@href"
-  next_page_xpath = "descendant-or-self::div[@id = 'mw-pages']/a[position() = last() and (contains(., 'next 200'))]/@href"
-
-  all_links = []
-  page_number = 1
-  # bit hacky, but it works nicely; we set page_number = 0 to end the loop
-  while page_number:
-    r = requests.get(category_url) # request desired webpage to scrape
-    if r.status_code != requests.codes.ok: # confirm request successful
-      sys.stderr.write('FATAL_ERROR: Link gathering request error')
-      return None
-    tree = html.fromstring(r.text) # parse html into tree
-    # add links on this page
-    all_links += tree.xpath(links_xpath) # add all links
-    next_page = tree.xpath(next_page_xpath) # look for a 'next 200' link
-    if not next_page:
-      page_number = 0
-    else:
-      category_url = mw_base_url + next_page[0]
-      page_number += 1
-
-  return all_links
-
 def mw_potion_page_scrape(url):
   '''Given a URL of a potion page, scrapes the following data into a dictionary
   under these keys:
@@ -603,6 +603,106 @@ def mw_potion_page_scrape(url):
   return data
 
 #END POTIONS SCRAPE CODE
+
+#START FOOD SCRAPE CODE
+
+def mw_food_page_scrape(url):
+  '''Given a URL of a food page, scrapes the following data into a dictionary
+  under these keys:
+
+  name
+  description
+  imgurl
+  wikilink
+
+  hp
+  mp
+  str
+  int
+  sp
+  defense
+  protection
+  luck
+  dex
+  will
+
+  Name and description are mandatory; without them we return None. Lack of an
+  imgurl will issue a WARNING, and lack of the stats will do nothing.'''
+  r = requests.get(url) # request desired webpage to scrape
+  if r.status_code != requests.codes.ok: # confirm that request was successful
+    sys.stderr.write('ERROR: Request error\n')
+    return None
+  
+  tree = html.fromstring(r.text) # parse html into tree
+
+  name_xpath = "descendant-or-self::h1[@id = 'firstHeading']"
+  description_xpath = "descendant-or-self::div[@id = 'mw-content-text']/p/i"
+  imgurl_xpath = "descendant-or-self::div[@id = 'mw-content-text']/table/*[name() = 'tr' and (position() = 1)]/*[@class and contains(concat(' ', normalize-space(@class), ' '), ' image ') and (name() = 'td') and (position() = 1)]/a/img/@src"
+  # Just checks for the text 'SP', 'Dex', and 'Prot'. Not entirely robust, but
+  # should be good enough
+  stats_row_xpath = "descendant-or-self::div[@id = 'mw-content-text']/table[position() = 1]/tr[contains(., 'SP') and contains(., 'Dex') and contains(., 'Prot')]/following-sibling::*[name() = 'tr' and (position() = 1)]"
+
+  name = tree.xpath(name_xpath)
+  description = tree.xpath(description_xpath)
+  imgurl = tree.xpath(imgurl_xpath)
+
+  data = {}
+  if len(name) == 0:
+    sys.stderr.write('ERROR: Unable to find a name\n')
+    return None
+  else:
+    if len(name) > 1:
+      sys.stderr.write('WARNING: More than one name selected. Using first\n')
+    data['name'] = name[0].text_content()
+
+  if len(description) == 0:
+    sys.stderr.write('ERROR: Unable to find a description\n')
+    return None
+  else:
+    if len(description) > 1:
+      sys.stderr.write('WARNING: More than one description selected. Using first\n')
+    data['description'] = description[0].text_content()
+
+  if len(imgurl) == 0:
+    sys.stderr.write('WARNING: Unable to find a imgurl\n')
+  else:
+    if len(imgurl) > 1:
+      sys.stderr.write('WARNING: More than one imgurl selected. Using first\n')
+    data['imgurl'] = mw_base_url + imgurl[0]
+
+  data['wikilink'] = url
+
+  stats_rows = tree.xpath(stats_row_xpath)
+
+  if not stats_rows:
+    sys.stderr.write('No stats rows found. Treating as Inedible Food.\n')
+    return data
+
+  stat_names = ['hp', 'mp', 'sp', 'str', 'int', 'dex', 'will', 'luck', 'defense', 'protection']
+  for sn in stat_names:
+    data[sn] = 0
+  # We'll keep track of the maximum value seen for each, and use these as the
+  # stats, to deal with all the ?s
+  for row in stats_rows:
+    cells = row.cssselect('td')
+    if len(cells) != 10:
+      sys.stderr.write('ERROR: Stats row selected has length != 10\n')
+      return None
+    for i in xrange(10):
+      try:
+        text = cells[i].text_content().strip()
+        tilde_index = string.find(text, '~')
+        if tilde_index != -1:
+          text = text[tilde_index+1:]
+        new_val = int(text)
+        if abs(new_val) > abs(data[stat_names[i]]): # get the largest/smallest
+          data[stat_names[i]] = new_val
+      except ValueError:
+        pass
+
+  return data
+
+#END FOOD SCRAPE CODE
 
 #START COMMON CODE
 
@@ -739,6 +839,11 @@ def print_reforges_data():
 # python scrapewiki.py 2>&1 >reforges.data | tee reforges.log
 
 # TO SCRAPE POTIONS:
-print_items_data(lambda: gather_links_to_scrape("http://wiki.mabinogiworld.com/view/Category:Potions"), mw_potion_page_scrape)
+# print_items_data(lambda: gather_links_to_scrape("http://wiki.mabinogiworld.com/view/Category:Potions"), mw_potion_page_scrape)
 # make sure everything else is commented, then run
 # python scrapewiki.py 2>&1 >potions.data | tee potions.log
+
+# TO SCRAPE FOOD:
+print_items_data(lambda: gather_links_to_scrape("http://wiki.mabinogiworld.com/view/Category:Food"), mw_food_page_scrape)
+# make sure everything else is commented, then run
+# python scrapewiki.py 2>&1 >food.data | tee food.log
