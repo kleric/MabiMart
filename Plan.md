@@ -1,12 +1,12 @@
 ## The Plan
- - Polish Auction Creation Page
- - Do backend for Auction Creation Page
- - Complete template for Auction View Page
- - Implement Bids
- - Complete Backend for Auction View Page
- - Enchant View Page
- - Enchant List View Page
- - Dashboard
- - Personal Messages (sending/recieving)
- - Feedback
- - User profiles
+ -  404 Page
+ -  Internal Server Error Page
+ -  Ending Auctions Gracefully
+ -  Feedback Page
+ -  Show Feedback on Auction View
+ -  Custom User Profile Pictures
+ -  Single Sign On
+ -  Add Auction Pages
+ -  Item Search
+ -  New Items/Potions/New Categories
+ -  Prevent registration with Admin or Administrator
