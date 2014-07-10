@@ -35,6 +35,7 @@ jQuery(document).ready(function($) {
       Page {{{ $page }}}
     </div>
     @if(isset($all_auctions) && count($all_auctions) > 0)
+    <div class="table-responsive">
     <table class="table table-hover">
       <thead>
         <tr class="success">
@@ -59,6 +60,7 @@ jQuery(document).ready(function($) {
       @endforeach
       </tbody>
     </table>
+    </div>
     @else
     <div class="panel-body">
       There's nothing for sale

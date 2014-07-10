@@ -21,6 +21,7 @@ jQuery(document).ready(function($) {
       My Auctions (Selling)
     </div>
     @if(isset($auctions_selling) && count($auctions_selling) > 0)
+    <div class="table-responsive">
     <table class="table table-hover">
       <thead>
         <tr class="success">
@@ -39,6 +40,7 @@ jQuery(document).ready(function($) {
       @endforeach
       </tbody>
     </table>
+    </div>
     @else
     <div class="panel-body">
       <center>You aren't selling anything!</center>
@@ -50,6 +52,7 @@ jQuery(document).ready(function($) {
       Auctions I'm Bidding On
     </div>
     @if(isset($auctions_buying))
+    <div class="table-responsive">
     <table class="table table-hover">
       <thead>
         <tr class="warning">
@@ -70,6 +73,7 @@ jQuery(document).ready(function($) {
       @endforeach
       </tbody>
     </table>
+    </div>
     @else
     <div class="panel-body">
       <center>You aren't bidding on anything!</center>

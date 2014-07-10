@@ -91,6 +91,7 @@
       Selling
     </div>
     @if(isset($auctions_selling) && count($auctions_selling) > 0)
+    <div class="table-responsive">
     <table class="table table-hover">
       <thead>
         <tr class="success">
@@ -109,6 +110,7 @@
       @endforeach
       </tbody>
     </table>
+    </div>
     @else
     <div class="panel-body">
       <center>They have nothing for sale!</center>
