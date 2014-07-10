@@ -50,7 +50,7 @@ jQuery(document).ready(function($) {
             <a href="{{ URL::route('createauction-get', $item_id) }}" class="label label-success">Sell Yours</a>
             </div>
           </div>
-          
+          <div class="table-responsive">
             <table class="table">
               <thead>
                 <tr class="success">
@@ -72,6 +72,7 @@ jQuery(document).ready(function($) {
               @endif
               </tbody>
             </table>
+           </div>
             @if(count($auctions) == 0)
             <div class="panel-body">
               <center><p>Sorry, no one is selling this :(</p></center>
