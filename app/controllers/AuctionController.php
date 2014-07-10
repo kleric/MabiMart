@@ -215,7 +215,7 @@ class AuctionController extends BaseController {
 					'durability' => 'min:0|integer',
 					'maxdurability' => 'min:0|integer',
 					'reforgerank' => 'in:1,2,3',
-					'reforge-1-level' => 'required_withinteger|max:25',
+					'reforge-1-level' => 'integer|max:25',
 					'reforge-2-level' => 'integer|max:25',
 					'reforge-3-level' => 'integer|max:25',
 					'specialup' => 'size:2',
