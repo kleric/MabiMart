@@ -77,6 +77,7 @@
       @endif
     </div>
   </div>
+  @if(isset($auction->description) && !empty($auction->description))
   <div class="panel panel-primary">
     <div class="panel-heading">
       Auction Details
@@ -86,6 +87,7 @@
       {{{ $auction->description }}}
     </div>
   </div>
+  @endif
   @if(isset($reforged) && $reforged)
   <div class="panel panel-default">
     <div class="panel-heading">
