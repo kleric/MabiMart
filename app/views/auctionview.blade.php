@@ -18,9 +18,13 @@
         <small>{{{ $user_name or 'Invalid User ID'}}}</small>
       </div>
       <div class="text-center">
-        <span class="label label-success">{{{ $seller->getPositiveCount() }}}</span>
-        <span class="label label-default">{{{ $seller->getNeutralCount() }}}</span>
-        <span class="label label-danger">{{{ $seller->getNegativeCount() }}}</span>
+        @if( $seller->getFeedbackScore() > 0)
+        <span class="label label-success">+{{{ $seller->getFeedbackScore() }}}</span>
+        @elseif( $seller->getFeedbackScore() == 0)
+        <span class="label label-default">+{{{ $seller->getFeedbackScore() }}}</span>
+        @else
+        <span class="label label-danger">-{{{ $seller->getFeedbackScore() }}}</span>
+        @endif
       </div>
       <div>
       </div>

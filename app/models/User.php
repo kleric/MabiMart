@@ -55,16 +55,19 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	{
 		$str = "";
 	}
-
+	public function getFeedbackScore() 
+	{
+		return $this->getPositiveCount() + $this->getNegativeCount();
+	}
 	public function getPositiveCount() 
 	{
 		$positive = Review::where('reviewee_id', '=', $this->id)->where('rating', '>', 0)->count();
-		return "+" . $positive;
+		return $positive;
 	}
 	public function getNegativeCount() 
 	{
 		$positive = Review::where('reviewee_id', '=', $this->id)->where('rating', '<', 0)->count();
-		return "-" . $positive;
+		return $positive;
 	}
 	public function getNeutralCount() 
 	{
