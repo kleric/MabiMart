@@ -167,7 +167,7 @@ class AuctionController extends BaseController {
 			$validator = Validator::make(Input::all(),
 				array(
 					'server' => 'required|in:1,2,3,4',
-					'duration' => 'required|in:1,2,3,4,5',
+					'duration' => 'required|in:1,2,3,4,5,10',
 					'minprice' => 'min:1000|integer',
 					'quantity' => 'sometimes|required|max:999|min:1|integer',
 					'price' =>'required|min:1000|max:1000000000|integer',
