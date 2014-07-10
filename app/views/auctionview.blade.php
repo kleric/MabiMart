@@ -31,11 +31,7 @@
       Contact Information
     </div>
     <div class="panel-body">
-      @if(empty($seller->getContactDetails()))
-      <center>No way to contact them :(</center>
-      @else
       {{{ $seller->getContactDetails() }}}
-      @endif
     </div>
   </div>
 </div>
