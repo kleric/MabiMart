@@ -26,10 +26,18 @@
       </div>
     </div>
   </div>
-  <ul class="list-group">
-    <li class="list-group-item list-group-item-warning">Recent Feedback</li>
-    <li class="list-group-item">Feedback not found</li>
-  </ul>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Contact Information
+    </div>
+    <div class="panel-body">
+      @if(empty($seller->getContactDetails()))
+      <center>No way to contact them :(</center>
+      @else
+      {{{ $seller->getContactDetails() }}}
+      @endif
+    </div>
+  </div>
 </div>
 <div class="col-md-5">
   <div class="panel panel-success">

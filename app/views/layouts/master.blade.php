@@ -14,7 +14,7 @@
 <body>
 	<div class="container" id="logoarea">
 		<div class="col-xs-2 col-md-2">
-			<img src="/images/logo.png">
+			<img src="/images/alpha_logo.png">
 		</div>
 		<div class="hidden-phone pull-right col-md-2 text-right" id="timepanel">
 				<center>Mart Time: <span id="servertime">{{ date("H:i:s", time()) }}</span></center>
@@ -70,10 +70,6 @@
 			</div>
 		</div>
 		<div class="container" id="content">
-			<br/>
-			<div class="alert alert-warning">
-				Please keep in mind this site is semi-working prototype. Please checkout this forum <a href="http://forums.mabimart.com/t/mabimart-is-just-a-prototype/21">post</a> for more information. 
-			</div>
 			@if(null !== Session::get('success_message'))
 			<div class="alert alert-success alert-dismissible" role="alert">
 				<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
