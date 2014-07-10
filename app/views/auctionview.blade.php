@@ -42,7 +42,8 @@
       </div>
     </div>
     <div class="panel-body">
-      {{{ $item_name or 'Not a valid item'}}} <br/>
+      {{{ $item_name or 'Not a valid item'}}} @if ($auction->quantity > 1) (x{{{ $auction->quantity }}}) @endif
+      <br/>
       <div class="media">
         <img class="media-object pull-left" src="{{{ $imgurl }}}">
         <div class="media-body">
