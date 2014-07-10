@@ -15,12 +15,18 @@
       </div>
       <br/>
       <div class="text-center">
-        <span class="label label-success">{{{ $user->getPositiveCount() }}}</span>
-        <span class="label label-default">{{{ $user->getNeutralCount() }}}</span>
-        <span class="label label-danger">{{{ $user->getNegativeCount() }}}</span>
+         @if( $user->getFeedbackScore() > 0)
+        <span class="label label-success">+{{{ $user->getFeedbackScore() }}}</span>
+        @elseif( $user->getFeedbackScore() == 0)
+        <span class="label label-default">+{{{ $user->getFeedbackScore() }}}</span>
+        @else
+        <span class="label label-danger">-{{{ $user->getFeedbackScore() }}}</span>
+        @endif
       </div>
       <br/>
-      <center><a href="{{ URL::route('create-message', $user->id) }}" class="label label-primary">Send a message</a></center>
+      <center>
+        <a href="{{ URL::route('create-message', $user->id) }}" class="label label-primary"><i class="fa fa-paper-plane"></i> PM</a>
+      </center>
     </div>
   </div>
   <div class="panel panel-default">
@@ -28,13 +34,21 @@
       About Me
     </div>
     <div class="panel-body">
+      <small><i>A little about me...</i></small><br/>
       {{{ $user->getAboutMe() }}}
-      <small><i>To reach me for trades...</i></small><br/>
-      {{{ $user->getContactDetails() }}}
     </div>
   </div>
 </div>
 <div class="col-md-9">
+  <div class="panel panel-warning">
+    <div class="panel-heading">
+      Contact Me
+    </div>
+    <div class="panel-body">
+      <small><i>To reach me for trades...</i></small><br/>
+      {{{ $user->getContactDetails() }}}
+    </div>
+  </div>
   <div class="panel panel-info">
     <div class="panel-heading">
       Recent Feedback
