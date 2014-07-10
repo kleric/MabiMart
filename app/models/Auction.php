@@ -11,11 +11,32 @@ class Auction extends Eloquent {
 	 */
 	protected $table = 'auctions';
 
+	public static function getById($auctionid) 
+	{
+		$auctions = Auction::where('id', '=', $auctionid);
+
+		if($auctions->count())
+		{
+			return $auctions->first();
+		}
+		return null;
+	}
 	public function getEndTime() {
 		return date_format(new DateTime($this->auctionendtime), 'F jS \a\t g:i:s A');
 	}
 	public function getStartingPrice() {
 		return number_format($this->starting_price);
+	}
+	public function getUserBid($id)
+	{
+		$all_bids = Bid::where('auction_id', '=', $this->id)->where('bidder_id', '=', $id)->orderBy('amount', 'desc');
+		$leading_bid = ($all_bids->count()) ? $all_bids->first() : null;
+
+		if(isset($leading_bid)) {
+			return $leading_bid->getAmount();
+		}
+
+		return "";
 	}
 	private function getEnchantDescription($id) {
 		$enchant = Enchant::where('id', '=', $id)->first();
@@ -37,6 +58,36 @@ class Auction extends Eloquent {
 			return "Invalid enchant";
 		}
 	}
+	public function getReforgeRank() {
+		return $this->reforgerank;
+	}
+	public function getReforge($num) {
+		$id = null;
+		switch($num) {
+			case 1:
+				$id = $this->reforgeone_id;
+				break;
+			case 2:
+				$id = $this->reforgetwo_id;
+				break;
+			case 3:
+				$id = $this->reforgethree_id;
+				break;
+			default:
+				return "";
+		}
+		if(!isset($id)) {
+			return "";
+		}
+		$reforge = Reforge::where('id', '=', $id)->first();
+		if($num == 3) {
+			$str = $reforge->name . " " . $this->reforgeone_level;
+		}
+		else {
+			$str = $reforge->name . " " . $this->reforgeone_level . "<br/>";
+		}
+		return $str;
+	}
 	public function getSuffixDescription() {
 		if(isset($this->suffix_enchant_id)) {
 			return $this->getEnchantDescription($this->suffix_enchant_id);
@@ -45,19 +96,30 @@ class Auction extends Eloquent {
 			return "Invalid enchant";
 		}
 	}
+	public function getLeadingBid() {
+		if(isset($this->leading_bid_id))
+		{
+			$bid = Bid::where('id', '=', $this->leading_bid_id);
+			if($bid->count())
+			{
+			$bid = Bid::where('id', '=', $this->leading_bid_id)->first();
+			return $bid;
+			}
+			return null;
+		}
+		return null;
+	}
 	public function getCurrentOffer() {
-		$all_bids = Bid::where('auction_id', '=', $this->id)->orderBy('amount', 'desc');
-		$leading_bid = ($all_bids->count()) ? $all_bids->first() : null;
-
-		if(isset($leading_bid)) {
+		$leading_bid = $this->getLeadingBid();
+		if(isset($leading_bid))
+		{
 			return $leading_bid->getAmount();
 		}
 
 		return "";
 	}
 	public function getCurrentPrice() {
-		$all_bids = Bid::where('auction_id', '=', $this->id)->orderBy('amount', 'desc');
-		$leading_bid = ($all_bids->count()) ? $all_bids->first() : null;
+		$leading_bid = $this->getLeadingBid();
 
 		if(isset($leading_bid)) {
 			return $leading_bid->getAmount();
@@ -70,13 +132,68 @@ class Auction extends Eloquent {
 	}
 
 	public function getSeller() {
-		$user = User::where('id', '=', $this->seller_id)->first();
+		$user = User::getById($this->seller_id);
 
 		if(isset($user)) {
 			return $user->username;
 		}
 
 		return "Invalid ID";
+	}
+	public function getSellerId() {
+		$user = User::where('id', '=', $this->seller_id)->first();
+
+		if(isset($user)) {
+			return $user->id;
+		}
+
+		return 0;
+	}
+	public function isOver()
+	{
+		$now = new DateTime('NOW');
+		$end = new DateTime($this->auctionendtime);
+
+		if($end < $now) return true;
+
+		return false;
+	}
+	public function hasWinner() {
+		if($this->endtime < (new DateTime('NOW'))){
+			$all_bids = Bid::where('auction_id', '=', $this->id)->orderBy('amount', 'desc');
+			$leading_bid = ($all_bids->count()) ? $all_bids->first() : null;
+
+			if(isset($leading_bid) && $leading_bid >= $this->minprice) {
+				return true;
+			}
+		}
+		return false;
+	}
+	public function getWinner() {
+		if($this->endtime < (new DateTime('NOW'))){
+			//$all_bids = Bid::where('auction_id', '=', $this->id)->orderBy('amount', 'desc');
+			$leading_user_id = $this->leading_user_id;
+			
+			if(isset($leading_user_id))
+			{
+				$usr = User::where('id', '=', $leading_user_id)->first();
+
+				return $usr->getUsername();
+			}
+		}
+		return 1;
+	}
+	public function getWinnerId() {
+		if($this->endtime < (new DateTime('NOW'))){
+			//$all_bids = Bid::where('auction_id', '=', $this->id)->orderBy('amount', 'desc');
+			$leading_user_id = $this->leading_user_id;
+			
+			if(isset($leading_user_id))
+			{
+				return $leading_user_id;
+			}
+		}
+		return 1;
 	}
 	public function getItemName() {
 		$item = Item::where('id', '=', $this->item_id)->first();
@@ -193,7 +310,7 @@ class Auction extends Eloquent {
 
 		$stats = $this->statToString($stats, $this->maxdurability, "Durability", false);
 
-		/*$stats = $this->statToString($stats, $this->setexplosion, "Explosion Resistance");
+	    $stats = $this->statToString($stats, $this->setexplosion, "Explosion Resistance");
 		$stats = $this->statToString($stats, $this->setstomp, "Stomp Resistance");
 		$stats = $this->statToString($stats, $this->setpoison, "Poison Resistance");
 		$stats = $this->statToString($stats, $this->setmpred, "Mana Usage Reduction");
@@ -218,7 +335,7 @@ class Auction extends Eloquent {
 		$stats = $this->statToString($stats, $this->setrefine, "Refining Enhancement");
 		$stats = $this->statToString($stats, $this->setsmash, "Smash Enhancement");
 		$stats = $this->statToString($stats, $this->setassaultslash, "Assault Slash Enhancement");
-		$stats = $this->statToString($stats, $this->setdemigod, "Demigod Enhancement");*/
+		$stats = $this->statToString($stats, $this->setdemigod, "Demigod Enhancement");
 
 
 		return $stats;

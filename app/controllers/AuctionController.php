@@ -18,47 +18,81 @@ class AuctionController extends BaseController {
 	public function postAuction($id)
 	{
 		$auction = Auction::where('id', '=', $id);
-		$minamount;
+		$user = Auth::user();
+
 		if($auction->count()) {
 			$auction = $auction->first();
+
+			if($auction->isOver())
+			{
+				return Redirect::route('auction', $id)->with('error_message', "This auction has already ended...");
+			}
 			$all_bids = Bid::where('auction_id', '=', $auction->id)->orderBy('amount', 'desc');
-			$leading_bid = ($all_bids->count()) ? $all_bids->first() : null;
-			if(!isset($leading_bid)) {
-				$minamount = $auction->startingprice;
-			}
-			else {
-				$minamount = $leading_bid->amount;
-			}
-			$invalid_bidders = $auction->seller_id;
 
-			if(isset($leading_bid)) {
-				$invalid_bidders .= "," . $leading_bid->getBidderId();
-			}
-			$minamount = $minamount + (0.1 * $minamount);
-			$validator = Validator::make(
-				array(
-					'amount' => Input::get('amount'),
-					'bidder' => Auth::user()->id
-					),
-				array(
-					'amount' => 'required|numeric|min:' . $minamount,
-					'bidder' => ('not_in:' . $invalid_bidders)
-					),
-				array(
-					'not_in' => "You can't you're already winning.")
-				);
-			if($validator->fails()) {
-				return Redirect::route('auction', $id)
-				->withErrors($validator)
-				->withInput();
-			}
-			else if (Auth::check()){
-				$amount = Input::get('amount');
+			try {
+    			DB::connection()->getPdo()->beginTransaction();
+      			$leading_bid = $auction->getLeadingBid();
 
-				$bid = Bid::create(array(
-					'auction_id' => $auction->id,
-					'amount' => $amount,
-					'bidder_id' => Auth::user()->id));
+      			$minamount;
+      			if(!isset($leading_bid)) {
+					$minamount = $auction->starting_price;
+
+				}
+				else {
+					$minamount = $leading_bid->amount;
+
+					if($minamount < 1000)
+					{
+						$minamount = $auction->starting_price;
+					}
+					$minamount = intval($minamount + ($minamount * 0.1));
+				}
+				$invalid_bidders = $auction->seller_id;	
+
+				$validator = Validator::make(
+					array(
+						'amount' => Input::get('amount'),
+						'bidder' => Auth::user()->id
+						),
+					array(
+						'amount' => 'required|numeric|min:' . $minamount,
+						'bidder' => ('not_in:' . $invalid_bidders)
+						),
+					array(
+						'not_in' => "You can't bid on your own item.")
+					);
+				if($validator->fails()) {
+					return Redirect::route('auction', $id)
+					->withErrors($validator)
+					->withInput();
+				}
+				else if (Auth::check()){
+					$amount = Input::get('amount');			
+
+					if($amount > $auction->autowin && $auction->autowin >= 1000) {
+						$amount = $auction->autowin;
+						$new_end_time = new DateTime('NOW');
+						$new_end_time->modify('-' . 2 . " second");
+						$auction->auctionendtime = $new_end_time;
+					}
+
+					$bid = Bid::create(array(
+						'auction_id' => $auction->id,
+						'amount' => $amount,
+						'bidder_id' => $user->id));
+
+					if($bid) {
+						$auction->leading_bid_id = $bid->id;
+						$auction->leading_user_id = $bid->bidder_id;
+						$auction->save();
+
+						 DB::connection()->getPdo()->commit();
+					}
+				}
+ 			}
+ 			catch (\PDOException $e) {
+    			// Woopsy
+    			DB::connection()->getPdo()->rollBack();
 			}
 		}
 		$this->getAuction($id);
@@ -80,7 +114,10 @@ class AuctionController extends BaseController {
 			$item_wiki_link = "";
 			$item_description = "";
 			$item_stats = $auction->getStats();
-
+			$reforged = false;
+			if(isset($auction->reforgeone_id) || isset($auction->reforgetwo_id) || isset($auction->reforgethree_id)) {
+				$reforged = true;
+			}
 			$item = Item::where('id', '=', $auction->item_id);
 
 			if($item->count()) {
@@ -105,6 +142,7 @@ class AuctionController extends BaseController {
 				'auction_id' => $auction->id,
 				'seller_id' => $auction->seller_id,
 				'item_id' => $id,
+				'reforged' => $reforged,
 				'item_stats' => $item_stats,
 				'item_description' => $item_description,
 				'imgurl' => $item_imgurl,
@@ -130,7 +168,8 @@ class AuctionController extends BaseController {
 				array(
 					'server' => 'required|in:1,2,3,4',
 					'duration' => 'required|in:1,2,3,4,5',
-					'quantity' => 'required|max:999|min:1|integer',
+					'minprice' => 'min:1000|integer',
+					'quantity' => 'sometimes|required|max:999|min:1|integer',
 					'price' =>'required|min:1000|max:1000000000|integer',
 					'autowin' => 'min:1000|max:1000000000|integer',
 					'upgrades' => 'min:0|integer',
@@ -176,12 +215,28 @@ class AuctionController extends BaseController {
 					'durability' => 'min:0|integer',
 					'maxdurability' => 'min:0|integer',
 					'reforgerank' => 'in:1,2,3',
-					'reforge-1' => 'alphanumeric|max:100',
-					'reforge-2' => 'alphanumeric|max:100',
-					'reforge-3' => 'alphanumeric|max:100',
+					'reforge-1-level' => 'required_withinteger|max:25',
+					'reforge-2-level' => 'integer|max:25',
+					'reforge-3-level' => 'integer|max:25',
 					'specialup' => 'size:2',
 					'description' => 'max:500'
 					));
+
+		if($validator->fails()) {
+				return Redirect::route('createauction-get', $itemid)
+				->withErrors($validator)
+				->withInput();
+			}
+
+		$autowin = Input::get('autowin');
+		$minprice = Input::get('minprice');
+
+		if(isset($autowin) && isset($minprice) && $minprice > $autowin)
+		{
+			return Redirect::route('createauction-get', $itemid)
+			->withInput()->with('error_message', 'Your min price is greater than your autowin.');
+		}
+
 		$weaponrange = Input::get('weaponrange');
 		$injuryrate = Input::get('injuryrate');
 		$weaponmax = null;
@@ -189,6 +244,11 @@ class AuctionController extends BaseController {
 		$injurymax = null;
 		$injurymin = null;
 		$sniperprotection = Input::get('sniperprotect');
+		$quantity = Input::get('quantity');
+
+		if(!isset($quantity)) {
+			$quantity = 1;
+		}
 
 		if(!isset($sniperprotection))
 		{
@@ -208,15 +268,47 @@ class AuctionController extends BaseController {
 		$prefix = Input::get('prefix');
 		$suffix = Input::get('suffix');
 		if(isset($prefix)) {
-			if($prefix == -1) {
+			if(!Enchant::exists($prefix))
+			{
 				$prefix = null;
 			}
 		}
 		if(isset($suffix)) {
-			if($suffix == -1) {
+			if(!Enchant::exists($suffix))
+			{
 				$suffix = null;
 			}
 		}
+		$reforge_1 = Input::get('reforge-1');
+		$reforge_2 = Input::get('reforge-2');
+		$reforge_3 = Input::get('reforge-3');
+
+		$reforge_1_level = Input::get('reforge-1-level');
+		$reforge_2_level = Input::get('reforge-2-level');
+		$reforge_3_level = Input::get('reforge-3-level');
+
+		if(isset($reforge_1)) {
+			if(!Reforge::exists($reforge_1))
+			{
+				$reforge_1 = null;
+				$reforge_1_level = null;
+			}
+		}
+		if(isset($reforge_2)) {
+			if(!Reforge::exists($reforge_2))
+			{
+				$reforge_2 = null;
+				$reforge_2_level = null;
+			}
+		}
+		if(isset($reforge_3)) {
+			if(!Reforge::exists($reforge_3))
+			{
+				$reforge_3 = null;
+				$reforge_3_level = null;
+			}
+		}
+
 		$endtime = new DateTime('NOW');
 		$endtime->modify('+' . Input::get('duration') . " day");
 
@@ -224,6 +316,7 @@ class AuctionController extends BaseController {
 			'server' => Input::get('server'),
 			'auctionendtime' => $endtime,
 			'item_id' => $itemid,
+			'quantity' => $quantity,
 			'seller_id' => Auth::user()->id,
 			'description' => Input::get('description'),
 			'starting_price' => Input::get('price'),
@@ -276,10 +369,13 @@ class AuctionController extends BaseController {
 			'setsmash' => Input::get('setsmash'),
 			'setassaultslash' => Input::get('setassaultslash'),
 			'setdemigod' => Input::get('setdemigod'),
-			'reforgelevel' => Input::get('reforgerank'),
-			'reforgeone' => Input::get('reforge-1'),
-			'reforgetwo' => Input::get('reforge-2'),
-			'reforgethree' => Input::get('reforge-3'),
+			'reforgerank' => Input::get('reforgerank'),
+			'reforgeone_id' => $reforge_1,
+			'reforgetwo_id' => $reforge_2,
+			'reforgethree_id' => $reforge_3,
+			'reforgeone_level' => $reforge_1_level,
+			'reforgetwo_level' => $reforge_2_level,
+			'reforgethree_level' => $reforge_3_level,
 			'prefix_enchant_id' => $prefix,
 			'suffix_enchant_id' => $suffix,
 			'specialup' => Input::get('specialup')
@@ -314,6 +410,11 @@ class AuctionController extends BaseController {
 			$prefix_enchants = Enchant::where('type', '=', 1)->orderBy('rank', 'desc')->get();
 			$suffix_enchants = Enchant::where('type', '=', 2)->orderBy('rank', 'desc')->get();
 
+			$reforges = null;
+			if(isset($baseitem->reforgable)) {
+				$reforges = Reforge::getAll();
+			}
+
 			$args = array(
 				'item_id' => $itemid,
 				'item_description' => $item_description,
@@ -326,7 +427,7 @@ class AuctionController extends BaseController {
 				'proficiency' => $item_proficiency,
 				'weaponrange' => $item_damage_range,
 				'injuryrate' => $item_injury_rate,
-
+				'reforges' => $reforges,
 				'item_name' => $item_name,
 				'prefix_enchants' => $prefix_enchants,
 				'suffix_enchants' => $suffix_enchants);
@@ -352,10 +453,16 @@ class AuctionController extends BaseController {
 		{
 			$auctions_buying = Auction::where('auctionendtime', '>', new DateTime('NOW'))->whereIn('id', $auction_ids)->get();
 		}
+		$auctions_ended = null;
+
+		$auctions_ended_seller = Auction::where('auctionendtime', '<', new DateTime('NOW'))->where('seller_id', '=', $user->id)->where('seller_reviewed', '=', false)->get();
+		$auctions_ended_buyer = Auction::where('auctionendtime', '<', new DateTime('NOW'))->where('leading_user_id', '=', $user->id)->where('buyer_reviewed', '=', false)->get();
+
 		$this->layout->content = View::make('myauctions',
 			array(
 				'auctions_selling' => $auctions_selling,
-				'auctions_buying' => $auctions_buying
+				'auctions_buying' => $auctions_buying,
+				'auctions_ended' => $auctions_ended
 			)
 		);
 	}

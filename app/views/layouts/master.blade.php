@@ -71,18 +71,18 @@
 		</div>
 		<div class="container" id="content">
 			<br/>
-			<div class="alert alert-danger">
+			<div class="alert alert-warning">
 				Please keep in mind this site is semi-working prototype. Please checkout this forum <a href="http://forums.mabimart.com/t/mabimart-is-just-a-prototype/21">post</a> for more information. 
 			</div>
 			@if(null !== Session::get('success_message'))
-			<br/>
-			<div class="alert alert-success">
+			<div class="alert alert-success alert-dismissible" role="alert">
+				<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 				{{{ Session::get('success_message') }}}
 			</div>
 			@endif
 			@if(null !== Session::get('error_message'))
-			<br/>
-			<div class="alert alert-danger">
+			<div class="alert alert-danger alert-dismissable" role="alert">
+				<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 				{{{ Session::get('error_message') }}}
 			</div>
 			@endif

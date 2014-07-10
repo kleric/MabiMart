@@ -48,7 +48,7 @@ class AccountController extends BaseController {
 			$auth = Auth::attempt(array(
 				'email' => Input::get('email'),
 				'password' => Input::get('password'),
-				'active' => 1)
+				'active' => true)
 			);
 
 			if($auth) {
@@ -104,6 +104,7 @@ class AccountController extends BaseController {
 				'email'           => $email,
 				'username' 	      => $username,
 				'password' 		  => Hash::make($password),
+				'active'          => false,
 				'activation_code' => $activcode));
 
 			if($user) {
@@ -112,7 +113,7 @@ class AccountController extends BaseController {
 					$message->to($user->email, $user->username)->subject('Activate your MabiMart Account');
 				});
 
-				return Redirect::route('login')->with('success_message', 'Your account has been created. Please visit your e-mail address and activate it.');
+				return Redirect::to('/')->with('success_message', 'Your account has been created. Please visit your e-mail address and activate it.');
 
 			}
 			else {

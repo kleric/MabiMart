@@ -12,10 +12,10 @@ Inbox
     <table class="table table-hover">
       <tbody>
         @foreach($inbox as $msg)
-        <tr class="clickableRow" href="http://google.com/">
-          <td><h5>$msg->getSenderName()</h5></td>
-          <td><h6>$msg->getSubject()</h6></td>
-          <td><h6>$msg->getDate()</h6></td>
+        <tr class="clickableRow" href="{{{ URL::route('view-message', $msg->id) }}}">
+          <td><h5>{{{ $msg->getSenderName() }}}</h5></td>
+          <td><h6>{{{ $msg->getSubject() }}}</h6></td>
+          <td><h6>{{{ $msg->getDate() }}}</h6></td>
         </tr>
         @endforeach
       </tbody>

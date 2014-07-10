@@ -16,6 +16,11 @@ class PM extends Eloquent {
 		$user = User::where('id', '=', $this->sender_id)->first()->username;
 		return $user;
 	}
+	public function getRecieverName()
+	{
+		$user = User::where('id', '=', $this->reciever_id)->first()->username;
+		return $user;
+	}
 	public function getSubject()
 	{
 		return $this->subject;

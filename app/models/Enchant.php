@@ -23,4 +23,9 @@ class Enchant extends Eloquent {
 
 		return $str;
 	}
+
+	public static function exists($id) 
+	{
+		return (Enchant::where('id', '=', $id)->count() == 0) ? false : true;
+	}
 }

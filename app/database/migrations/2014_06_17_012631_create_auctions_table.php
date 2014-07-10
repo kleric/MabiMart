@@ -20,6 +20,7 @@ class CreateAuctionsTable extends Migration {
 
 			$table->integer('item_id')->unsigned();
 			$table->integer('seller_id')->unsigned();
+			$table->integer('quantity')->unsigned();
 
 			$table->foreign('item_id')->references('id')->on('items');
 			$table->foreign('seller_id')->references('id')->on('users');
@@ -99,10 +100,11 @@ class CreateAuctionsTable extends Migration {
 			$table->smallInteger('setassaultslash')->unsigned()->nullable(); //Assault Slash
 			$table->smallInteger('setdemigod')->unsigned()->nullable(); //DEMI GOD
 
-			$table->tinyInteger('reforgelevel')->unsigned()->nullable();
-			$table->string('reforgeone', 100)->nullable();
-			$table->string('reforgetwo', 100)->nullable();
-			$table->string('reforgethree', 100)->nullable();
+			$table->tinyInteger('reforgerank')->unsigned()->nullable();
+
+			$table->string('reforgeone_level', 100)->nullable();
+			$table->string('reforgetwo_level', 100)->nullable();
+			$table->string('reforgethree_level', 100)->nullable();
 
 			$table->string('specialup', 2)->nullable();
 			$table->timestamps();

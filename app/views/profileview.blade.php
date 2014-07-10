@@ -14,15 +14,21 @@
         <img src="{{{ $user->getGravatarUrl() }}}"/><br/>
       </div>
       <br/>
-      <small><i>A little about me...</i></small> <br/>
-      {{{ $user->getAboutMe() }}}
+      <div class="text-center">
+        <span class="label label-success">{{{ $user->getPositiveCount() }}}</span>
+        <span class="label label-default">{{{ $user->getNeutralCount() }}}</span>
+        <span class="label label-danger">{{{ $user->getNegativeCount() }}}</span>
+      </div>
+      <br/>
+      <center><a href="{{ URL::route('create-message', $user->id) }}" class="label label-primary">Send a message</a></center>
     </div>
   </div>
   <div class="panel panel-default">
     <div class="panel-heading">
-      Contact Information
+      About Me
     </div>
     <div class="panel-body">
+      {{{ $user->getAboutMe() }}}
       <small><i>To reach me for trades...</i></small><br/>
       {{{ $user->getContactDetails() }}}
     </div>
@@ -46,14 +52,14 @@
         <img class="media-object" src="{{{ $review->getReviewer()->getGravatarUrl() }}}&s=50" alt="...">
         </a>
         <div class="media-body">
-          <h4 class="media-heading">
             @if ($review->getRating() > 0) 
           <span class="label label-success">Positive</span>
           @elseif ($review->getRating() < 0)
-          <span class="label label-danger">Positive</span>
+          <span class="label label-danger">Negative</span>
           @else
-          <span class="label label-default">Positive</span>
+          <span class="label label-default pull-right">Neutral</span>
           @endif
+          <h4 class="media-heading">
             <a href="{{ URL::route('profile', $review->getReviewer()->id) }}">{{{ $review->getReviewer()->getUsername() }}}</a>
           </h4>
  

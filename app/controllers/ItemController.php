@@ -43,7 +43,7 @@ class ItemController extends BaseController {
 				$imgurl = $onserverimgurl;	
 			}
 
-			$auctions = Auction::where('item_id', '=', $id)->where('auctionendtime', '>', time())->orderBy('auctionendtime', 'asc')->get();
+			$auctions = Auction::where('item_id', '=', $id)->where('auctionendtime', '>', new DateTime('NOW'))->orderBy('auctionendtime', 'asc')->get();
 
 			$this->layout->content = View::make('itemview', array(
 				'item_id' => $id,

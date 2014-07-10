@@ -26,9 +26,14 @@ class CreateReforgesTable extends Migration {
 
 		Schema::table('auctions', function($table)
 		{
-			$table->integer('reforge_id')->unsigned();
-			$table->foreign('reforge_id')->references('id')->on('reforges');
-			$table->smallInteger('reforge_level')->unsigned()->nullable();
+			$table->integer('reforgeone_id')->unsigned()->nullable();
+			$table->foreign('reforgeone_id')->references('id')->on('reforges');
+
+			$table->integer('reforgetwo_id')->unsigned()->nullable();
+			$table->foreign('reforgetwo_id')->references('id')->on('reforges');
+
+			$table->integer('reforgethree_id')->unsigned()->nullable();
+			$table->foreign('reforgethree_id')->references('id')->on('reforges');
 		});
 	}
 
@@ -41,9 +46,9 @@ class CreateReforgesTable extends Migration {
 	{
 		Schema::table('auctions', function($table) 
 		{
-			$table->dropForeign('auctions_reforge_id_foreign');
-
-			$table->dropColumn('reforge_level');
+			$table->dropForeign('auctions_reforgeone_id_foreign');
+			$table->dropForeign('auctions_reforgetwo_id_foreign');
+			$table->dropForeign('auctions_reforgethree_id_foreign');
 		});
 		Schema::dropIfExists('reforges');
 	}

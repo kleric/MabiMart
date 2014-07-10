@@ -25,4 +25,8 @@ class Bid extends Eloquent {
 
 		return $bidder->id;
 	}
+	public static function getWinningBid($auctionid) 
+	{
+		
+	}
 }

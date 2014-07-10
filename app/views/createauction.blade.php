@@ -122,21 +122,21 @@ Create an Auction
 						Starting Price
 						@endif
 						<div class="input-group">
-							<input class="form-control" type="number" value="1000" class="form-control" name="price">
+							<input class="form-control" type="number" {{ Input::old('price') ? ' value="' . Input::old('price')  . '"' : 'value="1000"'}} class="form-control" name="price">
 							<span class="input-group-addon"><img src="/images/gold.gif" width="16" height="16"></span>
 						</div>
 					</div>
 					<div class="col-md-4">
 						Minimum price
 						<div class="input-group">
-							<input class="form-control" type="number" placeholder="Optional" class="form-control" name="minprice">
+							<input class="form-control" type="integer" {{ Input::old('minprice') ? ' value="' . Input::old('minprice')  . '"' : ''}}placeholder="Optional" class="form-control" name="minprice">
 							<span class="input-group-addon"><img src="/images/gold.gif" width="16" height="16"></span>
 						</div>
 					</div>
 					<div class="col-md-4">
 						Auto-win
 						<div class="input-group">
-							<input class="form-control" type="number" placeholder="Optional" class="form-control" name="autowin">
+							<input class="form-control" type="integer" placeholder="Optional" {{ Input::old('autowin') ? ' value="' . Input::old('autowin')  . '"' : ''}} class="form-control" name="autowin">
 							<span class="input-group-addon"><img src="/images/gold.gif" width="16" height="16"></span>
 						</div>
 					</div>
@@ -152,7 +152,7 @@ Create an Auction
 			</div>
 			<div class="panel-body">
 				<p>Give a description of what you're selling, maybe some specifics, the color of the item, etc. Careful, you only have 500 characters.</p>
-				<textarea name="description" class="form-control" rows="8" maxlength="500"></textarea>
+				<textarea name="description" class="form-control" rows="8" maxlength="500">{{ Input::old('description') ? Input::old('description')  : ''}}</textarea>
 			</div>
 		</div>
 		@if(isset($base_item->enchantable))
@@ -636,27 +636,50 @@ Create an Auction
 			</div>
 			<div class="panel-body">
 				<div class="col-md-4 col-sm-4">
-					<select class="form-control" name="reforgerank">
+					Reforge Rank
+					<select class="form-control center-y" name="reforgerank">
 						<option value="3" selected="selected">Rank 3</option>
 						<option value="2">Rank 2</option>
 						<option value="1">Rank 1</option>
 					</select>
 				</div>
 				<div class="col-md-8 col-sm-8">
+					Reforge Line 1
+					<select class="combobox form-control" data-placeholder="None" name="reforge-1">
+						<option value="-1"></option>
+						@foreach ($reforges as $reforge)
+						<option value="{{{ $reforge->id }}}">{{{ $reforge->getName() }}}</option>
+						@endforeach
+					</select>
 					<div class="input-group">
-						<span class="input-group-addon stat_label" title="The reforge on the first line">Reforge 1</span>
-						<input type="text" placeholder="None" name="reforge-1"class="form-control">
+
+						<span class="input-group-addon stat_label" title="The reforge on the first line">Reforge Level</span>
+						<input type="number" placeholder="None" name="reforge-1-level"class="form-control">
 						<br>
 					</div>
 					<br>
+					Reforge Line 2
+					<select class="combobox form-control" data-placeholder="None" name="reforge-2">
+						<option value="-1"></option>
+						@foreach ($reforges as $reforge)
+						<option value="{{{ $reforge->id }}}">{{{ $reforge->getName() }}}</option>
+						@endforeach
+					</select>
 					<div class="input-group">
-						<span class="input-group-addon stat_label" title="The reforge on the second line">Reforge 2</span>
-						<input type="text" placeholder="None" name="reforge-2" class="form-control">
+						<span class="input-group-addon stat_label" title="The reforge on the second line">Reforge Level</span>
+						<input type="number" placeholder="None" name="reforge-2-level" class="form-control">
 					</div>
 					<br>
+					Reforge Line 3
+					<select class="combobox form-control" data-placeholder="None" name="reforge-3">
+						<option value="-1"></option>
+						@foreach ($reforges as $reforge)
+						<option value="{{{ $reforge->id }}}">{{{ $reforge->getName() }}}</option>
+						@endforeach
+					</select>
 					<div class="input-group">
-						<span class="input-group-addon stat_label" title="The reforge on the third line">Reforge 3</span>
-						<input type="text" placeholder="None" name="reforge-3" class="form-control">
+						<span class="input-group-addon stat_label" title="The reforge on the third line">Reforge Level</span>
+						<input type="number" placeholder="None" name="reforge-3-level" class="form-control">
 					</div>
 				</div>
 			</div>

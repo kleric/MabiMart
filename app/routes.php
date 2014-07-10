@@ -72,11 +72,24 @@ Route::group(array('before' => 'auth'), function() {
 		Route::post('/profile/edit', array(
 			'as' => 'profile-edit-post',
 			'uses' => 'ProfileController@postEditProfile'));
+
+		Route::post('/messages/create/{sendtoid}',
+			array(
+				'as' => 'send-message',
+				'uses' => 'MessageController@sendMessage'));
+
+		Route::post('/review/create/{auctionid}', array(
+			'as' => 'post-review',
+			'uses' => 'ReviewController@postReview'));
 	});
 	Route::get('/logout', array(
 		'as' => 'logout',
 		'uses' => 'AccountController@getLogout')
 	);
+
+	Route::get('/review/create/{auctionid}', array(
+		'as' => 'create-review',
+		'uses' => 'ReviewController@createReview'));
 
 	Route::get('/profile/edit', array(
 		'as' => 'profile-edit',
@@ -88,6 +101,16 @@ Route::group(array('before' => 'auth'), function() {
 		'uses' => 'MessageController@getInbox')
 	);
 
+	Route::get('/messages/reply/{id}', array(
+		'as' => 'reply-message',
+		'uses' => 'MessageController@replyMessage'));
+
+	Route::get('/messages/create/{userid}',
+		array(
+			'as' => 'create-message',
+			'uses' => 'MessageController@createMessage')
+		);
+
 	Route::get('/messages/sent', array(
 		'as' => 'sent',
 		'uses' => 'MessageController@getSent')
@@ -96,6 +119,11 @@ Route::group(array('before' => 'auth'), function() {
 	Route::get('/auction/create/{itemid}', array(
 		'as' => 'createauction-get',
 		'uses' => 'AuctionController@getCreateAuction')
+	);
+
+	Route::get('/messages/view/{msgid}',array(
+		'as' => 'view-message',
+		'uses' => 'MessageController@viewMessage')
 	);
 
 	Route::any('/dashboard', array(

@@ -18,8 +18,9 @@
         <small>{{{ $user_name or 'Invalid User ID'}}}</small>
       </div>
       <div class="text-center">
-        <span class="label label-success">+500</span>
-        <span class="label label-danger">-5</span>
+        <span class="label label-success">{{{ $seller->getPositiveCount() }}}</span>
+        <span class="label label-default">{{{ $seller->getNeutralCount() }}}</span>
+        <span class="label label-danger">{{{ $seller->getNegativeCount() }}}</span>
       </div>
       <div>
       </div>
@@ -84,6 +85,18 @@
       {{{ $auction->description }}}
     </div>
   </div>
+  @if(isset($reforged) && $reforged)
+  <div class="panel panel-default">
+    <div class="panel-heading">
+        Rank {{{ $auction->getReforgeRank() }}} Reforge
+    </div>
+    <div class="panel-body">
+      {{ $auction->getReforge(1) }}
+      {{ $auction->getReforge(2) }}
+      {{ $auction->getReforge(3) }}
+    </div>
+  </div>
+  @endif
 </div>
 <div class="col-md-4">
   <div class="panel panel-default">
@@ -91,7 +104,9 @@
       Recent Offers
     </div>
     <div class="panel-body">
-      @if(!Auth::check()) 
+      @if($auction->isOver())
+      <center>This auction has already ended.</center>
+      @elseif(!Auth::check()) 
       You must be logged in to bid.
       @elseif($seller_id == Auth::user()->id)
       You can't bid on your own item!
@@ -123,12 +138,12 @@
       </form>
       @endif
     </div>
-    @if (isset($auction->minprice))
+    @if (isset($auction->minprice) && $auction->minprice > 1000)
     <div class="panel-heading">
       <small>Reserve Price: {{{ number_format($auction->minprice) }}}</small>
     </div>
     @endif
-    @if(isset($auction->autowin))
+    @if(isset($auction->autowin)&& $auction->autowin > 1000)
     <div class="panel-heading">
       Autowin: {{{ number_format($auction->autowin) }}}
     </div>
@@ -137,7 +152,11 @@
       @if(isset($leading_bid))
       <thead>
         <tr>
+          @if($auction->isOver())
+          <th>Winning Bid</th>
+          @else
           <th>Leading Bid</th>
+          @endif
           <th></th>
         </tr>
         <tr class="success">

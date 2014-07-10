@@ -22,6 +22,9 @@ class DatabaseSeeder extends Seeder {
 
 		$this->call('EnchantTableSeeder');
 		$this->command->info('Enchants now added');
+
+		$this->call('ReforgeTableSeeder');
+		$this->command->info('Reforges added');
 	}
 
 }

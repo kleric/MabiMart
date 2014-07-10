@@ -37,4 +37,16 @@ class Review extends Eloquent {
 		
 		return $rating;
 	}
+	public static function getByAuctionAndReviewerId($id, $writerid)
+	{
+		$reviews = Review::where('auction_id', '=', $id)->where('reviewer_id', '=', $writerid);
+
+		if($reviews->count())
+		{
+			$review = $reviews->first();
+
+			return $review;
+		}
+		return null;
+	}
 }

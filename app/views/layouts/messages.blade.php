@@ -9,7 +9,9 @@ jQuery(document).ready(function($) {
 </script>
 @stop
 @section('content')
-<br/>
+<div class="page-header">
+  <h4>Messages</h4>
+</div>
 <div class="col-md-4">
   <div class="list-group">
     @if($state == 1)
