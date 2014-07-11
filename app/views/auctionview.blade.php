@@ -182,7 +182,7 @@
         </tr>
       </thead>
       <tbody>
-        @if(count($bid_offers) > 1)
+        @if(count($bid_offers) >= 1)
         @foreach ($bid_offers as $bid)
         <tr class="danger">
           <td><small>{{{ $bid->getAmount() }}}</small></td>
