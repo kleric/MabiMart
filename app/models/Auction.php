@@ -356,6 +356,10 @@ class Auction extends Eloquent {
 	{
 		return Auction::where('auctionendtime', '<', new DateTime('NOW'))->where('leading_user_id', '=', $id)->where('buyer_reviewed', '=', false)->get();
 	}
+	public static function getAuctionsBiddingOnForUserId($id)
+	{
+		
+	}
 	public static function getBiddingForUserId($id)
 	{
 		$user_bids = Bid::forUser($id);
@@ -367,7 +371,7 @@ class Auction extends Eloquent {
 		$auctions_buying = null;
 		if(count($auction_ids))
 		{
-			$auctions_buying = Auction::getAuctionsBiddingOnForUserId($id);
+			$auctions_buying = Auction::where('auctionendtime', '>', new DateTime('NOW'))->whereIn('id', $auction_ids)->get();
 		}
 		return $auctions_buying;
 	}
