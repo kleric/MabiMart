@@ -2,6 +2,15 @@
 @section('page-title')
 {{{ $user->username }}}
 @stop
+@section('script')
+<script>
+jQuery(document).ready(function($) {
+      $(".clickableRow").click(function() {
+            window.document.location = $(this).attr("href");
+      });
+});
+</script>
+@stop
 @section('content')
 </br>
 <div class="col-md-3">

@@ -25,9 +25,10 @@ class ProfileController extends BaseController {
 			$user = $user->first();
 
 			$reviews = Review::where('reviewee_id', '=', $id)->orderBy('updated_at', 'desc')->take(5)->get();
-
+			$auctions = Auction::getSellingForUserId($user->id);
 			$this->layout->content = View::make('profileview', array(
 				'reviews' => $reviews,
+				'auctions_selling' => $auctions,
 				'user' => $user));
 		}
 	}

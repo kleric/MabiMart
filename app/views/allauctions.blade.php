@@ -51,7 +51,7 @@ jQuery(document).ready(function($) {
       @foreach($all_auctions as $auction)
         <tr class="clickableRow" href="{{ URL::route('auction', $auction->id)}}">
           <td>{{{$auction->getSeller() }}}</td>
-          <td>{{{$auction->getItemName()}}}</td>
+          <td>{{{$auction->getItemName()}}}@if($auction->quantity > 1) (x{{{ $auction->quantity }}}) @endif</td>
           <td>{{{$auction->getStartingPrice() }}}</td>
           <td>{{{$auction->getCurrentOffer() }}}</td>
           <td>{{{$auction->getAutowinPrice() }}}</td>

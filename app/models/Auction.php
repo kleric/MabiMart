@@ -344,4 +344,8 @@ class Auction extends Eloquent {
 	{
 		return Auction::where('auctionendtime', '>', new DateTime('NOW'))->count();
 	}
+	public static function getSellingForUserId($id)
+	{
+		return Auction::where('auctionendtime', '>', new DateTime('NOW'))->where('seller_id', '=', $id)->get();
+	}
 }
