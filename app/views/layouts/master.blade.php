@@ -33,7 +33,13 @@
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
 						<li><a href="/">Home</a></li>
-						<li><a href="{{ URL::route('categories') }}">Items</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Items <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="{{ URL::route('categories') }}">Browse</a></li>
+								<li><a href="{{ URL::route('item-search') }}">Search</a></li>
+							</ul>
+						</li>
 						<li><a href="{{ URL::route('enchantlist') }}">Enchants</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Auctions <span class="caret"></span></a>
@@ -71,12 +77,14 @@
 		</div>
 		<div class="container" id="content">
 			@if(null !== Session::get('success_message'))
+			<br/>
 			<div class="alert alert-success alert-dismissible" role="alert">
 				<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 				{{{ Session::get('success_message') }}}
 			</div>
 			@endif
 			@if(null !== Session::get('error_message'))
+			<br/>
 			<div class="alert alert-danger alert-dismissable" role="alert">
 				<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 				{{{ Session::get('error_message') }}}

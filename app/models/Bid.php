@@ -29,4 +29,8 @@ class Bid extends Eloquent {
 	{
 		
 	}
+	public static function forUser($userid)
+	{
+		return Bid::where('bidder_id', '=', $userid)->get();
+	}
 }

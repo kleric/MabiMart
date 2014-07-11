@@ -346,6 +346,29 @@ class Auction extends Eloquent {
 	}
 	public static function getSellingForUserId($id)
 	{
-		return Auction::where('auctionendtime', '>', new DateTime('NOW'))->where('seller_id', '=', $id)->get();
+		return Auction::where('auctionendtime', '>', new DateTime('NOW'))->where('seller_id', '=', $id)->orderBy('auctionendtime', 'asc')->get();
+	}
+	public static function getEndedSoldAuctionsForUserId($id)
+	{
+		return Auction::where('auctionendtime', '<', new DateTime('NOW'))->where('seller_id', '=', $id)->where('seller_reviewed', '=', false)->get();
+	}
+	public static function getEndedWonAuctionsForUserId($id)
+	{
+		return Auction::where('auctionendtime', '<', new DateTime('NOW'))->where('leading_user_id', '=', $id)->where('buyer_reviewed', '=', false)->get();
+	}
+	public static function getBiddingForUserId($id)
+	{
+		$user_bids = Bid::forUser($id);
+
+		$auction_ids = array();
+		foreach($user_bids as $bid) {
+			array_push($auction_ids, $bid->auction_id);
+		}
+		$auctions_buying = null;
+		if(count($auction_ids))
+		{
+			$auctions_buying = Auction::getAuctionsBiddingOnForUserId($id);
+		}
+		return $auctions_buying;
 	}
 }

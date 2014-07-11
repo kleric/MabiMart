@@ -59,6 +59,14 @@ Route::any('/auctions/{page}', array(
 	'as' => 'auctions',
 	'uses' => 'AuctionController@getAllAuctions'));
 
+Route::get('/search/items', array(
+	'as' => 'item-search',
+	'uses' => 'SearchController@itemSearch'));
+
+Route::post('/search/items', array(
+	'as' => 'search-items',
+	'uses' => 'SearchController@searchItems'));
+
 Route::group(array('before' => 'auth'), function() {
 	Route::group(array('before' => 'csrf'), function() {
 		Route::post('/auction/create/{itemid}', array(
@@ -67,7 +75,7 @@ Route::group(array('before' => 'auth'), function() {
 		);
 		Route::post('/auction/view/{id}', array(
 			'as' => 'auction-post',
-			'uses' => 'AuctionController@postAuction'));
+			'uses' => 'AuctionController@placeBid'));
 
 		Route::post('/profile/edit', array(
 			'as' => 'profile-edit-post',

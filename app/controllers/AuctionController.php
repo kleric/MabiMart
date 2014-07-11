@@ -7,15 +7,15 @@ class AuctionController extends BaseController {
 	| Default Home Controller
 	|--------------------------------------------------------------------------
 	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|	Route::get('/', 'HomeController@showWelcome');
-	|
 	*/
 	protected $layout = 'layouts.master';
-	public function postAuction($id)
+
+	/*
+	| placeBid($auctionid)
+	|
+	| Places the bid for the selected auction.
+	*/
+	public function placeBid($id)
 	{
 		$auction = Auction::where('id', '=', $id);
 		$user = Auth::user();
@@ -129,7 +129,7 @@ class AuctionController extends BaseController {
 			$imagefilename = $auction->item_id . ".png";
 			$onserverimgurl = "http://mabimart.com/images/items/" . $imagefilename;
 			
-			//Download it onto the server if it doesn't exist :) so we don't strain wiki servers
+			//Use our image, since we have it.
 			if(@getimagesize($onserverimgurl)) {
 				$item_imgurl = $onserverimgurl;	
 			}
@@ -440,23 +440,15 @@ class AuctionController extends BaseController {
 	{
 		$user = Auth::user();
 
-		$auctions_selling = Auction::where('seller_id', '=', $user->id)->where('auctionendtime', '>', new DateTime('NOW'))->orderBy('auctionendtime', 'asc')->get();
+		$auctions_selling = Auction::getSellingForUserId($user->id);
+		$auctions_buying = Auction::getBiddingForUserId($user->id);
 
-		$user_bids = Bid::where('bidder_id', '=', $user->id)->get();
-
-		$auction_ids = array();
-		foreach($user_bids as $bid) {
-			array_push($auction_ids, $bid->auction_id);
-		}
-		$auctions_buying = null;
-		if(count($auction_ids))
-		{
-			$auctions_buying = Auction::where('auctionendtime', '>', new DateTime('NOW'))->whereIn('id', $auction_ids)->get();
-		}
 		$auctions_ended = null;
 
-		$auctions_ended_seller = Auction::where('auctionendtime', '<', new DateTime('NOW'))->where('seller_id', '=', $user->id)->where('seller_reviewed', '=', false)->get();
-		$auctions_ended_buyer = Auction::where('auctionendtime', '<', new DateTime('NOW'))->where('leading_user_id', '=', $user->id)->where('buyer_reviewed', '=', false)->get();
+		$auctions_ended_seller = Auction::getEndedSoldAuctionsForUserId($user->id);
+		$auctions_ended_buyer = Auction::getEndedWonAuctionsForUserId($user->id);
+
+		$auctions_ended = $auctions_ended_seller->merge($auctions_ended_buyer);
 
 		$this->layout->content = View::make('myauctions',
 			array(
@@ -466,7 +458,7 @@ class AuctionController extends BaseController {
 			)
 		);
 	}
-	public function getAllAuctions($page = 1)
+	public function getAllAuctions($server = 1, $page = 1)
 	{
 		$auctions_per_page = 50;
 		$lastpage = intval(Auction::getAuctionCount()/$auctions_per_page) + 1;
