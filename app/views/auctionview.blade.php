@@ -96,16 +96,18 @@
     </div>
   </div>
   @endif
-  @if(isset($reforged) && $reforged)
+  @if(isset($reforged) && $reforged || $auction->getReforgeRank() < 3)
   <div class="panel panel-default">
     <div class="panel-heading">
         Rank {{{ $auction->getReforgeRank() }}} Reforge
     </div>
+    @if($reforged) 
     <div class="panel-body">
       {{ $auction->getReforge(1) }}
       {{ $auction->getReforge(2) }}
       {{ $auction->getReforge(3) }}
     </div>
+    @endif
   </div>
   @endif
 </div>
