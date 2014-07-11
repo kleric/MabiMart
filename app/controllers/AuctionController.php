@@ -458,7 +458,7 @@ class AuctionController extends BaseController {
 			)
 		);
 	}
-	public function getAllAuctions($server = 1, $page = 1)
+	public function getAllAuctions($page = 1)
 	{
 		$auctions_per_page = 50;
 		$lastpage = intval(Auction::getAuctionCount()/$auctions_per_page) + 1;
