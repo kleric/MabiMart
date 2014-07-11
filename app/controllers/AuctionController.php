@@ -69,7 +69,7 @@ class AuctionController extends BaseController {
 				else if (Auth::check()){
 					$amount = Input::get('amount');			
 
-					if($amount > $auction->autowin && $auction->autowin >= 1000) {
+					if($amount >= $auction->autowin && $auction->autowin >= 1000) {
 						$amount = $auction->autowin;
 						$new_end_time = new DateTime('NOW');
 						$new_end_time->modify('-' . 2 . " second");
