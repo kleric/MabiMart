@@ -237,7 +237,7 @@ class AuctionController extends BaseController {
 			return Redirect::route('createauction-get', $itemid)
 			->withInput()->with('error_message', 'Your min price is greater than your autowin.');
 		}
-		else if((isset($autowin) || isset($minprice)) && ($starting_price > $autowin || $starting_price > $minprice))
+		else if((isset($autowin) || isset($minprice)) && ($starting_price > $autowin && $autowin >= 1000))
 		{
 			return Redirect::route('createauction-get', $itemid)
 			->withInput()->with('error_message', 'Your starting price is higher than auto-win.');

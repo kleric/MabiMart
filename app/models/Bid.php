@@ -33,4 +33,8 @@ class Bid extends Eloquent {
 	{
 		return Bid::where('bidder_id', '=', $userid)->get();
 	}
+	public static function getById($id)
+	{
+		return Bid::where('id', '=', $id)->first();
+	}
 }

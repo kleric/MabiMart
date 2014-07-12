@@ -354,11 +354,17 @@ class Auction extends Eloquent {
 	}
 	public static function getEndedWonAuctionsForUserId($id)
 	{
-		return Auction::where('auctionendtime', '<', new DateTime('NOW'))->where('leading_user_id', '=', $id)->where('buyer_reviewed', '=', false)->get();
+		$won = Auction::where('auctionendtime', '<', new DateTime('NOW'))->where('leading_user_id', '=', $id)->where('buyer_reviewed', '=', false)->get();
+		$won = $won->filter(function($auction) {
+			$bid = Bid::getById($auction->leading_bid_id);
+
+			return $bid->amount >= $auction->minprice;
+		});
+		return $won;
 	}
 	public static function getAuctionsBiddingOnForUserId($id)
 	{
-		
+
 	}
 	public static function getBiddingForUserId($id)
 	{
