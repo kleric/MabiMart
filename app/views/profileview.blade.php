@@ -105,6 +105,7 @@ jQuery(document).ready(function($) {
       <thead>
         <tr class="success">
           <td><strong>Item Name</strong></td>
+          <td><strong>Starting Price</strong></td>
           <td><strong>Current Offer</strong></td>
           <td><strong>End Time</strong></td>
         <tr>
@@ -113,7 +114,8 @@ jQuery(document).ready(function($) {
       @foreach($auctions_selling as $sale)
         <tr class="clickableRow" href="{{ URL::route('auction', $sale->id)}}">
           <td>{{{$sale->getItemName()}}}</td>
-          <td>{{{$sale->getCurrentPrice()}}}</td>
+          <td>{{{$sale->getStartingPrice()}}}</td>
+          <td>{{{$sale->getCurrentOffer()}}}</td>
           <td>{{{$sale->getEndTime() }}}</td>
         </tr>
       @endforeach
