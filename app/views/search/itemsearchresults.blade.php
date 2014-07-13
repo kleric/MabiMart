@@ -4,7 +4,7 @@ Results for {{{ $search }}}
 @stop
 @section('content')
 <div class="page-header">
-	<h2>Results for "{{{ $search }}}"</h2> <a href="{{{ URL::route('item-search') }}}">Back to search</a>
+	<h2>Results for "{{{ $search }}}"</h2> <a href="{{{ URL::route('categories') }}}">Back</a>
 </div>
 <div>
 	@foreach ($itemlist as $item)
