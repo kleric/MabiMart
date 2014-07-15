@@ -73,9 +73,11 @@ if (form.attachEvent) {
 			Auction Guidelines
 		</div>
 		<div class="panel-body">
-			Based on the item, base stats are pre-entered and stats are added based on possible upgrade paths. Enter in the stats for the item you're trying to sell.
+			Screenshots are necessary (unless you'd rather write out all the specifics for the items, that's fine too), unless it's a simple item (e.g. Cobweb).
 			<br/><br/>
-			Please enter accurate information and please remember to follow the <a href="">rules</a>.
+			Also, if you have not, <strong>PLEASE</strong> add a way to contact you in your profile. This makes it easier to reach out after an auction is finished.
+			<br/><br/>
+			Please enter accurate information and please remember to follow the <a href="">rules</a> (that I have yet to write, just be considerate).
 		</div>
 	</div>
 </div>
