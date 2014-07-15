@@ -412,6 +412,7 @@ class AuctionController extends BaseController {
 			$item_notes = $baseitem->getNotes();
 			$item_imgurl = $baseitem->imgurl;
 			$item_is_simple = isset($baseitem->maxdurability) ? null : true;
+			$itemlistingstats = $baseitem->getStats() . "<br/>" . $item_notes;
 
 			$item_damage_range = $baseitem->getDamageRange();
 			$item_injury_rate = $baseitem->getInjuryRate();
@@ -440,7 +441,8 @@ class AuctionController extends BaseController {
 				'reforges' => $reforges,
 				'item_name' => $item_name,
 				'prefix_enchants' => $prefix_enchants,
-				'suffix_enchants' => $suffix_enchants);
+				'suffix_enchants' => $suffix_enchants,
+				'itemlistingstats' => $itemlistingstats);
 
 			$this->layout->content = View::make('createauction', $args);
 		}
