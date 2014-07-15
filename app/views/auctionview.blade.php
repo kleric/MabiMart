@@ -35,7 +35,7 @@
       Contact Information
     </div>
     <div class="panel-body">
-      {{{ $seller->getContactDetails() }}}
+      {{ $seller->getContactDetails() }}
     </div>
   </div>
 </div>
