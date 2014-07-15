@@ -44,7 +44,7 @@ jQuery(document).ready(function($) {
     </div>
     <div class="panel-body">
       <small><i>A little about me...</i></small><br/>
-      {{{ $user->getAboutMe() }}}
+      {{ $user->getAboutMe() }}
     </div>
   </div>
 </div>
@@ -55,7 +55,7 @@ jQuery(document).ready(function($) {
     </div>
     <div class="panel-body">
       <small><i>To reach me for trades...</i></small><br/>
-      {{{ $user->getContactDetails() }}}
+      {{ $user->getContactDetails() }}
     </div>
   </div>
   <div class="panel panel-info">
