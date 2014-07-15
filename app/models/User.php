@@ -45,7 +45,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	}
 	public function getAboutMe()
 	{
-		return Purifier::clean($this->about_me, array('titles'));
+		return Purifier::clean($this->about_me);
 	}
 	public function getUsername()
 	{
