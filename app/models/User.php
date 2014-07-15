@@ -41,7 +41,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	public function getContactDetails()
 	{
-		return Purifier::clean($this->contact_details0;
+		return Purifier::clean($this->contact_details);
 	}
 	public function getAboutMe()
 	{
