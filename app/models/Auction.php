@@ -201,9 +201,9 @@ class Auction extends Eloquent {
 		return $item->name;
 	}
 	public function getDescription() {
-		return $this->description;
+		return Purifier::clean($this->description);
 	}
-		private function statToString($statstring, $stat, $statname, $sign = true, $percent = false) {
+	private function statToString($statstring, $stat, $statname, $sign = true, $percent = false) {
 		if ($stat === null) return $statstring;
 
 		if ($stat >= 0 && $sign) {
@@ -241,6 +241,9 @@ class Auction extends Eloquent {
 		if($this->weaponinjurymin === null || $this->weaponinjurymax === null) return null;
 
 		return $this->weaponinjurymin . " - " . $this->weaponinjurymax; 
+	}
+	public function isOldStyle() {
+		return $this->old_style;
 	}
 	public function getStats() {
 		$baseitem = Item::where('id', '=', $this->item_id)->first();

@@ -2,6 +2,33 @@
 @section('page-title')
 Edit your profile
 @stop
+@section('css')
+<link rel="stylesheet" type="text/css" href="/css/bootstrap-wysihtml5.css" />
+@stop
+@section('script')
+<script src="/js/wysihtml5-0.3.0.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap3-wysihtml5.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $('#about').wysihtml5();
+    $('#contact').wysihtml5();
+
+    function processForm(e) {
+      var ab = document.getElementById('about');
+      ab.value = $('#about').val();
+
+      var ct = document.getElementById('contact');
+      ct.value = $('#contact').val();
+    return true;
+}
+
+var form = document.getElementById('profile-form');
+if (form.attachEvent) {
+    form.attachEvent("submit", processForm);
+} else {
+    form.addEventListener("submit", processForm);
+}
+</script>
+@stop
 @section('content')
 <div class="page-header">
   <h2>Edit your profile</h2>
@@ -38,7 +65,7 @@ Edit your profile
         @endforeach
     </div>
     @endif
-  <form action="{{ URL::route('profile-edit-post') }}" method="post">
+  <form action="{{ URL::route('profile-edit-post') }}" method="post" id="profile-form">
     <div class="panel panel-success">
       <div class="panel-heading">
         Reaching You
@@ -46,7 +73,7 @@ Edit your profile
       <div class="panel-body">
         <i><small>This section is <strong>required</strong>! Please add a way to reach you in game so that trades can be performed. They're the heart of this site. (Max 1000 characters)</small></i>
         <br/>
-        <textarea name="contact_details" class="form-control" rows="8" maxlength="1000">{{{ $contact }}}</textarea>
+        <textarea name="contact_details" id="contact" class="form-control" rows="8" maxlength="1000">{{{ $contact }}}</textarea>
       </div>
     </div>
     <div class="panel panel-default">
@@ -56,7 +83,7 @@ Edit your profile
       <div class="panel-body">
         <i><small>This section is optional, but feel free to add a little bit about yourself</small></i>
         <br/>
-        <textarea name="about_you" class="form-control" rows="5" maxlength="1000">{{{ $about }}}</textarea>
+        <textarea name="about_you" id="about" class="form-control" rows="5" maxlength="1000">{{{ $about }}}</textarea>
       </div>
     </div>
     <div class="form-group pull-right">

@@ -113,7 +113,7 @@ class AuctionController extends BaseController {
 			$item_imgurl = "";
 			$item_wiki_link = "";
 			$item_description = "";
-			$item_stats = $auction->getStats();
+			$item_stats = $auction->isOldStyle() ? $auction->getStats() : Item::getById($auction->item_id)->getStats();
 			$reforged = false;
 			if(isset($auction->reforgeone_id) || isset($auction->reforgetwo_id) || isset($auction->reforgethree_id)) {
 				$reforged = true;
@@ -387,7 +387,8 @@ class AuctionController extends BaseController {
 			'reforgethree_level' => $reforge_3_level,
 			'prefix_enchant_id' => $prefix,
 			'suffix_enchant_id' => $suffix,
-			'specialup' => Input::get('specialup')
+			'specialup' => Input::get('specialup'),
+			'old_style' => false
 			));
 			if($auction) {
 				return Redirect::route('auction', $auction->id)->with('success_message', 'You have successfully created your auction');

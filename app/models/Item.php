@@ -14,7 +14,9 @@ class Item extends Eloquent {
 	public function categories() {
 		return $this->morphToMany('Category', 'sorteditem');
 	}
-
+	public static function getById($id) {
+		return Item::where('id', '=', $id)->first();
+	}
 	public function getDescription() {
 		$description = $this->description;
 

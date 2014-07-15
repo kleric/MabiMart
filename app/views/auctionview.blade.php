@@ -42,7 +42,7 @@
 <div class="col-md-5">
   <div class="panel panel-success">
     <div class="panel-heading">
-      Item Details
+      Item Base Details
       <div class="pull-right">
         @if(isset($wiki_link)) 
         <a href="{{{ $wiki_link }}}" class="label label-success">View Wiki</a>
@@ -88,15 +88,14 @@
   @if(isset($auction->description) && !empty($auction->description))
   <div class="panel panel-primary">
     <div class="panel-heading">
-      Auction Details
+      Item Details
     </div>
     <div class="panel-body">
-      <strong>Description</strong><br/>
-      {{{ $auction->description }}}
+      {{ $auction->getDescription() }}
     </div>
   </div>
   @endif
-  @if(isset($reforged) && $reforged || $auction->getReforgeRank() < 3)
+  @if(isset($reforged) && $reforged || ($auction->getReforgeRank() < 3 && $auction->getReforgeRank() > 0))
   <div class="panel panel-default">
     <div class="panel-heading">
         Rank {{{ $auction->getReforgeRank() }}} Reforge
