@@ -174,7 +174,7 @@ if (form.attachEvent) {
 			<div class="panel-body">
 				<p>Give a description of what you're selling. Maybe what it looks like, etc. Please insert reforge and enchant data below. Please insert a screenshot of the item in your inventory (hover over it). You can use Mabi's screenshot functionality and crop using paint, then upload somewhere like imgur. Or if you prefer, you can use Puush or Gyazo. </p>
 				<p>This will make it easier to show what you're trying to sell :)</p>
-				<textarea name="description" id="description-area" class="form-control" rows="12">{{ Input::old('description') ? Input::old('description')  : ''}}</textarea>
+				<textarea name="description" id="description-area" class="form-control" rows="12">{{ Input::old('description') ? Input::old('description')  : $itemlistingstats }}</textarea>
 			</div>
 		</div>
 		@if(isset($base_item->enchantable))
