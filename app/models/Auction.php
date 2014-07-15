@@ -81,7 +81,10 @@ class Auction extends Eloquent {
 		}
 		$reforge = Reforge::where('id', '=', $id)->first();
 		if($num == 3) {
-			$str = $reforge->name . " " . $this->reforgeone_level;
+			$str = $reforge->name . " " . $this->reforgethree_level;
+		}
+		else if($num == 2) {
+			$str = $reforge->name . " " . $this->reforgetwo_level . "<br/>";
 		}
 		else {
 			$str = $reforge->name . " " . $this->reforgeone_level . "<br/>";
