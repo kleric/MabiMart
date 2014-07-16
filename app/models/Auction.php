@@ -203,9 +203,6 @@ class Auction extends Eloquent {
 
 		return $item->name;
 	}
-	public function getTitle() {
-		$item = this->getItemName();
-	}
 	public function getDescription() {
 		return Purifier::clean($this->description);
 	}
