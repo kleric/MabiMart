@@ -70,6 +70,16 @@
 			</div>
 		</div>
 		<div class="container" id="content">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- MabiMart Top Banner -->
+			<ins class="adsbygoogle"
+     				style="display:block"
+     				data-ad-client="ca-pub-1637065973230314"
+     				data-ad-slot="2726910983"
+     				data-ad-format="auto"></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
 			@if(null !== Session::get('success_message'))
 			<br/>
 			<div class="alert alert-success alert-dismissible" role="alert">
