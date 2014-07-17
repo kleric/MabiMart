@@ -43,7 +43,7 @@ class AccountController extends BaseController {
 			$remember = Input::get('remember', false);
 			$auth = Auth::attempt(array(
 				'email' => Input::get('email'),
-				'password' => Input::get('password'), $remember)
+				'password' => Input::get('password')), $remember
 			);
 			if($auth) {
 				if(!Auth::user()->active) {
