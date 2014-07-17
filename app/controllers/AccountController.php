@@ -40,7 +40,7 @@ class AccountController extends BaseController {
 					->withInput();
 		}
 		else {
-			$remember = false || Input::get('remember_me');
+			$remember = Input::get('remember_me', false);
 			$auth = Auth::attempt(array(
 				'email' => Input::get('email'),
 				'password' => Input::get('password'), $remember)
