@@ -70,20 +70,47 @@ class ProfileController extends BaseController {
 						->withErrors($validator)
 						->withInput();
 			}
+			try {
+    			DB::connection()->getPdo()->beginTransaction();
+				$user->contact_details = Input::get('contact_details');
+				$user->about_me = Input::get('about_you');
+				$user->pic_id = $user->pic_id + 1;
+				$src_url = 'images/avatar/' . $user->id . "/";
 
-			$user->contact_details = Input::get('contact_details');
-			$user->about_me = Input::get('about_you');
+				$pic->move($src_url, $user->pic_id . '_original.png');
 
-			$src_url = 'images/avatar/' . $user->id . '.png';
+				$extension = strtolower(strrchr($pic->getClientOriginalName(), '.'));
+				$img;
+    	switch ($extension) {
+        case '.jpg':
+        case '.jpeg':
+            $img = @imagecreatefromjpeg($src_url . $user->pic_id . '_original.png');
+            break;
+        case '.gif':
+            $img = @imagecreatefromgif($src_url . $user->pic_id . '_original.png');
+            break;
+        case '.png':
+            $img = @imagecreatefrompng($src_url . $user->pic_id . '_original.png');
+            break;
+        default:
+            break;
+    }
+    			//if(isset($img)) {
+    				$small_img = imagescale ($img, 50, 50);
+				$normal_img = imagescale($img, 100,100);
 
-			$pic->move($src_url);
+				imagepng ($small_img, $src_url . $user->pic_id . '.small.png');
+				imagepng ($normal_img, $src_url . $user->pic_id . '.png');
+    			//}
+				//$img = imagecreatefrompng($src_url . $user->pic_id . '_original.png');
 
-			$img = imagecreatefrompng($src_url);
-			$small_img = imagescale ($img, 50, 50);
-
-			imagepng ($small_img, 'images/avatar/' . $user->id . '_small.png');
-
-			$user->save();
+				$user->save();
+				DB::connection()->getPdo()->commit();
+			}
+ 			catch (\PDOException $e) {
+    			// Woopsy
+    			DB::connection()->getPdo()->rollBack();
+			}
 
 			return Redirect::route('profile', $user->id)->with('success_message', 'Changes saved successfully :)');
 		}

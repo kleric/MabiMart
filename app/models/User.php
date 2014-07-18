@@ -42,13 +42,22 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public function getProfilePictureUrl()
 	{
 
-		$url = URL::route('avatar', $this->id);
+		$url = "images/avatar/" . $this->id . "/" . $this->pic_id . ".png";
 
 		if(!(@getimagesize($url))) {
 			$url = URL::to('images/avatar/blank.png');
 		}
-		return $url;
+		return "/" . $url;
 
+	}
+	public function getProfilePictureSmallUrl()
+	{
+		$url = "images/avatar/" . $this->id . "/" . $this->pic_id . ".small.png";
+
+		if(!(@getimagesize($url))) {
+			$url = URL::to('images/avatar/blank_small.png');
+		}
+		return "/" . $url;
 	}
 
 	public function getContactDetails()
