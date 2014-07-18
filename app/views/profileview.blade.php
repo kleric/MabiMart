@@ -75,10 +75,10 @@ jQuery(document).ready(function($) {
         <img class="media-object" src="{{{ $review->getReviewer()->getGravatarUrl() }}}&s=50" alt="...">
         </a>
         <div class="media-body">
-            @if ($review->getRating() > 0) 
-          <span class="label label-success">Positive</span>
+          @if ($review->getRating() > 0) 
+          <span class="label label-success pull-right">Positive</span>
           @elseif ($review->getRating() < 0)
-          <span class="label label-danger">Negative</span>
+          <span class="label label-danger pull-right">Negative</span>
           @else
           <span class="label label-default pull-right">Neutral</span>
           @endif

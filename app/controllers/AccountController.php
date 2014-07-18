@@ -40,17 +40,20 @@ class AccountController extends BaseController {
 					->withInput();
 		}
 		else {
+			$remember = Input::get('remember', false);
 			$auth = Auth::attempt(array(
 				'email' => Input::get('email'),
-				'password' => Input::get('password'),
-				'active' => true)
+				'password' => Input::get('password')), $remember
 			);
-
 			if($auth) {
+				if(!Auth::user()->active) {
+					Auth::logout();
+					return Redirect::route('login')->withInput()->with('error_message', 'Account not activated.');	
+				}
 				return Redirect::intended('/');
 			}
 			else {
-				return Redirect::route('login')->withInput()->with('error_message', 'Incorrect credentials or account not activated.');
+				return Redirect::route('login')->withInput()->with('error_message', 'Account credentials are incorrect.');
 			}
 		}
 
