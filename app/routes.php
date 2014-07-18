@@ -19,7 +19,9 @@ Route::any('/items/{category}', array(
 	'as' => 'items',
 	'uses' => 'ItemController@getCategory')
 );
-
+Route::any('/avatar/{userid}', array(
+	'as' => 'avatar',
+	'uses' => 'ProfileController@getAvatar'));
 Route::any('/enchants/{category}', array(
 	'as' => 'enchants',
 	'uses' => 'EnchantController@getRank'));

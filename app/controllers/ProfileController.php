@@ -32,11 +32,18 @@ class ProfileController extends BaseController {
 				'user' => $user));
 		}
 	}
+	public function getAvatar($userid) 
+	{
+
+	}
 	public function getEditProfile() {
 		$user = User::where('id', '=', Auth::user()->id)->first();
 
+		$profile_pic_url = $user->getProfilePictureUrl();
+
 		$this->layout->content = View::make('profileedit', array(
 			'contact' => $user->contact_details,
+			'profile_pic_url' => $profile_pic_url,
 			'about' => $user->about_me));
 	}
 	public function postEditProfile() {
@@ -53,8 +60,29 @@ class ProfileController extends BaseController {
 						->withErrors($validator)
 						->withInput();
 			}	
+			$pic = Input::file('profilepic');
+			$validator = Validator::make(array('image' => $pic),
+				array(
+					'image' => 'image|max:1024'));
+
+			if($validator->fails()) {
+				return Redirect::route('profile-edit')
+						->withErrors($validator)
+						->withInput();
+			}
+
 			$user->contact_details = Input::get('contact_details');
 			$user->about_me = Input::get('about_you');
+
+			$src_url = 'images/avatar/' . $user->id . '.png';
+
+			$pic->move($src_url);
+
+			$img = imagecreatefrompng($src_url);
+			$small_img = imagescale ($img, 50, 50);
+
+			imagepng ($small_img, 'images/avatar/' . $user->id . '_small.png');
+
 			$user->save();
 
 			return Redirect::route('profile', $user->id)->with('success_message', 'Changes saved successfully :)');

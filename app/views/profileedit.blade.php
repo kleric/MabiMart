@@ -39,7 +39,14 @@ if (form.attachEvent) {
       Profile Pictures
     </div>
     <div class="panel-body">
-      Currently we're just using profile images from gravatar. I'm working on switching it so you can upload profile images here.
+      <p>Your current profile picture is displayed below.</p>
+      <div class="text-center">
+        <img src="{{{ $profile_pic_url }}}"/>
+      </div>
+      <br/>
+      <p>Select a different image if you'd like to change your profile picture. It will be uploaded and saved when you save your profile.</p>
+      <br/>
+      <input type="file" name="profilepic" form="profile-form">
     </div>
   </div>
   <div class="panel panel-warning">
@@ -65,7 +72,7 @@ if (form.attachEvent) {
         @endforeach
     </div>
     @endif
-  <form action="{{ URL::route('profile-edit-post') }}" method="post" id="profile-form">
+  <form action="{{ URL::route('profile-edit-post') }}" method="post" id="profile-form" enctype="multipart/form-data">
     <div class="panel panel-success">
       <div class="panel-heading">
         Reaching You

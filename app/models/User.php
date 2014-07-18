@@ -39,6 +39,18 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $url;
 	}
 
+	public function getProfilePictureUrl()
+	{
+
+		$url = URL::route('avatar', $this->id);
+
+		if(!(@getimagesize($url))) {
+			$url = URL::to('images/avatar/blank.png');
+		}
+		return $url;
+
+	}
+
 	public function getContactDetails()
 	{
 		return Purifier::clean($this->contact_details);
