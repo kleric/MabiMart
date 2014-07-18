@@ -47,7 +47,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		if(!(@getimagesize($url))) {
 			$url = URL::to('images/avatar/blank.png');
 		}
-		return "/" . $url;
+		else {
+			$url = "/" . $url;
+		}
+		return $url;
 
 	}
 	public function getProfilePictureSmallUrl()
@@ -57,7 +60,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		if(!(@getimagesize($url))) {
 			$url = URL::to('images/avatar/blank_small.png');
 		}
-		return "/" . $url;
+		else {
+			$url = "/" . $url;
+		}
+		return $url;
 	}
 
 	public function getContactDetails()

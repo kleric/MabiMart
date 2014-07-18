@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
     </div>
     <div class="panel-body">
       <div class="text-center">
-        <img src="{{{ $user->getGravatarUrl() }}}"/><br/>
+        <img src="{{{ $user->getProfilePictureUrl() }}}"/><br/>
       </div>
       <br/>
       <div class="text-center">
@@ -72,7 +72,7 @@ jQuery(document).ready(function($) {
     @foreach($reviews as $review)
       <div class="media">
         <a class="pull-left" href="{{ URL::route('profile', $review->getReviewer()->id) }}">
-        <img class="media-object" src="{{{ $review->getReviewer()->getGravatarUrl() }}}&s=50" alt="...">
+        <img class="media-object" src="{{{ $review->getReviewer()->getProfilePictureSmallUrl() }}}" alt="...">
         </a>
         <div class="media-body">
           @if ($review->getRating() > 0) 

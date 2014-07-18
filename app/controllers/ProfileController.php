@@ -40,11 +40,12 @@ class ProfileController extends BaseController {
 		$user = User::where('id', '=', Auth::user()->id)->first();
 
 		$profile_pic_url = $user->getProfilePictureUrl();
-
+		$contact_details = (Input::old('contact_details') !== null) ? Input::old('contact_details') : $user->contact_details;
+		$about = (Input::old('about_you') !== null) ? Input::old('about_you') : $user->about_me;
 		$this->layout->content = View::make('profileedit', array(
-			'contact' => $user->contact_details,
+			'contact' => $contact_details,
 			'profile_pic_url' => $profile_pic_url,
-			'about' => $user->about_me));
+			'about' => $about));
 	}
 	public function postEditProfile() {
 		if(Auth::check()) {
@@ -76,32 +77,38 @@ class ProfileController extends BaseController {
 				$user->about_me = Input::get('about_you');
 				$user->pic_id = $user->pic_id + 1;
 				$src_url = 'images/avatar/' . $user->id . "/";
+				if(isset($pic)) {
+					$pic->move($src_url, $user->pic_id . '_original.png');
+				
 
-				$pic->move($src_url, $user->pic_id . '_original.png');
+					$extension = strtolower(strrchr($pic->getClientOriginalName(), '.'));
+					$img;
+    				switch ($extension) {
+        				case '.jpg':
+        				case '.jpeg':
+            				$img = @imagecreatefromjpeg($src_url . $user->pic_id . '_original.png');
+            				break;
+        				case '.gif':
+            				$img = @imagecreatefromgif($src_url . $user->pic_id . '_original.png');
+            				break;
+        				case '.png':
+            				$img = @imagecreatefrompng($src_url . $user->pic_id . '_original.png');
+            				break;
+        				default:
+            				break;
+    				}
+    				if(($img)) {
+    					$small_img = imagescale ($img, 50, 50);
+						$normal_img = imagescale($img, 100,100);
 
-				$extension = strtolower(strrchr($pic->getClientOriginalName(), '.'));
-				$img;
-    	switch ($extension) {
-        case '.jpg':
-        case '.jpeg':
-            $img = @imagecreatefromjpeg($src_url . $user->pic_id . '_original.png');
-            break;
-        case '.gif':
-            $img = @imagecreatefromgif($src_url . $user->pic_id . '_original.png');
-            break;
-        case '.png':
-            $img = @imagecreatefrompng($src_url . $user->pic_id . '_original.png');
-            break;
-        default:
-            break;
-    }
-    			//if(isset($img)) {
-    				$small_img = imagescale ($img, 50, 50);
-				$normal_img = imagescale($img, 100,100);
-
-				imagepng ($small_img, $src_url . $user->pic_id . '.small.png');
-				imagepng ($normal_img, $src_url . $user->pic_id . '.png');
-    			//}
+						@imagepng ($small_img, $src_url . $user->pic_id . '.small.png');
+						@imagepng ($normal_img, $src_url . $user->pic_id . '.png');
+    				}
+    				else {
+    					File::delete($src_url . $user->pic_id . '_original.png');
+    					return Redirect::route('profile-edit', $user->id)->with('error_message', 'Image invalid')->withInput();
+    				}
+    			}
 				//$img = imagecreatefrompng($src_url . $user->pic_id . '_original.png');
 
 				$user->save();
@@ -111,7 +118,6 @@ class ProfileController extends BaseController {
     			// Woopsy
     			DB::connection()->getPdo()->rollBack();
 			}
-
 			return Redirect::route('profile', $user->id)->with('success_message', 'Changes saved successfully :)');
 		}
 	}
