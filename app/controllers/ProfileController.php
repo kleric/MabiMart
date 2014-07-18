@@ -82,7 +82,7 @@ class ProfileController extends BaseController {
 				
 
 					$extension = strtolower(strrchr($pic->getClientOriginalName(), '.'));
-					$img;
+					$img = false;
     				switch ($extension) {
         				case '.jpg':
         				case '.jpeg':
@@ -95,14 +95,15 @@ class ProfileController extends BaseController {
             				$img = @imagecreatefrompng($src_url . $user->pic_id . '_original.png');
             				break;
         				default:
+        					$img = false;
             				break;
     				}
     				if(($img)) {
-    					$small_img = imagescale ($img, 50, 50);
+    					$small_img = imagescale($img, 50, 50);
 						$normal_img = imagescale($img, 100,100);
 
-						@imagepng ($small_img, $src_url . $user->pic_id . '.small.png');
-						@imagepng ($normal_img, $src_url . $user->pic_id . '.png');
+						imagepng ($small_img, $src_url . $user->pic_id . '.small.png');
+						imagepng ($normal_img, $src_url . $user->pic_id . '.png');
     				}
     				else {
     					File::delete($src_url . $user->pic_id . '_original.png');
