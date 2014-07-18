@@ -45,7 +45,7 @@ if (form.attachEvent) {
       </div>
       <br/>
       <p>Select a different image if you'd like to change your profile picture. It will be uploaded and saved when you save your profile.</p>
-      <p>Please keep the size under 1mb. It will be auto-resized to 100x100. Please avoid transparency, your picture will likely look weird</p>
+      <p>Please keep the size under 1mb. It will be auto-resized to 100x100. Please avoid transparency, your picture will likely look weird.</p>
       <br/>
       <input type="file" name="profilepic" form="profile-form">
     </div>

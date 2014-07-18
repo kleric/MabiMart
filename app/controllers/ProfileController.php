@@ -99,8 +99,17 @@ class ProfileController extends BaseController {
             				break;
     				}
     				if(($img)) {
-    					$small_img = imagescale($img, 50, 50);
-						$normal_img = imagescale($img, 100,100);
+    					function scale($image, $dim)
+	{
+    	$w = $dim;
+    	$h = $dim;
+    	$newimage = imagecreatetruecolor($w, $h);
+    	imagecopyresized($newimage, $image, 0, 0, 0, 0, $w, $h,
+                                                   imagesx($image), imagesy($image));
+    	return $newimage;
+	}
+    					$small_img = scale($img, 50);
+						$normal_img = scale($img, 100);
 
 						imagepng ($small_img, $src_url . $user->pic_id . '.small.png');
 						imagepng ($normal_img, $src_url . $user->pic_id . '.png');
