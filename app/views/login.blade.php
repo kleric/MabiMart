@@ -32,7 +32,7 @@ Login
 				</div>
 			</div>
 			<div class="form-group col-md-12">
-				<p class="pull-left">Forget your password? Reset it <a href="">here.</a></p>
+				<p class="pull-left">Forget your password? Reset it <a href="{{ URL::route('get-password-forgot') }}">here.</a></p>
 				<button type="submit" class="pull-right btn btn-success">Login</button>
 			</div>
 			{{ Form::token() }}

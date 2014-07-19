@@ -175,4 +175,22 @@ Route::group(array('before' => 'guest'), function() {
 		'as' => 'activate',
 		'uses' => 'AccountController@getActivate')
 	);
+
+	Route::get('/password/forgot', array(
+		'as' => 'get-password-forgot',
+		'uses' => 'RemindersController@getRemind')
+	);
+
+	Route::post('/password/forgot', array(
+		'as' => 'post-password-forgot',
+		'uses' => 'RemindersController@postRemind')
+	);
+	Route::get('/password/reset/{token}', array(
+		'as' => 'get-password-reset',
+		'uses' => 'RemindersController@getReset')
+	);
+	Route::post('/password/reset', array(
+		'as' => 'post-password-reset',
+		'uses' => 'RemindersController@postReset')
+	);
 });
