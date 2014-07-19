@@ -6,7 +6,7 @@ Home
 	<br>
 	<div class="jumbotron" id="jumbo-intro">
 		<h1>Hello, MabiMart!</h1>
-		<p>MabiMart has has gone Alpha, trades are officially open! Say hello to a way to buy and sell items without all the hassle.</p>
+		<p>MabiMart has gone Alpha, trades are officially open! Say hello to a way to buy and sell items without all the hassle.</p>
 		<p><a href="{{{ URL::route('register') }}}" class="btn btn-success" role="button">Get Trading!</a></p>
 	</div>
 	<div>

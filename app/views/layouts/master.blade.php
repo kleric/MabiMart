@@ -103,6 +103,13 @@
 				Copyright &copy; 2014 MabiMart. Built lovingly with <a href="http://getbootstrap.com/">Bootstrap</a>.
 			</div>
 		</div>
+		<div class="hidden-xs">
+			<style type='text/css'>@import url('http://getbarometer.s3.amazonaws.com/assets/barometer/css/barometer.css');</style>
+				<script src='http://getbarometer.s3.amazonaws.com/assets/barometer/javascripts/barometer.js' type='text/javascript'></script>
+				<script type="text/javascript" charset="utf-8">
+  					BAROMETER.load('jbD64ThsgC3SHOe5cyXPM');
+			</script>
+		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
 		<script src="/js/jquery.lazyload.min.js" type="text/javascript"></script>
