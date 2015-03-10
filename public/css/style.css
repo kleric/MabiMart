@@ -113,4 +113,11 @@ body {
 .table-hover tbody tr:hover > td.info {
   background-color: #c4e3f3 !important;
 }
+h1,h2,h3 {
+  vertical-align:middle;
+}
+
+h1>.badge, h2>.badge, h3>.badge {
+  vertical-align:middle;
+}
 

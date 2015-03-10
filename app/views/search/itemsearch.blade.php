@@ -7,7 +7,7 @@ Item Search
 	<h2>Search for an Item</h2>
 </div>
 <div class="col-md-8 col-md-offset-2">
-<form class="form" method="post">
+<form class="form" method="post" action="{{ URL::route('item-search') }}">
 	<div class="input-group">
 		<input class="form-control" type="text" name="search" placeholder="Seek and ye shall find">
 		<span class="input-group-btn">
@@ -15,7 +15,6 @@ Item Search
 		</span>
 	</div>
 </form>
-<br/>
 <br/>
 </div>
 @stop

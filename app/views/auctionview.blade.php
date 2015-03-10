@@ -14,7 +14,6 @@
     </div>
     <div class="panel-body">
       <div class="text-center">
-        <img src="{{{ $seller->getProfilePictureUrl() }}}"/><br/>
         <small>{{{ $user_name or 'Invalid User ID'}}}</small>
       </div>
       <div class="text-center">

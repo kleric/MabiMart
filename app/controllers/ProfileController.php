@@ -16,15 +16,15 @@ class ProfileController extends BaseController {
 	*/
 	protected $layout = 'layouts.master';
 
-	public function getProfile($id) 
+	public function getProfile($name) 
 	{
-		$user = User::where('id', '=', $id);
+		$user = User::where('username', '=', $name);
 
 		if($user->count())
 		{
 			$user = $user->first();
 
-			$reviews = Review::where('reviewee_id', '=', $id)->orderBy('updated_at', 'desc')->take(5)->get();
+			$reviews = Review::where('reviewee_id', '=', $user->id)->orderBy('updated_at', 'desc')->take(5)->get();
 			$auctions = Auction::getSellingForUserId($user->id);
 			$this->layout->content = View::make('profileview', array(
 				'reviews' => $reviews,
@@ -32,19 +32,13 @@ class ProfileController extends BaseController {
 				'user' => $user));
 		}
 	}
-	public function getAvatar($userid) 
-	{
-
-	}
 	public function getEditProfile() {
 		$user = User::where('id', '=', Auth::user()->id)->first();
 
-		$profile_pic_url = $user->getProfilePictureUrl();
 		$contact_details = (Input::old('contact_details') !== null) ? Input::old('contact_details') : $user->contact_details;
 		$about = (Input::old('about_you') !== null) ? Input::old('about_you') : $user->about_me;
 		$this->layout->content = View::make('profileedit', array(
 			'contact' => $contact_details,
-			'profile_pic_url' => $profile_pic_url,
 			'about' => $about));
 	}
 	public function postEditProfile() {

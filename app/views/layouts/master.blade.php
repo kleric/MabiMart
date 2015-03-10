@@ -16,9 +16,6 @@
 		<div class="col-xs-2 col-md-2">
 			<img src="/images/alpha_logo.png">
 		</div>
-		<div class="hidden-phone pull-right col-md-2 text-right" id="timepanel">
-				<center>Mart Time: <span id="servertime">{{ date("H:i:s", time()) }}</span></center>
-		</div>
 		</div>
 		<div class="navbar-default" role="navigation" id="navbar">
 			<div class="container">
@@ -33,7 +30,13 @@
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
 						<li><a href="/">Home</a></li>
-						<li><a href="{{ URL::route('categories') }}">Items</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Items <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="{{ URL::route('categories') }}">Browse</a></li>
+								<li><a href="{{ URL::route('item-search') }}">Search</a></li>
+							</ul>
+						</li>
 						<li><a href="{{ URL::route('enchantlist') }}">Enchants</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Auctions <span class="caret"></span></a>
@@ -42,19 +45,17 @@
 								<li><a href="{{ URL::route('dashboard') }}">My Auctions</a></li>
 								<li><a href="{{ URL::route('categories') }}">Add Auction</a></li>
 								@endif
-								<li><a href="{{ URL::route('all-auctions') }}">All auctions</a></li>
-								<li><a href="#">Ending Soon</a></li>
+								<li><a href="{{ URL::route('all-auctions') }}">Ending Soon</a></li>
 								<li><a href="#">Search</a></li>
 							</ul>
 						</li>
-						<li><a href="http://forums.mabimart.com/">Forums</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						@if(Auth::check())
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{{ Auth::user()->username }}}</a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="{{ URL::route('profile', Auth::user()->id) }}"><span class="fa fa-user"></span> My Profile</a></li>
+								<li><a href="{{ URL::route('profile', Auth::user()->username) }}"><span class="fa fa-user"></span> My Profile</a></li>
 								<li><a href="{{ URL::route('profile-edit') }}"><span class="fa fa-pencil"></span> Edit Profile</a></li>
 								<li><a href="#"><span class="fa fa-cog"></span> Account Settings</a></li>
 							</ul>
@@ -95,45 +96,16 @@
 			</div>
 			@endif
 			@yield('content')
-			<div id="footer" class="col-md-12 col-xs-12">
-				<center>
-					About Us | Contact Us | Give Feedback
-				</center>
-				<br/>
-				Copyright &copy; 2014 MabiMart. Built lovingly with <a href="http://getbootstrap.com/">Bootstrap</a>.
+			<div id="footer" class="col-md-12 col-xs-12 text-center">
+				<br />
+				<a href="{{ URL::route('about'); }}">About Us</a> | <a href="{{ URL::route('contact') }}">Contact Us</a> | <a href="https://github.com/kleric/MabiMart">GitHub</a>
+				<br/> <br />
+				Copyright &copy; 2015 MabiMart. Built lovingly with <a href="http://getbootstrap.com/">Bootstrap.</a>.
 			</div>
-		</div>
-		<div class="hidden-xs">
-			<style type='text/css'>@import url('http://getbarometer.s3.amazonaws.com/assets/barometer/css/barometer.css');</style>
-				<script src='http://getbarometer.s3.amazonaws.com/assets/barometer/javascripts/barometer.js' type='text/javascript'></script>
-				<script type="text/javascript" charset="utf-8">
-  					BAROMETER.load('jbD64ThsgC3SHOe5cyXPM');
-			</script>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
 		<script src="/js/jquery.lazyload.min.js" type="text/javascript"></script>
-		<script type="text/javascript">
-var currenttime = '{{ date("F d, Y H:i:s", time()) }}'; //PHP method of getting server date
-
-var serverdate=new Date(currenttime);
-
-function padlength(what){
-var output=(what.toString().length==1)? "0"+what : what;
-return output;
-}
-
-function displaytime(){
-serverdate.setSeconds(serverdate.getSeconds()+1);
-var timestring=padlength(serverdate.getHours())+":"+padlength(serverdate.getMinutes())+":"+padlength(serverdate.getSeconds());
-document.getElementById("servertime").innerHTML = timestring;
-}
-
-window.onload=function(){
-setInterval("displaytime()", 1000);
-}
-
-</script>
 		@yield('script')
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

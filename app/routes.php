@@ -29,6 +29,14 @@ Route::any('/items', array(
 	'as' => 'categories',
 	'uses' => 'ItemController@getCategories')
 );
+Route::any('/about', array(
+	'as' => 'about',
+	'uses' => 'HomeController@showAbout')
+);
+Route::any('/contact', array(
+	'as' => 'contact',
+	'uses' => 'HomeController@showContact')
+);
 Route::any('/enchants', array(
 	'as' => 'enchantlist',
 	'uses' => 'EnchantController@getRanks'));
@@ -49,7 +57,7 @@ Route::get('/auction/view/{id}', array(
 	'as' => 'auction',
 	'uses' => 'AuctionController@getAuction'));
 
-Route::any('/profile/view/{id}', array(
+Route::any('/profile/view/{name}', array(
 	'as' => 'profile',
 	'uses' => 'ProfileController@getProfile'));
 

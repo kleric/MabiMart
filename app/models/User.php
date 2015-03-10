@@ -30,47 +30,12 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		$count = PM::where('reciever_id', '=', $this->id)->where('read', '=', false)->where('sent', '=', true)->count();
 		return $count;
 	}
-	public function getGravatarUrl()
-	{
-		$email = trim($this->email);
-		$email = strtolower($email);
-
-		$url = 'http://www.gravatar.com/avatar/' . md5($email) . "?r=pg";
-		return $url;
-	}
-
-	public function getProfilePictureUrl()
-	{
-
-		$url = "images/avatar/" . $this->id . "/" . $this->pic_id . ".png";
-
-		if(!(@getimagesize($url))) {
-			$url = URL::to('images/avatar/blank.png');
-		}
-		else {
-			$url = "/" . $url;
-		}
-		return $url;
-
-	}
-	public function getProfilePictureSmallUrl()
-	{
-		$url = "images/avatar/" . $this->id . "/" . $this->pic_id . ".small.png";
-
-		if(!(@getimagesize($url))) {
-			$url = URL::to('images/avatar/blank_small.png');
-		}
-		else {
-			$url = "/" . $url;
-		}
-		return $url;
-	}
 
 	public function getContactDetails()
 	{
 		return Purifier::clean($this->contact_details);
 	}
-	public function getAboutMe()
+	public function getBulletin()
 	{
 		return Purifier::clean($this->about_me, array(
             		'AutoFormat.AutoParagraph' => false,

@@ -12,46 +12,35 @@ jQuery(document).ready(function($) {
 </script>
 @stop
 @section('content')
-</br>
-<div class="col-md-3">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      {{{ $user->username or 'Invalid User ID'}}}
-    </div>
-    <div class="panel-body">
-      <div class="text-center">
-        <img src="{{{ $user->getProfilePictureUrl() }}}"/><br/>
-      </div>
-      <br/>
-      <div class="text-center">
-         @if( $user->getFeedbackScore() > 0)
-        <span class="label label-success">+{{{ $user->getFeedbackScore() }}}</span>
-        @elseif( $user->getFeedbackScore() == 0)
-        <span class="label label-default">+{{{ $user->getFeedbackScore() }}}</span>
+<div class="page-header col-md-12 col-sm-12 col-lg-12 col-xm-12">
+  <h2>
+    {{{ $user->username or 'Invalid User ID'}}}
+    @if( $user->getFeedbackScore() >= 0)
+        <span class="badge">+{{{ $user->getFeedbackScore() }}}</span>
         @else
-        <span class="label label-danger">-{{{ $user->getFeedbackScore() }}}</span>
+        <span class="badge">-{{{ $user->getFeedbackScore() }}}</span>
         @endif
-      </div>
-      <br/>
+  </h2>
+</div>
+<div class="col-md-3">
       <center>
-        <a href="{{ URL::route('create-message', $user->id) }}" class="label label-primary"><i class="fa fa-paper-plane"></i> PM</a>
       </center>
-    </div>
-  </div>
   <div class="panel panel-default">
     <div class="panel-heading">
-      About Me
+      Bulletin
     </div>
     <div class="panel-body">
-      <small><i>A little about me...</i></small><br/>
-      {{ $user->getAboutMe() }}
+      {{ $user->getBulletin() }}
     </div>
   </div>
 </div>
 <div class="col-md-9">
-  <div class="panel panel-warning">
+  <div class="panel panel-default">
     <div class="panel-heading">
       Contact Me
+      <div class="pull-right">
+        <a href="{{ URL::route('create-message', $user->id) }}" class="label label-primary"><i class="fa fa-paper-plane"></i> PM</a>
+      </div>
     </div>
     <div class="panel-body">
       <small><i>To reach me for trades...</i></small><br/>
@@ -72,7 +61,6 @@ jQuery(document).ready(function($) {
     @foreach($reviews as $review)
       <div class="media">
         <a class="pull-left" href="{{ URL::route('profile', $review->getReviewer()->id) }}">
-        <img class="media-object" src="{{{ $review->getReviewer()->getProfilePictureSmallUrl() }}}" alt="...">
         </a>
         <div class="media-body">
           @if ($review->getRating() > 0) 

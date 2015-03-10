@@ -34,22 +34,6 @@ if (form.attachEvent) {
   <h2>Edit your profile</h2>
 </div>
 <div class="col-md-4">
-  <div class="panel panel-info">
-    <div class="panel-heading">
-      Profile Pictures
-    </div>
-    <div class="panel-body">
-      <p>Your current profile picture is displayed below.</p>
-      <div class="text-center">
-        <img src="{{{ $profile_pic_url }}}"/>
-      </div>
-      <br/>
-      <p>Select a different image if you'd like to change your profile picture. It will be uploaded and saved when you save your profile.</p>
-      <p>Please keep the size under 1mb. It will be auto-resized to 100x100. Please avoid transparency, your picture will likely look weird.</p>
-      <br/>
-      <input type="file" name="profilepic" form="profile-form">
-    </div>
-  </div>
   <div class="panel panel-warning">
     <div class="panel-heading">
         Contact Guidelines
@@ -86,10 +70,10 @@ if (form.attachEvent) {
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">
-        About You
+        Bulletin Board
       </div>
       <div class="panel-body">
-        <i><small>This section is optional, but feel free to add a little bit about yourself</small></i>
+        <i><small>This section is optional, but feel free to add anything here. It could be an advertisement, or whatever!</small></i>
         <br/>
         <textarea name="about_you" id="about" class="form-control" rows="5" maxlength="1000">{{{ $about }}}</textarea>
       </div>
