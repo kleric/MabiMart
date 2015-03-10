@@ -6,8 +6,8 @@ Home
 	<br>
 	<div class="jumbotron" id="jumbo-intro">
 		<h1>Hello, MabiMart!</h1>
-		<p>MabiMart has gone Alpha, trades are officially open! Say hello to a way to buy and sell items without all the hassle.</p>
-		<p><a href="{{{ URL::route('register') }}}" class="btn btn-success" role="button">Get Trading!</a></p>
+		<p>Welcome to the MabiMart test server, a up and coming site for selling stuff you don't want to buy things that you do.</p>
+		<p><a href="{{{ URL::route('register') }}}" class="btn btn-success" role="button">Test Drive?</a></p>
 	</div>
 	<div>
 		<div class="col-md-8 col-sm-8">
@@ -15,21 +15,10 @@ Home
 				<h2>News  <small> Recent Updates</small></h2>
 			</div>
 			<div>
-				<h4>The Basics <small>7/9/2014</small></h4>
-				The basic functionality should now all be up and running, so auctions are now <strong>officially</strong> open!<br/>
-				<br/>
-				What does that mean? All the functionality revolving basic auctions should now be working. You should be able to send messages, view messages, leave feedback, win auctions, create auctions, etc.
-				<br/><br/>
-				Unfortunately, that also means I'm wiping the database, as all the prior stuff was merely there for you to experiment with. No worries, from here on out, I'll try not to touch the database except for adding items and such.
-				<br/><br/>
-				From now on I'll be focusing on adding new features, but any bugs I find (or people report) will be top priority.
+				<h4>Revival? <small>3/10/2015</small></h4>
+				<p>Trying to get stuff back up and running. A few various planned changes, I'll keep you posted. Experiment with the site I guess, but be wary this is only a test server at the moment. Things can change at any time.</p>
+				<p>Oh if you have any questions, thoughts, suggestions, feedback, add me on Nihl</p>
 
-				Thanks! Checkout the <a href="http://forums.mabimart.com/">forums</a> for more information.
-
-				<br/><br/>
-				Thanks!
-				 <br/>Nihl
-				 <br/><br/>
 			</div>
 		</div>
 		<div class="col-md-4 col-sm-4">
@@ -37,7 +26,6 @@ Home
 				<h2>Useful Sites</h2> 
 			</div>
 			<ul>
-				<li><a href="https://www.facebook.com/groups/Alexinaserver/">Alexina Facebook Group</a></li>
 				<li><a href="http://wiki.mabinogiworld.com/">Mabinogi Wiki</a></li>
 			</ul>
 		</div>
