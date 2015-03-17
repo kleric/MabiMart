@@ -138,7 +138,7 @@ class AuctionController extends BaseController {
 			if($user->count()) {
 				$user = $user->first();
 			}
-			$this->layout->content = View::make('auctionview', array(
+			$this->layout->content = View::make('auctions.auctionview', array(
 				'auction_id' => $auction->id,
 				'seller_id' => $auction->seller_id,
 				'item_id' => $id,
@@ -444,7 +444,7 @@ class AuctionController extends BaseController {
 				'suffix_enchants' => $suffix_enchants,
 				'itemlistingstats' => $itemlistingstats);
 
-			$this->layout->content = View::make('createauction', $args);
+			$this->layout->content = View::make('auctions.createauction', $args);
 		}
 	}
 
@@ -462,7 +462,7 @@ class AuctionController extends BaseController {
 
 		$auctions_ended = $auctions_ended_seller->merge($auctions_ended_buyer);
 
-		$this->layout->content = View::make('myauctions',
+		$this->layout->content = View::make('auctions.myauctions',
 			array(
 				'auctions_selling' => $auctions_selling,
 				'auctions_buying' => $auctions_buying,
@@ -484,7 +484,7 @@ class AuctionController extends BaseController {
 			->orderBy('auctionendtime', 'asc')
 			->skip($auctions_per_page * ($page - 1))->take($auctions_per_page)->get();
 
-		$this->layout->content = View::make('allauctions',
+		$this->layout->content = View::make('auctions.allauctions',
 			array(
 				'page' => $page,
 				'lastpage' => $lastpage,

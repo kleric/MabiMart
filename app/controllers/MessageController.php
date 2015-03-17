@@ -26,7 +26,7 @@ class MessageController extends BaseController {
 			{
 				$message = $message->first();
 
-				return Redirect::route('create-message', $message->sender_id)->with('subject', 'RE: ' . $message->subject);
+				return Redirect::route('messages.create-message', $message->sender_id)->with('subject', 'RE: ' . $message->subject);
 			}
 			else
 			{
@@ -57,7 +57,7 @@ class MessageController extends BaseController {
 
 				$message->read = true;
 				$message->save();
-				$this->layout->content = View::make('viewmessage', array(
+				$this->layout->content = View::make('messages.viewmessage', array(
 					'sent_view' => $sent_view,
 					'subject' => $message->subject,
 					'reciever_name' => $reciever_name,
@@ -88,7 +88,7 @@ class MessageController extends BaseController {
 			}
 			$reciever = User::where('id', '=', $id)->first();
 
-			$this->layout->content = View::make('createmessage', array(
+			$this->layout->content = View::make('messages.createmessage', array(
 				'state' => 0,
 				'subject' => $subject,
 				'reciever_name' => $reciever->getUsername()
@@ -142,7 +142,7 @@ class MessageController extends BaseController {
 			$user = Auth::user();
 			$messages = PM::where('reciever_id', '=', $user->id)->where('recieverdeleted', '=', false)->orderBy('created_at', 'desc')->get();
 
-			$this->layout->content = View::make('inboxview', array(
+			$this->layout->content = View::make('messages.inboxview', array(
 				'state' => 1,
 				'inbox' => $messages));
 		}
@@ -153,7 +153,7 @@ class MessageController extends BaseController {
 			$user = Auth::user();
 			$messages = PM::where('sender_id', '=', $user->id)->where('senderdeleted', '=', false)->orderBy('created_at', 'desc')->get();
 
-			$this->layout->content = View::make('sentview', array(
+			$this->layout->content = View::make('messages.sentview', array(
 				'state' => 2,
 				'sent' => $messages));
 		}

@@ -4,7 +4,22 @@ Categories
 @stop
 @section('content')
 <div class="page-header">
-	<h1>Enchants</h1>
+	<div class="col-md-6">
+		<h1>Enchants</h1>
+	</div>
+	<div class="col-md-6">
+		<form class="form" method="post" action="{{ URL::route('item-search') }}">
+		<div class="input-group">
+			<input class="form-control" type="text" name="search" placeholder="Seek and ye shall find">
+			<span class="input-group-btn">
+				<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+			</span>
+		</div>
+		</form>
+	</div>
+<div class="col-md-12">
+<br/>
+</div>
 </div>
 <ol class="breadcrumb">
 	<li>Enchants</li>

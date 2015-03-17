@@ -22,7 +22,7 @@ class SearchController extends BaseController {
 	}
 	public function searchItems()
 	{
-		$searchterm = Input::get('search');
+		$searchterm = trim(Input::get('search'));
 
 		if(!isset($searchterm) || empty($searchterm))
 		{
