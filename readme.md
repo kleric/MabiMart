@@ -1,5 +1,5 @@
 <p align="center">
-<img src="http://mabimart.com/images/logo.png"/>
+<img src="https://raw.githubusercontent.com/kleric/MabiMart/master/public/images/logo.png"/>
 </p>
 MabiMart is an online auction site for the free-to-play game Mabinogi. Built to simplify the buying and selling of items in game. Not to mention also gaining some experience developing web applications.
 
